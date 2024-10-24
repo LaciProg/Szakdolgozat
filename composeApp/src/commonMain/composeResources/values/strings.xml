@@ -1,0 +1,93 @@
+<resources>
+    <string name="app_name">ExamApp</string>
+
+    <string name="back_button">Back</string>
+    <string name="delete">Delete</string>
+    <string name="save_action">Save</string>
+
+    <string name="delete_question">Are you sure you want to delete?</string>
+    <string name="no_topic_description">Oops!\nNo topic in the list.\nTap + to add.</string>
+    <string name="edit_topic">Edit Topic</string>
+    <string name="topic">Topic</string>
+    <string name="topic_entry_title">Add Topic</string>
+    <string name="topic_description_req">Topic Description*</string>
+    <string name="topic_name_req">Topic*</string>
+
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
+
+    <string name="required_fields">*required fields</string>
+    <string name="attention">Attention</string>
+    <string name="description">Description</string>
+    <string name="parent_topic">Parent topic</string>
+    <string name="no_parent">No parent topic</string>
+    <string name="point">Point</string>
+    <string name="point_type_req">Point type*</string>
+    <string name="point_req">Point*</string>
+    <string name="good_answer_req">Good answer*</string>
+    <string name="bad_answer_req">Bad answer*</string>
+    <string name="edit_point">Edit Point</string>
+    <string name="point_type">Point type</string>
+    <string name="good_answer">Good answer</string>
+    <string name="bad_answer">Bad answer</string>
+    <string name="question">Question</string>
+    <string name="answer">Answer</string>
+    <string name="true_false_question">True-False question</string>
+    <string name="question_name_req">Question*</string>
+    <string name="true_action">True</string>
+    <string name="false_action">False</string>
+    <string name="correct_answer_req">Mark the correct answer*</string>
+    <string name="edit_question">Edit question</string>
+    <string name="correct_answer">Correct answer</string>
+    <string name="question_answer_req">Answer*</string>
+    <string name="multiple_choice_question">Multiple choice question</string>
+    <string name="exam_name_req">Exam name*</string>
+    <string name="exam">Exam</string>
+    <string name="exam_info">Edit exam informations</string>
+    <string name="true_false">True-False</string>
+    <string name="multiple">Multiple</string>
+    <string name="remove_question">Remove question</string>
+    <string name="exams">Exams</string>
+    <string name="add_question">Add question</string>
+
+    <string name="export_exams">Export exams</string>
+    <string name="name">Name:</string>
+    <string name="neptun_code">Neptun:</string>
+    <string name="date">Date:</string>
+    <string name="grade_boundaries">Grade boundaries</string>
+    <string name="one_percent">0–39%</string>
+    <string name="one_grade">1 insufficient</string>
+    <string name="two_percent">40–54%</string>
+    <string name="two_grade">2 sufficient</string>
+    <string name="three_percent">55–69%</string>
+    <string name="three_grade">3 average</string>
+    <string name="four_percent">70–84%</string>
+    <string name="four_grade">4 good</string>
+    <string name="five_percent">85–100%</string>
+    <string name="five_grade">5 excellent</string>
+    <string name="total_points">Total points: </string>
+    <string name="reached_points">Reached points: </string>
+    <string name="percent">Percent: </string>
+    <string name="questions">Questions</string>
+
+    <string name="some_error_message">Error</string>
+    <string name="button_text_sign_up">Sign up</string>
+    <string name="button_text_sign_in">Sign In</string>
+    <string name="textfield_label_email">Email</string>
+    <string name="textfield_label_password">Password</string>
+    <string name="textfield_label_confirm_password">Confirm Password</string>
+    <string name="app_bar_title_sign_up">Sign up</string>
+    <string name="button_text_no_account">I don\'t have an account yet.</string>
+    <string name="log_out">Log out</string>
+    <string name="submit">Submit</string>
+    <string name="true_or_false">true or false</string>
+    <string name="answer_numbers">e.g.: A,B,D</string>
+    <string name="try_again">Try again</string>
+    <string name="nice">Nice</string>
+    <string name="correct_answers">Correct answers: %1$s</string>
+    <string name="percentage">Percentage: %1$s percent</string>
+    <string name="submission">Submission</string>
+    <string name="scan">Scan exams</string>
+
+
+</resources>
