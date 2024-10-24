@@ -40,6 +40,7 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import examapp.composeapp.generated.resources.Res
 import examapp.composeapp.generated.resources.*
+import hu.bme.aut.android.examapp.MainCameraScreen
 //import hu.bme.aut.android.examapp.MainCameraScreen
 import hu.bme.aut.android.examapp.Type
 import hu.bme.aut.android.examapp.api.dto.MultipleChoiceQuestionDto
@@ -66,7 +67,7 @@ fun SubmissionScreen (
         is SubmissionScreenUiState.Loading ->  CircularProgressIndicator(modifier = Modifier.fillMaxSize())
         is SubmissionScreenUiState.Error -> Text(text = SubmissionScreenUiState.Error.errorMessage.ifBlank { "Unexpected error " })
         is SubmissionScreenUiState.Success -> SubmissionScreenContent(viewModel)
-        is SubmissionScreenUiState.Camera -> SubmissionScreenContent(viewModel)//MainCameraScreen(savedStateHandle)
+        is SubmissionScreenUiState.Camera -> MainCameraScreen(savedStateHandle)
     }
 
 

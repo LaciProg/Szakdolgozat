@@ -32,7 +32,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import examapp.composeapp.generated.resources.Res
 import examapp.composeapp.generated.resources.*
 import hu.bme.aut.android.examapp.Notify
-//import hu.bme.aut.android.examapp.logDebug
+import hu.bme.aut.android.examapp.logDebug
 import hu.bme.aut.android.examapp.ui.components.DropDownList
 import hu.bme.aut.android.examapp.ui.viewmodel.multiplechoicequestion.MultipleChoiceQuestionDetails
 import hu.bme.aut.android.examapp.ui.viewmodel.multiplechoicequestion.MultipleChoiceQuestionEntryScreenUiState
@@ -175,7 +175,7 @@ fun MultipleChoiceQuestionInputForm(
                 //TODO ha kitörlöd nem fut a recomposeition
                 //Log.d("asd", "text: $text ${multipleChoiceQuestionDetails.isAnswerChosen}")
 
-                //logDebug("asd", "text: $text ${multipleChoiceQuestionDetails.isAnswerChosen}")
+                logDebug("asd", "text: $text ${multipleChoiceQuestionDetails.isAnswerChosen}")
 
                 Row{
                     TextButton(onClick = {
