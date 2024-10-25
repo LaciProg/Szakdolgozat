@@ -37,6 +37,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import examapp.composeapp.generated.resources.Res
 import examapp.composeapp.generated.resources.*
 import hu.bme.aut.android.examapp.api.dto.TopicDto
+import hu.bme.aut.android.examapp.ui.components.TopAppBarContent
 import hu.bme.aut.android.examapp.ui.viewmodel.topic.TopicDetails
 import hu.bme.aut.android.examapp.ui.viewmodel.topic.TopicDetailsScreenUiState
 import hu.bme.aut.android.examapp.ui.viewmodel.topic.TopicDetailsUiState
@@ -81,7 +82,7 @@ fun TopicDetailsScreenUiState(
 ){
     val coroutineScope = rememberCoroutineScope()
     Scaffold(
-        topBar = {},
+        topBar = { TopAppBarContent(stringResource(Res.string.topic_details), navigateBack) },
         floatingActionButton = {
             FloatingActionButton(
                 onClick = { navigateToEditPoint(topic.uuid) },

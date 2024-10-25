@@ -6,13 +6,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.Button
-import androidx.compose.material3.CircularProgressIndicator
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedTextField
-import androidx.compose.material3.OutlinedTextFieldDefaults
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
+import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
@@ -21,6 +15,7 @@ import examapp.composeapp.generated.resources.Res
 import examapp.composeapp.generated.resources.*
 import hu.bme.aut.android.examapp.Notify
 import hu.bme.aut.android.examapp.ui.components.DropDownList
+import hu.bme.aut.android.examapp.ui.components.TopAppBarContent
 import hu.bme.aut.android.examapp.ui.viewmodel.topic.TopicDetails
 import hu.bme.aut.android.examapp.ui.viewmodel.topic.TopicEntryScreenUiState
 import hu.bme.aut.android.examapp.ui.viewmodel.topic.TopicEntryViewModel
@@ -60,7 +55,7 @@ private fun NewTopicScreenUiState(
     }
 
     Scaffold(
-        topBar = { }
+        topBar = { TopAppBarContent(stringResource(Res.string.topic_crate), navigateBack) }
     ) { innerPadding ->
         TopicEntryBody(
             topicUiState = viewModel.topicUiState,

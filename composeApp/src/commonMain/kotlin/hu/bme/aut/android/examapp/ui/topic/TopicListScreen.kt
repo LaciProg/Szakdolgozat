@@ -15,26 +15,31 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
+import examapp.composeapp.generated.resources.Res
+import examapp.composeapp.generated.resources.topic_list
 //import androidx.hilt.navigation.compose.hiltViewModel
 import hu.bme.aut.android.examapp.api.dto.NameDto
+import hu.bme.aut.android.examapp.ui.components.TopAppBarContent
 import hu.bme.aut.android.examapp.ui.viewmodel.topic.TopicListScreenUiState
 import hu.bme.aut.android.examapp.ui.viewmodel.topic.TopicListViewModel
+import org.jetbrains.compose.resources.stringResource
 
 @Composable
 fun TopicListScreen(
     modifier: Modifier = Modifier,
     addNewTopic: () -> Unit = {},
     navigateToTopicDetails: (String) -> Unit,
+    navigateBack: () -> Unit,
     viewModel: TopicListViewModel = viewModel { TopicListViewModel() } ,
     //viewModel: TopicListViewModel = hiltViewModel()//viewModel(factory = AppViewModelProvider.Factory)
   ){
     when(viewModel.topicListScreenUiState){
         is TopicListScreenUiState.Loading -> CircularProgressIndicator(modifier = Modifier.fillMaxSize())
         is TopicListScreenUiState.Success -> TopicListResultScreen(
-            topics =  (viewModel.topicListScreenUiState as TopicListScreenUiState.Success).topics,
+            topics = (viewModel.topicListScreenUiState as TopicListScreenUiState.Success).topics,
             addNewPoint = addNewTopic,
             navigateToPointDetails = navigateToTopicDetails,
-            viewModel = viewModel,
+            navigateBack = navigateBack,
         )
         is TopicListScreenUiState.Error -> Text(text = TopicListScreenUiState.Error.errorMessage.ifBlank { "Unexpected error " }, modifier = Modifier.fillMaxSize())
     }
@@ -49,13 +54,11 @@ fun TopicListResultScreen(
     topics: List<NameDto>,
     addNewPoint: () -> Unit,
     navigateToPointDetails: (String) -> Unit,
-    viewModel: TopicListViewModel
+    navigateBack: () -> Unit
 ){
 
-
-
     Scaffold(
-        topBar = {  },
+        topBar = { TopAppBarContent(stringResource(Res.string.topic_list), navigateBack) },
         floatingActionButton = {
             FloatingActionButton(
                 onClick = { addNewPoint() }

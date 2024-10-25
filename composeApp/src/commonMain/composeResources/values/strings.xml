@@ -89,5 +89,35 @@
     <string name="submission">Submission</string>
     <string name="scan">Scan exams</string>
 
+    <!-- Topic-related strings -->
+    <string name="topic_list">Topic list</string>
+    <string name="topic_details">Topic details</string>
+    <string name="topic_edit">Edit topic</string>
+    <string name="topic_crate">Create topic</string>
+
+    <!-- Point-related strings -->
+    <string name="point_list">Point list</string>
+    <string name="point_details">Point details</string>
+    <string name="point_edit">Edit point</string>
+    <string name="point_create">Create point</string>
+
+    <!-- Exam-related strings -->
+    <string name="exam_list">Exam list</string>
+    <string name="exam_details">Exam details</string>
+    <string name="exam_edit">Edit exam</string>
+    <string name="exam_create">Create exam</string>
+
+    <!-- True/False Question-related strings -->
+    <string name="true_false_question_list">True/False Question list</string>
+    <string name="true_false_question_details">True/False Question details</string>
+    <string name="true_false_question_edit">Edit True/False Question</string>
+    <string name="true_false_question_create">Create True/False Question</string>
+
+    <!-- Multiple Choice Question-related strings -->
+    <string name="multiple_choice_question_list">Multiple Choice Question list</string>
+    <string name="multiple_choice_question_details">Multiple Choice Question details</string>
+    <string name="multiple_choice_question_edit">Edit Multiple Choice Question</string>
+    <string name="multiple_choice_question_create">Create Multiple Choice Question</string>
+
 
 </resources>

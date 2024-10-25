@@ -13,6 +13,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import hu.bme.aut.android.examapp.MainScreen
+import hu.bme.aut.android.examapp.pdf.ExportExamDetailsScreen
 import hu.bme.aut.android.examapp.ui.exam.ExamDetailsScreen
 import hu.bme.aut.android.examapp.ui.exam.ExamEditScreen
 import hu.bme.aut.android.examapp.ui.exam.ExamListScreen
@@ -129,7 +130,8 @@ fun ExamNavHost(
                 addNewTopic = { navController.navigate(/*ExamDestination.*/ExamDestination.NewTopicDestination.route) },
                 navigateToTopicDetails = { topicId ->
                     navController.navigate(/*ExamDestination.*/"${ExamDestination.TopicDetailsDestination.route}/${topicId}")
-                }
+                },
+                navigateBack = { navController.popBackStack() }
             )
         }
 
@@ -363,13 +365,14 @@ fun ExamNavHost(
             )
         }
 
-        /*composable(
+        composable(
             route = ExamDestination.ExportExamDetailsDestination.routeWithArgs
         ){
             ExportExamDetailsScreen(
                 //navigateToEditMultipleChoiceQuestion = {navController.navigate("${ ExamEditDestination.route}/$it") },
-                navigateBack = { navController.popBackStack() }
+                navigateBack = { navController.popBackStack() },
+                savedStateHandle =  SavedStateHandle.createHandle(null, it.arguments),
             )
-        }*/
+        }
     }
 }
