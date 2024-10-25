@@ -1,16 +1,22 @@
 package hu.bme.aut.android.examapp.ui.exam
 
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewmodel.compose.viewModel
+import examapp.composeapp.generated.resources.Res
+import examapp.composeapp.generated.resources.exam_edit
 import hu.bme.aut.android.examapp.Notify
+import hu.bme.aut.android.examapp.ui.components.TopAppBarContent
 import hu.bme.aut.android.examapp.ui.viewmodel.exam.ExamEditScreenUiState
 import hu.bme.aut.android.examapp.ui.viewmodel.exam.ExamEditViewModel
 import kotlinx.coroutines.launch
+import org.jetbrains.compose.resources.stringResource
 
 @Composable
 fun ExamEditScreen(
@@ -44,21 +50,24 @@ fun ExamEditResultScreen(
         Notify(notifyMessage)
         showNotify = false
     }
-
-    ExamEntryBody(
-        examUiState = viewModel.examUiState,
-        onExamValueChange = viewModel::updateUiState,
-        onSaveClick = {
-            coroutineScope.launch {
-                if(viewModel.updateExam()){
-                    navigateBack()
+    Scaffold(
+        topBar = { TopAppBarContent(stringResource(Res.string.exam_edit), navigateBack) },
+    ){innerPadding ->
+        ExamEntryBody(
+            examUiState = viewModel.examUiState,
+            onExamValueChange = viewModel::updateUiState,
+            onSaveClick = {
+                coroutineScope.launch {
+                    if(viewModel.updateExam()){
+                        navigateBack()
+                    }
+                    else{
+                        showNotify = true
+                        notifyMessage =  "Exam with this name already exists"
+                    }
                 }
-                else{
-                    showNotify = true
-                    notifyMessage =  "Exam with this name already exists"
-                }
-            }
-        },
-        modifier = modifier
-    )
+            },
+            modifier = modifier.padding(innerPadding)
+        )
+    }
 }

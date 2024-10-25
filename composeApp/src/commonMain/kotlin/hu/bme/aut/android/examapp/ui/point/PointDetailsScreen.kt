@@ -38,6 +38,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import examapp.composeapp.generated.resources.Res
 import examapp.composeapp.generated.resources.*
 import hu.bme.aut.android.examapp.api.dto.PointDto
+import hu.bme.aut.android.examapp.ui.components.TopAppBarContent
 import hu.bme.aut.android.examapp.ui.viewmodel.point.PointDetailsScreenUiState
 import hu.bme.aut.android.examapp.ui.viewmodel.point.PointDetailsUiState
 import hu.bme.aut.android.examapp.ui.viewmodel.point.PointDetailsViewModel
@@ -82,7 +83,7 @@ fun PointDetailsResultScreen(
 ) {
     val coroutineScope = rememberCoroutineScope()
     Scaffold(
-        topBar = {},
+         topBar = { TopAppBarContent(stringResource(Res.string.point_details), navigateBack) },
         floatingActionButton = {
             FloatingActionButton(
                 onClick = { navigateToEditPoint(point.uuid) },

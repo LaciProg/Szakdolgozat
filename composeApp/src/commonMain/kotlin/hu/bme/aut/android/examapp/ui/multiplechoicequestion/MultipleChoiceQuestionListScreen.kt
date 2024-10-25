@@ -15,24 +15,29 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
+import examapp.composeapp.generated.resources.Res
+import examapp.composeapp.generated.resources.multiple_choice_question_list
 import hu.bme.aut.android.examapp.api.dto.NameDto
+import hu.bme.aut.android.examapp.ui.components.TopAppBarContent
 import hu.bme.aut.android.examapp.ui.viewmodel.multiplechoicequestion.MultipleChoiceQuestionListScreenUiState
 import hu.bme.aut.android.examapp.ui.viewmodel.multiplechoicequestion.MultipleChoiceQuestionListViewModel
+import org.jetbrains.compose.resources.stringResource
 
 @Composable
 fun MultipleChoiceQuestionListScreen(
     modifier: Modifier = Modifier,
     addNewMultipleChoiceQuestion: () -> Unit = {},
     navigateToMultipleChoiceQuestionDetails: (String) -> Unit,
-    viewModel: MultipleChoiceQuestionListViewModel = viewModel { MultipleChoiceQuestionListViewModel() }//viewModel(factory = AppViewModelProvider.Factory)
-  ){
+    viewModel: MultipleChoiceQuestionListViewModel = viewModel { MultipleChoiceQuestionListViewModel() },//viewModel(factory = AppViewModelProvider.Factory)
+    navigateBack: () -> Unit
+){
     when(viewModel.multipleChoiceQuestionListScreenUiState){
         is MultipleChoiceQuestionListScreenUiState.Loading -> CircularProgressIndicator(modifier = Modifier.fillMaxSize())
         is MultipleChoiceQuestionListScreenUiState.Success -> MultipleChoiceQuestionListResultScreen(
             questions =  (viewModel.multipleChoiceQuestionListScreenUiState as MultipleChoiceQuestionListScreenUiState.Success).questions,
             addNewQuestion = addNewMultipleChoiceQuestion,
             navigateToMultipleChoiceQuestionDetails = navigateToMultipleChoiceQuestionDetails,
-            viewModel = viewModel
+            navigateBack = navigateBack
         )
         is MultipleChoiceQuestionListScreenUiState.Error -> Text(text = MultipleChoiceQuestionListScreenUiState.Error.errorMessage.ifBlank { "Unexpected error " }, modifier = Modifier.fillMaxSize())
     }
@@ -47,10 +52,10 @@ fun MultipleChoiceQuestionListResultScreen(
     questions: List<NameDto>,
     addNewQuestion: () -> Unit,
     navigateToMultipleChoiceQuestionDetails: (String) -> Unit,
-    viewModel: MultipleChoiceQuestionListViewModel
+    navigateBack: () -> Unit
 ) {
     Scaffold(
-        topBar = {  },
+         topBar = { TopAppBarContent(stringResource(Res.string.multiple_choice_question_list), navigateBack) },
         floatingActionButton = {
             FloatingActionButton(
                 onClick = { addNewQuestion() }

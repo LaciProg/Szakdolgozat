@@ -84,6 +84,7 @@ import hu.bme.aut.android.examapp.api.dto.Question
 import hu.bme.aut.android.examapp.api.dto.TopicDto
 import hu.bme.aut.android.examapp.api.dto.TrueFalseQuestionDto
 import hu.bme.aut.android.examapp.ui.components.DropDownList
+import hu.bme.aut.android.examapp.ui.components.TopAppBarContent
 import hu.bme.aut.android.examapp.ui.multiplechoicequestion.MultipleChoiceQuestionDetails
 import hu.bme.aut.android.examapp.ui.theme.Green
 import hu.bme.aut.android.examapp.ui.theme.GreenLight
@@ -153,20 +154,23 @@ fun ExamDetailsDetailsScreenUiState(
 
     Scaffold(
         topBar = {
-            SearchBar(
-                backgroundColor = backgroundColor,
-                tabPage = tabPage,
-                onTabSelected = { tabPage = it },
-                topics = examViewModel.topicList,
-                trueFalse =  examViewModel.trueFalseList,
-                multipleChoice =  examViewModel.multipleChoiceList,
-                questions = examUiState.examDetails.questionList,
-                examTopic = examUiState.examDetails.topicId,
-            ){
-                coroutineScope.launch {
-                    when (tabPage) {
-                        Type.trueFalseQuestion -> examViewModel.saveQuestion(tabPage.ordinal, it)
-                        Type.multipleChoiceQuestion -> examViewModel.saveQuestion(tabPage.ordinal, it)
+            Column {
+                TopAppBarContent(stringResource(Res.string.exam_details), navigateBack)
+                SearchBar(
+                    backgroundColor = backgroundColor,
+                    tabPage = tabPage,
+                    onTabSelected = { tabPage = it },
+                    topics = examViewModel.topicList,
+                    trueFalse =  examViewModel.trueFalseList,
+                    multipleChoice =  examViewModel.multipleChoiceList,
+                    questions = examUiState.examDetails.questionList,
+                    examTopic = examUiState.examDetails.topicId,
+                ){
+                    coroutineScope.launch {
+                        when (tabPage) {
+                            Type.trueFalseQuestion -> examViewModel.saveQuestion(tabPage.ordinal, it)
+                            Type.multipleChoiceQuestion -> examViewModel.saveQuestion(tabPage.ordinal, it)
+                        }
                     }
                 }
             }

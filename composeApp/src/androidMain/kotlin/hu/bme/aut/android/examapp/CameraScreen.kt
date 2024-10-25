@@ -40,7 +40,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import hu.bme.aut.android.examapp.ui.viewmodel.submission.SubmissionViewModel
 
 @Composable
-actual fun CameraScreen(savedStateHandle: SavedStateHandle) {
+actual fun CameraScreen(savedStateHandle: SavedStateHandle, navigateBack: ()-> Unit) {
     CameraContent(savedStateHandle)
 }
 

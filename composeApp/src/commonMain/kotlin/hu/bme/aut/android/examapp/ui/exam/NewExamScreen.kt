@@ -21,6 +21,7 @@ import examapp.composeapp.generated.resources.Res
 import examapp.composeapp.generated.resources.*
 import hu.bme.aut.android.examapp.Notify
 import hu.bme.aut.android.examapp.ui.components.DropDownList
+import hu.bme.aut.android.examapp.ui.components.TopAppBarContent
 import hu.bme.aut.android.examapp.ui.viewmodel.exam.ExamDetails
 import hu.bme.aut.android.examapp.ui.viewmodel.exam.ExamEntryScreenUiState
 import hu.bme.aut.android.examapp.ui.viewmodel.exam.ExamEntryViewModel
@@ -58,7 +59,7 @@ private fun NewExamScreenUiState(
     }
 
     Scaffold(
-        topBar = { }
+         topBar = { TopAppBarContent(stringResource(Res.string.exam_create), navigateBack) },
     ) { innerPadding ->
         ExamEntryBody(
             examUiState = viewModel.examUiState,

@@ -4,4 +4,4 @@ import androidx.compose.runtime.Composable
 import androidx.lifecycle.SavedStateHandle
 
 @Composable
-expect fun MainCameraScreen(savedStateHandle: SavedStateHandle)
+expect fun MainCameraScreen(savedStateHandle: SavedStateHandle, navigateBack: () -> Unit)

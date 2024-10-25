@@ -1,16 +1,23 @@
 package hu.bme.aut.android.examapp.ui.truefalsequestion
 
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewmodel.compose.viewModel
+import examapp.composeapp.generated.resources.Res
+import examapp.composeapp.generated.resources.true_false_question_create
+import examapp.composeapp.generated.resources.true_false_question_edit
 import hu.bme.aut.android.examapp.Notify
+import hu.bme.aut.android.examapp.ui.components.TopAppBarContent
 import hu.bme.aut.android.examapp.ui.viewmodel.truefalsequestion.TrueFalseQuestionEditScreenUiState
 import hu.bme.aut.android.examapp.ui.viewmodel.truefalsequestion.TrueFalseQuestionEditViewModel
 import kotlinx.coroutines.launch
+import org.jetbrains.compose.resources.stringResource
 
 @Composable
 fun TrueFalseQuestionEditScreen(
@@ -45,20 +52,25 @@ fun TrueFalseQuestionEditResultScreen(
         showNotify = false
     }
 
-    TrueFalseQuestionEntryBody(
-        trueFalseQuestionUiState = viewModel.trueFalseQuestionUiState,
-        onTrueFalseQuestionValueChange = viewModel::updateUiState,
-        onSaveClick = {
-            coroutineScope.launch {
-                if(viewModel.updateTrueFalseQuestion()){
-                    navigateBack()
+    Scaffold(
+        topBar = { TopAppBarContent(stringResource(Res.string.true_false_question_edit), navigateBack) },
+    ){innerPadding ->
+
+        TrueFalseQuestionEntryBody(
+            trueFalseQuestionUiState = viewModel.trueFalseQuestionUiState,
+            onTrueFalseQuestionValueChange = viewModel::updateUiState,
+            onSaveClick = {
+                coroutineScope.launch {
+                    if(viewModel.updateTrueFalseQuestion()){
+                        navigateBack()
+                    }
+                    else{
+                        showNotify = true
+                        notifyMessage = "Question with this name already exists"
+                    }
                 }
-                else{
-                    showNotify = true
-                    notifyMessage = "Question with this name already exists"
-                }
-            }
-        },
-        modifier = modifier
-    )
+            },
+            modifier = modifier.padding(innerPadding)
+        )
+    }
 }

@@ -7,11 +7,6 @@ import androidx.navigation.*
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 
-import androidx.navigation.compose.currentBackStackEntryAsState
-import androidx.navigation.compose.rememberNavController
-
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
 import hu.bme.aut.android.examapp.MainScreen
 import hu.bme.aut.android.examapp.pdf.ExportExamDetailsScreen
 import hu.bme.aut.android.examapp.ui.exam.ExamDetailsScreen
@@ -35,33 +30,6 @@ import hu.bme.aut.android.examapp.ui.truefalsequestion.NewTrueFalseQuestionScree
 import hu.bme.aut.android.examapp.ui.truefalsequestion.TrueFalseQuestionDetailsScreen
 import hu.bme.aut.android.examapp.ui.truefalsequestion.TrueFalseQuestionEditScreen
 import hu.bme.aut.android.examapp.ui.truefalsequestion.TrueFalseQuestionListScreen
-
-//import hu.bme.aut.android.examapp.MainScreen
-/*
-import hu.bme.aut.android.examapp.ui.auth.LoginScreen
-import hu.bme.aut.android.examapp.ui.auth.RegisterScreen
-import hu.bme.aut.android.examapp.ui.exam.ExamDetailsScreen
-import hu.bme.aut.android.examapp.ui.exam.ExamEditScreen
-import hu.bme.aut.android.examapp.ui.exam.ExamListScreen
-import hu.bme.aut.android.examapp.ui.exam.ExportExamDetailsScreen
-import hu.bme.aut.android.examapp.ui.exam.NewExamScreen
-import hu.bme.aut.android.examapp.ui.multiplechoicequestion.MultipleChoiceQuestionDetailsScreen
-import hu.bme.aut.android.examapp.ui.multiplechoicequestion.MultipleChoiceQuestionEditScreen
-import hu.bme.aut.android.examapp.ui.multiplechoicequestion.MultipleChoiceQuestionListScreen
-import hu.bme.aut.android.examapp.ui.multiplechoicequestion.NewMultipleChoiceQuestionScreen
-import hu.bme.aut.android.examapp.ui.point.NewPoint
-import hu.bme.aut.android.examapp.ui.point.PointDetailsScreen
-import hu.bme.aut.android.examapp.ui.point.PointEditScreen
-import hu.bme.aut.android.examapp.ui.point.PointListScreen
-import hu.bme.aut.android.examapp.ui.submission.SubmissionScreen
-import hu.bme.aut.android.examapp.ui.topic.NewTopic
-import hu.bme.aut.android.examapp.ui.topic.TopicDetailsScreen
-import hu.bme.aut.android.examapp.ui.topic.TopicEditScreen
-import hu.bme.aut.android.examapp.ui.topic.TopicListScreen
-import hu.bme.aut.android.examapp.ui.truefalsequestion.NewTrueFalseQuestionScreen
-import hu.bme.aut.android.examapp.ui.truefalsequestion.TrueFalseQuestionDetailsScreen
-import hu.bme.aut.android.examapp.ui.truefalsequestion.TrueFalseQuestionEditScreen
-import hu.bme.aut.android.examapp.ui.truefalsequestion.TrueFalseQuestionListScreen*/
 
 @Composable
 fun ExamNavHost(
@@ -127,9 +95,9 @@ fun ExamNavHost(
             route = /*ExamDestination.*/ExamDestination.TopicListDestination.route,
         ) {
             TopicListScreen(
-                addNewTopic = { navController.navigate(/*ExamDestination.*/ExamDestination.NewTopicDestination.route) },
+                addNewTopic = { navController.navigate(ExamDestination.NewTopicDestination.route) },
                 navigateToTopicDetails = { topicId ->
-                    navController.navigate(/*ExamDestination.*/"${ExamDestination.TopicDetailsDestination.route}/${topicId}")
+                    navController.navigate("${ExamDestination.TopicDetailsDestination.route}/${topicId}")
                 },
                 navigateBack = { navController.popBackStack() }
             )
@@ -155,12 +123,11 @@ fun ExamNavHost(
             TopicEditScreen(
                 navigateBack = { navController.popBackStack() },
                 savedStateHandle =  SavedStateHandle.createHandle(null, it.arguments),
-                //onNavigateUp = { navController.navigateUp() }
             )
         }
 
         composable(
-            route = /*ExamDestination.*/ExamDestination.NewTopicDestination.route
+            route = ExamDestination.NewTopicDestination.route
         ) {
             NewTopic(
                 navigateBack = { navController.popBackStack() },
@@ -169,13 +136,14 @@ fun ExamNavHost(
         }
 
         composable(
-            route = /*ExamDestination.*/ExamDestination.PointListDestination.route,
+            route = ExamDestination.PointListDestination.route,
         ) {
             PointListScreen(
-                addNewPoint = { navController.navigate(/*ExamDestination.*/ExamDestination.NewPointDestination.route) },
+                addNewPoint = { navController.navigate(ExamDestination.NewPointDestination.route) },
                 navigateToPointDetails = { pointId ->
-                    navController.navigate(/*ExamDestination.*/"${ExamDestination.PointDetailsDestination.route}/$pointId")
-                }
+                    navController.navigate("${ExamDestination.PointDetailsDestination.route}/$pointId")
+                },
+                navigateBack = { navController.popBackStack() }
             )
         }
 
@@ -198,12 +166,11 @@ fun ExamNavHost(
             PointEditScreen(
                 navigateBack = { navController.popBackStack() },
                 savedStateHandle =  SavedStateHandle.createHandle(null, it.arguments),
-                //onNavigateUp = { navController.navigateUp() }
             )
         }
 
         composable(
-            route = /*ExamDestination.*/ExamDestination.NewPointDestination.route
+            route = ExamDestination.NewPointDestination.route
         ) {
             NewPoint(
                 navigateBack = { navController.popBackStack() },
@@ -217,7 +184,8 @@ fun ExamNavHost(
         ) {
             TrueFalseQuestionListScreen(
                 addNewTrueFalseQuestion = { navController.navigate(ExamDestination.NewTrueFalseQuestionDestination.route) },
-                navigateToTrueFalseQuestionDetails = { navController.navigate("${ExamDestination.TrueFalseQuestionDetailsDestination.route}/$it") }
+                navigateToTrueFalseQuestionDetails = { navController.navigate("${ExamDestination.TrueFalseQuestionDetailsDestination.route}/$it") },
+                navigateBack = { navController.popBackStack() }
             )
         }
 
@@ -238,13 +206,12 @@ fun ExamNavHost(
             TrueFalseQuestionEditScreen(
                 navigateBack = { navController.popBackStack() },
                 savedStateHandle =  SavedStateHandle.createHandle(null, it.arguments),
-                //onNavigateUp = { navController.navigateUp() }
             )
         }
 
 
         composable(
-            route = /*ExamDestination.*/ExamDestination.NewTrueFalseQuestionDestination.route
+            route = ExamDestination.NewTrueFalseQuestionDestination.route
         ) {
             NewTrueFalseQuestionScreen(
                 navigateBack = { navController.popBackStack() },
@@ -258,7 +225,8 @@ fun ExamNavHost(
         ) {
             MultipleChoiceQuestionListScreen(
                 addNewMultipleChoiceQuestion = { navController.navigate(ExamDestination.NewMultipleChoiceQuestionDestination.route) },
-                navigateToMultipleChoiceQuestionDetails = { navController.navigate("${ExamDestination.MultipleChoiceQuestionDetailsDestination.route}/$it") }
+                navigateToMultipleChoiceQuestionDetails = { navController.navigate("${ExamDestination.MultipleChoiceQuestionDetailsDestination.route}/$it") },
+                navigateBack = { navController.popBackStack() }
             )
         }
 
@@ -279,7 +247,6 @@ fun ExamNavHost(
             MultipleChoiceQuestionEditScreen(
                 navigateBack = { navController.popBackStack() },
                 savedStateHandle =  SavedStateHandle.createHandle(null, it.arguments),
-                //onNavigateUp = { navController.navigateUp() }
             )
         }
 
@@ -302,7 +269,8 @@ fun ExamNavHost(
         ) {
             ExamListScreen(
                 addNewExam = { navController.navigate(ExamDestination.NewExamDestination.route) },
-                navigateToExamDetails = { navController.navigate("${ ExamDestination.ExamDetailsDestination.route}/$it") }
+                navigateToExamDetails = { navController.navigate("${ ExamDestination.ExamDetailsDestination.route}/$it") },
+                navigateBack = { navController.popBackStack() }
             )
         }
 
@@ -323,7 +291,6 @@ fun ExamNavHost(
             ExamEditScreen(
                 navigateBack = { navController.popBackStack() },
                 savedStateHandle =  SavedStateHandle.createHandle(null, it.arguments),
-                //onNavigateUp = { navController.navigateUp() }
             )
         }
 
@@ -342,7 +309,8 @@ fun ExamNavHost(
         ) {
             ExamListScreen(
                 addNewExam = { navController.navigate(ExamDestination.NewExamDestination.route) },
-                navigateToExamDetails = { navController.navigate("${ExamDestination.SubmissionDestination.route}/$it") }
+                navigateToExamDetails = { navController.navigate("${ExamDestination.SubmissionDestination.route}/$it") },
+                navigateBack = { navController.popBackStack() }
             )
         }
 
@@ -361,7 +329,8 @@ fun ExamNavHost(
         ) {
             ExamListScreen(
                 addNewExam = { navController.navigate(ExamDestination.NewExamDestination.route) },
-                navigateToExamDetails = { navController.navigate("${ExamDestination.ExportExamDetailsDestination.route}/$it") }
+                navigateToExamDetails = { navController.navigate("${ExamDestination.ExportExamDetailsDestination.route}/$it") },
+                navigateBack = { navController.popBackStack() }
             )
         }
 

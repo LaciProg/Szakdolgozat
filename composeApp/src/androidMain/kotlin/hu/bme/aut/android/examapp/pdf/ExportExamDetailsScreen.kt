@@ -56,6 +56,7 @@ import hu.bme.aut.android.examapp.api.dto.Question
 import hu.bme.aut.android.examapp.api.dto.TrueFalseQuestionDto
 import hu.bme.aut.android.examapp.ui.components.ExportedMultipleChoiceQuestion
 import hu.bme.aut.android.examapp.ui.components.ExportedTrueFalseQuestion
+import hu.bme.aut.android.examapp.ui.components.TopAppBarContent
 import hu.bme.aut.android.examapp.ui.viewmodel.exam.ExamDetailsViewModel
 import java.io.IOException
 
@@ -239,16 +240,6 @@ actual fun ExportExamDetailsScreen(    //IN navigation used
     savedStateHandle: SavedStateHandle,
     examViewModel: ExamDetailsViewModel
 ) {
-    val permissionLauncher = rememberMultiplePermissionsState(
-            permissions = listOf(
-                android.Manifest.permission.WRITE_EXTERNAL_STORAGE,
-            )
-    )
-
-    LaunchedEffect(Unit) {
-        permissionLauncher.launchMultiplePermissionRequest()
-    }
-
     val context = LocalContext.current
 
     // Reference to the ComposeView
@@ -256,10 +247,7 @@ actual fun ExportExamDetailsScreen(    //IN navigation used
 
     Scaffold(
         topBar = {
-            TopBar(
-                examName = examViewModel.uiState.examDetails.name,
-                modifier = modifier
-            )
+            TopAppBarContent(examViewModel.uiState.examDetails.name, navigateBack)
         },
         floatingActionButton = {
             ExtendedFloatingActionButton(

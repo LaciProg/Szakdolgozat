@@ -22,6 +22,7 @@ import examapp.composeapp.generated.resources.Res
 import examapp.composeapp.generated.resources.*
 import hu.bme.aut.android.examapp.Notify
 import hu.bme.aut.android.examapp.ui.components.DropDownList
+import hu.bme.aut.android.examapp.ui.components.TopAppBarContent
 import hu.bme.aut.android.examapp.ui.viewmodel.point.PointListViewModel
 import hu.bme.aut.android.examapp.ui.viewmodel.topic.TopicListViewModel
 import hu.bme.aut.android.examapp.ui.viewmodel.truefalsequestion.TrueFalseQuestionDetails
@@ -60,7 +61,7 @@ private fun NewTrueFalseQuestionScreenUiState(
     }
 
     Scaffold(
-        topBar = {}
+         topBar = { TopAppBarContent(stringResource(Res.string.true_false_question_create), navigateBack) },
     ) { innerPadding ->
         TrueFalseQuestionEntryBody(
             trueFalseQuestionUiState = viewModel.trueFalseQuestionUiState,

@@ -119,5 +119,13 @@
     <string name="multiple_choice_question_edit">Edit Multiple Choice Question</string>
     <string name="multiple_choice_question_create">Create Multiple Choice Question</string>
 
+    <!--Unspoorted screen-->
+    <string name="warning">Warning</string>
+    <string name="not_supported">This feature is not supported on your device</string>
+    <string name="try_another_device">Please try on another device or contact support.</string>
+
+    <string name="camera">Camera</string>
+
+
 
 </resources>

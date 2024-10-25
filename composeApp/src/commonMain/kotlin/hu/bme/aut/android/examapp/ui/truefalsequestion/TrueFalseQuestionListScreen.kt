@@ -15,24 +15,30 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
+import examapp.composeapp.generated.resources.Res
+import examapp.composeapp.generated.resources.true_false_question_create
+import examapp.composeapp.generated.resources.true_false_question_list
 import hu.bme.aut.android.examapp.api.dto.NameDto
+import hu.bme.aut.android.examapp.ui.components.TopAppBarContent
 import hu.bme.aut.android.examapp.ui.viewmodel.truefalsequestion.TrueFalseQuestionListScreenUiState
 import hu.bme.aut.android.examapp.ui.viewmodel.truefalsequestion.TrueFalseQuestionListViewModel
+import org.jetbrains.compose.resources.stringResource
 
 @Composable
 fun TrueFalseQuestionListScreen(
     modifier: Modifier = Modifier,
     addNewTrueFalseQuestion: () -> Unit = {},
     navigateToTrueFalseQuestionDetails: (String) -> Unit,
-    viewModel: TrueFalseQuestionListViewModel = viewModel { TrueFalseQuestionListViewModel() }//viewModel(factory = AppViewModelProvider.Factory)
-  ){
+    viewModel: TrueFalseQuestionListViewModel = viewModel { TrueFalseQuestionListViewModel() },//viewModel(factory = AppViewModelProvider.Factory)
+    navigateBack: () -> Unit
+){
     when(viewModel.trueFalseQuestionListScreenUiState){
         is TrueFalseQuestionListScreenUiState.Loading -> CircularProgressIndicator(modifier = Modifier.fillMaxSize())
         is TrueFalseQuestionListScreenUiState.Success -> TrueFalseQuestionListResultScreen(
             questions =  (viewModel.trueFalseQuestionListScreenUiState as TrueFalseQuestionListScreenUiState.Success).questions,
             addNewQuestion = addNewTrueFalseQuestion,
             navigateToQuestionDetails = navigateToTrueFalseQuestionDetails,
-            viewModel = viewModel
+            navigateBack = navigateBack
         )
         is TrueFalseQuestionListScreenUiState.Error -> Text(text = TrueFalseQuestionListScreenUiState.Error.errorMessage.ifBlank { "Unexpected error " }, modifier = Modifier.fillMaxSize())
     }
@@ -47,10 +53,10 @@ fun TrueFalseQuestionListResultScreen(
     questions: List<NameDto>,
     addNewQuestion: () -> Unit,
     navigateToQuestionDetails: (String) -> Unit,
-    viewModel: TrueFalseQuestionListViewModel
+    navigateBack: () -> Unit
 ){
    Scaffold(
-        topBar = {  },
+        topBar = { TopAppBarContent(stringResource(Res.string.true_false_question_list), navigateBack) },
         floatingActionButton = {
             FloatingActionButton(
                 onClick = { addNewQuestion() }

@@ -15,17 +15,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.AlertDialog
-import androidx.compose.material3.AlertDialogDefaults
-import androidx.compose.material3.Button
-import androidx.compose.material3.Card
-import androidx.compose.material3.CardColors
-import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.CircularProgressIndicator
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedTextField
-import androidx.compose.material3.OutlinedTextFieldDefaults
-import androidx.compose.material3.Text
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -47,6 +37,7 @@ import hu.bme.aut.android.examapp.api.dto.MultipleChoiceQuestionDto
 import hu.bme.aut.android.examapp.api.dto.Question
 import hu.bme.aut.android.examapp.api.dto.StatisticsDto
 import hu.bme.aut.android.examapp.api.dto.TrueFalseQuestionDto
+import hu.bme.aut.android.examapp.ui.components.TopAppBarContent
 import hu.bme.aut.android.examapp.ui.theme.Green
 import hu.bme.aut.android.examapp.ui.theme.PaleDogwood
 import hu.bme.aut.android.examapp.ui.theme.Purple40
@@ -66,8 +57,8 @@ fun SubmissionScreen (
     when(viewModel.submissionScreenUiState){
         is SubmissionScreenUiState.Loading ->  CircularProgressIndicator(modifier = Modifier.fillMaxSize())
         is SubmissionScreenUiState.Error -> Text(text = SubmissionScreenUiState.Error.errorMessage.ifBlank { "Unexpected error " })
-        is SubmissionScreenUiState.Success -> SubmissionScreenContent(viewModel)
-        is SubmissionScreenUiState.Camera -> MainCameraScreen(savedStateHandle)
+        is SubmissionScreenUiState.Success -> SubmissionScreenContent(viewModel, navigateBack)
+        is SubmissionScreenUiState.Camera -> MainCameraScreen(savedStateHandle, navigateBack)
     }
 
 
@@ -84,41 +75,46 @@ fun SubmissionScreen (
 
 @Composable
 fun SubmissionScreenContent(
-    viewModel: SubmissionViewModel
+    viewModel: SubmissionViewModel,
+    navigateBack: () -> Unit
 ){
-    Column(
-        modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState())
-    ) {
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.Center
-        ) {
+    Scaffold (
+        topBar = { TopAppBarContent(stringResource(Res.string.submission), navigateBack) },
+        ){innerPadding ->
             Column(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalAlignment = Alignment.CenterHorizontally
+                modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(innerPadding)
             ) {
-                Text(text = "Submission Screen")
-                Text(text = viewModel.uiState.examDetails.name)
-                Button(onClick = { viewModel.submissionScreenUiState = SubmissionScreenUiState.Camera }) {
-                    Text(stringResource(Res.string.scan))
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.Center
+                ) {
+                    Column(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Text(text = "Submission Screen")
+                        Text(text = viewModel.uiState.examDetails.name)
+                        Button(onClick = { viewModel.submissionScreenUiState = SubmissionScreenUiState.Camera }) {
+                            Text(stringResource(Res.string.scan))
+                        }
+                    }
+                }
+                Spacer(modifier = Modifier.height(30.dp))
+
+                for ((index, question) in viewModel.uiState.examDetails.questionList.withIndex()) {
+                    QuestionCard(question, viewModel.answers, index)
+                }
+
+                Button(onClick = {
+                    viewModel.statisticsDto = StatisticsDto(0.0,0.0)
+                    viewModel.statisticsDialogUiState = SubmissionResultScreenUiState.Loading
+                    println(viewModel.answers.answers)
+                    viewModel.submitAnswers(answers = viewModel.answers.answers.joinToString("-"))
+                }) {
+                    Text(stringResource(Res.string.submit))
                 }
             }
         }
-        Spacer(modifier = Modifier.height(30.dp))
-
-        for ((index, question) in viewModel.uiState.examDetails.questionList.withIndex()) {
-            QuestionCard(question, viewModel.answers, index)
-        }
-
-        Button(onClick = {
-            viewModel.statisticsDto = StatisticsDto(0.0,0.0)
-            viewModel.statisticsDialogUiState = SubmissionResultScreenUiState.Loading
-            println(viewModel.answers.answers)
-            viewModel.submitAnswers(answers = viewModel.answers.answers.joinToString("-"))
-        }) {
-            Text(stringResource(Res.string.submit))
-        }
-    }
 }
 
 @Composable

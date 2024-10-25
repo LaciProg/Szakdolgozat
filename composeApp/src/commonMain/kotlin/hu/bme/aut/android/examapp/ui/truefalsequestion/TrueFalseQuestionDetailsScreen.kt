@@ -40,6 +40,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import examapp.composeapp.generated.resources.Res
 import examapp.composeapp.generated.resources.*
 import hu.bme.aut.android.examapp.api.dto.TrueFalseQuestionDto
+import hu.bme.aut.android.examapp.ui.components.TopAppBarContent
 import hu.bme.aut.android.examapp.ui.viewmodel.truefalsequestion.TrueFalseQuestionDetails
 import hu.bme.aut.android.examapp.ui.viewmodel.truefalsequestion.TrueFalseQuestionDetailsScreenUiState
 import hu.bme.aut.android.examapp.ui.viewmodel.truefalsequestion.TrueFalseQuestionDetailsUiState
@@ -83,7 +84,7 @@ fun TrueFalseQuestionDetailsScreenUiState(
 ) {
     val coroutineScope = rememberCoroutineScope()
     Scaffold(
-        topBar = { },
+       topBar = { TopAppBarContent(stringResource(Res.string.true_false_question_details), navigateBack) },
         floatingActionButton = {
             FloatingActionButton(
                 onClick = { navigateToEditTrueFalseQuestion(viewModel.uiState.trueFalseQuestionDetails.id) },

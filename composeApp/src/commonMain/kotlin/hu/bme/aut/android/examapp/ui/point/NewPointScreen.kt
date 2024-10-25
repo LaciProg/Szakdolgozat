@@ -22,6 +22,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import examapp.composeapp.generated.resources.Res
 import examapp.composeapp.generated.resources.*
 import hu.bme.aut.android.examapp.Notify
+import hu.bme.aut.android.examapp.ui.components.TopAppBarContent
 import hu.bme.aut.android.examapp.ui.viewmodel.point.PointDetails
 import hu.bme.aut.android.examapp.ui.viewmodel.point.PointEntryScreenUiState
 import hu.bme.aut.android.examapp.ui.viewmodel.point.PointEntryViewModel
@@ -58,7 +59,7 @@ private fun NewPointScreenUiState(
     }
 
     Scaffold(
-        topBar = {}
+         topBar = { TopAppBarContent(stringResource(Res.string.point_create), navigateBack) },
     ) { innerPadding ->
         PointEntryBody(
             pointUiState = viewModel.pointUiState,

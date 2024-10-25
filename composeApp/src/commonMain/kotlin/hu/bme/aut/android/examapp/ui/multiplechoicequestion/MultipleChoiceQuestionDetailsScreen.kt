@@ -40,6 +40,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import examapp.composeapp.generated.resources.Res
 import examapp.composeapp.generated.resources.*
 import hu.bme.aut.android.examapp.api.dto.MultipleChoiceQuestionDto
+import hu.bme.aut.android.examapp.ui.components.TopAppBarContent
 import hu.bme.aut.android.examapp.ui.viewmodel.multiplechoicequestion.MultipleChoiceQuestionDetails
 import hu.bme.aut.android.examapp.ui.viewmodel.multiplechoicequestion.MultipleChoiceQuestionDetailsScreenUiState
 import hu.bme.aut.android.examapp.ui.viewmodel.multiplechoicequestion.MultipleChoiceQuestionDetailsUiState
@@ -83,7 +84,7 @@ fun MultipleChoiceQuestionDetailsScreenUiState(
 ) {
     val coroutineScope = rememberCoroutineScope()
     Scaffold(
-        topBar = {},
+         topBar = { TopAppBarContent(stringResource(Res.string.multiple_choice_question_details), navigateBack) },
         floatingActionButton = {
             FloatingActionButton(
                 onClick = { navigateToEditTrueFalseQuestion(viewModel.uiState.multipleChoiceQuestionDetails.id) },

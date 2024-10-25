@@ -1,16 +1,22 @@
 package hu.bme.aut.android.examapp.ui.point
 
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewmodel.compose.viewModel
+import examapp.composeapp.generated.resources.Res
+import examapp.composeapp.generated.resources.point_edit
 import hu.bme.aut.android.examapp.Notify
+import hu.bme.aut.android.examapp.ui.components.TopAppBarContent
 import hu.bme.aut.android.examapp.ui.viewmodel.point.PointEditScreenUiState
 import hu.bme.aut.android.examapp.ui.viewmodel.point.PointEditViewModel
 import kotlinx.coroutines.launch
+import org.jetbrains.compose.resources.stringResource
 
 @Composable
 fun PointEditScreen(
@@ -44,18 +50,24 @@ fun PointEditResultScreen(
     if (showNotify) {
         Notify(notifyMessage)
     }
-    PointEntryBody(
-        pointUiState = viewModel.pointUiState,
-        onPointValueChange = viewModel::updateUiState,
-        onSaveClick = {
-            coroutineScope.launch {
-                if(viewModel.updatePoint()) { navigateBack() }
-                else{
-                    showNotify = true
-                    notifyMessage = "Point with this name already exists"
+
+    Scaffold(
+        topBar = { TopAppBarContent(stringResource(Res.string.point_edit), navigateBack) },
+    ){innderPadding ->
+
+        PointEntryBody(
+            pointUiState = viewModel.pointUiState,
+            onPointValueChange = viewModel::updateUiState,
+            onSaveClick = {
+                coroutineScope.launch {
+                    if(viewModel.updatePoint()) { navigateBack() }
+                    else{
+                        showNotify = true
+                        notifyMessage = "Point with this name already exists"
+                    }
                 }
-            }
-        },
-        modifier = modifier
-    )
+            },
+            modifier = modifier.padding(innderPadding)
+        )
+    }
 }

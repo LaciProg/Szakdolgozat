@@ -34,6 +34,7 @@ import examapp.composeapp.generated.resources.*
 import hu.bme.aut.android.examapp.Notify
 import hu.bme.aut.android.examapp.logDebug
 import hu.bme.aut.android.examapp.ui.components.DropDownList
+import hu.bme.aut.android.examapp.ui.components.TopAppBarContent
 import hu.bme.aut.android.examapp.ui.viewmodel.multiplechoicequestion.MultipleChoiceQuestionDetails
 import hu.bme.aut.android.examapp.ui.viewmodel.multiplechoicequestion.MultipleChoiceQuestionEntryScreenUiState
 import hu.bme.aut.android.examapp.ui.viewmodel.multiplechoicequestion.MultipleChoiceQuestionEntryViewModel
@@ -71,7 +72,7 @@ private fun NewMultipleChoiceQuestionScreenUiState(
     }
 
     Scaffold(
-        topBar = {}
+         topBar = { TopAppBarContent(stringResource(Res.string.multiple_choice_question_create), navigateBack) },
     ) { innerPadding ->
         MultipleChoiceQuestionEntryBody(
             multipleChoiceQuestionUiState = viewModel.multipleChoiceQuestionUiState,

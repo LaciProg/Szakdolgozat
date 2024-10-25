@@ -15,24 +15,29 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
+import examapp.composeapp.generated.resources.Res
+import examapp.composeapp.generated.resources.exam_list
 import hu.bme.aut.android.examapp.api.dto.NameDto
+import hu.bme.aut.android.examapp.ui.components.TopAppBarContent
 import hu.bme.aut.android.examapp.ui.viewmodel.exam.ExamListScreenUiState
 import hu.bme.aut.android.examapp.ui.viewmodel.exam.ExamListViewModel
+import org.jetbrains.compose.resources.stringResource
 
 @Composable
 fun ExamListScreen(
     modifier: Modifier = Modifier,
     addNewExam: () -> Unit = {},
     navigateToExamDetails: (String) -> Unit,
-    viewModel: ExamListViewModel = viewModel { ExamListViewModel() }//viewModel(factory = AppViewModelProvider.Factory)
-  ){
+    viewModel: ExamListViewModel = viewModel { ExamListViewModel() },//viewModel(factory = AppViewModelProvider.Factory)
+    navigateBack: () -> Unit
+){
     when(viewModel.examListScreenUiState){
         is ExamListScreenUiState.Loading -> CircularProgressIndicator(modifier = Modifier.fillMaxSize())
         is ExamListScreenUiState.Success -> ExamListResultScreen(
             exams =  (viewModel.examListScreenUiState as ExamListScreenUiState.Success).exams,
             addNewExam = addNewExam,
             navigateToExamDetails = navigateToExamDetails,
-            viewModel = viewModel
+            navigateBack= navigateBack
         )
         is ExamListScreenUiState.Error -> Text(text = ExamListScreenUiState.Error.errorMessage.ifBlank { "Unexpected error " }, modifier = Modifier.fillMaxSize())
     }
@@ -47,10 +52,10 @@ private fun ExamListResultScreen(
     exams: List<NameDto>,
     addNewExam: () -> Unit,
     navigateToExamDetails: (String) -> Unit,
-    viewModel: ExamListViewModel
+    navigateBack: () -> Unit
 ) {
     Scaffold(
-        topBar = {  },
+         topBar = { TopAppBarContent(stringResource(Res.string.exam_list), navigateBack) },
         floatingActionButton = {
             FloatingActionButton(
                 onClick = { addNewExam() }
