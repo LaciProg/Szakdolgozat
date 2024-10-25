@@ -160,13 +160,13 @@ fun MainScreen(
             ) {
                 Text(stringResource(Res.string.submission))
             }
-            /*OutlinedButton(
+            OutlinedButton(
                 onClick = { navigateToExportExamList() },
                 shape = MaterialTheme.shapes.small,
                 modifier = Modifier.fillMaxWidth()
             ) {
                 Text(stringResource(Res.string.export_exams))
-            }*/
+            }
         }
 
     }

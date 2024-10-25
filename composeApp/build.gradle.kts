@@ -42,6 +42,9 @@ kotlin {
             val accompanist_version = "0.36.0"
             implementation("com.google.accompanist:accompanist-permissions:$accompanist_version")
 
+            implementation(libs.androidx.core)
+            implementation(libs.androidx.core.ktx.v1120)
+
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -64,7 +67,7 @@ kotlin {
             implementation("org.jetbrains.androidx.navigation:navigation-compose:2.7.0-alpha07")
 
             //Reorderable list
-            implementation("org.burnoutcrew.composereorderable:reorderable:0.9.6")
+            implementation(libs.reorderable)
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
