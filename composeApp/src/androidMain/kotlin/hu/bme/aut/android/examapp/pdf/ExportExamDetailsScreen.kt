@@ -328,14 +328,6 @@ fun ExportExamDetailsBodyView(  //Calls the PDFExamView
 }
 
 @Composable
-fun TopBar(
-    examName: String,
-    modifier: Modifier = Modifier
-) {
-
-}
-
-@Composable
 fun ExportExamDetailsBody(  //Content you can see on the screen
     examName: String,
     questions: List<Question>,

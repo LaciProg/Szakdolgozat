@@ -73,6 +73,7 @@ kotlin {
             implementation(compose.desktop.currentOs)
             implementation(libs.kotlinx.coroutines.swing)
             implementation(libs.ktor.client.okhttp)
+            implementation("org.apache.pdfbox:pdfbox:2.0.27")
         }
     }
 }
