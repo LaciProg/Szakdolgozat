@@ -10,7 +10,7 @@ jobs:
         uses: Cyberboss/install-winget@v1
       - name: Compile latex
         run: |
-          winget install MiKTeX.MiKTeX 
+          winget install --accept-package-agreements --accept-source-agreements MiKTeX.MiKTeX 
           cd DiplomatervSablon_LaTeX_v1
           pdflatex thesis.tex || true
       - name: Upload PDF file
