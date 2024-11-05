@@ -3,7 +3,6 @@ on: [push]
 jobs:
   build_latex:
     runs-on: windows-latest
-    container: miktex/miktex:basic
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v4
