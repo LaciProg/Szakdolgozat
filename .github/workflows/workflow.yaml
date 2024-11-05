@@ -10,7 +10,7 @@ jobs:
       - name: Compile latex
         run: | 
           cd DiplomatervSablon_LaTeX_v1
-          make pdflatex || true
+          pdflatex thesis.tex || true
       - name: Upload PDF file
         if: always()
         uses: actions/upload-artifact@v4
