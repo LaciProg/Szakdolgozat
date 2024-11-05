@@ -1,12 +1,7 @@
 package hu.bme.aut.android.examapp.ui.topic
 
 import androidx.annotation.StringRes
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
@@ -29,6 +24,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -37,6 +33,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import examapp.composeapp.generated.resources.Res
 import examapp.composeapp.generated.resources.*
 import hu.bme.aut.android.examapp.api.dto.TopicDto
+import hu.bme.aut.android.examapp.logDebug
 import hu.bme.aut.android.examapp.ui.components.TopAppBarContent
 import hu.bme.aut.android.examapp.ui.viewmodel.topic.TopicDetails
 import hu.bme.aut.android.examapp.ui.viewmodel.topic.TopicDetailsScreenUiState
@@ -55,8 +52,20 @@ fun TopicDetailsScreen(
     topicId: String,
     viewModel: TopicDetailsViewModel = viewModel { TopicDetailsViewModel(topicId) },
 ) {
+    LaunchedEffect(topicId) {
+        viewModel.setId(topicId)
+    }
     when(viewModel.topicDetailsScreenUiState){
-        is TopicDetailsScreenUiState.Loading -> CircularProgressIndicator()
+        is TopicDetailsScreenUiState.Loading  -> {
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(16.dp),
+                contentAlignment = Alignment.Center
+            ) {
+                CircularProgressIndicator()
+            }
+        }
         is TopicDetailsScreenUiState.Success -> TopicDetailsScreenUiState(
             topic =  (viewModel.topicDetailsScreenUiState as TopicDetailsScreenUiState.Success).point,
             navigateToEditPoint = navigateToEditTopic,
@@ -68,6 +77,7 @@ fun TopicDetailsScreen(
     }
 
     LaunchedEffect(key1 = Unit){
+        logDebug("In details", viewModel.topicId)
         viewModel.getTopic(viewModel.topicId)
     }
 }
@@ -80,6 +90,7 @@ fun TopicDetailsScreenUiState(
     modifier: Modifier = Modifier,
     viewModel: TopicDetailsViewModel
 ){
+
     val coroutineScope = rememberCoroutineScope()
     Scaffold(
         topBar = { TopAppBarContent(stringResource(Res.string.topic_details), navigateBack) },

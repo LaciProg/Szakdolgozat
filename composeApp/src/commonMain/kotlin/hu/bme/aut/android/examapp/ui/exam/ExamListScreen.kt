@@ -1,19 +1,17 @@
 package hu.bme.aut.android.examapp.ui.exam
 
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
-import androidx.compose.material3.CircularProgressIndicator
-import androidx.compose.material3.FloatingActionButton
-import androidx.compose.material3.Icon
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.material3.TextButton
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import examapp.composeapp.generated.resources.Res
 import examapp.composeapp.generated.resources.exam_list
@@ -32,7 +30,16 @@ fun ExamListScreen(
     navigateBack: () -> Unit
 ){
     when(viewModel.examListScreenUiState){
-        is ExamListScreenUiState.Loading -> CircularProgressIndicator(modifier = Modifier.fillMaxSize())
+        is ExamListScreenUiState.Loading -> {
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(16.dp),
+                contentAlignment = Alignment.Center
+            ) {
+                CircularProgressIndicator()
+            }
+        }
         is ExamListScreenUiState.Success -> ExamListResultScreen(
             exams =  (viewModel.examListScreenUiState as ExamListScreenUiState.Success).exams,
             addNewExam = addNewExam,
@@ -58,19 +65,53 @@ private fun ExamListResultScreen(
          topBar = { TopAppBarContent(stringResource(Res.string.exam_list), navigateBack) },
         floatingActionButton = {
             FloatingActionButton(
-                onClick = { addNewExam() }
+                onClick = { addNewExam() },
+                containerColor = MaterialTheme.colorScheme.primaryContainer,
+                contentColor = MaterialTheme.colorScheme.onPrimary
             ) {
                 Icon(Icons.Filled.Add, contentDescription = "Add")
             }
         }
     ) { padding ->
 
-        LazyColumn(contentPadding = padding) {
-            items(exams){
-                TextButton(onClick = { navigateToExamDetails(it.uuid) }) {
-                    Text(it.name)
+        LazyColumn(
+            contentPadding = padding,
+            verticalArrangement = Arrangement.spacedBy(8.dp),
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(16.dp)
+        ) {
+            if (exams.isEmpty()) {
+                item {
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(16.dp),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Text(
+                            text = "No true/false questions available",
+                            style = MaterialTheme.typography.bodyLarge,
+                            color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f)
+                        )
+                    }
                 }
-
+            } else {
+                items(exams) { exam ->
+                    TextButton(
+                        onClick = { navigateToExamDetails(exam.uuid) },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .background(MaterialTheme.colorScheme.surfaceVariant) // Sötétebb háttér a gombnak
+                            .padding(8.dp)
+                    ) {
+                        Text(
+                            text = exam.name,
+                            style = MaterialTheme.typography.bodyLarge,
+                            color = MaterialTheme.colorScheme.primary
+                        )
+                    }
+                }
             }
         }
     }

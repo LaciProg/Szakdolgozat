@@ -18,7 +18,7 @@ sealed interface MultipleChoiceQuestionEditScreenUiState {
 }
 
 class MultipleChoiceQuestionEditViewModel(
-    multipleChoiceQuestionId: String,
+    var multipleChoiceQuestionId: String,
 ) : ViewModel() {
 
     private lateinit var originalQuestion: String
@@ -30,10 +30,15 @@ class MultipleChoiceQuestionEditViewModel(
         MultipleChoiceQuestionEditScreenUiState.Loading)
 
     init {
-        getTrueFalseQuestion(multipleChoiceQuestionId)
+        getMultipleChoiceQuestion(multipleChoiceQuestionId)
     }
 
-    fun getTrueFalseQuestion(topicId: String){
+    fun setId(id: String){
+        multipleChoiceQuestionId = id
+        getMultipleChoiceQuestion(id)
+    }
+
+    fun getMultipleChoiceQuestion(topicId: String){
         multipleChoiceEditScreenUiState = MultipleChoiceQuestionEditScreenUiState.Loading
         viewModelScope.launch {
             multipleChoiceEditScreenUiState = try{

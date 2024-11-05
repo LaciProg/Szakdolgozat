@@ -19,13 +19,18 @@ sealed interface TopicDetailsScreenUiState {
 }
 
 class TopicDetailsViewModel(
-    val topicId: String,
+    var topicId: String,
 ) : ViewModel() {
 
     var topicDetailsScreenUiState: TopicDetailsScreenUiState by mutableStateOf(TopicDetailsScreenUiState.Loading)
     var uiState by mutableStateOf(TopicDetailsUiState())
     init {
         getTopic(topicId)
+    }
+
+    fun setId(id: String){
+        topicId = id
+        getTopic(id)
     }
 
     fun getTopic(topicId: String){

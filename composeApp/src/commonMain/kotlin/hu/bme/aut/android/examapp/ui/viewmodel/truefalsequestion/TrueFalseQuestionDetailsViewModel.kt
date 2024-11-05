@@ -19,13 +19,18 @@ sealed interface TrueFalseQuestionDetailsScreenUiState {
 
 
 class TrueFalseQuestionDetailsViewModel(
-    val trueFalseQuestionId: String,
+    var trueFalseQuestionId: String,
 ) : ViewModel() {
 
     var trueFalseDetailsScreenUiState: TrueFalseQuestionDetailsScreenUiState by mutableStateOf(TrueFalseQuestionDetailsScreenUiState.Loading)
     var uiState by mutableStateOf(TrueFalseQuestionDetailsUiState())
     init {
         getQuestion(trueFalseQuestionId)
+    }
+
+    fun setId(id: String){
+        trueFalseQuestionId = id
+        getQuestion(id)
     }
 
     fun getQuestion(topicId: String){

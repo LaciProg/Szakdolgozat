@@ -1,9 +1,6 @@
 package hu.bme.aut.android.examapp.ui.truefalsequestion
 
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
@@ -15,6 +12,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -40,7 +38,16 @@ fun NewTrueFalseQuestionScreen(
     viewModel: TrueFalseQuestionEntryViewModel = viewModel {TrueFalseQuestionEntryViewModel() }//viewModel(factory = AppViewModelProvider.Factory)
 ) {
     when (viewModel.trueFalseEntryScreenUiState) {
-        TrueFalseQuestionEntryScreenUiState.Loading -> CircularProgressIndicator(modifier = Modifier.fillMaxWidth())
+        TrueFalseQuestionEntryScreenUiState.Loading -> {
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(16.dp),
+                contentAlignment = Alignment.Center
+            ) {
+                CircularProgressIndicator()
+            }
+        }
         TrueFalseQuestionEntryScreenUiState.Success -> NewTrueFalseQuestionScreenUiState(viewModel, navigateBack)
         TrueFalseQuestionEntryScreenUiState.Error -> Text(text = TrueFalseQuestionEntryScreenUiState.Error.errorMessage.ifBlank { "Unexpected error " })
     }

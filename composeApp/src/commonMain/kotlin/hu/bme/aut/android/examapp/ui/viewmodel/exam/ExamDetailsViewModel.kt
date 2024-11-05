@@ -24,7 +24,7 @@ sealed interface ExamDetailsScreenUiState {
 }
 
 class ExamDetailsViewModel(
-    val examId: String,
+    var examId: String,
 ) : ViewModel() {
     var examDetailsScreenUiState: ExamDetailsScreenUiState by mutableStateOf(
         ExamDetailsScreenUiState.Loading)
@@ -56,6 +56,11 @@ class ExamDetailsViewModel(
             }
             examDetailsScreenUiState = ExamDetailsScreenUiState.Error
         }*/
+    }
+
+    fun setId(id: String){
+        examId = id
+        getExam(id)
     }
 
 

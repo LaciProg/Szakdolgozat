@@ -18,7 +18,7 @@ sealed interface PointEditScreenUiState {
 }
 
 class PointEditViewModel(
-    pointId: String,
+    var pointId: String,
 ) : ViewModel() {
 
     var pointUiState by mutableStateOf(PointUiState())
@@ -30,6 +30,11 @@ class PointEditViewModel(
 
     init {
         getPoint(pointId)
+    }
+
+    fun setId(id: String){
+        pointId = id
+        getPoint(id)
     }
 
     fun getPoint(pointId: String){

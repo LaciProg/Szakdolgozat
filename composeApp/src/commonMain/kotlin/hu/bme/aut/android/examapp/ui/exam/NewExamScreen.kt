@@ -1,9 +1,6 @@
 package hu.bme.aut.android.examapp.ui.exam
 
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
@@ -14,6 +11,7 @@ import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -38,7 +36,16 @@ fun NewExamScreen(
     viewModel: ExamEntryViewModel = viewModel { ExamEntryViewModel() }//viewModel(factory = AppViewModelProvider.Factory)
 ) {
     when (viewModel.examEntryScreenUiState) {
-        ExamEntryScreenUiState.Loading -> CircularProgressIndicator(modifier = Modifier.fillMaxWidth())
+        ExamEntryScreenUiState.Loading -> {
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(16.dp),
+                contentAlignment = Alignment.Center
+            ) {
+                CircularProgressIndicator()
+            }
+        }
         ExamEntryScreenUiState.Success ->  NewExamScreenUiState(viewModel, navigateBack)
         ExamEntryScreenUiState.Error -> Text(text = ExamEntryScreenUiState.Error.errorMessage.ifBlank { "Unexpected error " })
     }

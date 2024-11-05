@@ -1,17 +1,10 @@
 package hu.bme.aut.android.examapp.ui.submission
 
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.animation.animateContentSize
 import androidx.compose.animation.core.LinearOutSlowInEasing
 import androidx.compose.animation.core.tween
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
@@ -55,8 +48,20 @@ fun SubmissionScreen (
     examId: String,
     viewModel: SubmissionViewModel = viewModel { SubmissionViewModel(examId) }
 ){
+    LaunchedEffect(examId) {
+        viewModel.setId(examId)
+    }
     when(viewModel.submissionScreenUiState){
-        is SubmissionScreenUiState.Loading ->  CircularProgressIndicator(modifier = Modifier.fillMaxSize())
+        is SubmissionScreenUiState.Loading -> {
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(16.dp),
+                contentAlignment = Alignment.Center
+            ) {
+                CircularProgressIndicator()
+            }
+        }
         is SubmissionScreenUiState.Error -> Text(text = SubmissionScreenUiState.Error.errorMessage.ifBlank { "Unexpected error " })
         is SubmissionScreenUiState.Success -> SubmissionScreenContent(viewModel, navigateBack)
         is SubmissionScreenUiState.Camera -> MainCameraScreen(examId, navigateBackCamera)

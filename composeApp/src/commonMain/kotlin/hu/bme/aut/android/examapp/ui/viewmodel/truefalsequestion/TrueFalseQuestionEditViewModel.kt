@@ -18,7 +18,7 @@ sealed interface TrueFalseQuestionEditScreenUiState {
 }
 
 class TrueFalseQuestionEditViewModel(
-    trueFalseQuestionId: String,
+    var trueFalseQuestionId: String,
 ) : ViewModel() {
 
     private lateinit var originalQuestion: String
@@ -30,6 +30,11 @@ class TrueFalseQuestionEditViewModel(
 
     init {
         getTrueFalseQuestion(trueFalseQuestionId)
+    }
+
+    fun setId(id: String){
+        trueFalseQuestionId = id
+        getTrueFalseQuestion(id)
     }
 
     fun getTrueFalseQuestion(topicId: String){

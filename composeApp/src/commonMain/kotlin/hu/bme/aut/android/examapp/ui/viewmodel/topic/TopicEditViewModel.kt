@@ -19,7 +19,7 @@ sealed interface TopicEditScreenUiState {
 }
 
 class TopicEditViewModel(
-    val topicId: String,
+    var topicId: String,
 ) : ViewModel() {
 
     private lateinit var originalTopic: String
@@ -34,6 +34,11 @@ class TopicEditViewModel(
 
     init {
         getTopic(topicId)
+    }
+
+    fun setId(id: String){
+        topicId = id
+        getTopic(id)
     }
 
     fun getTopic(topicId: String){

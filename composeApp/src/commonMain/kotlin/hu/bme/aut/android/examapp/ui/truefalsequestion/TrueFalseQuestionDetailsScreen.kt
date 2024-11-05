@@ -1,13 +1,7 @@
 package hu.bme.aut.android.examapp.ui.truefalsequestion
 
 import androidx.annotation.StringRes
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
@@ -31,6 +25,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
@@ -57,8 +52,20 @@ fun TrueFalseQuestionDetailsScreen(
     trueFalseQuestionId: String,
     viewModel: TrueFalseQuestionDetailsViewModel = viewModel { TrueFalseQuestionDetailsViewModel(trueFalseQuestionId) }//viewModel(factory = AppViewModelProvider.Factory)
 ) {
+    LaunchedEffect(trueFalseQuestionId) {
+        viewModel.setId(trueFalseQuestionId)
+    }
     when(viewModel.trueFalseDetailsScreenUiState){
-        is TrueFalseQuestionDetailsScreenUiState.Loading -> CircularProgressIndicator(modifier = Modifier.fillMaxSize())
+        is TrueFalseQuestionDetailsScreenUiState.Loading -> {
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(16.dp),
+                contentAlignment = Alignment.Center
+            ) {
+                CircularProgressIndicator()
+            }
+        }
         is TrueFalseQuestionDetailsScreenUiState.Success -> TrueFalseQuestionDetailsScreenUiState(
             question =  (viewModel.trueFalseDetailsScreenUiState as TrueFalseQuestionDetailsScreenUiState.Success).question,
             navigateToEditTrueFalseQuestion = navigateToEditTrueFalseQuestion,

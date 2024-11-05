@@ -115,8 +115,20 @@ fun ExamDetailsScreen(
     examId: String,
     examViewModel: ExamDetailsViewModel = viewModel { ExamDetailsViewModel(examId) }
 ) {
+    LaunchedEffect(examId) {
+        examViewModel.setId(examId)
+    }
     when(examViewModel.examDetailsScreenUiState){
-        is ExamDetailsScreenUiState.Loading -> CircularProgressIndicator(modifier = Modifier.fillMaxSize())
+        is ExamDetailsScreenUiState.Loading -> {
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(16.dp),
+                contentAlignment = Alignment.Center
+            ) {
+                CircularProgressIndicator()
+            }
+        }
         is ExamDetailsScreenUiState.Success -> {
             ExamDetailsDetailsScreenUiState(
                 exam =  (examViewModel.examDetailsScreenUiState as ExamDetailsScreenUiState.Success).exam,

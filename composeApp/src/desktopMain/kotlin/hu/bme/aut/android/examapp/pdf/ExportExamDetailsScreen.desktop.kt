@@ -10,6 +10,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.Send
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -47,7 +48,7 @@ actual fun ExportExamDetailsScreen(
             TopAppBarContent(examViewModel.uiState.examDetails.name, navigateBack)
                  },
         ){innerPadding ->
-            ExportExamDetailsScreen(navigateBack = navigateBack, modifier.padding(innerPadding), examViewModel)
+            ExportExamDetailsScreen(navigateBack = navigateBack, modifier.padding(innerPadding), examViewModel, examId)
     }
 }
 
@@ -277,7 +278,8 @@ fun Question.questionPoint(): String = when (this) {
 fun ExportExamDetailsScreen(
     navigateBack: () -> Unit,
     modifier: Modifier = Modifier,
-    examViewModel: ExamDetailsViewModel
+    examViewModel: ExamDetailsViewModel,
+    examId: String
 ) {
     val gradeBoundaries = listOf(
         stringResource(Res.string.one_percent) to stringResource(Res.string.one_grade),
@@ -286,6 +288,10 @@ fun ExportExamDetailsScreen(
         stringResource(Res.string.four_percent) to stringResource(Res.string.four_grade),
         stringResource(Res.string.five_percent) to stringResource(Res.string.five_grade)
     )
+
+    LaunchedEffect(examId){
+        examViewModel.setId(examId)
+    }
 
     Scaffold(
         floatingActionButton = {
@@ -477,7 +483,7 @@ private fun PointTable(modifier: Modifier = Modifier) {
 }
 
 @Composable
-private fun GradeBoundariesTableLine(@StringRes percent: StringResource, @StringRes grade: StringResource) {
+private fun GradeBoundariesTableLine(percent: StringResource, grade: StringResource) {
     Row(Modifier.size(height = 50.dp, width = 250.dp)) {
         OutlinedTextField(
             value = stringResource(percent),

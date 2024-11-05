@@ -18,13 +18,18 @@ sealed interface PointDetailsScreenUiState {
 }
 
 class PointDetailsViewModel(
-    val  pointId : String,
+    var  pointId : String,
 ) : ViewModel() {
 
     var pointDetailsScreenUiState: PointDetailsScreenUiState by mutableStateOf(PointDetailsScreenUiState.Loading)
 
     init {
         getPoint(pointId)
+    }
+
+    fun setId(id: String){
+        pointId = id
+        getPoint(id)
     }
 
     fun getPoint(pointId: String){

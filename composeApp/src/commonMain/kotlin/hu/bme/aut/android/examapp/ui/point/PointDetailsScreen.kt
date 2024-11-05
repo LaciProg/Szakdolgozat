@@ -1,13 +1,7 @@
 package hu.bme.aut.android.examapp.ui.point
 
 import androidx.annotation.StringRes
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
@@ -30,6 +24,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -56,8 +51,20 @@ fun PointDetailsScreen(
     pointId : String,
     viewModel: PointDetailsViewModel = viewModel { PointDetailsViewModel(pointId) }
 ) {
+    LaunchedEffect(pointId) {
+        viewModel.setId(pointId)
+    }
     when(viewModel.pointDetailsScreenUiState){
-        is PointDetailsScreenUiState.Loading -> CircularProgressIndicator(modifier = Modifier.fillMaxSize())
+        is PointDetailsScreenUiState.Loading -> {
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(16.dp),
+                contentAlignment = Alignment.Center
+            ) {
+                CircularProgressIndicator()
+            }
+        }
         is PointDetailsScreenUiState.Success -> PointDetailsResultScreen(
             point =  (viewModel.pointDetailsScreenUiState as PointDetailsScreenUiState.Success).point,
             navigateToEditPoint = navigateToEditPoint,

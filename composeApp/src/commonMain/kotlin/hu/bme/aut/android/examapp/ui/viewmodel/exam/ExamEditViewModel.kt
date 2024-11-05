@@ -18,7 +18,7 @@ sealed interface ExamEditScreenUiState {
 }
 
 class ExamEditViewModel(
-    examId: String,
+    var examId: String,
 ) : ViewModel() {
 
     private lateinit var originalExam: String
@@ -31,6 +31,11 @@ class ExamEditViewModel(
 
     init {
         getExam(examId)
+    }
+
+    fun setId(id: String){
+        examId = id
+        getExam(id)
     }
 
     fun getExam(topicId: String){

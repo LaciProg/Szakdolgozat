@@ -33,7 +33,7 @@ sealed interface SubmissionResultScreenUiState {
 }
 
 class SubmissionViewModel(
-    val examId: String,
+    var examId: String,
 ) : ViewModel() {
 
     var submissionScreenUiState: SubmissionScreenUiState by mutableStateOf(SubmissionScreenUiState.Loading)
@@ -47,6 +47,11 @@ class SubmissionViewModel(
 
     init {
         getExam(examId)
+    }
+
+    fun setId(id: String){
+        examId = id
+        getExam(id)
     }
 
 

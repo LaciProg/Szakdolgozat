@@ -1,12 +1,15 @@
 package hu.bme.aut.android.examapp.ui.point
 
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import examapp.composeapp.generated.resources.Res
@@ -25,8 +28,20 @@ fun PointEditScreen(
     pointId: String,
     viewModel: PointEditViewModel = viewModel { PointEditViewModel(pointId) }
 ) {
+    LaunchedEffect(pointId) {
+        viewModel.setId(pointId)
+    }
     when (viewModel.pointEditScreenUiState) {
-        is PointEditScreenUiState.Loading -> CircularProgressIndicator(modifier = Modifier.fillMaxSize())
+        is PointEditScreenUiState.Loading -> {
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(16.dp),
+                contentAlignment = Alignment.Center
+            ) {
+                CircularProgressIndicator()
+            }
+        }
         is PointEditScreenUiState.Success -> PointEditResultScreen(
             navigateBack = navigateBack,
             viewModel = viewModel,

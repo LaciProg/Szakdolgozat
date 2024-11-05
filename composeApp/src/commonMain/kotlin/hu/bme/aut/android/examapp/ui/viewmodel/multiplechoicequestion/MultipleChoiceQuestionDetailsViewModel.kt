@@ -18,7 +18,7 @@ sealed interface MultipleChoiceQuestionDetailsScreenUiState {
 }
 
 class MultipleChoiceQuestionDetailsViewModel(
-    val multipleChoiceQuestionId: String,
+    var multipleChoiceQuestionId: String,
 ) : ViewModel() {
 
     var multipleChoiceDetailsScreenUiState: MultipleChoiceQuestionDetailsScreenUiState by mutableStateOf(
@@ -26,6 +26,11 @@ class MultipleChoiceQuestionDetailsViewModel(
     var uiState by mutableStateOf(MultipleChoiceQuestionDetailsUiState())
     init {
         getQuestion(multipleChoiceQuestionId)
+    }
+
+    fun setId(id: String){
+        multipleChoiceQuestionId = id
+        getQuestion(id)
     }
 
     fun getQuestion(topicId: String){

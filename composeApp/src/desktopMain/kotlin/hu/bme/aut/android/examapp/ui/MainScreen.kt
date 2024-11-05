@@ -1,5 +1,6 @@
 package hu.bme.aut.android.examapp.ui
 
+import androidx.compose.foundation.background
 import androidx.compose.runtime.Composable
 
 import androidx.compose.foundation.layout.*
@@ -7,8 +8,10 @@ import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import hu.bme.aut.android.examapp.logDebug
 import hu.bme.aut.android.examapp.pdf.ExportExamDetailsScreen
 import hu.bme.aut.android.examapp.ui.exam.ExamDetailsScreen
 import hu.bme.aut.android.examapp.ui.exam.ExamEditScreen
@@ -88,17 +91,19 @@ actual fun MainScreen(
             verticalArrangement = Arrangement.Center
         ) {
             when (selectedContent) {
-                MainContent.WELCOME -> Text("Welcome to the Exam App!", modifier = Modifier.wrapContentSize())
+                MainContent.WELCOME -> WelcomeScreen()
                 MainContent.TOPICS -> TopicListScreen(
                     addNewTopic = { selectedContent = MainContent.TOPIC_NEW },
-                    navigateToTopicDetails = { topicId = it; selectedContent = MainContent.TOPIC_DETAILS },
+                    navigateToTopicDetails = { topicId = it; logDebug("TopicId", it); selectedContent = MainContent.TOPIC_DETAILS },
                     navigateBack = { selectedContent = MainContent.WELCOME }
                 )
-                MainContent.TOPIC_DETAILS -> TopicDetailsScreen(
+                MainContent.TOPIC_DETAILS -> {
+                    logDebug("Details", topicId)
+                    TopicDetailsScreen(
                     navigateToEditTopic = { selectedContent = MainContent.TOPIC_EDIT },
                     navigateBack = { selectedContent = MainContent.TOPICS },
                     topicId = topicId,
-                )
+                )}
                 MainContent.TOPIC_NEW -> NewTopic(
                     navigateBack = { selectedContent = MainContent.TOPICS },
                     onNavigateUp = { selectedContent = MainContent.TOPICS },
@@ -226,6 +231,41 @@ fun DrawerButton(
         modifier = Modifier.fillMaxWidth()
     ) {
         Text(text)
+    }
+}
+
+@Composable
+fun WelcomeScreen() {
+    Scaffold { padding ->
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(padding)
+                .background(MaterialTheme.colors.primary),
+            contentAlignment = Alignment.Center
+        ) {
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.spacedBy(16.dp),
+                modifier = Modifier
+                    .wrapContentSize()
+                    .padding(16.dp)
+            ) {
+                Text(
+                    text = "Welcome to the Exam App!",
+                    style = MaterialTheme.typography.h2,
+                    color = MaterialTheme.colors.onPrimary,
+                    modifier = Modifier.padding(8.dp)
+                )
+
+                Text(
+                    text = "Easily manage and take your exams with our app.",
+                    style = MaterialTheme.typography.body1,
+                    color = MaterialTheme.colors.onPrimary.copy(alpha = 0.8f),
+                    modifier = Modifier.padding(horizontal = 24.dp)
+                )
+            }
+        }
     }
 }
 

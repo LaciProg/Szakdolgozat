@@ -1,12 +1,15 @@
 package hu.bme.aut.android.examapp.ui.topic
 
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import examapp.composeapp.generated.resources.Res
@@ -26,9 +29,20 @@ fun TopicEditScreen(
     topicId: String,
     viewModel: TopicEditViewModel = viewModel { TopicEditViewModel(topicId) },
 ) {
-
+    LaunchedEffect(topicId) {
+        viewModel.setId(topicId)
+    }
     when (viewModel.topicEditScreenUiState) {
-        is TopicEditScreenUiState.Loading -> CircularProgressIndicator(modifier = Modifier.fillMaxSize())
+        is TopicEditScreenUiState.Loading -> {
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(16.dp),
+                contentAlignment = Alignment.Center
+            ) {
+                CircularProgressIndicator()
+            }
+        }
         is TopicEditScreenUiState.Success -> TopicEditResultScreen(
             navigateBack = navigateBack,
             viewModel = viewModel,
