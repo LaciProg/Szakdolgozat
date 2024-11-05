@@ -31,7 +31,6 @@ fun TopicListScreen(
     navigateToTopicDetails: (String) -> Unit,
     navigateBack: () -> Unit,
     viewModel: TopicListViewModel = viewModel { TopicListViewModel() } ,
-    //viewModel: TopicListViewModel = hiltViewModel()//viewModel(factory = AppViewModelProvider.Factory)
   ){
     when(viewModel.topicListScreenUiState){
         is TopicListScreenUiState.Loading -> CircularProgressIndicator(modifier = Modifier.fillMaxSize())

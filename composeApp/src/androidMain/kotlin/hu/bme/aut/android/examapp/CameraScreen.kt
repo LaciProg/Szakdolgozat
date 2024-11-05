@@ -40,14 +40,14 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import hu.bme.aut.android.examapp.ui.viewmodel.submission.SubmissionViewModel
 
 @Composable
-actual fun CameraScreen(savedStateHandle: SavedStateHandle, navigateBack: ()-> Unit) {
-    CameraContent(savedStateHandle)
+actual fun CameraScreen(examId: String, navigateBack: ()-> Unit) {
+    CameraContent(examId)
 }
 
 @Composable
 private fun CameraContent(
-    savedStateHandle: SavedStateHandle,
-    viewModel: SubmissionViewModel = viewModel { SubmissionViewModel(savedStateHandle) }
+    examId: String,
+    viewModel: SubmissionViewModel = viewModel { SubmissionViewModel(examId = examId) }
 ) {
 
     val context: Context = LocalContext.current

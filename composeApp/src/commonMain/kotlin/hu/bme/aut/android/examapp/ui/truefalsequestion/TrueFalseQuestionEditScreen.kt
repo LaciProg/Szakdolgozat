@@ -23,8 +23,8 @@ import org.jetbrains.compose.resources.stringResource
 fun TrueFalseQuestionEditScreen(
     navigateBack: () -> Unit,
     modifier: Modifier = Modifier,
-    savedStateHandle: SavedStateHandle,
-    viewModel: TrueFalseQuestionEditViewModel = viewModel { TrueFalseQuestionEditViewModel(savedStateHandle) }//viewModel(factory = AppViewModelProvider.Factory)
+    trueFalseQuestionId: String,
+    viewModel: TrueFalseQuestionEditViewModel = viewModel { TrueFalseQuestionEditViewModel(trueFalseQuestionId) }//viewModel(factory = AppViewModelProvider.Factory)
 ) {
     when (viewModel.trueFalseEditScreenUiState) {
         is TrueFalseQuestionEditScreenUiState.Loading -> CircularProgressIndicator(modifier = Modifier.fillMaxSize())

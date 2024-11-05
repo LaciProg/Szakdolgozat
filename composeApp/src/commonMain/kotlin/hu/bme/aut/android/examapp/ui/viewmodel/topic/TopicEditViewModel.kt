@@ -19,7 +19,7 @@ sealed interface TopicEditScreenUiState {
 }
 
 class TopicEditViewModel(
-    savedStateHandle: SavedStateHandle,
+    val topicId: String,
 ) : ViewModel() {
 
     private lateinit var originalTopic: String
@@ -29,7 +29,6 @@ class TopicEditViewModel(
     var topicUiState by mutableStateOf(TopicUiState())
         private set
 
-    private val topicId: String = checkNotNull(savedStateHandle[ExamDestination.TopicDetailsDestination.topicIdArg])
 
     var topicEditScreenUiState: TopicEditScreenUiState by mutableStateOf(TopicEditScreenUiState.Loading)
 

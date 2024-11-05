@@ -19,10 +19,8 @@ sealed interface TrueFalseQuestionDetailsScreenUiState {
 
 
 class TrueFalseQuestionDetailsViewModel(
-    savedStateHandle: SavedStateHandle,
+    val trueFalseQuestionId: String,
 ) : ViewModel() {
-
-    val trueFalseQuestionId: String = checkNotNull(savedStateHandle[ExamDestination.TrueFalseQuestionDetailsDestination.trueFalseQuestionIdArg])
 
     var trueFalseDetailsScreenUiState: TrueFalseQuestionDetailsScreenUiState by mutableStateOf(TrueFalseQuestionDetailsScreenUiState.Loading)
     var uiState by mutableStateOf(TrueFalseQuestionDetailsUiState())

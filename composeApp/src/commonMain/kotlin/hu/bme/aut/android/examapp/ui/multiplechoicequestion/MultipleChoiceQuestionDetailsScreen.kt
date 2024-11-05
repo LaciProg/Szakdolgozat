@@ -54,8 +54,8 @@ fun MultipleChoiceQuestionDetailsScreen(
     navigateToEditMultipleChoiceQuestion: (String) -> Unit,
     navigateBack: () -> Unit,
     modifier: Modifier = Modifier,
-    savedStateHandle: SavedStateHandle,
-    viewModel: MultipleChoiceQuestionDetailsViewModel = viewModel { MultipleChoiceQuestionDetailsViewModel(savedStateHandle) }//viewModel(factory = AppViewModelProvider.Factory)
+    multipleChoiceQuestionId: String,
+    viewModel: MultipleChoiceQuestionDetailsViewModel = viewModel { MultipleChoiceQuestionDetailsViewModel(multipleChoiceQuestionId) }//viewModel(factory = AppViewModelProvider.Factory)
 ) {
     when(viewModel.multipleChoiceDetailsScreenUiState){
         is MultipleChoiceQuestionDetailsScreenUiState.Loading -> CircularProgressIndicator(modifier = Modifier.fillMaxSize())

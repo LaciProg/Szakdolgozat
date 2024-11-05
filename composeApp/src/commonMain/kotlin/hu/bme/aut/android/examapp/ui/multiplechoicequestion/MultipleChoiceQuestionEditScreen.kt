@@ -25,8 +25,8 @@ import org.jetbrains.compose.resources.stringResource
 fun MultipleChoiceQuestionEditScreen(
     navigateBack: () -> Unit,
     modifier: Modifier = Modifier,
-    savedStateHandle: SavedStateHandle,
-    viewModel: MultipleChoiceQuestionEditViewModel = viewModel { MultipleChoiceQuestionEditViewModel(savedStateHandle) }//viewModel(factory = AppViewModelProvider.Factory)
+    multipleChoiceQuestionId: String,
+    viewModel: MultipleChoiceQuestionEditViewModel = viewModel { MultipleChoiceQuestionEditViewModel(multipleChoiceQuestionId) }//viewModel(factory = AppViewModelProvider.Factory)
 ) {
     when (viewModel.multipleChoiceEditScreenUiState) {
         is MultipleChoiceQuestionEditScreenUiState.Loading -> CircularProgressIndicator(modifier = Modifier.fillMaxSize())

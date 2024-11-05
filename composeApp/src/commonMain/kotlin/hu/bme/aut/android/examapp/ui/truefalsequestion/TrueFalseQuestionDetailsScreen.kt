@@ -54,8 +54,8 @@ fun TrueFalseQuestionDetailsScreen(
     navigateToEditTrueFalseQuestion: (String) -> Unit,
     navigateBack: () -> Unit,
     modifier: Modifier = Modifier,
-    savedStateHandle: SavedStateHandle,
-    viewModel: TrueFalseQuestionDetailsViewModel = viewModel { TrueFalseQuestionDetailsViewModel(savedStateHandle) }//viewModel(factory = AppViewModelProvider.Factory)
+    trueFalseQuestionId: String,
+    viewModel: TrueFalseQuestionDetailsViewModel = viewModel { TrueFalseQuestionDetailsViewModel(trueFalseQuestionId) }//viewModel(factory = AppViewModelProvider.Factory)
 ) {
     when(viewModel.trueFalseDetailsScreenUiState){
         is TrueFalseQuestionDetailsScreenUiState.Loading -> CircularProgressIndicator(modifier = Modifier.fillMaxSize())

@@ -18,10 +18,9 @@ sealed interface MultipleChoiceQuestionDetailsScreenUiState {
 }
 
 class MultipleChoiceQuestionDetailsViewModel(
-    savedStateHandle: SavedStateHandle,
+    val multipleChoiceQuestionId: String,
 ) : ViewModel() {
 
-    val multipleChoiceQuestionId: String = checkNotNull(savedStateHandle[ExamDestination.MultipleChoiceQuestionDetailsDestination.multipleChoiceQuestionIdArg])
     var multipleChoiceDetailsScreenUiState: MultipleChoiceQuestionDetailsScreenUiState by mutableStateOf(
         MultipleChoiceQuestionDetailsScreenUiState.Loading)
     var uiState by mutableStateOf(MultipleChoiceQuestionDetailsUiState())

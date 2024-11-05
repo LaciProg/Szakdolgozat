@@ -39,7 +39,7 @@ import java.io.File
 actual fun ExportExamDetailsScreen(
     navigateBack: () -> Unit,
     modifier: Modifier,
-    savedStateHandle: SavedStateHandle,
+    examId: String,
     examViewModel: ExamDetailsViewModel
 ) {
     Scaffold(

@@ -33,12 +33,11 @@ sealed interface SubmissionResultScreenUiState {
 }
 
 class SubmissionViewModel(
-    savedStateHandle: SavedStateHandle,
+    val examId: String,
 ) : ViewModel() {
 
     var submissionScreenUiState: SubmissionScreenUiState by mutableStateOf(SubmissionScreenUiState.Loading)
     var statisticsDialogUiState: SubmissionResultScreenUiState by mutableStateOf(SubmissionResultScreenUiState.Loading)
-    val examId: String = checkNotNull(savedStateHandle[ExamDestination.SubmissionDestination.examIdArg])
 
     var uiState by mutableStateOf(ExamDetailsUiState())
 

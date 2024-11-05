@@ -22,8 +22,8 @@ import org.jetbrains.compose.resources.stringResource
 fun PointEditScreen(
     navigateBack: () -> Unit,
     modifier: Modifier = Modifier,
-    savedStateHandle: SavedStateHandle,
-    viewModel: PointEditViewModel = viewModel { PointEditViewModel(savedStateHandle) }//viewModel(factory = AppViewModelProvider.Factory)
+    pointId: String,
+    viewModel: PointEditViewModel = viewModel { PointEditViewModel(pointId) }
 ) {
     when (viewModel.pointEditScreenUiState) {
         is PointEditScreenUiState.Loading -> CircularProgressIndicator(modifier = Modifier.fillMaxSize())

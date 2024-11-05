@@ -10,6 +10,6 @@ import hu.bme.aut.android.examapp.ui.viewmodel.exam.ExamDetailsViewModel
 expect fun ExportExamDetailsScreen(
     navigateBack: () -> Unit,
     modifier: Modifier = Modifier,
-    savedStateHandle: SavedStateHandle,
-    examViewModel: ExamDetailsViewModel = viewModel { ExamDetailsViewModel(savedStateHandle) }
+    examId: String,
+    examViewModel: ExamDetailsViewModel = viewModel { ExamDetailsViewModel(examId) }
 )

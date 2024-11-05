@@ -112,8 +112,8 @@ fun ExamDetailsScreen(
     navigateToEditMultipleChoiceQuestion: (String) -> Unit,
     navigateBack: () -> Unit,
     modifier: Modifier = Modifier,
-    savedStateHandle: SavedStateHandle,
-    examViewModel: ExamDetailsViewModel = viewModel { ExamDetailsViewModel(savedStateHandle) }//viewModel(factory = AppViewModelProvider.Factory),
+    examId: String,
+    examViewModel: ExamDetailsViewModel = viewModel { ExamDetailsViewModel(examId) }
 ) {
     when(examViewModel.examDetailsScreenUiState){
         is ExamDetailsScreenUiState.Loading -> CircularProgressIndicator(modifier = Modifier.fillMaxSize())
@@ -124,7 +124,7 @@ fun ExamDetailsScreen(
                 examViewModel = examViewModel,
                 modifier = modifier,
                 navigateBack = navigateBack,
-                savedStateHandle = savedStateHandle
+                examId = examId,
             )
         }
         is ExamDetailsScreenUiState.Error -> Text(text = ExamDetailsScreenUiState.Error.errorMessage.ifBlank { "Unexpected error " })
@@ -141,7 +141,7 @@ fun ExamDetailsDetailsScreenUiState(
     navigateToEditMultipleChoiceQuestion: (String) -> Unit,
     navigateBack: () -> Unit,
     modifier: Modifier = Modifier,
-    savedStateHandle: SavedStateHandle,
+    examId: String,
     examViewModel: ExamDetailsViewModel
 ){
     val  examUiState = examViewModel.uiState//.collectAsState()
@@ -197,7 +197,7 @@ fun ExamDetailsDetailsScreenUiState(
             pointList = examViewModel.pointList,
             modifier = Modifier.padding(innerPadding),
             tabPage = tabPage,
-            savedStateHandle = savedStateHandle,
+            examId = examId,
         )
     }
 }
@@ -386,9 +386,9 @@ fun ExamDetailsBody(
     topicList: List<TopicDto>,
     pointList: List<PointDto>,
     tabPage: Type,
-    savedStateHandle: SavedStateHandle,
+    examId: String,
     modifier: Modifier = Modifier,
-    examViewModel: ExamDetailsViewModel = viewModel { ExamDetailsViewModel(savedStateHandle) }//viewModel(factory = AppViewModelProvider.Factory),
+    examViewModel: ExamDetailsViewModel = viewModel { ExamDetailsViewModel(examId) }//viewModel(factory = AppViewModelProvider.Factory),
 ){
     val coroutineScope = rememberCoroutineScope()
     var deleteConfirmationRequired by rememberSaveable { mutableStateOf(false) }

@@ -18,15 +18,13 @@ sealed interface TrueFalseQuestionEditScreenUiState {
 }
 
 class TrueFalseQuestionEditViewModel(
-    savedStateHandle: SavedStateHandle,
+    trueFalseQuestionId: String,
 ) : ViewModel() {
 
     private lateinit var originalQuestion: String
 
     var trueFalseQuestionUiState by mutableStateOf(TrueFalseQuestionUiState())
         private set
-
-    private val trueFalseQuestionId: String = checkNotNull(savedStateHandle[ExamDestination.TrueFalseQuestionDetailsDestination.trueFalseQuestionIdArg])
 
     var trueFalseEditScreenUiState: TrueFalseQuestionEditScreenUiState by mutableStateOf(TrueFalseQuestionEditScreenUiState.Loading)
 

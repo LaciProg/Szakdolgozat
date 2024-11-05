@@ -51,9 +51,9 @@ fun TopicDetailsScreen(
     navigateToEditTopic: (String) -> Unit,
     navigateBack: () -> Unit,
     modifier: Modifier = Modifier,
-    savedStateHandle: SavedStateHandle,
-    viewModel: TopicDetailsViewModel = viewModel { TopicDetailsViewModel(savedStateHandle) },
-    //viewModel: TopicDetailsViewModel = hiltViewModel()//viewModel(factory = AppViewModelProvider.Factory)
+    //savedStateHandle: SavedStateHandle,
+    topicId: String,
+    viewModel: TopicDetailsViewModel = viewModel { TopicDetailsViewModel(topicId) },
 ) {
     when(viewModel.topicDetailsScreenUiState){
         is TopicDetailsScreenUiState.Loading -> CircularProgressIndicator()

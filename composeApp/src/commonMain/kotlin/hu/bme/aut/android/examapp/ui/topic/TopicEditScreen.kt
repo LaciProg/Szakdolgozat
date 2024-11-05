@@ -23,9 +23,8 @@ import org.jetbrains.compose.resources.stringResource
 fun TopicEditScreen(
     navigateBack: () -> Unit,
     modifier: Modifier = Modifier,
-    savedStateHandle: SavedStateHandle,
-    viewModel: TopicEditViewModel = viewModel { TopicEditViewModel(savedStateHandle) },
-    //viewModel: TopicEditViewModel = hiltViewModel()//viewModel(factory = AppViewModelProvider.Factory)
+    topicId: String,
+    viewModel: TopicEditViewModel = viewModel { TopicEditViewModel(topicId) },
 ) {
 
     when (viewModel.topicEditScreenUiState) {

@@ -12,13 +12,13 @@ import com.google.accompanist.permissions.rememberPermissionState
 
 @OptIn(ExperimentalPermissionsApi::class)
 @Composable
-actual fun MainCameraScreen(savedStateHandle: SavedStateHandle, navigateBack: () -> Unit) {
+actual fun MainCameraScreen(examId: String, navigateBack: () -> Unit) {
 
     val cameraPermissionState: PermissionState = rememberPermissionState(android.Manifest.permission.CAMERA)
 
     MainCameraContent(
         hasPermission = cameraPermissionState.status.isGranted,
-        savedStateHandle = savedStateHandle,
+        examId = examId,
         onRequestPermission = cameraPermissionState::launchPermissionRequest,
         navigateBack = navigateBack
     )
@@ -27,13 +27,13 @@ actual fun MainCameraScreen(savedStateHandle: SavedStateHandle, navigateBack: ()
 @Composable
 private fun MainCameraContent(
     hasPermission: Boolean,
-    savedStateHandle: SavedStateHandle,
+    examId: String,
     onRequestPermission: () -> Unit,
     navigateBack: () -> Unit
 ) {
 
     if (hasPermission) {
-        CameraScreen(savedStateHandle, navigateBack = navigateBack)
+        CameraScreen(examId, navigateBack = navigateBack)
     } else {
         NoPermissionScreen(onRequestPermission)
     }

@@ -53,8 +53,8 @@ fun PointDetailsScreen(
     navigateToEditPoint: (String) -> Unit,
     navigateBack: () -> Unit,
     modifier: Modifier = Modifier,
-    savedStateHandle: SavedStateHandle,
-    viewModel: PointDetailsViewModel = viewModel { PointDetailsViewModel(savedStateHandle) }//viewModel(factory = AppViewModelProvider.Factory)
+    pointId : String,
+    viewModel: PointDetailsViewModel = viewModel { PointDetailsViewModel(pointId) }
 ) {
     when(viewModel.pointDetailsScreenUiState){
         is PointDetailsScreenUiState.Loading -> CircularProgressIndicator(modifier = Modifier.fillMaxSize())

@@ -18,13 +18,11 @@ sealed interface PointEditScreenUiState {
 }
 
 class PointEditViewModel(
-    savedStateHandle: SavedStateHandle,
+    pointId: String,
 ) : ViewModel() {
 
     var pointUiState by mutableStateOf(PointUiState())
         private set
-
-    private val pointId: String = checkNotNull(savedStateHandle[ExamDestination.PointDetailsDestination.pointIdArg])
 
     private lateinit var originalPoint: String
 

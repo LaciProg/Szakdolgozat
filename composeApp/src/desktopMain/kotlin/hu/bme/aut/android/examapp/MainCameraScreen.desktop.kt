@@ -12,7 +12,7 @@ import hu.bme.aut.android.examapp.ui.components.UnsupportedFeatureScreen
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
-actual fun MainCameraScreen(savedStateHandle: SavedStateHandle, navigateBack: () -> Unit) {
+actual fun MainCameraScreen(examId: String, navigateBack: () -> Unit) {
     Scaffold(
         topBar = {
             TopAppBarContent(stringResource(Res.string.camera), navigateBack)

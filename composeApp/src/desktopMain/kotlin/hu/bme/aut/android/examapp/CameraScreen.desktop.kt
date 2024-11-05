@@ -11,6 +11,6 @@ import hu.bme.aut.android.examapp.ui.components.UnsupportedFeatureScreen
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
-actual fun CameraScreen(savedStateHandle: SavedStateHandle, navigateBack: ()-> Unit) {
+actual fun CameraScreen(examId: String, navigateBack: ()-> Unit) {
 
 }

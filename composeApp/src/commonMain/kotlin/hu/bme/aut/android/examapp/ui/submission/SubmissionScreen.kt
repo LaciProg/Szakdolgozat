@@ -51,14 +51,15 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 @Composable
 fun SubmissionScreen (
     navigateBack: () -> Unit = {},
-    savedStateHandle: SavedStateHandle,
-    viewModel: SubmissionViewModel = viewModel { SubmissionViewModel(savedStateHandle) }
+    navigateBackCamera: () -> Unit = {},
+    examId: String,
+    viewModel: SubmissionViewModel = viewModel { SubmissionViewModel(examId) }
 ){
     when(viewModel.submissionScreenUiState){
         is SubmissionScreenUiState.Loading ->  CircularProgressIndicator(modifier = Modifier.fillMaxSize())
         is SubmissionScreenUiState.Error -> Text(text = SubmissionScreenUiState.Error.errorMessage.ifBlank { "Unexpected error " })
         is SubmissionScreenUiState.Success -> SubmissionScreenContent(viewModel, navigateBack)
-        is SubmissionScreenUiState.Camera -> MainCameraScreen(savedStateHandle, navigateBack)
+        is SubmissionScreenUiState.Camera -> MainCameraScreen(examId, navigateBackCamera)
     }
 
 

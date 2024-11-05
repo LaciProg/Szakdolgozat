@@ -18,10 +18,8 @@ sealed interface PointDetailsScreenUiState {
 }
 
 class PointDetailsViewModel(
-    savedStateHandle: SavedStateHandle,
+    val  pointId : String,
 ) : ViewModel() {
-
-    val pointId: String = checkNotNull(savedStateHandle[ExamDestination.PointDetailsDestination.pointIdArg])
 
     var pointDetailsScreenUiState: PointDetailsScreenUiState by mutableStateOf(PointDetailsScreenUiState.Loading)
 

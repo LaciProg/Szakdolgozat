@@ -237,7 +237,7 @@ fun saveExamDetailsAsPdf(
 actual fun ExportExamDetailsScreen(    //IN navigation used
     navigateBack: () -> Unit,
     modifier: Modifier,
-    savedStateHandle: SavedStateHandle,
+    examId: String,
     examViewModel: ExamDetailsViewModel
 ) {
     val context = LocalContext.current

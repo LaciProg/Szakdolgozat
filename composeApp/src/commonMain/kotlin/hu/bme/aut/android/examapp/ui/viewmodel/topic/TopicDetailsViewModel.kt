@@ -19,10 +19,8 @@ sealed interface TopicDetailsScreenUiState {
 }
 
 class TopicDetailsViewModel(
-    savedStateHandle: SavedStateHandle,
+    val topicId: String,
 ) : ViewModel() {
-
-    val topicId: String = checkNotNull(savedStateHandle[ExamDestination.TopicDetailsDestination.topicIdArg])
 
     var topicDetailsScreenUiState: TopicDetailsScreenUiState by mutableStateOf(TopicDetailsScreenUiState.Loading)
     var uiState by mutableStateOf(TopicDetailsUiState())

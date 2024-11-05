@@ -18,15 +18,13 @@ sealed interface ExamEditScreenUiState {
 }
 
 class ExamEditViewModel(
-    savedStateHandle: SavedStateHandle,
+    examId: String,
 ) : ViewModel() {
 
     private lateinit var originalExam: String
 
     var examUiState by mutableStateOf(ExamUiState())
         private set
-
-    private val examId: String = checkNotNull(savedStateHandle[ExamDestination.ExamDetailsDestination.examIdArg])
 
     var examEditScreenUiState: ExamEditScreenUiState by mutableStateOf(
         ExamEditScreenUiState.Loading)

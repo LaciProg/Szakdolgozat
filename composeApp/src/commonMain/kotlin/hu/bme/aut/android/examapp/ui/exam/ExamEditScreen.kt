@@ -22,8 +22,8 @@ import org.jetbrains.compose.resources.stringResource
 fun ExamEditScreen(
     navigateBack: () -> Unit,
     modifier: Modifier = Modifier,
-    savedStateHandle: SavedStateHandle,
-    viewModel: ExamEditViewModel = viewModel { ExamEditViewModel(savedStateHandle) }//viewModel(factory = AppViewModelProvider.Factory)
+    examId: String,
+    viewModel: ExamEditViewModel = viewModel { ExamEditViewModel(examId) }//viewModel(factory = AppViewModelProvider.Factory)
 ) {
     when(viewModel.examEditScreenUiState){
         is ExamEditScreenUiState.Loading -> CircularProgressIndicator(modifier = Modifier.fillMaxSize())
