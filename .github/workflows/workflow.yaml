@@ -2,17 +2,15 @@ name: Build LaTeX document
 on: [push]
 jobs:
   build_latex:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
+    container: texlive/texlive:latest
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v4
-      - name: Install winget
-        uses: Cyberboss/install-winget@v1
       - name: Compile latex
-        run: |
-          winget install --accept-package-agreements --accept-source-agreements MiKTeX.MiKTeX 
+        run: | 
           cd DiplomatervSablon_LaTeX_v1
-          pdflatex thesis.tex || true
+          make pdflatex || true
       - name: Upload PDF file
         if: always()
         uses: actions/upload-artifact@v4
