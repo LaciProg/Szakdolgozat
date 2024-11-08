@@ -8,7 +8,27 @@
 %----------------------------------------------------------------------------
 \chapter*{Kivonat}\addcontentsline{toc}{chapter}{Kivonat}
 
-Jelen dokumentum egy diplomaterv sablon, amely formai keretet ad a BME Villamosmérnöki és Informatikai Karán végző hallgatók által elkészítendő szakdolgozatnak és diplomatervnek. A sablon használata opcionális. Ez a sablon \LaTeX~alapú, a \emph{TeXLive} \TeX-implementációval és a PDF-\LaTeX~fordítóval működőképes.
+A közoktatásban és a felsőoktatásban is gyakori probléma mind a tanárok, mind a diákok számára az időhiány a rengeteg munka miatt.
+Ez az alkalmazás a tanárok munkáját hivatott segíteni az előző félévben elkészített REST API-t felhasználva, és a hozzá írt Android-eszközökre készült program továbbfejlesztése által.
+Az alkalmazás lehetőséget biztosít egy nagyméretű kérdésbank létrehozására és tárolására.
+A kérdések bármikor módosíthatók, törölhetők, vagy hozhatók létre újak.
+Természetesen nem csak egy ember dolgozhat ugyanazon a tárgyon; a kérdésbank és a számonkérések közösen szerkeszthetők.
+
+Az alkalmazás lehetőséget biztosít a kérdések létrehozása mellett egyéni témák létrehozására, amivel a kérdéseket és feladatsorokat lehet csoportosítani.
+Továbbá el lehet készíteni a saját pontrendszert, akár több félét is, amelyet dinamikusan lehet változtatni a kérdéseknél.
+Fontos szempont volt az automatizált javítás segítése, így csak egyszerű kérdések vannak: igaz-hamis és feleletválasztós kérdések.
+Sajnos az AI még nem tart ott, hogy bármilyen kézírást pontosan felismerjen, és ebből a szövegből megállapítsa annak helyességét. Ennek ellenére a szövegfelismerő funkció így is támogatja a javítást, aminek az eredményét megkapja a javító.
+
+Ezekből az elemekből áll össze a számonkérés.
+Ez a szoftver csak a kérdéssorok összeállításáért és kiértékeléséért felel. 
+Ennek megfelelően elő kell állítani magát a feladatsort. 
+Egy dolgozatot ki lehet exportálni PDF formátumban, erről egy előnézet is lesz, amin nagyjából látszik, hogyan fog kinézni, de a végső változat csak az exportálást követően fog látszani. 
+Ezt követően szabadon nyomtathatóvá válik.
+
+Egy modern szoftver esetén elvárt, hogy könnyen és kényelmesen lehessen kezelni, mindenki számára a neki tetsző módon. 
+Ennek alapján úgy döntöttem, hogy felhasználom az Android fejlesztésben szerzett tapasztalataimat. 
+2021 augusztusában jelent meg a Compose Multiplatform technológia, amely kedvez az Android-fejlesztőknek, mivel a natív Android-megoldások könnyen átültethetők egy cross-platform alkalmazásba. 
+Jelenleg stabilan működik Android-, asztali- és iOS-alkalmazások készítéséhez, eszköz hiányában az első kettőt készítettem el.
 
 
 \vfill
@@ -20,7 +40,27 @@ Jelen dokumentum egy diplomaterv sablon, amely formai keretet ad a BME Villamosm
 %----------------------------------------------------------------------------
 \chapter*{Abstract}\addcontentsline{toc}{chapter}{Abstract}
 
-This document is a \LaTeX-based skeleton for BSc/MSc~theses of students at the Electrical Engineering and Informatics Faculty, Budapest University of Technology and Economics. The usage of this skeleton is optional. It has been tested with the \emph{TeXLive} \TeX~implementation, and it requires the PDF-\LaTeX~compiler.
+In both public and higher education, time constraints are a common issue for both teachers and students due to the large workload. 
+This application is intended to assist teachers by utilizing the REST API developed in the previous semester and enhancing the program created for Android devices. 
+The application allows for the creation and storage of a large question bank. 
+Questions can be modified, deleted, or new ones can be created at any time. 
+Of course, more than one person can work on the same subject; the question bank and the tests can be edited collaboratively.
+
+In addition to creating questions, the application also allows for the creation of custom topics, which can be used to organize questions and assignments. 
+Furthermore, a custom scoring system can be created, even multiple types, which can be dynamically adjusted for different questions. 
+An important aspect was to assist in automated grading, so only simple questions are included: true/false and multiple-choice questions. 
+Unfortunately, AI is not yet at the level where it can accurately recognize any handwriting and determine its correctness from the text. 
+Nonetheless, the text recognition function still supports grading, and the results are provided to the grader.
+
+These elements come together to form the assessment. 
+This software is responsible solely for compiling and evaluating the question sheets. 
+Accordingly, the task sheet itself must be generated. A test can be exported in PDF format, with a preview available that roughly shows how it will look, though the final version will only be visible after exporting. 
+After this, it can be freely printed.
+
+For modern software, it is expected to be easy and convenient to use, allowing everyone to handle it in their preferred way. 
+Based on this, I decided to leverage my experience in Android development. 
+The Compose Multiplatform technology, released in August 2021, is favorable for Android developers, as native Android solutions can easily be adapted into a cross-platform application. 
+It currently works stably for creating Android, desktop, and iOS applications; due to a lack of devices, I have implemented the first two.
 
 
 \vfill

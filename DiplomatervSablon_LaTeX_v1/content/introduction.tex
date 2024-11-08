@@ -2,6 +2,88 @@
 \chapter{\bevezetes}
 %----------------------------------------------------------------------------
 
-A bevezető tartalmazza a diplomaterv-kiírás elemzését, történelmi előzményeit, a feladat indokoltságát (a motiváció leírását), az eddigi megoldásokat, és ennek tükrében a hallgató megoldásának összefoglalását.
+\section{Témaválasztás indoklása}
 
-A bevezető szokás szerint a diplomaterv felépítésével záródik, azaz annak rövid leírásával, hogy melyik fejezet mivel foglalkozik.
+2023/2024 őszi félévében ismerkedtem meg a mobil, azon belül is az Android fejlesztéssel.
+Az ezt követő félévben tovább mélyítettem a tudásomat ebben a témában, az Önálló laboratórium tárgy keretein belül elkezdtem fejleszteni a szakdolgozatom alapjaként szolgáló alkalmazást.
+Szintén ebben a félévben hallgattam az Android alapú szoftverfejlesztés és a Kotlin alapú szoftverfejlesztés tárgyakat, amik segítettek jobban megérteni ezt a területet.
+Az így elsajátított tudás és az önálló kutatás és tanulás során előállt egy Kotlin nyelven írt REST API, ami egy PostgreSQL adatbázissal biztosít kommunikációt, és természetesen egy Android alkalmazás, amelyet a szakdolgozat során tovább bővítettem és alakítottam át egy cross-platform szoftverré.
+
+A kérdéssor összeállító alkalmazás ötletét a konzulensem vetette fel, hasznos lenne, ha létezne egy ilyen eszköz, amivel könnyen megoldható ez a feladat.
+Megtetszett nekem is az ötlet, mivel vannak ismerőseim és családtagjaim, akik szintén tudnának egy ilyen alkalmazást hasznosítani a munkájuk vagy egyéb elfoglaltságaik kapcsán.
+Egy nagyobb méretű fullstack alkalmazás előállítása túlmutat az Önálló laboratórium keretein, így rengeteg fejlesztési ötlet és lehetőség nem fért bele a félévbe.
+Továbbgondolva ezt a projektet, folytattam a munkát a szoftveren.
+Ezen kívül mindig szeretek új és érdekes dolgokat kipróbálni, és ha megtetszik, alaposan tanulmányozni és megtanulni.
+Pont ezért választottam a Google és a JetBrains legújabb megoldásait a szakdolgozathoz.
+
+A most elkészített szoftvert jelentősen tovább lehet még fejleszteni, felhasználók, szervezetek regisztrálásával és elkülönítésével, több fajta kérdéstípus megvalósításával.
+Bevezetni a szervezeteken belül az oktató és diák csoportokat, és egy online kitöltési formát is megtervezni, létrehozni.
+Az Önálló laboratórium alatt is élveztem ezzel foglalkozni, és még mindig szívesen fejleszteném tovább, és tenném jobbá az alkalmazást.
+
+\section{Felhasznált technológia jelentősége/elterjedtsége}
+\label{sec:IntroductionTechnologies}
+
+Megfigyelve a mai trendeket, láttam, hogy a multiplatform fejlesztés egyre népszerűbb, mivel gyorsabban és hatékonyabban lehet egyszerűbb alkalmazásokat elkészíteni több fajta felhasználói réteg számára.
+Úgy döntöttem, hogy kipróbálok egy új megoldást, ami a Compose Multiplatform; 2021 augusztusában jelent meg az 1.0 alpha verziója, és ezt a Kotlin Multiplatform egy évvel korábbi megjelenése tette lehetővé.
+Az Android fejlesztők körében kifejezetten népszerű lett, annak ellenére is, hogy még mindig van rengeteg funkció, amit nem támogat, de jelenleg is aktívan fejlesztik, és válik hónapról-hónapra egyre jobbá.
+A fejlesztések havonta / néhány havonta érkeznek mind a Kotlin nyelvhez és a Kotlin Multiplatformhoz\cite[]{KotlinMultiplatformRelease}, mind a Compose Multiplatformhoz\cite{ComposeMultiplatformRelease}.
+Jelenleg vannak sokkal jobban elterjedt, használtabb cross-platform keretrendszerek, mint például a Flutter (\refstruc{fig:FlutterVsCompose}) vagy a React Native, ami iOS és Android fejlesztést tesz lehetővé JavaScript/TypeScript nyelven, így a webes fejlesztők gyakran használják natív mobilos appokhoz.
+
+Szerencsére a fejlesztés folyamatos és gyors, amit segít az is, hogy sok nyílt forráskódú könyvtár is készül a felhasználók által.\cite{KotlinMultiplatformStable}
+A Compose Multiplatform ennek az ellenpontja lesz\cite{KotlinCrossPlatformFrameworks}; sajnos a webes támogatás még csak alpha verzióban van, így eléggé instabil, és sok olyan eszköz nem használható még, ami a többi területen már stabilan működik, így ezzel egyelőre a szakdolgozat keretein belül nem foglalkoztam részletesebben a webes megoldás megvalósításával.
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=150mm, keepaspectratio]{figures/flutter-vs-jetpack-compose-google-search-trends.png}
+    \caption{A Flutter és a Compose keresési arányai \cite{FlutterVsCompose}}
+    \label{fig:FlutterVsCompose}
+\end{figure}
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=150mm, keepaspectratio]{figures/Libraries-2800x995.png}
+    \caption{A könyvtárak növekedésének gyors üteme \cite{KotlinMultiplatformStable}}
+    \label{fig:KMPLibraries}
+\end{figure}
+
+A visszajelzések és a mostani szoftverfejlesztési irányokból arra lehet következtetni, hogy még hosszú jövő áll a technológiák előtt.
+Könnyen, gyorsan és hatékonyan lehet akár egyszerre az összes platformra alkalmazást fejleszteni, nagy méretű közös és kis méretű natív kódbázis írásával és karbantartásával, összesen két nyelv ismeretével.
+Webre, Androidra és asztali alkalmazáshoz elegendő lehet a Kotlin nyelv, esetleg egy kis HTML és JavaScript ismeret; iOS esetén minimális Swift és SwiftUI ismeret jól jöhet, de ez hasonlít a Kotlinra és a Compose-ra.
+Az a tény, hogy a Compose Multiplatform csupán Kotlin nyelven írt kódbázissal képes natívan megjeleníteni az elkészült alkalmazást minden platformon, nagyon erős eszközzé teszi.
+Például az Androidon futó alkalmazás az Androidos gombokat, görgetést stb. használja, míg iOS-en az ott megszokott stílust és irányítást kapja a felhasználó.
+
+\section{Dolgozat felépítése}
+
+Az alábbiakban bemutatom a dolgozat felépítését.
+
+\begin{enumerate}
+	\item \emph{Feladatspecifikáció:}
+        \begin{enumerate}
+            \item \emph{Feladat részletes leírása}
+            \item \emph{Diagramok:} Bemutatok néhány diagramot és ábrát, amelyek segítik az alkalmazás felépítésének megértését.
+        \end{enumerate}
+	\item \emph{Irodalomkutatás:} 
+        \begin{enumerate}
+            \item \emph{Felhasznált technológiák:} \az+\refstruc{sec:IntroductionTechnologies}ban leírtak és a használt könyvtárak részletes bemutatása 
+            \item \emph{Hasonló megoldások:} Rövid összevetés a többi hasonló cross-platform megoldással.
+        \end{enumerate}
+    \item \emph{Felsőszintű architektúra:} 
+        \begin{enumerate}
+            \item \emph{High level architektúra} 
+            \item \emph{Rendszer felépítései, komponensei}
+        \end{enumerate}
+    \item \emph{Részletes megvalósítás:} 
+        \begin{enumerate}
+            \item \emph{UML class diagramok} 
+            \item \emph{Enity-relation diagram}
+            \item \emph{Szekvencia diagram}
+            \item \emph{Kódrészek}
+        \end{enumerate}
+    \item \emph{Tesztelés:} 
+        \begin{enumerate}
+            \item \emph{Felhasználói leírás} 
+            \item \emph{A program bemutatása képekkel} 
+            \item \emph{Lehetséges tesztelési megoldások ismertetése}
+        \end{enumerate}
+    \item \emph{Összefoglalás, továbbfejlesztési lehetőségek} 
+\end{enumerate}
