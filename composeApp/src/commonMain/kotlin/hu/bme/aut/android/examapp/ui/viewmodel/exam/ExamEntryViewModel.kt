@@ -136,7 +136,7 @@ suspend fun ExamDto.toExamUiState(
     topicName: String,
     questionList: String,
 ): ExamUiState = ExamUiState(
-    examDetails = this.toExamDetails(topicName, questionList.split("#").map { if(it.toQuestion() != null) it.toQuestion()!! else throw IllegalArgumentException("Invalid question")}),
+    examDetails = this.toExamDetails(topicName, if(questionList == "") listOf() else questionList.split("#").map { if(it.toQuestion() != null) it.toQuestion()!! else throw IllegalArgumentException("Invalid type")}),
     isEntryValid = isEntryValid
 )
 
