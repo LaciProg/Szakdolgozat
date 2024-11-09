@@ -184,12 +184,6 @@ INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-
 INPUT .\thesis.aux
 INPUT .\thesis.aux
 INPUT thesis.aux
-INPUT .\include\guideline.aux
-INPUT .\include\guideline.aux
-INPUT include\guideline.aux
-INPUT .\include\project.aux
-INPUT .\include\project.aux
-INPUT include\project.aux
 INPUT .\include\titlepage.aux
 INPUT .\include\titlepage.aux
 INPUT include\titlepage.aux
@@ -202,12 +196,9 @@ INPUT content\abstract.aux
 INPUT .\content\introduction.aux
 INPUT .\content\introduction.aux
 INPUT content\introduction.aux
-INPUT .\content\latex-tools.aux
-INPUT .\content\latex-tools.aux
-INPUT content\latex-tools.aux
-INPUT .\content\thesis-format.aux
-INPUT .\content\thesis-format.aux
-INPUT content\thesis-format.aux
+INPUT .\content\specifiation.aux
+INPUT .\content\specifiation.aux
+INPUT content\specifiation.aux
 INPUT .\content\template-usage.aux
 INPUT .\content\template-usage.aux
 INPUT content\template-usage.aux
@@ -236,65 +227,6 @@ INPUT .\thesis.out
 INPUT .\thesis.out
 OUTPUT thesis.out
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\base\report.cls
-INPUT .\include\guideline.tex
-INPUT .\include\guideline.tex
-OUTPUT include\guideline.aux
-INPUT .\include\guideline.tex
-INPUT .\include\guideline.tex
-INPUT include\guideline.tex
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmr9.tfm
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmr12.tfm
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmbx12.tfm
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmbx12.tfm
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\lm\ot1lmr.fd
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\lm\ot1lmr.fd
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\lm\ot1lmr.fd
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\rm-lmr9.tfm
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\rm-lmr6.tfm
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\rm-lmr5.tfm
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\lm\omllmm.fd
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\lm\omllmm.fd
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\lm\omllmm.fd
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\lmmi9.tfm
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\lmmi6.tfm
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\lmmi5.tfm
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\lm\omslmsy.fd
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\lm\omslmsy.fd
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\lm\omslmsy.fd
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\lmsy9.tfm
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\lmsy6.tfm
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\lmsy5.tfm
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\lm\omxlmex.fd
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\lm\omxlmex.fd
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\lm\omxlmex.fd
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\lmex10.tfm
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsa.fd
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsa.fd
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsa.fd
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam7.tfm
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam5.tfm
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsb.fd
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsb.fd
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsb.fd
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm5.tfm
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmr6.tfm
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\lm\ts1lmr.fd
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\lm\ts1lmr.fd
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\lm\ts1lmr.fd
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ts1-lmr9.tfm
-INPUT C:\Users\Dell\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\lm\lm-ec.enc
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\lm\lm-ts1.enc
-INPUT .\include\project.tex
-INPUT .\include\project.tex
-OUTPUT include\project.aux
-INPUT .\include\project.tex
-INPUT .\include\project.tex
-INPUT include\project.tex
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmri10.tfm
 INPUT .\include\titlepage.tex
 INPUT .\include\titlepage.tex
 OUTPUT include\titlepage.aux
@@ -312,16 +244,44 @@ INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmr17.t
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmbx12.tfm
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmcsc10.tfm
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmcsc10.tfm
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\lm\ot1lmr.fd
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\lm\ot1lmr.fd
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\lm\ot1lmr.fd
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\rm-lmr10.tfm
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\rm-lmr8.tfm
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\rm-lmr6.tfm
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\lm\omllmm.fd
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\lm\omllmm.fd
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\lm\omllmm.fd
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\lmmi10.tfm
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\lmmi8.tfm
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\lmmi6.tfm
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\lm\omslmsy.fd
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\lm\omslmsy.fd
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\lm\omslmsy.fd
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\lmsy10.tfm
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\lmsy8.tfm
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\lmsy6.tfm
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\lm\omxlmex.fd
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\lm\omxlmex.fd
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\lm\omxlmex.fd
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\lmex10.tfm
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsa.fd
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsa.fd
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsa.fd
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam7.tfm
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsb.fd
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsb.fd
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsb.fd
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmri10.tfm
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmr12.tfm
+INPUT C:\Users\Dell\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\lm\lm-ec.enc
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmr17.tfm
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmbx12.tfm
 INPUT .\thesis.toc
@@ -335,6 +295,7 @@ OUTPUT include\declaration.aux
 INPUT .\include\declaration.tex
 INPUT .\include\declaration.tex
 INPUT include\declaration.tex
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmbx12.tfm
 INPUT .\content\abstract.tex
 INPUT .\content\abstract.tex
 OUTPUT content\abstract.aux
@@ -348,6 +309,7 @@ INPUT .\content\introduction.tex
 INPUT .\content\introduction.tex
 INPUT content\introduction.tex
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmr12.tfm
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmbx12.tfm
 INPUT .\figures\flutter-vs-jetpack-compose-google-search-trends.png
 INPUT .\figures\flutter-vs-jetpack-compose-google-search-trends.png
 INPUT .\figures\flutter-vs-jetpack-compose-google-search-trends.png
@@ -362,12 +324,65 @@ INPUT .\figures\Libraries-2800x995.png
 INPUT .\figures\Libraries-2800x995.png
 INPUT .\figures\Libraries-2800x995.png
 INPUT .\figures\Libraries-2800x995.png
-INPUT .\content\latex-tools.tex
-INPUT .\content\latex-tools.tex
-OUTPUT content\latex-tools.aux
-INPUT .\content\latex-tools.tex
-INPUT .\content\latex-tools.tex
-INPUT content\latex-tools.tex
+INPUT .\content\specifiation.tex
+INPUT .\content\specifiation.tex
+OUTPUT content\specifiation.aux
+INPUT .\content\specifiation.tex
+INPUT .\content\specifiation.tex
+INPUT content\specifiation.tex
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\lm\ts1lmr.fd
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\lm\ts1lmr.fd
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\lm\ts1lmr.fd
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ts1-lmr10.tfm
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\lm\lm-ts1.enc
+INPUT .\figures\Point Diagram.png
+INPUT .\figures\Point Diagram.png
+INPUT .\figures\Point Diagram.png
+INPUT .\figures\Point Diagram.png
+INPUT .\figures\Point Diagram.png
+INPUT .\figures\Point Diagram.png
+INPUT .\figures\Point Diagram.png
+INPUT .\figures\Topic Diagram.png
+INPUT .\figures\Topic Diagram.png
+INPUT .\figures\Topic Diagram.png
+INPUT .\figures\Topic Diagram.png
+INPUT .\figures\Topic Diagram.png
+INPUT .\figures\Topic Diagram.png
+INPUT .\figures\Topic Diagram.png
+INPUT .\figures\TrueFalseQuestion Diagram.png
+INPUT .\figures\TrueFalseQuestion Diagram.png
+INPUT .\figures\TrueFalseQuestion Diagram.png
+INPUT .\figures\TrueFalseQuestion Diagram.png
+INPUT .\figures\TrueFalseQuestion Diagram.png
+INPUT .\figures\TrueFalseQuestion Diagram.png
+INPUT .\figures\TrueFalseQuestion Diagram.png
+INPUT .\figures\MultipleChoiceQuestion Diagram.png
+INPUT .\figures\MultipleChoiceQuestion Diagram.png
+INPUT .\figures\MultipleChoiceQuestion Diagram.png
+INPUT .\figures\MultipleChoiceQuestion Diagram.png
+INPUT .\figures\MultipleChoiceQuestion Diagram.png
+INPUT .\figures\MultipleChoiceQuestion Diagram.png
+INPUT .\figures\MultipleChoiceQuestion Diagram.png
+INPUT .\figures\Exam Diagram.png
+INPUT .\figures\Exam Diagram.png
+INPUT .\figures\Exam Diagram.png
+INPUT .\figures\Exam Diagram.png
+INPUT .\figures\Exam Diagram.png
+INPUT .\figures\Exam Diagram.png
+INPUT .\figures\Exam Diagram.png
+INPUT .\figures\AnswerCheck Diagram.png
+INPUT .\figures\AnswerCheck Diagram.png
+INPUT .\figures\AnswerCheck Diagram.png
+INPUT .\figures\AnswerCheck Diagram.png
+INPUT .\figures\AnswerCheck Diagram.png
+INPUT .\figures\AnswerCheck Diagram.png
+INPUT .\figures\AnswerCheck Diagram.png
+INPUT .\content\template-usage.tex
+INPUT .\content\template-usage.tex
+OUTPUT content\template-usage.aux
+INPUT .\content\template-usage.tex
+INPUT .\content\template-usage.tex
+INPUT content\template-usage.tex
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\rm-lmr17.tfm
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\rm-lmr17.tfm
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\rm-lmr17.tfm
@@ -388,81 +403,69 @@ INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\lm\t1lmtt.fd
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\lm\t1lmtt.fd
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\lm\t1lmtt.fd
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmtl10.tfm
-INPUT .\figures\TeXstudio.png
-INPUT .\figures\TeXstudio.png
-INPUT .\figures\TeXstudio.png
-INPUT .\figures\TeXstudio.png
-INPUT .\figures\TeXstudio.png
-INPUT .\figures\TeXstudio.png
-INPUT .\figures\TeXstudio.png
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmr9.tfm
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\rm-lmr9.tfm
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\rm-lmr5.tfm
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\lmmi9.tfm
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\lmmi5.tfm
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\lmsy9.tfm
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\lmsy5.tfm
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam5.tfm
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm5.tfm
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmr6.tfm
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmtl10.tfm
+INPUT .\figures\TeXstudio.png
+INPUT .\figures\TeXstudio.png
+INPUT .\figures\TeXstudio.png
+INPUT .\figures\TeXstudio.png
+INPUT .\figures\TeXstudio.png
+INPUT .\figures\TeXstudio.png
+INPUT .\figures\TeXstudio.png
+INPUT .\figures\TeXstudio.png
+INPUT .\figures\TeXstudio.png
+INPUT .\figures\TeXstudio.png
+INPUT .\figures\TeXstudio.png
+INPUT .\figures\TeXstudio.png
+INPUT .\figures\TeXstudio.png
+INPUT .\figures\TeXstudio.png
+INPUT .\figures\TeXstudio.png
+INPUT .\figures\TeXstudio.png
+INPUT .\figures\TeXstudio.png
+INPUT .\figures\TeXstudio.png
+INPUT .\figures\TeXstudio.png
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang2.sty
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang2.sty
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang2.sty
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang3.sty
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang3.sty
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang3.sty
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmtl10.tfm
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang2.sty
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang2.sty
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang2.sty
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang3.sty
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang3.sty
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang3.sty
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang2.sty
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang2.sty
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang2.sty
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang3.sty
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang3.sty
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang3.sty
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstmisc.sty
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstmisc.sty
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstmisc.sty
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmtk10.tfm
-INPUT .\content\thesis-format.tex
-INPUT .\content\thesis-format.tex
-OUTPUT content\thesis-format.aux
-INPUT .\content\thesis-format.tex
-INPUT .\content\thesis-format.tex
-INPUT content\thesis-format.tex
-INPUT .\content\template-usage.tex
-INPUT .\content\template-usage.tex
-OUTPUT content\template-usage.aux
-INPUT .\content\template-usage.tex
-INPUT .\content\template-usage.tex
-INPUT content\template-usage.tex
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ts1-lmr10.tfm
-INPUT .\figures\TeXstudio.png
-INPUT .\figures\TeXstudio.png
-INPUT .\figures\TeXstudio.png
-INPUT .\figures\TeXstudio.png
-INPUT .\figures\TeXstudio.png
-INPUT .\figures\TeXstudio.png
-INPUT .\figures\TeXstudio.png
-INPUT .\figures\TeXstudio.png
-INPUT .\figures\TeXstudio.png
-INPUT .\figures\TeXstudio.png
-INPUT .\figures\TeXstudio.png
-INPUT .\figures\TeXstudio.png
-INPUT .\figures\TeXstudio.png
-INPUT .\figures\TeXstudio.png
-INPUT .\figures\TeXstudio.png
-INPUT .\figures\TeXstudio.png
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang2.sty
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang2.sty
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang2.sty
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang3.sty
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang3.sty
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang3.sty
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang2.sty
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang2.sty
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang2.sty
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang3.sty
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang3.sty
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang3.sty
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang2.sty
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang2.sty
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang2.sty
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang3.sty
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang3.sty
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang3.sty
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstmisc.sty
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstmisc.sty
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstmisc.sty
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\rm-lmbx10.tfm
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\rm-lmbx8.tfm
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\rm-lmbx6.tfm
@@ -472,6 +475,7 @@ INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\lm\lm-mathsy.e
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\lm\lm-mathex.enc
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\rm-lmbx9.tfm
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\rm-lmbx5.tfm
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmtl10.tfm
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\rm-lmr12.tfm
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\lmmi12.tfm
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\lmsy10.tfm
@@ -500,12 +504,6 @@ INPUT .\figures\TeXstudio.png
 INPUT .\figures\TeXstudio.png
 OUTPUT thesis.thm
 INPUT thesis.aux
-INPUT .\include\guideline.aux
-INPUT .\include\guideline.aux
-INPUT include\guideline.aux
-INPUT .\include\project.aux
-INPUT .\include\project.aux
-INPUT include\project.aux
 INPUT .\include\titlepage.aux
 INPUT .\include\titlepage.aux
 INPUT include\titlepage.aux
@@ -518,12 +516,9 @@ INPUT content\abstract.aux
 INPUT .\content\introduction.aux
 INPUT .\content\introduction.aux
 INPUT content\introduction.aux
-INPUT .\content\latex-tools.aux
-INPUT .\content\latex-tools.aux
-INPUT content\latex-tools.aux
-INPUT .\content\thesis-format.aux
-INPUT .\content\thesis-format.aux
-INPUT content\thesis-format.aux
+INPUT .\content\specifiation.aux
+INPUT .\content\specifiation.aux
+INPUT content\specifiation.aux
 INPUT .\content\template-usage.aux
 INPUT .\content\template-usage.aux
 INPUT content\template-usage.aux

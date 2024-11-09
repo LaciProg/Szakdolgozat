@@ -1,0 +1,31 @@
+@startuml Exam Diagram
+
+left to right direction
+
+actor Felhasználó
+
+package "Általános elem" {
+    usecase "Elem létrehozása" as CreateElement
+    usecase "Elem szerkesztése" as EditElement
+    usecase "Elem megtekintése" as ViewElement
+    usecase "Elem törlése" as DeleteElement
+}
+
+package "Feladatsor" {
+    usecase "Feladatsor létrehozása" as CreateExam
+    usecase "Feladatsor szerkesztése" as EditExam
+    usecase "Feladatsor megtekintése" as ViewExam
+    usecase "Feladatsor törlése" as DeleteExam
+
+    CreateExam -|> CreateElement
+    EditExam -|> EditElement
+    ViewExam -|> ViewElement
+    DeleteExam -|> DeleteElement
+}
+
+Felhasználó -> CreateExam
+Felhasználó -> EditExam
+Felhasználó -> ViewExam
+Felhasználó -> DeleteExam
+
+@enduml

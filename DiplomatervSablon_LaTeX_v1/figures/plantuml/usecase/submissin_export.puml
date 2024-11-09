@@ -1,0 +1,33 @@
+@startuml AnswerCheck Diagram
+
+left to right direction
+
+actor Felhasználó
+
+package "Általános elem" {
+    usecase "Elem megtekintése" as ViewElement
+}
+
+package "Válaszok ellenőrzése" {
+    usecase "Feladatsor megtekintése" as ViewExamCheck
+    usecase "Válaszok ellenőrzése" as CheckAnswers
+
+    ViewExamCheck -|> ViewElement
+}
+
+
+package "Feladatsor exportálása" {
+    usecase "Feladatsor megtekintése" as ViewExamExport
+    usecase "Feladatsor exportálása PDF-be" as ExportExamToPDF
+
+    ViewExamExport -|> ViewElement
+}
+
+
+Felhasználó -> ViewExamCheck
+Felhasználó -> CheckAnswers
+
+Felhasználó -> ViewExamExport
+Felhasználó -> ExportExamToPDF
+
+@enduml

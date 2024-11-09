@@ -1,0 +1,31 @@
+@startuml Topic Diagram
+
+left to right direction
+
+actor Felhasználó
+
+package "Általános elem" {
+    usecase "Elem létrehozása" as CreateElement
+    usecase "Elem szerkesztése" as EditElement
+    usecase "Elem megtekintése" as ViewElement
+    usecase "Elem törlése" as DeleteElement
+}
+
+package "Témakör" {
+    usecase "Témakör létrehozása" as CreateTopic
+    usecase "Témakör szerkesztése" as EditTopic
+    usecase "Témakör megtekintése" as ViewTopic
+    usecase "Témakör törlése" as DeleteTopic
+
+    CreateTopic -|> CreateElement
+    EditTopic -|> EditElement
+    ViewTopic -|> ViewElement
+    DeleteTopic -|> DeleteElement
+}
+
+Felhasználó -> CreateTopic
+Felhasználó -> EditTopic
+Felhasználó -> ViewTopic
+Felhasználó -> DeleteTopic
+
+@enduml

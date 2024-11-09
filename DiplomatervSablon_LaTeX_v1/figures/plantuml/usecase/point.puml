@@ -1,0 +1,31 @@
+@startuml Point Diagram
+
+left to right direction
+
+actor Felhasználó
+
+package "Általános elem" {
+    usecase "Elem létrehozása" as CreateElement
+    usecase "Elem szerkesztése" as EditElement
+    usecase "Elem megtekintése" as ViewElement
+    usecase "Elem törlése" as DeleteElement
+}
+
+package "Pont" {
+    usecase "Pont létrehozása" as CreatePoint
+    usecase "Pont szerkesztése" as EditPoint
+    usecase "Pont megtekintése" as ViewPoint
+    usecase "Pont törlése" as DeletePoint
+
+    CreatePoint -|> CreateElement
+    EditPoint -|> EditElement
+    ViewPoint -|> ViewElement
+    DeletePoint -|> DeleteElement
+}
+
+Felhasználó -> CreatePoint
+Felhasználó -> EditPoint
+Felhasználó -> ViewPoint
+Felhasználó -> DeletePoint
+
+@enduml

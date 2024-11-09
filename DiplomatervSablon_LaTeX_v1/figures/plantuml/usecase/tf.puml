@@ -1,0 +1,31 @@
+@startuml TrueFalseQuestion Diagram
+
+left to right direction
+
+actor Felhasználó
+
+package "Általános elem" {
+    usecase "Elem létrehozása" as CreateElement
+    usecase "Elem szerkesztése" as EditElement
+    usecase "Elem megtekintése" as ViewElement
+    usecase "Elem törlése" as DeleteElement
+}
+
+package "Igaz-hamis kérdés" {
+    usecase "Igaz-hamis kérdés létrehozása" as CreateTrueFalseQuestion
+    usecase "Igaz-hamis kérdés szerkesztése" as EditTrueFalseQuestion
+    usecase "Igaz-hamis kérdés megtekintése" as ViewTrueFalseQuestion
+    usecase "Igaz-hamis kérdés törlése" as DeleteTrueFalseQuestion
+
+    CreateTrueFalseQuestion -|> CreateElement
+    EditTrueFalseQuestion -|> EditElement
+    ViewTrueFalseQuestion -|> ViewElement
+    DeleteTrueFalseQuestion -|> DeleteElement
+}
+
+Felhasználó -> CreateTrueFalseQuestion
+Felhasználó -> EditTrueFalseQuestion
+Felhasználó -> ViewTrueFalseQuestion
+Felhasználó -> DeleteTrueFalseQuestion
+
+@enduml

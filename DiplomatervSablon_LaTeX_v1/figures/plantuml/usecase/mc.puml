@@ -1,0 +1,31 @@
+@startuml MultipleChoiceQuestion Diagram
+
+left to right direction
+
+actor Felhasználó
+
+package "Általános elem" {
+    usecase "Elem létrehozása" as CreateElement
+    usecase "Elem szerkesztése" as EditElement
+    usecase "Elem megtekintése" as ViewElement
+    usecase "Elem törlése" as DeleteElement
+}
+
+package "Feleletválasztós kérdés" {
+    usecase "Feleletválasztós kérdés létrehozása" as CreateMultipleChoiceQuestion
+    usecase "Feleletválasztós kérdés szerkesztése" as EditMultipleChoiceQuestion
+    usecase "Feleletválasztós kérdés megtekintése" as ViewMultipleChoiceQuestion
+    usecase "Feleletválasztós kérdés törlése" as DeleteMultipleChoiceQuestion
+
+    CreateMultipleChoiceQuestion -|> CreateElement
+    EditMultipleChoiceQuestion -|> EditElement
+    ViewMultipleChoiceQuestion -|> ViewElement
+    DeleteMultipleChoiceQuestion -|> DeleteElement
+}
+
+Felhasználó -> CreateMultipleChoiceQuestion
+Felhasználó -> EditMultipleChoiceQuestion
+Felhasználó -> ViewMultipleChoiceQuestion
+Felhasználó -> DeleteMultipleChoiceQuestion
+
+@enduml

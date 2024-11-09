@@ -1,0 +1,120 @@
+@startuml UseCase Diagram
+
+left to right direction
+
+actor Felhasználó
+
+package "Általános elem" {
+    usecase "Elem létrehozása" as CreateElement
+    usecase "Elem szerkesztése" as EditElement
+    usecase "Elem megtekintése" as ViewElement
+    usecase "Elem törlése" as DeleteElement
+}
+
+package "Pont" {
+    usecase "Pont létrehozása" as CreatePoint
+    usecase "Pont szerkesztése" as EditPoint
+    usecase "Pont megtekintése" as ViewPoint
+    usecase "Pont törlése" as DeletePoint
+
+    CreatePoint -|> CreateElement
+    EditPoint -|> EditElement
+    ViewPoint -|> ViewElement
+    DeletePoint -|> DeleteElement
+}
+
+package "Témakör" {
+    usecase "Témakör létrehozása" as CreateTopic
+    usecase "Témakör szerkesztése" as EditTopic
+    usecase "Témakör megtekintése" as ViewTopic
+    usecase "Témakör törlése" as DeleteTopic
+
+    CreateTopic -|> CreateElement
+    EditTopic -|> EditElement
+    ViewTopic -|> ViewElement
+    DeleteTopic -|> DeleteElement
+}
+
+package "Igaz-hamis kérdés" {
+    usecase "Igaz-hamis kérdés létrehozása" as CreateTrueFalseQuestion
+    usecase "Igaz-hamis kérdés szerkesztése" as EditTrueFalseQuestion
+    usecase "Igaz-hamis kérdés megtekintése" as ViewTrueFalseQuestion
+    usecase "Igaz-hamis kérdés törlése" as DeleteTrueFalseQuestion
+
+    CreateTrueFalseQuestion -|> CreateElement
+    EditTrueFalseQuestion -|> EditElement
+    ViewTrueFalseQuestion -|> ViewElement
+    DeleteTrueFalseQuestion -|> DeleteElement
+}
+
+package "Feleletválasztós kérdés" {
+    usecase "Feleletválasztós kérdés létrehozása" as CreateMultipleChoiceQuestion
+    usecase "Feleletválasztós kérdés szerkesztése" as EditMultipleChoiceQuestion
+    usecase "Feleletválasztós kérdés megtekintése" as ViewMultipleChoiceQuestion
+    usecase "Feleletválasztós kérdés törlése" as DeleteMultipleChoiceQuestion
+
+    CreateMultipleChoiceQuestion -|> CreateElement
+    EditMultipleChoiceQuestion -|> EditElement
+    ViewMultipleChoiceQuestion -|> ViewElement
+    DeleteMultipleChoiceQuestion -|> DeleteElement
+}
+
+package "Feladatsor" {
+    usecase "Feladatsor létrehozása" as CreateExam
+    usecase "Feladatsor szerkesztése" as EditExam
+    usecase "Feladatsor megtekintése" as ViewExam
+    usecase "Feladatsor törlése" as DeleteExam
+
+    CreateExam -|> CreateElement
+    EditExam -|> EditElement
+    ViewExam -|> ViewElement
+    DeleteExam -|> DeleteElement
+}
+
+package "Válaszok ellenőrzése" {
+    usecase "Feladatsor megtekintése" as ViewExamCheck
+    usecase "Válaszok ellenőrzése" as CheckAnswers
+
+    ViewExamCheck -|> ViewElement
+}
+
+package "Feladatsor exportálása" {
+    usecase "Feladatsor megtekintése" as ViewExamExport
+    usecase "Feladatsor exportálása PDF-be" as ExportExamToPDF
+
+    ViewExamExport -|> ViewElement
+}
+
+
+Felhasználó -> CreatePoint
+Felhasználó -> EditPoint
+Felhasználó -> ViewPoint
+Felhasználó -> DeletePoint
+
+Felhasználó -> CreateTopic
+Felhasználó -> EditTopic
+Felhasználó -> ViewTopic
+Felhasználó -> DeleteTopic
+
+Felhasználó -> CreateTrueFalseQuestion
+Felhasználó -> EditTrueFalseQuestion
+Felhasználó -> ViewTrueFalseQuestion
+Felhasználó -> DeleteTrueFalseQuestion
+
+Felhasználó -> CreateMultipleChoiceQuestion
+Felhasználó -> EditMultipleChoiceQuestion
+Felhasználó -> ViewMultipleChoiceQuestion
+Felhasználó -> DeleteMultipleChoiceQuestion
+
+Felhasználó -> CreateExam
+Felhasználó -> EditExam
+Felhasználó -> ViewExam
+Felhasználó -> DeleteExam
+
+Felhasználó -> ViewExamExport
+Felhasználó -> ExportExamToPDF
+
+Felhasználó -> ViewExamCheck
+Felhasználó -> CheckAnswers
+
+@enduml

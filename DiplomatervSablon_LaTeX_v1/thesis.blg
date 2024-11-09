@@ -4,10 +4,6 @@ The top-level auxiliary file: thesis.aux
 Reallocating 'name_of_file' (item size: 1) to 8 items.
 The style file: huplain.bst
 Reallocating 'name_of_file' (item size: 1) to 22 items.
-A level-1 auxiliary file: include/guideline.aux
-Reallocating 'name_of_file' (item size: 1) to 20 items.
-A level-1 auxiliary file: include/project.aux
-Reallocating 'name_of_file' (item size: 1) to 22 items.
 A level-1 auxiliary file: include/titlepage.aux
 Reallocating 'name_of_file' (item size: 1) to 24 items.
 A level-1 auxiliary file: include/declaration.aux
@@ -15,10 +11,8 @@ Reallocating 'name_of_file' (item size: 1) to 21 items.
 A level-1 auxiliary file: content/abstract.aux
 Reallocating 'name_of_file' (item size: 1) to 25 items.
 A level-1 auxiliary file: content/introduction.aux
-Reallocating 'name_of_file' (item size: 1) to 24 items.
-A level-1 auxiliary file: content/latex-tools.aux
-Reallocating 'name_of_file' (item size: 1) to 26 items.
-A level-1 auxiliary file: content/thesis-format.aux
+Reallocating 'name_of_file' (item size: 1) to 25 items.
+A level-1 auxiliary file: content/specifiation.aux
 Reallocating 'name_of_file' (item size: 1) to 27 items.
 A level-1 auxiliary file: content/template-usage.aux
 Reallocating 'name_of_file' (item size: 1) to 28 items.
@@ -35,46 +29,44 @@ Reallocating 'wiz_functions' (item size: 4) to 6000 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Database file #1: bib/mybib.bib
 Warning--entry type for "KissPhD" isn't style-file defined
---line 77 of file bib/mybib.bib
-Warning--entry type for "Jeney" isn't style-file defined
---line 116 of file bib/mybib.bib
+--line 86 of file bib/mybib.bib
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 You've used 13 entries,
             4991 wiz_defined-function locations,
-            1225 strings with 14252 characters,
-and the built_in function-call counts, 36169 in all, are:
-= -- 6913
+            1221 strings with 14107 characters,
+and the built_in function-call counts, 35284 in all, are:
+= -- 6721
 > -- 158
 < -- 5
-+ -- 2796
-- -- 120
-* -- 467
-:= -- 1187
-add.period$ -- 48
++ -- 2730
+- -- 119
+* -- 471
+:= -- 1193
+add.period$ -- 50
 call.type$ -- 13
 change.case$ -- 53
 chr.to.int$ -- 0
 cite$ -- 13
-duplicate$ -- 5957
-empty$ -- 600
-format.name$ -- 43
-if$ -- 7627
+duplicate$ -- 5818
+empty$ -- 595
+format.name$ -- 44
+if$ -- 7430
 int.to.chr$ -- 0
 int.to.str$ -- 13
-missing$ -- 13
-newline$ -- 173
+missing$ -- 14
+newline$ -- 174
 num.names$ -- 28
-pop$ -- 1073
+pop$ -- 1014
 preamble$ -- 1
 purify$ -- 42
 quote$ -- 22
-skip$ -- 237
+skip$ -- 235
 stack$ -- 0
-substring$ -- 4070
-swap$ -- 4006
+substring$ -- 3949
+swap$ -- 3886
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
@@ -82,5 +74,5 @@ type$ -- 65
 warning$ -- 0
 while$ -- 158
 width$ -- 15
-write$ -- 248
-(There were 2 warnings)
+write$ -- 250
+(There was 1 warning)

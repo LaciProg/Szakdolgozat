@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.11.5)  8 NOV 2024 04:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.11.5)  9 NOV 2024 04:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -464,7 +464,7 @@ File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count316
 \l__pdf_internal_box=\box55
-) (thesis.aux (include/guideline.aux) (include/project.aux) (include/titlepage.aux) (include/declaration.aux) (content/abstract.aux) (content/introduction.aux) (content/latex-tools.aux) (content/thesis-format.aux) (content/template-usage.aux) (content/acknowledgement.aux) (content/appendices.aux))
+) (thesis.aux (include/titlepage.aux) (include/declaration.aux) (content/abstract.aux) (content/introduction.aux) (content/specifiation.aux) (content/template-usage.aux) (content/acknowledgement.aux) (content/appendices.aux))
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
@@ -522,78 +522,49 @@ Package caption Info: End \AtBeginDocument code.
 LaTeX Info: Redefining \cal on input line 577.
 LaTeX Info: Redefining \mit on input line 578.
 )
-\openout2 = `include/guideline.aux'.
-
- (include/guideline.tex
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 29.
- (C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
-File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 29.
- (C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
-File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 29.
- (C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
-File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 29.
- (C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
-File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 29.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 29.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 29.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 29.
- (C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 29.
- (C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 44.
- (C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
-File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)) [1
-
-
-
-{C:/Users/Dell/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}]
-\openout2 = `include/project.aux'.
-
- (include/project.tex)
-pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.43 \include{include/project}
-                               [2
-
-
-
-
-]
 \openout2 = `include/titlepage.aux'.
 
  (include/titlepage.tex
 Package hyperref Info: Option `pageanchor' set `false' on input line 1.
-<figures/bme_logo.pdf, id=145, 705.63625pt x 188.705pt>
+<figures/bme_logo.pdf, id=138, 705.63625pt x 188.705pt>
 File: figures/bme_logo.pdf Graphic file (type pdf)
 <use figures/bme_logo.pdf>
 Package pdftex.def Info: figures/bme_logo.pdf  used on input line 7.
 (pdftex.def)             Requested size: 170.71652pt x 45.65292pt.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 20.
+ (C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
+File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 20.
+ (C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
+File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 20.
+ (C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
+File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 20.
+ (C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
+File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10.95> on input line 20.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8> on input line 20.
- [1
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 20.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 20.
+ (C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 20.
+ (C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1
 
 
 
- <./figures/bme_logo.pdf>]
+{C:/Users/Dell/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc} <./figures/bme_logo.pdf>]
 Package hyperref Info: Option `pageanchor' set `false' on input line 30.
 ) (thesis.toc [1
 
@@ -632,84 +603,96 @@ Package hyperref Info: Option `pageanchor' set `false' on input line 30.
 
 
 ]
-<figures/flutter-vs-jetpack-compose-google-search-trends.png, id=209, 803.0pt x 407.02063pt>
+<figures/flutter-vs-jetpack-compose-google-search-trends.png, id=211, 803.0pt x 407.02063pt>
 File: figures/flutter-vs-jetpack-compose-google-search-trends.png Graphic file (type png)
 <use figures/flutter-vs-jetpack-compose-google-search-trends.png>
 Package pdftex.def Info: figures/flutter-vs-jetpack-compose-google-search-trends.png  used on input line 37.
 (pdftex.def)             Requested size: 426.79134pt x 216.33475pt.
-<figures/Libraries-2800x995.png, id=213, 2810.5pt x 998.73125pt>
+<figures/Libraries-2800x995.png, id=215, 2810.5pt x 998.73125pt>
 File: figures/Libraries-2800x995.png Graphic file (type png)
 <use figures/Libraries-2800x995.png>
 Package pdftex.def Info: figures/Libraries-2800x995.png  used on input line 44.
 (pdftex.def)             Requested size: 426.79134pt x 151.66243pt.
  [2 <./figures/flutter-vs-jetpack-compose-google-search-trends.png> <./figures/Libraries-2800x995.png>]) [3]
-\openout2 = `content/latex-tools.aux'.
+\openout2 = `content/specifiation.aux'.
 
- (content/latex-tools.tex
+ (content/specifiation.tex
 2. fejezet.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <24.88> on input line 2.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <20.74> on input line 2.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <17.28> on input line 2.
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 7.
-(C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
-File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-<figures/TeXstudio.png, id=254, 1002.74625pt x 799.98875pt>
-File: figures/TeXstudio.png Graphic file (type png)
-<use figures/TeXstudio.png>
-Package pdftex.def Info: figures/TeXstudio.png  used on input line 11.
-(pdftex.def)             Requested size: 426.79134pt x 340.4973pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 16--17
-[]\T1/lmr/m/n/10.95 A TeX-s-tu-dio te-le-pí-té-se után ér-de-mes még le-töl-te-ni a ma-gyar nyel-v¶
- []
-
-
-Underfull \hbox (badness 1584) in paragraph at lines 16--17
-\T1/lmr/m/n/10.95 helyesírásellen®rz®-szótárakat hoz-zá. A TeX-s-tu-dio az OpenOffice-hoz hasz-ná-la-tos
- []
-
-[4
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 39.
+(C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) [4
 
 
 
 
- <./figures/TeXstudio.png (PNG copy)>] (C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
-) (C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
-)
-Underfull \hbox (badness 3271) in paragraph at lines 35--36
-[]\T1/lmr/m/n/10.95 A PDF-L[]T[]X hasz-ná-la-ta ese-tén a ge-ne-rált do-ku-men-tum köz-vet-le-nül PDF-
- []
+] [5{C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}] [6]
+<figures/Point Diagram.png, id=270, 286.06876pt x 730.73pt>
+File: figures/Point Diagram.png Graphic file (type png)
+<use figures/Point Diagram.png>
+Package pdftex.def Info: figures/Point Diagram.png  used on input line 176.
+(pdftex.def)             Requested size: 128.0387pt x 327.06375pt.
+<figures/Topic Diagram.png, id=271, 308.15125pt x 749.80125pt>
+File: figures/Topic Diagram.png Graphic file (type png)
+<use figures/Topic Diagram.png>
+Package pdftex.def Info: figures/Topic Diagram.png  used on input line 176.
+(pdftex.def)             Requested size: 128.0387pt x 311.55072pt.
+<figures/TrueFalseQuestion Diagram.png, id=272, 358.33875pt x 789.95125pt>
+File: figures/TrueFalseQuestion Diagram.png Graphic file (type png)
+<use figures/TrueFalseQuestion Diagram.png>
+Package pdftex.def Info: figures/TrueFalseQuestion Diagram.png  used on input line 176.
+(pdftex.def)             Requested size: 128.0387pt x 282.26077pt.
+<figures/MultipleChoiceQuestion Diagram.png, id=273, 390.45876pt x 817.0525pt>
+File: figures/MultipleChoiceQuestion Diagram.png Graphic file (type png)
+<use figures/MultipleChoiceQuestion Diagram.png>
+Package pdftex.def Info: figures/MultipleChoiceQuestion Diagram.png  used on input line 178.
+(pdftex.def)             Requested size: 128.0387pt x 267.92015pt.
+<figures/Exam Diagram.png, id=274, 317.185pt x 757.83125pt>
+File: figures/Exam Diagram.png Graphic file (type png)
+<use figures/Exam Diagram.png>
+Package pdftex.def Info: figures/Exam Diagram.png  used on input line 178.
+(pdftex.def)             Requested size: 128.0387pt x 305.9255pt.
+<figures/AnswerCheck Diagram.png, id=275, 352.31625pt x 599.23875pt>
+File: figures/AnswerCheck Diagram.png Graphic file (type png)
+<use figures/AnswerCheck Diagram.png>
+Package pdftex.def Info: figures/AnswerCheck Diagram.png  used on input line 178.
+(pdftex.def)             Requested size: 128.0387pt x 217.77396pt.
+) [7]
 
-[5]
-LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <8> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 43.
-) [6]
-\openout2 = `content/thesis-format.aux'.
+LaTeX Warning: Text page 8 contains only floats.
 
- (content/thesis-format.tex
-3. fejezet.
-) [7
-
-
-
-
-] [8]
+[8 <./figures/Point Diagram.png (PNG copy)> <./figures/Topic Diagram.png (PNG copy)> <./figures/TrueFalseQuestion Diagram.png (PNG copy)> <./figures/MultipleChoiceQuestion Diagram.png (PNG copy)> <./figures/Exam Diagram.png (PNG copy)> <./figures/AnswerCheck Diagram.png (PNG copy)>]
 \openout2 = `content/template-usage.aux'.
 
  (content/template-usage.tex
-4. fejezet.
-[9
+3. fejezet.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <24.88> on input line 5.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <20.74> on input line 5.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <17.28> on input line 5.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 13.
+(C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 15.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 15.
+ [9
 
 
 
 
 ]
+
+LaTeX Warning: Reference `sec:LatexTools' on page 10 undefined on input line 45.
+
+
+LaTeX Warning: Reference `fig:TeXstudio' on page 10 undefined on input line 45.
+
+<figures/TeXstudio.png, id=295, 1002.74625pt x 799.98875pt>
 File: figures/TeXstudio.png Graphic file (type png)
 <use figures/TeXstudio.png>
 Package pdftex.def Info: figures/TeXstudio.png  used on input line 49.
@@ -726,7 +709,7 @@ File: figures/TeXstudio.png Graphic file (type png)
 <use figures/TeXstudio.png>
 Package pdftex.def Info: figures/TeXstudio.png  used on input line 52.
 (pdftex.def)             Requested size: 190.63345pt x 152.08488pt.
- [10] [11] (C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+[10] [11 <./figures/TeXstudio.png (PNG copy)>] (C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 ) (C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang2.sty
 File: lstlang2.sty 2023/02/27 1.9 listings language file
@@ -752,6 +735,8 @@ Underfull \hbox (badness 1694) in paragraph at lines 97--98
  []
 
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 98.
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <8> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 100.
 [12{C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}]
 Underfull \hbox (badness 10000) in paragraph at lines 139--146
 [][][]$\T1/lmtt/m/n/10.95 http : / / www . ctan . org / tex-[]archive / info / symbols / comprehensive / symbols-[]a4 .
@@ -802,37 +787,47 @@ Underfull \hbox (badness 10000) in paragraph at lines 110--115
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 146--151
+Underfull \hbox (badness 3375) in paragraph at lines 129--134
+[]\T1/lmr/m/n/10.95 Google LLC: Re-cog-ni-ze text in ima-ges with ml kit on and-ro-id. \T1/lmr/m/it/10.95 ML-Kit
+ []
+
+
+Underfull \hbox (badness 4217) in paragraph at lines 129--134
+\T1/lmr/m/it/10.95 Guides\T1/lmr/m/n/10.95 , 2024. 10. [][]$\T1/lmtt/m/n/10.95 https : / / https : / / developers . google . com / ml-[]kit / vision /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--152
 []\T1/lmr/m/n/10.95 Elvira Mus-ta-fi-na: Com-po-se mul-ti-plat-form 1.7.0 re-le-as-ed. \T1/lmr/m/it/10.95 Jet-Bra-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 146--151
+Underfull \hbox (badness 10000) in paragraph at lines 147--152
 \T1/lmr/m/it/10.95 ins Blog\T1/lmr/m/n/10.95 , 2024. 10. [][]$\T1/lmtt/m/n/10.95 https : / / blog . jetbrains . com / kotlin / 2024 / 10 /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 159--164
+Underfull \hbox (badness 10000) in paragraph at lines 160--165
 \T1/lmtt/m/n/10.95 com / help / kotlin-[]multiplatform-[]dev / cross-[]platform-[]frameworks . html #
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 166--171
+Underfull \hbox (badness 10000) in paragraph at lines 167--172
 []\T1/lmr/m/n/10.95 JetBrains Kot-lin Team: Kot-lin mul-ti-plat-form go-es stab-le. \T1/lmr/m/it/10.95 Kot-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 166--171
+Underfull \hbox (badness 10000) in paragraph at lines 167--172
 \T1/lmr/m/it/10.95 lin Blog\T1/lmr/m/n/10.95 , 2023. 11. [][]$\T1/lmtt/m/n/10.95 https : / / blog . jetbrains . com / kotlin / 2023 / 11 /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--178
+Underfull \hbox (badness 10000) in paragraph at lines 174--179
 []\T1/lmr/m/n/10.95 Kotlin Do-cu-men-ta-ti-on Team: Up-date to the new re-le-a-se. \T1/lmr/m/it/10.95 Kot-lin Mul-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--178
+Underfull \hbox (badness 10000) in paragraph at lines 174--179
 \T1/lmr/m/it/10.95 ti-plat-form Plu-gin Re-le-as-es\T1/lmr/m/n/10.95 , 2024. 10. [][]$\T1/lmtt/m/n/10.95 https : / / kotlinlang . org / docs /
  []
 
@@ -857,26 +852,30 @@ Package pdftex.def Info: figures/TeXstudio.png  used on input line 17.
 \tf@thm=\write5
 \openout5 = `thesis.thm'.
 
- (thesis.aux (include/guideline.aux) (include/project.aux) (include/titlepage.aux) (include/declaration.aux) (content/abstract.aux) (content/introduction.aux) (content/latex-tools.aux) (content/thesis-format.aux) (content/template-usage.aux) (content/acknowledgement.aux) (content/appendices.aux))
+ (thesis.aux (include/titlepage.aux) (include/declaration.aux) (content/abstract.aux) (content/introduction.aux) (content/specifiation.aux) (content/template-usage.aux) (content/acknowledgement.aux) (content/appendices.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: B401D4E4F751A8AB4238230F01E187F9;5143.
+(rerunfilecheck)             Checksum: 45B30289CE8CC9EF012D79052478E16F;5786.
  ) 
 Here is how much of TeX's memory you used:
- 18689 strings out of 474485
- 303489 string characters out of 5744206
+ 18297 strings out of 474485
+ 298145 string characters out of 5744206
  2444542 words of memory out of 5000000
- 40358 multiletter control sequences out of 15000+600000
- 671275 words of font info for 114 fonts, out of 8000000 for 9000
+ 40013 multiletter control sequences out of 15000+600000
+ 670905 words of font info for 113 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
- 80i,16n,82p,1642b,2052s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 80i,16n,82p,1642b,2083s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx8.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri8.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtl10.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on thesis.pdf (31 pages, 975330 bytes).
+Output written on thesis.pdf (29 pages, 1260823 bytes).
 PDF statistics:
- 701 PDF objects out of 1000 (max. 8388607)
- 231 named destinations out of 1000 (max. 500000)
- 253 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 684 PDF objects out of 1000 (max. 8388607)
+ 210 named destinations out of 1000 (max. 500000)
+ 323 words of extra memory for PDF output out of 10000 (max. 10000000)
 
