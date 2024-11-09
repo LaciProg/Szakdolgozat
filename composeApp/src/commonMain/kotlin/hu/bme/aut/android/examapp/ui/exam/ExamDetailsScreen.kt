@@ -72,7 +72,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import examapp.composeapp.generated.resources.Res
 import examapp.composeapp.generated.resources.*
@@ -210,6 +209,7 @@ fun ExamDetailsDetailsScreenUiState(
             modifier = Modifier.padding(innerPadding),
             tabPage = tabPage,
             examId = examId,
+            navigateBack = navigateBack,
         )
     }
 }
@@ -400,7 +400,8 @@ fun ExamDetailsBody(
     tabPage: Type,
     examId: String,
     modifier: Modifier = Modifier,
-    examViewModel: ExamDetailsViewModel = viewModel { ExamDetailsViewModel(examId) }//viewModel(factory = AppViewModelProvider.Factory),
+    examViewModel: ExamDetailsViewModel = viewModel { ExamDetailsViewModel(examId) },//viewModel(factory = AppViewModelProvider.Factory),
+    navigateBack: () -> Unit
 ){
     val coroutineScope = rememberCoroutineScope()
     var deleteConfirmationRequired by rememberSaveable { mutableStateOf(false) }
@@ -415,46 +416,50 @@ fun ExamDetailsBody(
             }
         }
     })
-    LazyColumn(
-        state = state.listState,
-        modifier = modifier
-            .reorderable(state = state)
-            .detectReorderAfterLongPress(state)
-    ) {
-        items(lazyQuestions, {if(it is TrueFalseQuestionDto) "${it.type}~${it.uuid}" else if(it is MultipleChoiceQuestionDto) "${it.type}~${it.uuid}" else 0}) { question ->
-            ReorderableItem(state, key = question) { isDragging ->
-                val elevation = animateDpAsState(if (isDragging) 16.dp else 0.dp, label = "")
-                Column(
-                    modifier = Modifier
-                        .shadow(elevation.value)
-                ) {
-                    ExpandableQuestionItem(
-                        topicList = topicList,
-                        pointList = pointList,
-                        question = question,
-                        examViewModel = examViewModel
-                    )
+    Column{
+        LazyColumn(
+            state = state.listState,
+            modifier = modifier
+                .reorderable(state = state)
+                .detectReorderAfterLongPress(state)
+        ) {
+            items(lazyQuestions, {if(it is TrueFalseQuestionDto) "${it.type}~${it.uuid}" else if(it is MultipleChoiceQuestionDto) "${it.type}~${it.uuid}" else 0}) { question ->
+                ReorderableItem(state, key = question) { isDragging ->
+                    val elevation = animateDpAsState(if (isDragging) 16.dp else 0.dp, label = "")
+                    Column(
+                        modifier = Modifier
+                            .shadow(elevation.value)
+                    ) {
+                        ExpandableQuestionItem(
+                            topicList = topicList,
+                            pointList = pointList,
+                            question = question,
+                            examViewModel = examViewModel
+                        )
+                    }
                 }
             }
         }
+        OutlinedButton(
+            onClick = { deleteConfirmationRequired = true },
+            shape = MaterialTheme.shapes.small,
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text(stringResource(Res.string.delete))
+        }
+        if (deleteConfirmationRequired) {
+            DeleteConfirmationDialog(
+                onDeleteConfirm = {
+                    deleteConfirmationRequired = false
+                    coroutineScope.launch { examViewModel.deleteExam() }
+                    navigateBack()
+                },
+                onDeleteCancel = { deleteConfirmationRequired = false },
+                modifier = Modifier.padding(16.dp)
+            )
+        }
     }
-    OutlinedButton(
-        onClick = { deleteConfirmationRequired = true },
-        shape = MaterialTheme.shapes.small,
-        modifier = Modifier.fillMaxWidth()
-    ) {
-        Text(stringResource(Res.string.delete))
-    }
-    if (deleteConfirmationRequired) {
-        DeleteConfirmationDialog(
-            onDeleteConfirm = {
-                deleteConfirmationRequired = false
-                coroutineScope.launch { examViewModel.deleteExam() }
-            },
-            onDeleteCancel = { deleteConfirmationRequired = false },
-            modifier = Modifier.padding(16.dp)
-        )
-    }
+
 }
 
 
