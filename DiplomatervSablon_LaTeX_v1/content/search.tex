@@ -1,0 +1,105 @@
+%----------------------------------------------------------------------------
+\chapter{Irodalomkutatás}
+\label{sec:Search}
+%----------------------------------------------------------------------------
+
+\section{Felhasznált technológiák}
+\label{sec:Technologies}
+
+Ebben a fejezetben bemutatom az általam használt technológiákat amiket használtam és segítettek ennek a dolgozatnak a megírásában és elkészítésében.
+
+\subsection{Jetpack Compose}
+
+A Jetpack Compose a korábbi Android fejlesztési módszer mellett hozott létre egy alternatív megoldást.
+Kezedtebn nem lehetett tudni, hogy a fejlesztők hogyan fognak reagálni az új irányra.
+Korábban a Java nyelv mellett megjelent a Kotlin nyelv is, ami később szinte teljesen leváltotta az elődjét.
+Ebből arra lehetett következtetni, hogy egy új és modernebb megoldás meg tudja állni a helyét az XML View megoldást ellenében.
+Jelenleg mind a két megoldás támogatott, de a fejlsztések iránya egyértelműen a Compose felé húz.
+
+"A Jetpack Compose egy új, deklaratív UI toolkit, amit a Google hozott létre kifejezetten natív Android alkalmazások fejlesztéséhez."\cite{GettingStartedWithJetpackCompose}
+A deklaratív nyelvekhez hasonlóan, azt kellmegadnunk, hogy mit szeretnénk látni és nem azt leírni, hogy ez hogyan történjen meg.
+Nekünk elegendő azt leírni, hogy a gomb hogyan nézzen ki és hol legyen és megadni egy lambda paraméternek, hogy a megnyomása soránmi történjen.
+Mivel ez egy UI toolkit, ezért az összes vezerlő és szerkezeti elem hasonlóan néz ki, hasonlóan lehet használni így a fejlesztői és a felhasználói élmény is egységes és megszokott minőségű lesz minden alkalommal.
+A Google ezt a Material design segítségével hozta létre, illetve annak újabb változataival. Erről részletesebben itt találhatók információk: \url{https://m3.material.io/}.
+
+Az alábbiakban egy a Google által írt rövid kódrészleten bemutatom a legfontosabb részeit a Compose alapjainak.\cite{BasicCodelab}
+Az első lépése az alaklamzás elkészítésének az a Composable függvény megírása.
+Minden a UI-t megjelenítő függvény a @Composable annotációt viseli.
+Innentől kezdve hagyományos Kotlin függvényként viselkedik, megadahatunk tetszőleges paramétereket (name, modifier) és alapértelmezett értékeket is.
+Egy Composable függvényből tetszőleges másik Composable függvény meghívható megfelelőláthatóság esetén.
+Ilyen például a Text() is ami a Material könyvtárnak egyik tagja és egyszerű szöveget jelenít meg.
+
+A UI megírása után ezt a megfelelő helyen meg is kell jelenítenünk, erre az alkalmazás belépési pontja után van lehetőségünk.
+Android esetén ez az activity onCreate függvénye.
+A setContent vár egy lambda függvényt, aminek viselnie kell a @Composable annotációt, használhatjuk hozzá a Kotlin trailing lambda megoldását, aholis, ha az utolsó paramétere a függvénynek egy lambda, akkor a többi paraméter megadása után {} között megadhatjuk afüggvény törzsét.
+A BasicsCodelabTheme is egy Composable függvény amiben az alap beállítások után meghívhatjuk a saját Greeting függvényünket.
+A UI felépítse innentől kezdve már egyszerű.
+A Composable függvények megírása után egymásból meghívva azokat előáll az alkalmazás.
+
+\begin{lstlisting}
+    @Composable
+    fun Greeting(name: String, modifier: Modifier = Modifier) {
+        Text(
+            text = "Hello $name!",
+            modifier = modifier
+        )
+    }
+
+    class MainActivity : AppCompatActivity() {
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContent {
+                BasicsCodelabTheme {
+                    // A surface container using the 'background' color from the theme
+                    Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colorScheme.background
+                    ) {
+                        Greeting("Android")
+                    }
+                }
+            }
+        }
+    }
+
+    // Jetpack Compose forráskód
+    public fun ComponentActivity.setContent(
+        parent: CompositionContext? = null,
+        content: @Composable () -> Unit
+    )
+\end{lstlisting}
+
+A következőkben bemutatom a UI toolkit fontosabb általam használt részeit.
+Kitérek arra, hogy mire jó, miért ezt használtam és hogyan lehet őket hatékonyan felhasználni a legújabb Compose Multiplatform verziókban.
+
+\subsection{MutableState és StateFlow}
+\url{https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-viewmodel.html#using-viewmodel-in-common-code} 
+
+\subsection{ViewModel}
+\url{https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-viewmodel.html#using-viewmodel-in-common-code}
+
+\subsubsection{Navigation and routing}
+\url{https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-navigation-routing.html}
+
+
+\subsection{KotlinX Serilizáció}
+
+\subsection{Ktor}
+
+\subsection{CameraX}
+
+\subsection{ML-Kit}
+
+\subsection{ACCOMPANIST-engedélykezelés}
+
+\subsection{pdfbox és PdfDocument}
+
+\section{Kotlin- és Compose Multiplatform}
+
+\section{Gradle build rendszer}
+
+\section{Fejlesztőkörnyeztek}
+
+\section{REST API és adatbázis}
+
+\section{Kipróbált, de végül nem használt egyéb érdekes megoldások}

@@ -5,27 +5,27 @@ left to right direction
 actor Felhasználó
 
 package "Általános elem" {
-    usecase "Elem létrehozása" as CreateElement
-    usecase "Elem szerkesztése" as EditElement
-    usecase "Elem megtekintése" as ViewElement
-    usecase "Elem törlése" as DeleteElement
+    usecase "Elem létrehozása" as CreateElement #E9BABA
+    usecase "Elem szerkesztése" as EditElement #D2E9BA
+    usecase "Elem megtekintése" as ViewElement #BAE9E9
+    usecase "Elem törlése" as DeleteElement #D1BAE9
 }
 
 package "Pont" {
-    usecase "Pont létrehozása" as CreatePoint
-    usecase "Pont szerkesztése" as EditPoint
-    usecase "Pont megtekintése" as ViewPoint
-    usecase "Pont törlése" as DeletePoint
+    usecase "Pont létrehozása" as CreatePoint #E9BABA
+    usecase "Pont szerkesztése" as EditPoint #D2E9BA
+    usecase "Pont megtekintése" as ViewPoint #BAE9E9
+    usecase "Pont törlése" as DeletePoint #D1BAE9
 
-    CreatePoint -|> CreateElement
-    EditPoint -|> EditElement
-    ViewPoint -|> ViewElement
-    DeletePoint -|> DeleteElement
+    CreatePoint -[#E9BABA]|> CreateElement
+    EditPoint -[#D2E9BA]|> EditElement
+    ViewPoint -[#BAE9E9]|> ViewElement
+    DeletePoint -[#D1BAE9]|> DeleteElement
 }
 
-Felhasználó -> CreatePoint
-Felhasználó -> EditPoint
-Felhasználó -> ViewPoint
-Felhasználó -> DeletePoint
+Felhasználó -[#E9BABA]-> CreatePoint
+Felhasználó -[#D2E9BA]-> EditPoint
+Felhasználó -[#BAE9E9]-> ViewPoint
+Felhasználó -[#D1BAE9]-> DeletePoint
 
 @enduml

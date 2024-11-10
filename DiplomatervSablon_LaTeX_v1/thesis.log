@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.11.5)  9 NOV 2024 04:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.11.5)  10 NOV 2024 04:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -464,7 +464,7 @@ File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count316
 \l__pdf_internal_box=\box55
-) (thesis.aux (include/titlepage.aux) (include/declaration.aux) (content/abstract.aux) (content/introduction.aux) (content/specifiation.aux) (content/template-usage.aux) (content/acknowledgement.aux) (content/appendices.aux))
+) (thesis.aux (include/titlepage.aux) (include/declaration.aux) (content/abstract.aux) (content/introduction.aux) (content/specifiation.aux) (content/search.aux) (content/template-usage.aux) (content/acknowledgement.aux) (content/appendices.aux))
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
@@ -526,7 +526,7 @@ LaTeX Info: Redefining \mit on input line 578.
 
  (include/titlepage.tex
 Package hyperref Info: Option `pageanchor' set `false' on input line 1.
-<figures/bme_logo.pdf, id=138, 705.63625pt x 188.705pt>
+<figures/bme_logo.pdf, id=206, 705.63625pt x 188.705pt>
 File: figures/bme_logo.pdf Graphic file (type pdf)
 <use figures/bme_logo.pdf>
 Package pdftex.def Info: figures/bme_logo.pdf  used on input line 7.
@@ -603,12 +603,12 @@ Package hyperref Info: Option `pageanchor' set `false' on input line 30.
 
 
 ]
-<figures/flutter-vs-jetpack-compose-google-search-trends.png, id=211, 803.0pt x 407.02063pt>
+<figures/flutter-vs-jetpack-compose-google-search-trends.png, id=296, 803.0pt x 407.02063pt>
 File: figures/flutter-vs-jetpack-compose-google-search-trends.png Graphic file (type png)
 <use figures/flutter-vs-jetpack-compose-google-search-trends.png>
 Package pdftex.def Info: figures/flutter-vs-jetpack-compose-google-search-trends.png  used on input line 37.
 (pdftex.def)             Requested size: 426.79134pt x 216.33475pt.
-<figures/Libraries-2800x995.png, id=215, 2810.5pt x 998.73125pt>
+<figures/Libraries-2800x995.png, id=300, 2810.5pt x 998.73125pt>
 File: figures/Libraries-2800x995.png Graphic file (type png)
 <use figures/Libraries-2800x995.png>
 Package pdftex.def Info: figures/Libraries-2800x995.png  used on input line 44.
@@ -626,73 +626,93 @@ File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 
 
 
-] [5{C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}] [6]
-<figures/Point Diagram.png, id=270, 286.06876pt x 730.73pt>
+] [5{C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}] [6] [7]
+<figures/Point Diagram.png, id=361, 329.23pt x 637.38126pt>
 File: figures/Point Diagram.png Graphic file (type png)
 <use figures/Point Diagram.png>
-Package pdftex.def Info: figures/Point Diagram.png  used on input line 176.
-(pdftex.def)             Requested size: 128.0387pt x 327.06375pt.
-<figures/Topic Diagram.png, id=271, 308.15125pt x 749.80125pt>
+Package pdftex.def Info: figures/Point Diagram.png  used on input line 174.
+(pdftex.def)             Requested size: 128.0425pt x 277.06409pt.
+<figures/Topic Diagram.png, id=362, 350.30875pt x 656.4525pt>
 File: figures/Topic Diagram.png Graphic file (type png)
 <use figures/Topic Diagram.png>
-Package pdftex.def Info: figures/Topic Diagram.png  used on input line 176.
-(pdftex.def)             Requested size: 128.0387pt x 311.55072pt.
-<figures/TrueFalseQuestion Diagram.png, id=272, 358.33875pt x 789.95125pt>
+Package pdftex.def Info: figures/Topic Diagram.png  used on input line 175.
+(pdftex.def)             Requested size: 128.0407pt x 277.07043pt.
+<figures/TrueFalseQuestion Diagram.png, id=363, 402.50375pt x 696.6025pt>
 File: figures/TrueFalseQuestion Diagram.png Graphic file (type png)
 <use figures/TrueFalseQuestion Diagram.png>
 Package pdftex.def Info: figures/TrueFalseQuestion Diagram.png  used on input line 176.
-(pdftex.def)             Requested size: 128.0387pt x 282.26077pt.
-<figures/MultipleChoiceQuestion Diagram.png, id=273, 390.45876pt x 817.0525pt>
+(pdftex.def)             Requested size: 128.03612pt x 277.07356pt.
+<figures/MultipleChoiceQuestion Diagram.png, id=364, 434.62375pt x 723.70375pt>
 File: figures/MultipleChoiceQuestion Diagram.png Graphic file (type png)
 <use figures/MultipleChoiceQuestion Diagram.png>
-Package pdftex.def Info: figures/MultipleChoiceQuestion Diagram.png  used on input line 178.
-(pdftex.def)             Requested size: 128.0387pt x 267.92015pt.
-<figures/Exam Diagram.png, id=274, 317.185pt x 757.83125pt>
+Package pdftex.def Info: figures/MultipleChoiceQuestion Diagram.png  used on input line 179.
+(pdftex.def)             Requested size: 128.04047pt x 277.07529pt.
+<figures/Exam Diagram.png, id=365, 361.35pt x 664.4825pt>
 File: figures/Exam Diagram.png Graphic file (type png)
 <use figures/Exam Diagram.png>
-Package pdftex.def Info: figures/Exam Diagram.png  used on input line 178.
-(pdftex.def)             Requested size: 128.0387pt x 305.9255pt.
-<figures/AnswerCheck Diagram.png, id=275, 352.31625pt x 599.23875pt>
+Package pdftex.def Info: figures/Exam Diagram.png  used on input line 180.
+(pdftex.def)             Requested size: 128.0403pt x 277.07318pt.
+<figures/AnswerCheck Diagram.png, id=366, 399.4925pt x 505.89pt>
 File: figures/AnswerCheck Diagram.png Graphic file (type png)
 <use figures/AnswerCheck Diagram.png>
-Package pdftex.def Info: figures/AnswerCheck Diagram.png  used on input line 178.
-(pdftex.def)             Requested size: 128.0387pt x 217.77396pt.
-) [7]
+Package pdftex.def Info: figures/AnswerCheck Diagram.png  used on input line 181.
+(pdftex.def)             Requested size: 128.03526pt x 277.07474pt.
+) [8 <./figures/Point Diagram.png (PNG copy)> <./figures/Topic Diagram.png (PNG copy)> <./figures/TrueFalseQuestion Diagram.png (PNG copy)> <./figures/MultipleChoiceQuestion Diagram.png (PNG copy)> <./figures/Exam Diagram.png (PNG copy)> <./figures/AnswerCheck Diagram.png (PNG copy)>]
+\openout2 = `content/search.aux'.
 
-LaTeX Warning: Text page 8 contains only floats.
+ (content/search.tex
+3. fejezet.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 23.
+(C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) [9
 
-[8 <./figures/Point Diagram.png (PNG copy)> <./figures/Topic Diagram.png (PNG copy)> <./figures/TrueFalseQuestion Diagram.png (PNG copy)> <./figures/MultipleChoiceQuestion Diagram.png (PNG copy)> <./figures/Exam Diagram.png (PNG copy)> <./figures/AnswerCheck Diagram.png (PNG copy)>]
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 76--77
+[][]$\T1/lmtt/m/n/10.95 https : / / www . jetbrains . com / help / kotlin-[]multiplatform-[]dev /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 79--80
+[][]$\T1/lmtt/m/n/10.95 https : / / www . jetbrains . com / help / kotlin-[]multiplatform-[]dev /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 82--83
+[][]$\T1/lmtt/m/n/10.95 https : / / www . jetbrains . com / help / kotlin-[]multiplatform-[]dev /
+ []
+
+) [10] [11]
 \openout2 = `content/template-usage.aux'.
 
  (content/template-usage.tex
-3. fejezet.
+4. fejezet.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <24.88> on input line 5.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <20.74> on input line 5.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <17.28> on input line 5.
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 13.
-(C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
-File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <9> on input line 15.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 15.
- [9
+[12
 
 
 
 
 ]
 
-LaTeX Warning: Reference `sec:LatexTools' on page 10 undefined on input line 45.
+LaTeX Warning: Reference `sec:LatexTools' on page 13 undefined on input line 45.
 
 
-LaTeX Warning: Reference `fig:TeXstudio' on page 10 undefined on input line 45.
+LaTeX Warning: Reference `fig:TeXstudio' on page 13 undefined on input line 45.
 
-<figures/TeXstudio.png, id=295, 1002.74625pt x 799.98875pt>
+<figures/TeXstudio.png, id=433, 1002.74625pt x 799.98875pt>
 File: figures/TeXstudio.png Graphic file (type png)
 <use figures/TeXstudio.png>
 Package pdftex.def Info: figures/TeXstudio.png  used on input line 49.
@@ -709,7 +729,7 @@ File: figures/TeXstudio.png Graphic file (type png)
 <use figures/TeXstudio.png>
 Package pdftex.def Info: figures/TeXstudio.png  used on input line 52.
 (pdftex.def)             Requested size: 190.63345pt x 152.08488pt.
-[10] [11 <./figures/TeXstudio.png (PNG copy)>] (C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+[13] [14 <./figures/TeXstudio.png (PNG copy)>] (C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 ) (C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang2.sty
 File: lstlang2.sty 2023/02/27 1.9 listings language file
@@ -737,12 +757,12 @@ Underfull \hbox (badness 1694) in paragraph at lines 97--98
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 98.
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <8> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 100.
-[12{C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}]
+[15{C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}]
 Underfull \hbox (badness 10000) in paragraph at lines 139--146
 [][][]$\T1/lmtt/m/n/10.95 http : / / www . ctan . org / tex-[]archive / info / symbols / comprehensive / symbols-[]a4 .
  []
 
-[13{C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}] [14]
+[16{C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}] [17]
 Underfull \hbox (badness 1264) in paragraph at lines 238--240
 [][]\T1/lmtt/m/n/10.95 \cite{Lee87}[]\T1/lmr/m/n/10.95 , [][]\T1/lmtt/m/n/10.95 \cite{KissPhD}[]\T1/lmr/m/n/10.95 , [][]\T1/lmtt/m/n/10.95 \cite{Schreirer00}[]\T1/lmr/m/n/10.95 , [][]\T1/lmtt/m/n/10.95 \cite{Mkrtychev:1997} []\T1/lmr/m/n/10.95 és
  []
@@ -757,21 +777,21 @@ Underfull \hbox (badness 1895) in paragraph at lines 247--248
 [][]\T1/lmtt/m/n/10.95 inputenc []\T1/lmr/m/n/10.95 cso-mag-gal be-töl-tött [][]\T1/lmtt/m/n/10.95 latin2 []\T1/lmr/m/n/10.95 be-t¶-kész-let mi-att for-dít-ha-tó. Ugyan-ez a
  []
 
-[15]
+[18]
 Underfull \hbox (badness 10000) in paragraph at lines 258--259
 []\T1/lmr/m/n/10.95 1 ol-da-las \T1/lmr/m/it/10.95 tá-jé-koz-ta-tó \T1/lmr/m/n/10.95 a szak-dol-go-zat/-dip-lo-ma-terv szer-ke-ze-té-r®l
  []
 
-[16] [17]
+[19] [20]
 Package hyperref Info: bookmark level for unknown definition defaults to 0 on input line 306.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <12> on input line 308.
 Package hyperref Info: bookmark level for unknown example defaults to 0 on input line 311.
 Package hyperref Info: bookmark level for unknown theorem defaults to 0 on input line 314.
-) [18]
+) [21]
 \openout2 = `content/acknowledgement.aux'.
 
- (content/acknowledgement.tex) [19
+ (content/acknowledgement.tex) [22
 
 
 
@@ -783,59 +803,54 @@ Underfull \hbox (badness 10000) in paragraph at lines 110--115
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 110--115
-\T1/lmr/m/n/10.95 ury. \T1/lmr/m/it/10.95 Is-han Khan-na\T1/lmr/m/n/10.95 , 2023. 09. [][]$\T1/lmtt/m/n/10.95 https : / / blog . droidchef . dev /
+\T1/lmr/m/n/10.95 ury. \T1/lmr/m/it/10.95 Is-han Khan-na\T1/lmr/m/n/10.95 , 2022. 11. [][]$\T1/lmtt/m/n/10.95 https : / / blog . droidchef . dev /
  []
 
 
-Underfull \hbox (badness 3375) in paragraph at lines 129--134
-[]\T1/lmr/m/n/10.95 Google LLC: Re-cog-ni-ze text in ima-ges with ml kit on and-ro-id. \T1/lmr/m/it/10.95 ML-Kit
+Underfull \hbox (badness 1590) in paragraph at lines 129--134
+[]\T1/lmr/m/n/10.95 Google LLC: Jet-pack com-po-se ba-sics. \T1/lmr/m/it/10.95 And-ro-id co-del-abs\T1/lmr/m/n/10.95 , 2024. 01. [][]$\T1/lmtt/m/n/10.95 https : / /
  []
 
 
-Underfull \hbox (badness 4217) in paragraph at lines 129--134
-\T1/lmr/m/it/10.95 Guides\T1/lmr/m/n/10.95 , 2024. 10. [][]$\T1/lmtt/m/n/10.95 https : / / https : / / developers . google . com / ml-[]kit / vision /
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 147--152
+Underfull \hbox (badness 10000) in paragraph at lines 154--159
 []\T1/lmr/m/n/10.95 Elvira Mus-ta-fi-na: Com-po-se mul-ti-plat-form 1.7.0 re-le-as-ed. \T1/lmr/m/it/10.95 Jet-Bra-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 147--152
+Underfull \hbox (badness 10000) in paragraph at lines 154--159
 \T1/lmr/m/it/10.95 ins Blog\T1/lmr/m/n/10.95 , 2024. 10. [][]$\T1/lmtt/m/n/10.95 https : / / blog . jetbrains . com / kotlin / 2024 / 10 /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 160--165
+Underfull \hbox (badness 10000) in paragraph at lines 174--179
 \T1/lmtt/m/n/10.95 com / help / kotlin-[]multiplatform-[]dev / cross-[]platform-[]frameworks . html #
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 167--172
+Underfull \hbox (badness 10000) in paragraph at lines 181--186
 []\T1/lmr/m/n/10.95 JetBrains Kot-lin Team: Kot-lin mul-ti-plat-form go-es stab-le. \T1/lmr/m/it/10.95 Kot-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 167--172
+Underfull \hbox (badness 10000) in paragraph at lines 181--186
 \T1/lmr/m/it/10.95 lin Blog\T1/lmr/m/n/10.95 , 2023. 11. [][]$\T1/lmtt/m/n/10.95 https : / / blog . jetbrains . com / kotlin / 2023 / 11 /
  []
 
+[23
 
-Underfull \hbox (badness 10000) in paragraph at lines 174--179
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 188--193
 []\T1/lmr/m/n/10.95 Kotlin Do-cu-men-ta-ti-on Team: Up-date to the new re-le-a-se. \T1/lmr/m/it/10.95 Kot-lin Mul-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 174--179
-\T1/lmr/m/it/10.95 ti-plat-form Plu-gin Re-le-as-es\T1/lmr/m/n/10.95 , 2024. 10. [][]$\T1/lmtt/m/n/10.95 https : / / kotlinlang . org / docs /
+Underfull \hbox (badness 10000) in paragraph at lines 188--193
+\T1/lmr/m/it/10.95 ti-plat-form Plu-gin Re-le-as-es\T1/lmr/m/n/10.95 , 2024. 09. [][]$\T1/lmtt/m/n/10.95 https : / / kotlinlang . org / docs /
  []
 
-[20
-
-
-
-]) [21]
+) [24]
 \openout2 = `content/appendices.aux'.
 
  (content/appendices.tex
@@ -843,16 +858,16 @@ File: figures/TeXstudio.png Graphic file (type png)
 <use figures/TeXstudio.png>
 Package pdftex.def Info: figures/TeXstudio.png  used on input line 17.
 (pdftex.def)             Requested size: 426.79134pt x 340.4973pt.
- [22
+ [25
 
 
-]) [23
+]) [26
 
 ]
 \tf@thm=\write5
 \openout5 = `thesis.thm'.
 
- (thesis.aux (include/titlepage.aux) (include/declaration.aux) (content/abstract.aux) (content/introduction.aux) (content/specifiation.aux) (content/template-usage.aux) (content/acknowledgement.aux) (content/appendices.aux))
+ (thesis.aux (include/titlepage.aux) (include/declaration.aux) (content/abstract.aux) (content/introduction.aux) (content/specifiation.aux) (content/search.aux) (content/template-usage.aux) (content/acknowledgement.aux) (content/appendices.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
@@ -862,20 +877,20 @@ L3 programming layer <2024-01-04>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 45B30289CE8CC9EF012D79052478E16F;5786.
+(rerunfilecheck)             Checksum: E4253A8F5D6068C276A30D2BD5A8BA11;8661.
  ) 
 Here is how much of TeX's memory you used:
- 18297 strings out of 474485
- 298145 string characters out of 5744206
- 2444542 words of memory out of 5000000
- 40013 multiletter control sequences out of 15000+600000
+ 18397 strings out of 474485
+ 300310 string characters out of 5744206
+ 2445542 words of memory out of 5000000
+ 40056 multiletter control sequences out of 15000+600000
  670905 words of font info for 113 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
  80i,16n,82p,1642b,2083s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx8.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri8.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtl10.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on thesis.pdf (29 pages, 1260823 bytes).
+Output written on thesis.pdf (32 pages, 1263610 bytes).
 PDF statistics:
- 684 PDF objects out of 1000 (max. 8388607)
- 210 named destinations out of 1000 (max. 500000)
- 323 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 840 PDF objects out of 1000 (max. 8388607)
+ 260 named destinations out of 1000 (max. 500000)
+ 459 words of extra memory for PDF output out of 10000 (max. 10000000)
 

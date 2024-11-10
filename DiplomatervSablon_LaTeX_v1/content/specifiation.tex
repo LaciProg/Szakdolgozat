@@ -10,7 +10,6 @@
 \subsection{Általános célok bemutatása}
 
 
-
 A program célja az, hogy egy vagy több felhasználó létre tudjon hozni igaz-hamis illetve feleletválasztós (tetszőleges számú válaszopcióval) kérdésekből álló feladatsort.
 Az alaklamazás csak papír alapú kitöltést támogat, ezt olyan formában teszi, hogy az összeállító a kész kérdéssort ki tudja exportálni PDF formátumba.
 Ezen kívül rendelkezik egy automtizált javítási rendszerrel, okostelefont használva a Google ML Kit\cite{MlLKit} segítségével be lehet scannelni egy megfelelően formázott választ, és az belekerül egy form-ba amit a szervernek elküldve visszaküldi az eredményt.
@@ -31,6 +30,7 @@ A kattintások során amik igénylik az adatbázis elérést (listázás, részl
 Az adatok forgalma szabványos JSON formátummal zajlik mind az adatküldés, mind az adatok fogadása során mindkét irányban.
 A REST API és az adatbázis is egy virtuális gépen fut egy-egy Docker konténerben.
 
+
 \subsection{Egy feladatsor felépítése}
 
 Egy feladatsor a következő elemekből épül fel:
@@ -39,132 +39,130 @@ Egy feladatsor a következő elemekből épül fel:
 	\item \emph{Témakör}
 	\item \emph{Kérdések:}
         \begin{itemize}
-            \item \emph{Igaz-hamis:} A szokásos egyszerű igaz-hamis típusfeladat-
+            \item \emph{Igaz-hamis:} A szokásos egyszerű igaz-hamis típusfeladat.
                 \begin{itemize}
                     \item \emph{Kérdés:} Meg kell adni magát az eldöntendő kérdést.
-                    \item \emph{Pontozási módszer:} Egyedi pontozási módszert lehet létrehozni. Beálítható az összpontszám és a helyes és helytelen válaszokra adott pontérték, ez lehet negatív is.
-                    \item \emph{Témakör:} Segít a kérdések kategórizálásában és szűrésáben összaállítás során.
+                    \item \emph{Pontozási módszer:} Egyedi pontozási módszert lehet létrehozni. Beállítható az összpontszám és a helyes és helytelen válaszokra adott pontérték, amely lehet negatív is.
+                    \item \emph{Témakör:} Segít a kérdések kategorizálásában és szűrésében az összeállítás során.
                     \item \emph{Helyes válasz:} Szükséges a javítás elvégzéséhez.
                 \end{itemize}
             \item \emph{Feleletválasztós:} A szokásos egyszerű feleletválasztós típusfeladat, testreszabható mennyiségű válaszopcióval.
                 \begin{itemize}
-                    \item \emph{Kérdés:} Meg kell adni magát kérdést, több helyes válasz is lehetséges.
-                    \item \emph{Pontozási módszer:} Egyedi pontozási módszert lehet létrehozni. Beálítható az összpontszám és a helyes és helytelen válaszokra adott pontérték, ez lehet negatív is.
-                    \item \emph{Témakör:} Segít a kérdések kategórizálásában és szűrésáben összaállítás során.
+                    \item \emph{Kérdés:} Meg kell adni magát a kérdést, több helyes válasz is lehetséges.
+                    \item \emph{Pontozási módszer:} Egyedi pontozási módszert lehet létrehozni. Beállítható az összpontszám és a helyes és helytelen válaszokra adott pontérték, amely lehet negatív is.
+                    \item \emph{Témakör:} Segít a kérdések kategorizálásában és szűrésében az összeállítás során.
                     \item \emph{Válaszok:} Meg kell adni a válaszopciókat.
                     \item \emph{Helyes válasz(ok listája):} Szükséges a javítás elvégzéséhez.
                 \end{itemize}
         \end{itemize}
-
 \end{itemize}
 
 \subsection{Komponensek létrehozásának lépései}
 
-Az alábbiakban bemutatom az egyes alkatóelemek életútját az alkalmzáson belül.
+Az alábbiakban bemutatom az egyes alkotóelemek életútját az alkalmazáson belül.
 
 \subsubsection{Pont}
 
 A pontok listáját az ennek megfelelő menüpont kiválasztása után érjük el.
 Itt egy floating button segítségével adhatunk új pontot az alkalmazáshoz.
-A létrehozásához, amelyet szintén egy floating button segítségével érhetünk el a részletes nézetről, minden mező kitöltése kötelező, csak így biztosítható megfelelően az elvárt működése a javítási funkció miatt.
+A létrehozáshoz, amelyet szintén egy floating button segítségével érhetünk el a részletes nézetről, minden mező kitöltése kötelező, csak így biztosítható megfelelően az elvárt működése a javítási funkció miatt.
 
 \begin{itemize}
     \item \emph{Típus/Név:} A pont típusa vagy neve. Ez egyedi mező is egyben, így lehet rá hivatkozni és megtalálni az alkalmazásban.
-    \item \emph{Pont:} A feladatra adható maximális pont.
-    \item \emph{Helyes válasz:} A helyes válaszokra adható pont, ajánlott úgy megvallósítani a pontozást, hogy ezeknek az összege a teljes pontszám legyen.
-    \item \emph{Helytelen válasz:} A helytelen válaszok során levont pontmennyiség. Amennyiben nincs levonás az értéke 0, egyébként egy negatív szám. 
+    \item \emph{Pont:} A feladatra adható maximális pontszám.
+    \item \emph{Helyes válasz:} A helyes válaszokra adható pont, ajánlott úgy megvalósítani a pontozást, hogy ezeknek az összege a teljes pontszám legyen.
+    \item \emph{Helytelen válasz:} A helytelen válaszok során levont pontmennyiség. Amennyiben nincs levonás, az értéke 0; egyébként egy negatív szám.
 \end{itemize}
 
 A pont létrehozása után látható lesz a listás nézetben, ahol kiválasztva ellenőrizhetjük a megadott értékeket, szükség esetén módosíthatjuk is.
 A pontokat törölni is lehet, de csak akkor, ha egyetlen kérdéshez sem használjuk, különben inkonzisztens állapot alakulna ki és pont nélküli kérdések keletkeznének.
-Mind a két műveletet a részletes oldalon tehetjük meg.
+Mindkét műveletet a részletes oldalon tehetjük meg.
 
 \subsubsection{Témakör}
 
 A témák listáját az ennek megfelelő menüpont kiválasztása után érjük el.
-Itt egy floating button segítségével adhatunk új pontot az alkalmazáshoz.
-A létrehozásához, amelyet szintén egy floating button segítségével érhetünk el a részletes nézetről, minden mező kitöltése kötelező, csak így biztosítható megfelelően az elvárt működés.
+Itt egy floating button segítségével adhatunk új témakört az alkalmazáshoz.
+A létrehozáshoz, amelyet szintén egy floating button segítségével érhetünk el a részletes nézetről, minden mező kitöltése kötelező, csak így biztosítható megfelelően az elvárt működés.
 
 \begin{itemize}
     \item \emph{Témakör neve:} A témakör megnevezése, egyedi mező.
-    \item \emph{Témakör leírása:} Kötelező egy rövid leírást adni az egyéretműség miatt.
-    \item \emph{Szülő témakör:} Megadaható egy fölérendelt témakör is.
+    \item \emph{Témakör leírása:} Kötelező egy rövid leírást adni az egyértelműség érdekében.
+    \item \emph{Szülő témakör:} Megadható egy fölérendelt témakör is.
 \end{itemize}
 
 A témakör létrehozása után látható lesz a listás nézetben, ahol kiválasztva ellenőrizhetjük a megadott értékeket, szükség esetén módosíthatjuk is.
-A témaköröket törölni is lehet, de csak akkor, ha egyetlen kérdéshez és feladatsorhoz sem használjuk, különben inkonzisztens állapot alakulna ki és témakör nélküli kérdések és feladatsorok keletkeznének.
-Mind a két műveletet a részletes oldalon tehetjük meg.
+A témaköröket törölni is lehet, de csak akkor, ha egyetlen kérdéshez és feladatsorhoz sem használjuk, különben inkonzisztens állapot alakulna ki, és témakör nélküli kérdések és feladatsorok keletkeznének.
+Mindkét műveletet a részletes oldalon tehetjük meg.
 
 \subsubsection{Igaz-hamis kérdés}
 
-A igaz-hamis kérdések listáját az ennek megfelelő menüpont kiválasztása után érjük el.
+Az igaz-hamis kérdések listáját az ennek megfelelő menüpont kiválasztása után érjük el.
 Itt egy floating button segítségével adhatunk új kérdést az alkalmazáshoz.
-A létrehozásához, amelyet szintén egy floating button segítségével érhetünk el a részletes nézetről, minden mező kitöltése kötelező, csak így biztosítható megfelelően az elvárt működés.
+A létrehozáshoz, amelyet szintén egy floating button segítségével érhetünk el a részletes nézetről, minden mező kitöltése kötelező, csak így biztosítható megfelelően az elvárt működés.
 
 \begin{itemize}
     \item \emph{Témakör neve:} A kérdéshez tartozó témakör megnevezése, a meglévő elemek közül választható.
     \item \emph{Pont típusa:} A kérdéshez tartozó pont megnevezése, a meglévő elemek közül választható.
     \item \emph{Kérdés:} A kérdés szövege, egyedinek kell lennie.
-    \item \emph{Heyes válasz:} Meg kell adni a helyes válaszopciót, ez lehet igaz vagy hamis.
+    \item \emph{Helyes válasz:} Meg kell adni a helyes válaszopciót, amely lehet igaz vagy hamis.
 \end{itemize}
 
 A kérdés létrehozása után látható lesz a listás nézetben, ahol kiválasztva ellenőrizhetjük a megadott értékeket, szükség esetén módosíthatjuk is.
-A kérdéseket törölni is lehet, de csak akkor, ha egyetlen feladatsorhoz sem használjuk, különben inkonzisztens állapot alakulna ki és hányoznának kérdések az összeállítött feladatsorokból.
-Mind a két műveletet a részletes oldalon tehetjük meg.
+A kérdéseket törölni is lehet, de csak akkor, ha egyetlen feladatsorhoz sem használjuk, különben inkonzisztens állapot alakulna ki, és hiányoznának kérdések az összeállított feladatsorokból.
+Mindkét műveletet a részletes oldalon tehetjük meg.
 
 \subsubsection{Feleletválasztós kérdés}
 
 A feleletválasztós kérdések listáját az ennek megfelelő menüpont kiválasztása után érjük el.
 Itt egy floating button segítségével adhatunk új kérdést az alkalmazáshoz.
-A létrehozásához, amelyet szintén egy floating button segítségével érhetünk el a részletes nézetről, minden mező kitöltése kötelező, csak így biztosítható megfelelően az elvárt működés.
+A létrehozáshoz, amelyet szintén egy floating button segítségével érhetünk el a részletes nézetről, minden mező kitöltése kötelező, csak így biztosítható megfelelően az elvárt működés.
 
 \begin{itemize}
     \item \emph{Témakör neve:} A kérdéshez tartozó témakör megnevezése, a meglévő elemek közül választható.
     \item \emph{Pont típusa:} A kérdéshez tartozó pont megnevezése, a meglévő elemek közül választható.
     \item \emph{Kérdés:} A kérdés szövege, egyedinek kell lennie.
-    \item \emph{Válaszok megadása:} Meg kell adni a válaszokat és jelölni kell a helyes válaszokat.
+    \item \emph{Válaszok megadása:} Meg kell adni a válaszokat, és jelölni kell a helyes válaszokat.
 \end{itemize}
 
 A kérdés létrehozása után látható lesz a listás nézetben, ahol kiválasztva ellenőrizhetjük a megadott értékeket, szükség esetén módosíthatjuk is.
-A kérdéseket törölni is lehet, de csak akkor, ha egyetlen feladatsorhoz sem használjuk, különben inkonzisztens állapot alakulna ki és hányoznának kérdések az összeállítött feladatsorokból.
-Mind a két műveletet a részletes oldalon tehetjük meg.
+A kérdéseket törölni is lehet, de csak akkor, ha egyetlen feladatsorhoz sem használjuk, különben inkonzisztens állapot alakulna ki, és hiányoznának kérdések az összeállított feladatsorokból.
+Mindkét műveletet a részletes oldalon tehetjük meg.
 
 \subsubsection{Feladatsor}
-\label{sec:SepcificationExamDesription}
+\label{sec:SpecificationExamDescription}
 
 A feladatsorok listáját az ennek megfelelő menüpont kiválasztása után érjük el.
 Itt egy floating button segítségével adhatunk új feladatsort az alkalmazáshoz.
-A létrehozásához, amelyet szintén egy floating button segítségével érhetünk el a részletes nézetről, minden mező kitöltése kötelező, csak így biztosítható megfelelően az elvárt működés.
+A létrehozáshoz, amelyet szintén egy floating button segítségével érhetünk el a részletes nézetről, minden mező kitöltése kötelező, csak így biztosítható megfelelően az elvárt működés.
 
 \begin{itemize}
     \item \emph{Feladatsor neve:} Egyedi mező.
     \item \emph{Témakör kiválasztása:} A kérdéshez tartozó témakör megnevezése, a meglévő elemek közül választható.
 \end{itemize}
 
-
 A feladatsor létrehozása után látható lesz a listás nézetben, ahol kiválasztva a részletes oldalt látjuk.
-Itt van lehetőségünk a kérdések hozzáadásra és eltávolítására a feladatsorból.
+Itt van lehetőségünk a kérdések hozzáadására és eltávolítására a feladatsorból.
 A témákra és kérdéstípusokra szűrve válogathatunk a kérdéseink között.
 Hozzáadás után a kérdések mozgathatóak a listában.
-A feladatsorok szabadon törölhetőek.
-Innen léphetünk át a szerkesztés oldalra ahol a nevet és a témkört tudjuk szerkeszteni.
+A feladatsorok szabadon törölhetők.
+Innen léphetünk át a szerkesztés oldalra, ahol a nevet és a témakört tudjuk módosítani.
 
 \subsubsection{Válaszok ellenőrzése}
 
-Amennyiben ezt a menüpontot választjuk akkor a \refstruc{sec:SepcificationExamDesription}ban is leírt feladatsor listát látjuk, innen és létre lehet hozni új feladatsort.
+Amennyiben ezt a menüpontot választjuk, akkor a \refstruc{sec:SpecificationExamDescription}-ban is leírt feladatsor listát látjuk, innen is létre lehet hozni új feladatsort.
 Az itt kiválasztott elem viszont egy form beküldő oldalra navigál, ahol egymás alatt látszanak a kérdések.
-Itt lehet megadni a válaszainkat, illetve mobil eszközön a szövegfelismerés funkció gyorsíthatja meg a kitöltést.
-A beküldést követően hamarosan megjelenik majd az eredmény a képernyőn.
+Itt lehet megadni a válaszainkat, illetve mobil eszközön a szövegfelismerés funkciója gyorsíthatja meg a kitöltést.
+A beküldést követően hamarosan megjelenik az eredmény a képernyőn.
 
-\subsubsection{Feladsorok exportálása}
+\subsubsection{Feladatsorok exportálása}
 
-Amennyiben ezt a menüpontot választjuk akkor a \refstruc{sec:SepcificationExamDesription}ban is leírt feladatsor listát látjuk, innen és létre lehet hozni új feladatsort.
-Az itt kiválasztott elem viszont egy előzetes feladtsor megjelnítő oldalra navigál.
-Ha az itt látottak elégedettek vagyunk, rendben vannak a pontok és a kérdések, akkor exportálhatjuk is a munkát PDF formátumban.
-Az itt látottak csak egy vázlatos elrendezés, az adatok ellenőrzésre szolgál.
+Amennyiben ezt a menüpontot választjuk, akkor a \refstruc{sec:SpecificationExamDescription}-ban is leírt feladatsor listát látjuk, innen is létre lehet hozni új feladatsort.
+Az itt kiválasztott elem viszont egy előzetes feladatsor megjelenítő oldalra navigál.
+Ha az itt látottakkal elégedettek vagyunk, rendben vannak a pontok és a kérdések, akkor exportálhatjuk is a munkát PDF formátumban.
+Az itt látottak csak egy vázlatos elrendezést adnak; az adatok ellenőrzésére szolgálnak.
 Előfordulhat, hogy a mobilos és az asztali verzió kis mértékben eltér egymástól a megjelenésben.
 
-\vfill
+\pagebreak
 
 \section{Diagramok}
 \label{sec:SepcificationDiagrams}
@@ -173,9 +171,14 @@ Előfordulhat, hogy a mobilos és az asztali verzió kis mértékben eltér egym
     \centering
     \begin{tabular}{ccc} % Három oszlop és két sor elrendezése
         % Első sor
-        \includegraphics[width=0.30\textwidth]{figures/Point Diagram.png} & \includegraphics[width=0.30\textwidth]{figures/Topic Diagram.png} & \includegraphics[width=0.30\textwidth]{figures/TrueFalseQuestion Diagram.png} \\
+        \includegraphics[width=0.30\textwidth, height=0.4\textheight]{figures/Point Diagram.png} & 
+        \includegraphics[width=0.30\textwidth, height=0.4\textheight]{figures/Topic Diagram.png} & 
+        \includegraphics[width=0.30\textwidth, height=0.4\textheight]{figures/TrueFalseQuestion Diagram.png} \\
+        
         % Második sor
-        \includegraphics[width=0.30\textwidth]{figures/MultipleChoiceQuestion Diagram.png} & \includegraphics[width=0.30\textwidth]{figures/Exam Diagram.png} & \includegraphics[width=0.30\textwidth]{figures/AnswerCheck Diagram.png}
+        \includegraphics[width=0.30\textwidth, height=0.4\textheight]{figures/MultipleChoiceQuestion Diagram.png} & 
+        \includegraphics[width=0.30\textwidth, height=0.4\textheight]{figures/Exam Diagram.png} & 
+        \includegraphics[width=0.30\textwidth, height=0.4\textheight]{figures/AnswerCheck Diagram.png}
     \end{tabular}
     \caption{Usecase diagramja az alkalmazásnak.}
     \label{fig:UsecaseDiagram}

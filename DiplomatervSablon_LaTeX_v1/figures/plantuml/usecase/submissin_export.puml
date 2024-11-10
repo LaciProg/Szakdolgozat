@@ -5,29 +5,27 @@ left to right direction
 actor Felhasználó
 
 package "Általános elem" {
-    usecase "Elem megtekintése" as ViewElement
+    usecase "Elem megtekintése" as ViewElement #BAE9E9
 }
 
 package "Válaszok ellenőrzése" {
-    usecase "Feladatsor megtekintése" as ViewExamCheck
-    usecase "Válaszok ellenőrzése" as CheckAnswers
+    usecase "Feladatsor megtekintése" as ViewExamCheck #BAE9E9
+    usecase "Válaszok ellenőrzése" as CheckAnswers #D2E9BA
 
-    ViewExamCheck -|> ViewElement
+    ViewExamCheck -[#BAE9E9]|> ViewElement
 }
 
+Felhasználó -[#BAE9E9]-> ViewExamCheck
+Felhasználó -[#D2E9BA]-> CheckAnswers
 
 package "Feladatsor exportálása" {
-    usecase "Feladatsor megtekintése" as ViewExamExport
-    usecase "Feladatsor exportálása PDF-be" as ExportExamToPDF
+    usecase "Feladatsor megtekintése" as ViewExamExport #BAE9E9
+    usecase "Feladatsor exportálása PDF-be" as ExportExamToPDF #E9BABA
 
-    ViewExamExport -|> ViewElement
+    ViewExamExport -[#BAE9E9]|> ViewElement
 }
 
-
-Felhasználó -> ViewExamCheck
-Felhasználó -> CheckAnswers
-
-Felhasználó -> ViewExamExport
-Felhasználó -> ExportExamToPDF
+Felhasználó -[#BAE9E9]-> ViewExamExport
+Felhasználó -[#E9BABA]-> ExportExamToPDF
 
 @enduml

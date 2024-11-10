@@ -199,6 +199,9 @@ INPUT content\introduction.aux
 INPUT .\content\specifiation.aux
 INPUT .\content\specifiation.aux
 INPUT content\specifiation.aux
+INPUT .\content\search.aux
+INPUT .\content\search.aux
+INPUT content\search.aux
 INPUT .\content\template-usage.aux
 INPUT .\content\template-usage.aux
 INPUT content\template-usage.aux
@@ -377,6 +380,18 @@ INPUT .\figures\AnswerCheck Diagram.png
 INPUT .\figures\AnswerCheck Diagram.png
 INPUT .\figures\AnswerCheck Diagram.png
 INPUT .\figures\AnswerCheck Diagram.png
+INPUT .\content\search.tex
+INPUT .\content\search.tex
+OUTPUT content\search.aux
+INPUT .\content\search.tex
+INPUT .\content\search.tex
+INPUT content\search.tex
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\lm\t1lmtt.fd
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\lm\t1lmtt.fd
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\lm\t1lmtt.fd
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmtl10.tfm
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmr8.tfm
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmtl10.tfm
 INPUT .\content\template-usage.tex
 INPUT .\content\template-usage.tex
 OUTPUT content\template-usage.aux
@@ -398,11 +413,6 @@ INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symb
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmr8.tfm
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\lm\t1lmtt.fd
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\lm\t1lmtt.fd
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\lm\t1lmtt.fd
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmtl10.tfm
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmr9.tfm
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\rm-lmr9.tfm
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\rm-lmr5.tfm
@@ -415,7 +425,6 @@ INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symb
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm5.tfm
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmr6.tfm
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmtl10.tfm
 INPUT .\figures\TeXstudio.png
 INPUT .\figures\TeXstudio.png
 INPUT .\figures\TeXstudio.png
@@ -519,6 +528,9 @@ INPUT content\introduction.aux
 INPUT .\content\specifiation.aux
 INPUT .\content\specifiation.aux
 INPUT content\specifiation.aux
+INPUT .\content\search.aux
+INPUT .\content\search.aux
+INPUT content\search.aux
 INPUT .\content\template-usage.aux
 INPUT .\content\template-usage.aux
 INPUT content\template-usage.aux
