@@ -113,6 +113,27 @@ Droid Chef:
 \bibNewBlock
   \url{https://blog.droidchef.dev/flutter-vs-jetpack-compose-the-battle-of-the-century/}.
 
+\bibitem{StateVsStateFlow}
+Husayn Fakher:
+\bibNewBlock Compose state vs stateflow: State management in jetpack compose.
+\bibNewBlock {\em Medium}, 2024.\ 04.
+\bibNewBlock
+  \url{https://medium.com/@husayn.fakher/compose-state-vs-stateflow-state-management-in-jetpack-compose-c99740732023}.
+
+\bibitem{ViewModelKMP}
+JetBrains:
+\bibNewBlock Common viewmodel.
+\bibNewBlock {\em Kotlin Multiplatform Development}, 2024.\ 10.
+\bibNewBlock
+  \url{https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-viewmodel.html}.
+
+\bibitem{NavigationKMP}
+JetBrains:
+\bibNewBlock Navigation and routing.
+\bibNewBlock {\em Kotlin Multiplatform Development}, 2024.\ 10.
+\bibNewBlock
+  \url{https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-navigation-routing.html}.
+
 \bibitem{KissPhD}
 Peter Kiss:
 \bibNewBlock Adaptive digital compensation of analog circuit imperfections for
@@ -138,6 +159,13 @@ Google LLC:
 \bibNewBlock {\em ML-Kit Guides}, 2024.\ 10.
 \bibNewBlock
   \url{https://developers.google.com/ml-kit/vision/text-recognition/v2/android}.
+
+\bibitem{ViewModelAndroid}
+Google LLC:
+\bibNewBlock Viewmodel overview.
+\bibNewBlock {\em Android Developers Guide}, 2024.\ 07.
+\bibNewBlock
+  \url{https://developer.android.com/topic/libraries/architecture/viewmodel}.
 
 \bibitem{Mkrtychev:1997}
 Alexey Mkrtychev:

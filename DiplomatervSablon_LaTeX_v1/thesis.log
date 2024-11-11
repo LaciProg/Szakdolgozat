@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.11.5)  10 NOV 2024 04:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.11.5)  11 NOV 2024 04:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -670,22 +670,13 @@ File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 
 
 
-]
-Underfull \hbox (badness 10000) in paragraph at lines 76--77
-[][]$\T1/lmtt/m/n/10.95 https : / / www . jetbrains . com / help / kotlin-[]multiplatform-[]dev /
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 79--80
-[][]$\T1/lmtt/m/n/10.95 https : / / www . jetbrains . com / help / kotlin-[]multiplatform-[]dev /
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 82--83
-[][]$\T1/lmtt/m/n/10.95 https : / / www . jetbrains . com / help / kotlin-[]multiplatform-[]dev /
- []
-
-) [10] [11]
+] [10]
+<figures/viewmodel-lifecycle.png, id=419, 523.9575pt x 545.03625pt>
+File: figures/viewmodel-lifecycle.png Graphic file (type png)
+<use figures/viewmodel-lifecycle.png>
+Package pdftex.def Info: figures/viewmodel-lifecycle.png  used on input line 137.
+(pdftex.def)             Requested size: 426.79134pt x 443.97192pt.
+ [11] [12 <./figures/viewmodel-lifecycle.png>]) [13] [14]
 \openout2 = `content/template-usage.aux'.
 
  (content/template-usage.tex
@@ -700,19 +691,19 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <9> on input line 15.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 15.
-[12
+[15
 
 
 
 
 ]
 
-LaTeX Warning: Reference `sec:LatexTools' on page 13 undefined on input line 45.
+LaTeX Warning: Reference `sec:LatexTools' on page 16 undefined on input line 45.
 
 
-LaTeX Warning: Reference `fig:TeXstudio' on page 13 undefined on input line 45.
+LaTeX Warning: Reference `fig:TeXstudio' on page 16 undefined on input line 45.
 
-<figures/TeXstudio.png, id=433, 1002.74625pt x 799.98875pt>
+<figures/TeXstudio.png, id=534, 1002.74625pt x 799.98875pt>
 File: figures/TeXstudio.png Graphic file (type png)
 <use figures/TeXstudio.png>
 Package pdftex.def Info: figures/TeXstudio.png  used on input line 49.
@@ -729,7 +720,7 @@ File: figures/TeXstudio.png Graphic file (type png)
 <use figures/TeXstudio.png>
 Package pdftex.def Info: figures/TeXstudio.png  used on input line 52.
 (pdftex.def)             Requested size: 190.63345pt x 152.08488pt.
-[13] [14 <./figures/TeXstudio.png (PNG copy)>] (C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+[16] [17 <./figures/TeXstudio.png (PNG copy)>] (C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 ) (C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang2.sty
 File: lstlang2.sty 2023/02/27 1.9 listings language file
@@ -757,12 +748,12 @@ Underfull \hbox (badness 1694) in paragraph at lines 97--98
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 98.
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <8> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 100.
-[15{C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}]
+[18{C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}]
 Underfull \hbox (badness 10000) in paragraph at lines 139--146
 [][][]$\T1/lmtt/m/n/10.95 http : / / www . ctan . org / tex-[]archive / info / symbols / comprehensive / symbols-[]a4 .
  []
 
-[16{C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}] [17]
+[19{C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}] [20]
 Underfull \hbox (badness 1264) in paragraph at lines 238--240
 [][]\T1/lmtt/m/n/10.95 \cite{Lee87}[]\T1/lmr/m/n/10.95 , [][]\T1/lmtt/m/n/10.95 \cite{KissPhD}[]\T1/lmr/m/n/10.95 , [][]\T1/lmtt/m/n/10.95 \cite{Schreirer00}[]\T1/lmr/m/n/10.95 , [][]\T1/lmtt/m/n/10.95 \cite{Mkrtychev:1997} []\T1/lmr/m/n/10.95 és
  []
@@ -777,21 +768,21 @@ Underfull \hbox (badness 1895) in paragraph at lines 247--248
 [][]\T1/lmtt/m/n/10.95 inputenc []\T1/lmr/m/n/10.95 cso-mag-gal be-töl-tött [][]\T1/lmtt/m/n/10.95 latin2 []\T1/lmr/m/n/10.95 be-t¶-kész-let mi-att for-dít-ha-tó. Ugyan-ez a
  []
 
-[18]
+[21]
 Underfull \hbox (badness 10000) in paragraph at lines 258--259
 []\T1/lmr/m/n/10.95 1 ol-da-las \T1/lmr/m/it/10.95 tá-jé-koz-ta-tó \T1/lmr/m/n/10.95 a szak-dol-go-zat/-dip-lo-ma-terv szer-ke-ze-té-r®l
  []
 
-[19] [20]
+[22] [23]
 Package hyperref Info: bookmark level for unknown definition defaults to 0 on input line 306.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <12> on input line 308.
 Package hyperref Info: bookmark level for unknown example defaults to 0 on input line 311.
 Package hyperref Info: bookmark level for unknown theorem defaults to 0 on input line 314.
-) [21]
+) [24]
 \openout2 = `content/acknowledgement.aux'.
 
- (content/acknowledgement.tex) [22
+ (content/acknowledgement.tex) [25
 
 
 
@@ -807,50 +798,80 @@ Underfull \hbox (badness 10000) in paragraph at lines 110--115
  []
 
 
-Underfull \hbox (badness 1590) in paragraph at lines 129--134
+Underfull \hbox (badness 6792) in paragraph at lines 117--122
+[]\T1/lmr/m/n/10.95 Husayn Fak-her: Com-po-se sta-te vs sta-tef-low: Sta-te ma-nag-ement in jet-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 117--122
+\T1/lmr/m/n/10.95 pack com-po-se. \T1/lmr/m/it/10.95 Me-di-um\T1/lmr/m/n/10.95 , 2024. 04. [][]$\T1/lmtt/m/n/10.95 https : / / medium . com / @husayn . fakher /
+ []
+
+
+Overfull \hbox (34.41357pt too wide) in paragraph at lines 117--122
+\T1/lmtt/m/n/10.95 compose-[]state-[]vs-[]stateflow-[]state-[]management-[]in-[]jetpack-[]compose-[]c99740732023$[][]\T1/lmr/m/n/10.95 . 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 124--129
+\T1/lmtt/m/n/10.95 / / www . jetbrains . com / help / kotlin-[]multiplatform-[]dev / compose-[]viewmodel .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 131--136
+[]\T1/lmr/m/n/10.95 JetBrains: Na-vi-ga-ti-on and ro-u-ting. \T1/lmr/m/it/10.95 Kot-lin Mul-ti-plat-form De-ve-lop-ment\T1/lmr/m/n/10.95 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 131--136
+\T1/lmr/m/n/10.95 2024. 10. [][]$\T1/lmtt/m/n/10.95 https : / / www . jetbrains . com / help / kotlin-[]multiplatform-[]dev /
+ []
+
+
+Underfull \hbox (badness 1590) in paragraph at lines 150--155
 []\T1/lmr/m/n/10.95 Google LLC: Jet-pack com-po-se ba-sics. \T1/lmr/m/it/10.95 And-ro-id co-del-abs\T1/lmr/m/n/10.95 , 2024. 01. [][]$\T1/lmtt/m/n/10.95 https : / /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 154--159
+Underfull \hbox (badness 10000) in paragraph at lines 182--187
 []\T1/lmr/m/n/10.95 Elvira Mus-ta-fi-na: Com-po-se mul-ti-plat-form 1.7.0 re-le-as-ed. \T1/lmr/m/it/10.95 Jet-Bra-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 154--159
+Underfull \hbox (badness 10000) in paragraph at lines 182--187
 \T1/lmr/m/it/10.95 ins Blog\T1/lmr/m/n/10.95 , 2024. 10. [][]$\T1/lmtt/m/n/10.95 https : / / blog . jetbrains . com / kotlin / 2024 / 10 /
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 174--179
-\T1/lmtt/m/n/10.95 com / help / kotlin-[]multiplatform-[]dev / cross-[]platform-[]frameworks . html #
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 181--186
-[]\T1/lmr/m/n/10.95 JetBrains Kot-lin Team: Kot-lin mul-ti-plat-form go-es stab-le. \T1/lmr/m/it/10.95 Kot-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 181--186
-\T1/lmr/m/it/10.95 lin Blog\T1/lmr/m/n/10.95 , 2023. 11. [][]$\T1/lmtt/m/n/10.95 https : / / blog . jetbrains . com / kotlin / 2023 / 11 /
- []
-
-[23
+[26
 
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 188--193
+Underfull \hbox (badness 10000) in paragraph at lines 202--207
+\T1/lmtt/m/n/10.95 com / help / kotlin-[]multiplatform-[]dev / cross-[]platform-[]frameworks . html #
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 209--214
+[]\T1/lmr/m/n/10.95 JetBrains Kot-lin Team: Kot-lin mul-ti-plat-form go-es stab-le. \T1/lmr/m/it/10.95 Kot-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 209--214
+\T1/lmr/m/it/10.95 lin Blog\T1/lmr/m/n/10.95 , 2023. 11. [][]$\T1/lmtt/m/n/10.95 https : / / blog . jetbrains . com / kotlin / 2023 / 11 /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 216--221
 []\T1/lmr/m/n/10.95 Kotlin Do-cu-men-ta-ti-on Team: Up-date to the new re-le-a-se. \T1/lmr/m/it/10.95 Kot-lin Mul-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 188--193
+Underfull \hbox (badness 10000) in paragraph at lines 216--221
 \T1/lmr/m/it/10.95 ti-plat-form Plu-gin Re-le-as-es\T1/lmr/m/n/10.95 , 2024. 09. [][]$\T1/lmtt/m/n/10.95 https : / / kotlinlang . org / docs /
  []
 
-) [24]
+) [27]
 \openout2 = `content/appendices.aux'.
 
  (content/appendices.tex
@@ -858,10 +879,10 @@ File: figures/TeXstudio.png Graphic file (type png)
 <use figures/TeXstudio.png>
 Package pdftex.def Info: figures/TeXstudio.png  used on input line 17.
 (pdftex.def)             Requested size: 426.79134pt x 340.4973pt.
- [25
+ [28
 
 
-]) [26
+]) [29
 
 ]
 \tf@thm=\write5
@@ -877,20 +898,20 @@ L3 programming layer <2024-01-04>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: E4253A8F5D6068C276A30D2BD5A8BA11;8661.
+(rerunfilecheck)             Checksum: 138EF770A4AD3BAA8BB9D1752D164AA8;8621.
  ) 
 Here is how much of TeX's memory you used:
- 18397 strings out of 474485
- 300310 string characters out of 5744206
+ 18504 strings out of 474485
+ 302122 string characters out of 5744206
  2445542 words of memory out of 5000000
- 40056 multiletter control sequences out of 15000+600000
+ 40076 multiletter control sequences out of 15000+600000
  670905 words of font info for 113 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
  80i,16n,82p,1642b,2083s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx8.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri8.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtl10.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on thesis.pdf (32 pages, 1263610 bytes).
+Output written on thesis.pdf (35 pages, 1307684 bytes).
 PDF statistics:
- 840 PDF objects out of 1000 (max. 8388607)
- 260 named destinations out of 1000 (max. 500000)
- 459 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 965 PDF objects out of 1000 (max. 8388607)
+ 347 named destinations out of 1000 (max. 500000)
+ 464 words of extra memory for PDF output out of 10000 (max. 10000000)
 

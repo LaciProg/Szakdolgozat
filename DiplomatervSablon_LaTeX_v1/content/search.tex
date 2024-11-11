@@ -72,25 +72,151 @@ A Composable függvények megírása után egymásból meghívva azokat előáll
 A következőkben bemutatom a UI toolkit fontosabb általam használt részeit.
 Kitérek arra, hogy mire jó, miért ezt használtam és hogyan lehet őket hatékonyan felhasználni a legújabb Compose Multiplatform verziókban.
 
-\subsection{MutableState és StateFlow}
-\url{https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-viewmodel.html#using-viewmodel-in-common-code} 
+\subsubsection{State és StateFlow}
+A State és a StateFlow hasnló problémára ad megoldást.
+A State alapvetően Compose sepcifikus megoldás, ha változik az értéke akkor a lefut a recomposoition.
+Ezzel szemben a StateFlow a Kotlin nyelvben általánosan használt eszköz és sokkal bővebb felhasználással rendelkezik, mint az egyszerű State.
+Az egyszerű Stateet általában egy Composable függvényen belül használják, míg a a StateFlowt ViewModelekben.
+Ennek ellénére mind a két megoldás tökéletesen alkalmazható, jelenleg már Compose Multiplatform alkalmazásokban is.
+Mivel ViewModelben használva az adatok nem besznek el a képernyő elforgatása során ezért egyszerűbb műveletekre és adaokra nincs lényegi különbség a működésben. 
 
-\subsection{ViewModel}
-\url{https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-viewmodel.html#using-viewmodel-in-common-code}
+"A StateFlow előnyei:"\cite{StateVsStateFlow}
+\begin{itemize}
+    \item \emph{"Flow operátorok:} A StateFlow támogat olyan operátorokat, mint a map, filter, és combine, lehetővé téve az adatok rugalmas feldolgozását és összetett adatfolyamok létrehozását."
+    \item \emph{"Folyamat-megszakadás kezelése:} A SavedStateHandle-lel kombinálva biztosítja az UI állapot megőrzését, még a képernyő elforgatása vagy újraindítás esetén is."
+    \item \emph{"ViewModel újrafelhasználhatóság:} A StateFlow lehetővé teszi a ViewModel függetlenítését a UI-rétegtől, ami elősegíti a moduláris, tesztelhető és újrafelhasználható architektúrát."
+\end{itemize}
+
+A lenti kódban láthatunk példát mind az egyszerű State használatára, ebben az esetben a Screen állapotát tárolom el Statekben.
+A megjelnített adatok itt a StateFlow logikáját követik. 
+Létezik egy privát MutableStateFlow amin történnek a változások például, ha adat érkezik.
+Van egy másik azonos nevű érték is ami ugyan annak a StateFlownak egy immutábilis változata, ehhez fér hozzá a UI, így onnan nem érkezhet változás közvetlenül a StateFlowba.
+Amennyiben erre szükség van, a viewmodel biztosíthat erre vonatkozóan függvényeket és beállíthatja a privát MutableStateFlow értékét.
+
+\begin{lstlisting}
+class TopicListViewModel: ViewModel() {
+    var topicListScreenUiState: TopicListScreenUiState by mutableStateOf(TopicListScreenUiState.Loading)
+    private val _topicListUiState = MutableStateFlow(TopicListUiState())
+    val topicListUiState: StateFlow<TopicListUiState> = _topicListUiState
+...
+    fun getAllTopicList(){
+        topicListScreenUiState = TopicListScreenUiState.Loading // State változtatása
+        viewModelScope.launch {
+            topicListScreenUiState = try{    // State változtatása
+                val result = ApiService.getAllTopicNames()
+                _topicListUiState.value = TopicListUiState(     //StateFlow változtatása
+                    topicList = result.map { nameDto ->
+                        TopicRowUiState(
+                            topic = nameDto.name,
+                            id = nameDto.uuid
+                        )
+                    }
+                )
+                TopicListScreenUiState.Success(result) // State változtatása
+            } catch (e: IOException) {
+                TopicListScreenUiState.Error.errorMessage = e.toString()// "Network error"
+                TopicListScreenUiState.Error // State változtatása
+            }
+        }
+    }
+}
+\end{lstlisting}
+
+\subsubsection{ViewModel}
+Az Android ViewModel már használható Kotlin- és Compose Multiplatform környezetekben is\cite{ViewModelKMP}, így természetesen ezt a jól bevált megoldást választottam.
+Egy rövid összefoglalót szeretnék adni a hivatalos dokumentáció alapján a képességeiről:\cite{ViewModelAndroid}
+
+A ViewModel az Android Jetpack része, és az UI állapotának megőrzésére szolgál konfigurációs változások során, például képernyőforgatáskor. \refstruc{fig:ViewModel} Fő előnyei közé tartozik az állapot tartósítása és az üzleti logika elérése a UI-rétegben. A ViewModel segít elválasztani az adatkezelést a UI-rétegtől, ehhez a ViewModelben felhasználható a Kotlin coroutine ami egyfajta aszinkron működést tesz lehetővé, és kompatibilis olyan Jetpack könyvtárakkal, mint a Hilt, Compose, és a Navigation. Best practice szerint kerülni kell az életciklushoz kötött objektumok tárolását benne, hogy elkerüljük a memóriaszivárgást. 
+
+Mint minden MVM és MVVM architektúrában az adatok elérése, átalakítása a UI számára, tartós tárolása a ViewModel feladata.
+Több megközelítés is lehetséges: minden képernyő kapjon egy saját ViewModelt; egy ViewModel tudjon többet és legyen újra felhasznáva több képernyőn.
+Én az első megoldást választottam, így könnyebb kezeleni a különböző képrenyők állaptait és egyszerűbb átlátni egy-egy egységet.
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=150mm, keepaspectratio]{figures/viewmodel-lifecycle.png}
+    \caption{A ViewModel álltalánosságban véve hosszabb életű, mint egy View. Ez különsöen igaz Android környezetben, ahol számolni kell a képernyő elforgatással és az alaklmazás háttérbe kerülésével. A tartósan tárolnikívánt adatokat ezért mindig ViewModel kell tárolni. \cite{ViewModelAndroid}}
+    \label{fig:ViewModel}
+\end{figure}
 
 \subsubsection{Navigation and routing}
-\url{https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-navigation-routing.html}
 
+Az Androidban már jól műküdő navigációrt felelős könyvtárak már használhatóak a Kotlin Multiplatform fejlesztéséhez \cite{NavigationKMP}.
+Ennk mindösszesen pár egyszerű lépése van, így könnyű használni és rugalamsan működik minden környezettel.
+A következők a szükséges lépések: \cite{NavigationKMP}.
+\begin{enumerate}
+    \item "Sorold fel a navigációs gráfban szereplő útvonalakat, mindegyik egyedi string határozza meg az útvonalat."
+    \item "Hozz létre egy NavHostController példányt a navigáció kezeléséhez"
+    \item "Adj hozzá egy NavHost komponenst az alkalmazásodhoz:"
+        \begin{itemize}
+            \item "Válaszd ki a kezdő útvonalat a korábban definiált útvonalak közül."
+            \item "Hozd létre a navigációs gráfot közvetlenül a NavHost részeként vagy programozottan a NavController.createGraph() függvénnyel."
+        \end{itemize}
+\end{enumerate}
 
-\subsection{KotlinX Serilizáció}
+\begin{lstlisting}
 
-\subsection{Ktor}
+    //Első lépés: útvonalak létrehozása
+//Érdemes sealed classt használni és data objectként létrehozni a routeokat
+sealed class ExamDestination(val route: String) {
+    //Lehet egyszerű
+    data object LoginScreenDestination : ExamDestination("LoginScreen")
 
-\subsection{CameraX}
+    //Vagy paraméterekkel és adatokkal ellátott
+    data object TopicDetailsDestination : ExamDestination("TopicDetails") {
+        const val topicIdArg = "0"
+        val routeWithArgs = "$route/{$topicIdArg}"
+    }
+}
+
+//Második lépés: NavController létrehozása
+fun NavigationComponent() {
+    MaterialTheme {
+        val navController = rememberNavController() //Itt történik
+        Scaffold() { innerPadding ->
+            ExamNavHost(    //Paraméternek egy Composable függvényt vár, ezen belül is egy NavHost függvényt
+                navController = navController,
+                modifier = Modifier.padding(innerPadding)
+            )
+        }
+    }
+}
+
+//Harmadik lépés: NavHost komponens hozzáadása
+actual fun ExamNavHost(
+    navController: NavHostController,
+    modifier: Modifier
+) {
+    NavHost(
+        navController = navController,  //NavController hozzárendelése
+        startDestination = ExamDestination.MainScreenDestination.route, //Kezdő útvonal beállítása
+        modifier = modifier
+    ) {
+        //Navigácós gráf egy elemének létrehozása
+        composable(
+            route = ExamDestination.TopicListDestination.route,
+        ) {
+            TopicListScreen(
+                addNewTopic = { navController.navigate(ExamDestination.NewTopicDestination.route) },
+                navigateToTopicDetails = { topicId ->
+                    navController.navigate("${ExamDestination.TopicDetailsDestination.route}/${topicId}")
+                },
+                navigateBack = { navController.popBackStack() }
+            )
+        }
+    }
+}
+\end{lstlisting}
+
+\section{KotlinX Serilizáció}
+
+\section{Ktor}
+
+\section{CameraX}
 
 \subsection{ML-Kit}
 
-\subsection{ACCOMPANIST-engedélykezelés}
+\section{ACCOMPANIST-engedélykezelés}
 
 \subsection{pdfbox és PdfDocument}
 

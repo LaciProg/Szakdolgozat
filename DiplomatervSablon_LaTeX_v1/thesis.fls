@@ -392,6 +392,13 @@ INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\lm\t1lmtt.fd
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmtl10.tfm
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmr8.tfm
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmtl10.tfm
+INPUT .\figures\viewmodel-lifecycle.png
+INPUT .\figures\viewmodel-lifecycle.png
+INPUT .\figures\viewmodel-lifecycle.png
+INPUT .\figures\viewmodel-lifecycle.png
+INPUT .\figures\viewmodel-lifecycle.png
+INPUT .\figures\viewmodel-lifecycle.png
+INPUT .\figures\viewmodel-lifecycle.png
 INPUT .\content\template-usage.tex
 INPUT .\content\template-usage.tex
 OUTPUT content\template-usage.aux
