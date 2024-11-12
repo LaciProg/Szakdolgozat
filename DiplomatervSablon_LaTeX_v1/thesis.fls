@@ -175,6 +175,12 @@ INPUT .\include\preamble.tex
 INPUT .\include\preamble.tex
 INPUT .\include\preamble.tex
 INPUT include\preamble.tex
+INPUT .\include\kotlin.tex
+INPUT .\include\kotlin.tex
+INPUT include\kotlin.tex
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\graphics\dvipsnam.def
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\graphics\dvipsnam.def
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\graphics\dvipsnam.def
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\lm\t1lmr.fd
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\lm\t1lmr.fd
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\lm\t1lmr.fd
@@ -392,6 +398,7 @@ INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\lm\t1lmtt.fd
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmtl10.tfm
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmr8.tfm
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmtl10.tfm
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmtk10.tfm
 INPUT .\figures\viewmodel-lifecycle.png
 INPUT .\figures\viewmodel-lifecycle.png
 INPUT .\figures\viewmodel-lifecycle.png
@@ -399,6 +406,20 @@ INPUT .\figures\viewmodel-lifecycle.png
 INPUT .\figures\viewmodel-lifecycle.png
 INPUT .\figures\viewmodel-lifecycle.png
 INPUT .\figures\viewmodel-lifecycle.png
+INPUT .\figures\KMP-types.png
+INPUT .\figures\KMP-types.png
+INPUT .\figures\KMP-types.png
+INPUT .\figures\KMP-types.png
+INPUT .\figures\KMP-types.png
+INPUT .\figures\KMP-types.png
+INPUT .\figures\KMP-types.png
+INPUT .\figures\fleet-run-configurations.png
+INPUT .\figures\fleet-run-configurations.png
+INPUT .\figures\fleet-run-configurations.png
+INPUT .\figures\fleet-run-configurations.png
+INPUT .\figures\fleet-run-configurations.png
+INPUT .\figures\fleet-run-configurations.png
+INPUT .\figures\fleet-run-configurations.png
 INPUT .\content\template-usage.tex
 INPUT .\content\template-usage.tex
 OUTPUT content\template-usage.aux
@@ -481,7 +502,6 @@ INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang3.st
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstmisc.sty
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstmisc.sty
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstmisc.sty
-INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmtk10.tfm
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\rm-lmbx10.tfm
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\rm-lmbx8.tfm
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\rm-lmbx6.tfm
@@ -507,6 +527,7 @@ INPUT content\acknowledgement.tex
 INPUT .\thesis.bbl
 INPUT .\thesis.bbl
 INPUT thesis.bbl
+INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ts1-lmri10.tfm
 INPUT C:\Users\Dell\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmri8.tfm
 INPUT .\content\appendices.tex
 INPUT .\content\appendices.tex

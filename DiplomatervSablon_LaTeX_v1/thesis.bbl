@@ -93,6 +93,12 @@
 \def\bibInSelf#1{In u\H{o}: }
 \csname bibOverride\endcsname
 
+\bibitem{PDFbox}
+Apache:
+\bibNewBlock Apache pdfbox® - a java pdf library.
+\bibNewBlock {\em Apache PDFBox®}, 2024.\ 07.
+\bibNewBlock \url{https://pdfbox.apache.org/}.
+
 \bibitem{DipPortal}
 {Budapesti Műszaki és Gazdaságtudományi Egyetem Villamosmérnöki és
   Informatikai Kar}:
@@ -127,12 +133,32 @@ JetBrains:
 \bibNewBlock
   \url{https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-viewmodel.html}.
 
+\bibitem{Ktor}
+JetBrains:
+\bibNewBlock Creating a cross-platform mobile application.
+\bibNewBlock {\em Ktor Documentation}, 2024.\ 04.
+\bibNewBlock
+  \url{https://ktor.io/docs/client-create-multiplatform-application.html}.
+
 \bibitem{NavigationKMP}
 JetBrains:
 \bibNewBlock Navigation and routing.
 \bibNewBlock {\em Kotlin Multiplatform Development}, 2024.\ 10.
 \bibNewBlock
   \url{https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-navigation-routing.html}.
+
+\bibitem{Serialization}
+JetBrains:
+\bibNewBlock Serialization.
+\bibNewBlock {\em Official libraries}, 2024.\ 09.
+\bibNewBlock \url{https://kotlinlang.org/docs/serialization.html#0}.
+
+\bibitem{Fleet}
+JetBrains:
+\bibNewBlock Use fleet for multiplatform development — tutorial.
+\bibNewBlock {\em Kotlin Multiplatform Development}, 2024.\ 10.
+\bibNewBlock
+  \url{https://www.jetbrains.com/help/kotlin-multiplatform-dev/fleet.html#prepare-your-development-environment}.
 
 \bibitem{KissPhD}
 Peter Kiss:
@@ -146,6 +172,12 @@ Wai~L. Lee\bibAnd 1Charles~G. Sodini:
   Systems} (kon\-fe\-ren\-cia\-anyag).
 \bibNewBlock 1987.\ 4-7~05., 459--462.~p.
 
+\bibitem{CameraX}
+Google LLC:
+\bibNewBlock Camerax overview.
+\bibNewBlock {\em Android Developers Guide}, 2024.\ 01.
+\bibNewBlock \url{https://developer.android.com/media/camera/camerax}.
+
 \bibitem{BasicCodelab}
 Google LLC:
 \bibNewBlock Jetpack compose basics.
@@ -153,7 +185,7 @@ Google LLC:
 \bibNewBlock
   \url{https://developer.android.com/codelabs/jetpack-compose-basics#0}.
 
-\bibitem{MlLKit}
+\bibitem{MLKit}
 Google LLC:
 \bibNewBlock Recognize text in images with ml kit on android.
 \bibNewBlock {\em ML-Kit Guides}, 2024.\ 10.
@@ -185,12 +217,34 @@ Elvira Mustafina:
 \bibNewBlock
   \url{https://blog.jetbrains.com/kotlin/2024/10/compose-multiplatform-1-7-0-released/}.
 
+\bibitem{Permissions}
+Lukoh Nam:
+\bibNewBlock Jetpack compose permissions using accompanist library,
+  modalbottomsheet.
+\bibNewBlock {\em Medium}, 2023.\ 05.
+\bibNewBlock
+  \url{https://medium.com/@lukohnam/jetpack-compose-permissions-using-accompanist-library-b1c0fbbe8831}.
+
 \bibitem{GettingStartedWithJetpackCompose}
 Lazar Nikolov:
 \bibNewBlock Getting started with jetpack compose.
 \bibNewBlock {\em Sentry Blog}, 2023.\ 02.
 \bibNewBlock
   \url{https://blog.sentry.io/getting-started-with-jetpack-compose/}.
+
+\bibitem{KotlinDSL}
+Ivan Osipov:
+\bibNewBlock Kotlin dsl: from theory to practice.
+\bibNewBlock {\em JMIX}, 2017.\ 10.
+\bibNewBlock
+  \url{https://www.jmix.io/cuba-blog/kotlin-dsl-from-theory-to-practice}.
+
+\bibitem{KotlinMultiplatformStable}
+Ekaterina Petrova:
+\bibNewBlock Kotlin multiplatform goes stable.
+\bibNewBlock {\em Kotlin Blog}, 2023.\ 11.
+\bibNewBlock
+  \url{https://blog.jetbrains.com/kotlin/2023/11/kotlin-multiplatform-stable/}.
 
 \bibitem{Schreier00}
 Richard Schreier:
@@ -204,13 +258,6 @@ JetBrains~Documentation Team:
 \bibNewBlock {\em Kotlin Multiplatform Documentation}, 2024.\ 09.
 \bibNewBlock
   \url{https://www.jetbrains.com/help/kotlin-multiplatform-dev/cross-platform-frameworks.html#popular-cross-platform-app-development-frameworks}.
-
-\bibitem{KotlinMultiplatformStable}
-JetBrains~Kotlin Team:
-\bibNewBlock Kotlin multiplatform goes stable.
-\bibNewBlock {\em Kotlin Blog}, 2023.\ 11.
-\bibNewBlock
-  \url{https://blog.jetbrains.com/kotlin/2023/11/kotlin-multiplatform-stable/}.
 
 \bibitem{KotlinMultiplatformRelease}
 Kotlin~Documentation Team:

@@ -31,50 +31,50 @@ Reallocating 'wiz_functions' (item size: 4) to 6000 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Database file #1: bib/mybib.bib
 Warning--entry type for "KissPhD" isn't style-file defined
---line 141 of file bib/mybib.bib
+--line 203 of file bib/mybib.bib
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
-You've used 19 entries,
+You've used 26 entries,
             4991 wiz_defined-function locations,
-            1257 strings with 15129 characters,
-and the built_in function-call counts, 47936 in all, are:
-= -- 9134
-> -- 200
+            1293 strings with 16067 characters,
+and the built_in function-call counts, 62965 in all, are:
+= -- 12004
+> -- 249
 < -- 5
-+ -- 3769
-- -- 149
-* -- 627
-:= -- 1685
-add.period$ -- 74
-call.type$ -- 19
-change.case$ -- 77
++ -- 4987
+- -- 184
+* -- 809
+:= -- 2259
+add.period$ -- 102
+call.type$ -- 26
+change.case$ -- 105
 chr.to.int$ -- 0
-cite$ -- 19
-duplicate$ -- 7950
-empty$ -- 829
-format.name$ -- 62
-if$ -- 10101
+cite$ -- 26
+duplicate$ -- 10449
+empty$ -- 1102
+format.name$ -- 83
+if$ -- 13272
 int.to.chr$ -- 0
-int.to.str$ -- 19
-missing$ -- 20
-newline$ -- 210
-num.names$ -- 40
-pop$ -- 1295
+int.to.str$ -- 26
+missing$ -- 27
+newline$ -- 252
+num.names$ -- 54
+pop$ -- 1666
 preamble$ -- 1
-purify$ -- 60
+purify$ -- 81
 quote$ -- 22
-skip$ -- 319
+skip$ -- 417
 stack$ -- 0
-substring$ -- 5329
-swap$ -- 5254
+substring$ -- 6988
+swap$ -- 6899
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 95
+type$ -- 130
 warning$ -- 0
-while$ -- 224
-width$ -- 21
-write$ -- 322
+while$ -- 301
+width$ -- 28
+write$ -- 406
 (There was 1 warning)
