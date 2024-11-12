@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.11.5)  12 NOV 2024 04:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.11.5)  12 NOV 2024 04:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -528,7 +528,7 @@ LaTeX Info: Redefining \mit on input line 578.
 
  (include/titlepage.tex
 Package hyperref Info: Option `pageanchor' set `false' on input line 1.
-<figures/bme_logo.pdf, id=206, 705.63625pt x 188.705pt>
+<figures/bme_logo.pdf, id=210, 705.63625pt x 188.705pt>
 File: figures/bme_logo.pdf Graphic file (type pdf)
 <use figures/bme_logo.pdf>
 Package pdftex.def Info: figures/bme_logo.pdf  used on input line 7.
@@ -605,12 +605,12 @@ Package hyperref Info: Option `pageanchor' set `false' on input line 30.
 
 
 ]
-<figures/flutter-vs-jetpack-compose-google-search-trends.png, id=296, 803.0pt x 407.02063pt>
+<figures/flutter-vs-jetpack-compose-google-search-trends.png, id=302, 803.0pt x 407.02063pt>
 File: figures/flutter-vs-jetpack-compose-google-search-trends.png Graphic file (type png)
 <use figures/flutter-vs-jetpack-compose-google-search-trends.png>
 Package pdftex.def Info: figures/flutter-vs-jetpack-compose-google-search-trends.png  used on input line 37.
 (pdftex.def)             Requested size: 426.79134pt x 216.33475pt.
-<figures/Libraries-2800x995.png, id=300, 2810.5pt x 998.73125pt>
+<figures/Libraries-2800x995.png, id=306, 2810.5pt x 998.73125pt>
 File: figures/Libraries-2800x995.png Graphic file (type png)
 <use figures/Libraries-2800x995.png>
 Package pdftex.def Info: figures/Libraries-2800x995.png  used on input line 44.
@@ -629,32 +629,32 @@ File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 
 
 ] [5{C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}] [6] [7]
-<figures/Point Diagram.png, id=361, 329.23pt x 637.38126pt>
+<figures/Point Diagram.png, id=367, 329.23pt x 637.38126pt>
 File: figures/Point Diagram.png Graphic file (type png)
 <use figures/Point Diagram.png>
 Package pdftex.def Info: figures/Point Diagram.png  used on input line 174.
 (pdftex.def)             Requested size: 128.0425pt x 277.06409pt.
-<figures/Topic Diagram.png, id=362, 350.30875pt x 656.4525pt>
+<figures/Topic Diagram.png, id=368, 350.30875pt x 656.4525pt>
 File: figures/Topic Diagram.png Graphic file (type png)
 <use figures/Topic Diagram.png>
 Package pdftex.def Info: figures/Topic Diagram.png  used on input line 175.
 (pdftex.def)             Requested size: 128.0407pt x 277.07043pt.
-<figures/TrueFalseQuestion Diagram.png, id=363, 402.50375pt x 696.6025pt>
+<figures/TrueFalseQuestion Diagram.png, id=369, 402.50375pt x 696.6025pt>
 File: figures/TrueFalseQuestion Diagram.png Graphic file (type png)
 <use figures/TrueFalseQuestion Diagram.png>
 Package pdftex.def Info: figures/TrueFalseQuestion Diagram.png  used on input line 176.
 (pdftex.def)             Requested size: 128.03612pt x 277.07356pt.
-<figures/MultipleChoiceQuestion Diagram.png, id=364, 434.62375pt x 723.70375pt>
+<figures/MultipleChoiceQuestion Diagram.png, id=370, 434.62375pt x 723.70375pt>
 File: figures/MultipleChoiceQuestion Diagram.png Graphic file (type png)
 <use figures/MultipleChoiceQuestion Diagram.png>
 Package pdftex.def Info: figures/MultipleChoiceQuestion Diagram.png  used on input line 179.
 (pdftex.def)             Requested size: 128.04047pt x 277.07529pt.
-<figures/Exam Diagram.png, id=365, 361.35pt x 664.4825pt>
+<figures/Exam Diagram.png, id=371, 361.35pt x 664.4825pt>
 File: figures/Exam Diagram.png Graphic file (type png)
 <use figures/Exam Diagram.png>
 Package pdftex.def Info: figures/Exam Diagram.png  used on input line 180.
 (pdftex.def)             Requested size: 128.0403pt x 277.07318pt.
-<figures/AnswerCheck Diagram.png, id=366, 399.4925pt x 505.89pt>
+<figures/AnswerCheck Diagram.png, id=372, 399.4925pt x 505.89pt>
 File: figures/AnswerCheck Diagram.png Graphic file (type png)
 <use figures/AnswerCheck Diagram.png>
 Package pdftex.def Info: figures/AnswerCheck Diagram.png  used on input line 181.
@@ -677,23 +677,29 @@ Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on in
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <8> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 42.
  [10]
-<figures/viewmodel-lifecycle.png, id=422, 523.9575pt x 545.03625pt>
+<figures/viewmodel-lifecycle.png, id=428, 523.9575pt x 545.03625pt>
 File: figures/viewmodel-lifecycle.png Graphic file (type png)
 <use figures/viewmodel-lifecycle.png>
 Package pdftex.def Info: figures/viewmodel-lifecycle.png  used on input line 142.
 (pdftex.def)             Requested size: 426.79134pt x 443.97192pt.
  [11] [12 <./figures/viewmodel-lifecycle.png>] [13] [14] [15]
-<figures/KMP-types.png, id=573, 1606.0pt x 467.7475pt>
+<figures/KMP-types.png, id=579, 1606.0pt x 467.7475pt>
 File: figures/KMP-types.png Graphic file (type png)
 <use figures/KMP-types.png>
 Package pdftex.def Info: figures/KMP-types.png  used on input line 322.
 (pdftex.def)             Requested size: 426.79134pt x 124.30222pt.
  [16 <./figures/KMP-types.png>] [17]
-<figures/fleet-run-configurations.png, id=634, 970.62625pt x 472.76625pt>
+<figures/fleet-run-configurations.png, id=640, 970.62625pt x 472.76625pt>
 File: figures/fleet-run-configurations.png Graphic file (type png)
 <use figures/fleet-run-configurations.png>
 Package pdftex.def Info: figures/fleet-run-configurations.png  used on input line 430.
 (pdftex.def)             Requested size: 426.79134pt x 207.88072pt.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <14.4> on input line 440.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 440.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 440.
 ) [18] [19 <./figures/fleet-run-configurations.png>]
 \openout2 = `content/template-usage.aux'.
 
@@ -721,7 +727,7 @@ LaTeX Warning: Reference `sec:LatexTools' on page 21 undefined on input line 45.
 
 LaTeX Warning: Reference `fig:TeXstudio' on page 21 undefined on input line 45.
 
-<figures/TeXstudio.png, id=677, 1002.74625pt x 799.98875pt>
+<figures/TeXstudio.png, id=682, 1002.74625pt x 799.98875pt>
 File: figures/TeXstudio.png Graphic file (type png)
 <use figures/TeXstudio.png>
 Package pdftex.def Info: figures/TeXstudio.png  used on input line 49.
@@ -928,20 +934,20 @@ L3 programming layer <2024-01-04>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: D999FEF9DEE953CE1A734EFE7E459A5F;8657.
+(rerunfilecheck)             Checksum: A0201B3451C2103DEDE9D93863C6BB4B;8870.
  ) 
 Here is how much of TeX's memory you used:
- 19665 strings out of 474485
- 317860 string characters out of 5744206
+ 19689 strings out of 474485
+ 318172 string characters out of 5744206
  2445542 words of memory out of 5000000
- 41137 multiletter control sequences out of 15000+600000
- 671322 words of font info for 114 fonts, out of 8000000 for 9000
+ 41157 multiletter control sequences out of 15000+600000
+ 686366 words of font info for 130 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
  80i,16n,82p,1642b,2055s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx8.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri8.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtl10.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on thesis.pdf (40 pages, 1531665 bytes).
+Output written on thesis.pdf (40 pages, 1532683 bytes).
 PDF statistics:
- 1146 PDF objects out of 1200 (max. 8388607)
- 440 named destinations out of 1000 (max. 500000)
- 474 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1151 PDF objects out of 1200 (max. 8388607)
+ 441 named destinations out of 1000 (max. 500000)
+ 482 words of extra memory for PDF output out of 10000 (max. 10000000)
 

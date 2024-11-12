@@ -33,7 +33,8 @@
 \select@language {magyar} \contentsline {section}{\numberline {3.9}Gradle build rendszer}{17}{section.3.9}%
 \select@language {magyar} \contentsline {section}{\numberline {3.10}Fejlesztőkörnyeztek}{18}{section.3.10}%
 \select@language {magyar} \contentsline {section}{\numberline {3.11}REST API, Postman és adatbázis}{19}{section.3.11}%
-\select@language {magyar} \contentsline {section}{\numberline {3.12}Kipróbált, de végül nem használt egyéb érdekes megoldások}{19}{section.3.12}%
+\select@language {magyar} \contentsline {section}{\numberline {3.12}Dokumentáció: \LaTeX , PlantUML}{19}{section.3.12}%
+\select@language {magyar} \contentsline {section}{\numberline {3.13}Kipróbált, de végül nem használt egyéb érdekes megoldások}{19}{section.3.13}%
 \select@language {magyar} \contentsline {chapter}{\numberline {4}A \LaTeX -sablon használata}{20}{chapter.4}%
 \select@language {magyar} \contentsline {section}{\numberline {4.1}Címkék és hivatkozások}{20}{section.4.1}%
 \select@language {magyar} \contentsline {section}{\numberline {4.2}Ábrák és táblázatok}{20}{section.4.2}%
