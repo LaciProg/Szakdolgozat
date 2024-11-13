@@ -126,6 +126,13 @@ Husayn Fakher:
 \bibNewBlock
   \url{https://medium.com/@husayn.fakher/compose-state-vs-stateflow-state-management-in-jetpack-compose-c99740732023}.
 
+\bibitem{BasicProject}
+JetBrains:
+\bibNewBlock The basics of kotlin multiplatform project structure.
+\bibNewBlock {\em Multiplatform Development}, 2024.\ 09.
+\bibNewBlock
+  \url{https://kotlinlang.org/docs/multiplatform-discover-project.html#compilation-to-a-specific-target}.
+
 \bibitem{ViewModelKMP}
 JetBrains:
 \bibNewBlock Common viewmodel.
@@ -139,6 +146,12 @@ JetBrains:
 \bibNewBlock {\em Ktor Documentation}, 2024.\ 04.
 \bibNewBlock
   \url{https://ktor.io/docs/client-create-multiplatform-application.html}.
+
+\bibitem{Backend}
+JetBrains:
+\bibNewBlock Integrate a database with kotlin, ktor, and exposed.
+\bibNewBlock {\em Ktor Documentation}, 2024.\ 09.
+\bibNewBlock \url{https://ktor.io/docs/server-integrate-database.html}.
 
 \bibitem{NavigationKMP}
 JetBrains:
@@ -199,6 +212,12 @@ Google LLC:
 \bibNewBlock
   \url{https://developer.android.com/topic/libraries/architecture/viewmodel}.
 
+\bibitem{MAUI}
+Microsoft:
+\bibNewBlock .net multi-platform app ui.
+\bibNewBlock {\em .NET MAUI}, 2024.\ 11.
+\bibNewBlock \url{https://dotnet.microsoft.com/en-us/apps/maui}.
+
 \bibitem{Mkrtychev:1997}
 Alexey Mkrtychev:
 \bibNewBlock Models for the logic of proofs.
@@ -252,6 +271,18 @@ Richard Schreier:
 \bibNewBlock Oregon State University, 2000.\ 01.
 \bibNewBlock \url{http://www.mathworks.com/matlabcentral/fileexchange/}.
 
+\bibitem{Docker}
+Docker Team:
+\bibNewBlock What is docker?
+\bibNewBlock {\em Dockerdocs}, 2024.\ 11.
+\bibNewBlock \url{https://docs.docker.com/get-started/docker-overview/}.
+
+\bibitem{Flutter}
+Flutter Team:
+\bibNewBlock Flutter.
+\bibNewBlock {\em Flutter}, 2024.\ 11.
+\bibNewBlock \url{https://flutter.dev/}.
+
 \bibitem{KotlinCrossPlatformFrameworks}
 JetBrains~Documentation Team:
 \bibNewBlock Popular cross-platform app development frameworks.
@@ -265,6 +296,19 @@ Kotlin~Documentation Team:
 \bibNewBlock {\em Kotlin Multiplatform Plugin Releases}, 2024.\ 09.
 \bibNewBlock
   \url{https://kotlinlang.org/docs/multiplatform-plugin-releases.html#update-to-the-new-release}.
+
+\bibitem{ReactNative}
+React~Native Team:
+\bibNewBlock React native.
+\bibNewBlock {\em React Native}, 2024.\ 11.
+\bibNewBlock \url{https://reactnative.dev/}.
+
+\bibitem{MVVMArchitecture}
+Antoine van~der Lee:
+\bibNewBlock Mvvm: An architectural coding pattern to structure swiftui views.
+\bibNewBlock {\em SwiftLee}, 2024.\ 05.
+\bibNewBlock
+  \url{https://www.avanderlee.com/swiftui/mvvm-architectural-coding-pattern-to-structure-views/}.
 
 \bibitem{Wettl04}
 Ferenc Wettl\bibAnd 0Gyula Mayer\bibAnd 2Péter Szabó:

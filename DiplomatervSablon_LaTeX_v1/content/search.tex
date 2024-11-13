@@ -215,7 +215,7 @@ actual fun ExamNavHost(
 }
 \end{lstlisting}
 
-\section{Ktor}
+\subsection{Ktor}
 \label{sec:Ktor}
 
 A Ktor egy Kotlin HTTP kommunikációt megvalósító könyvtár\cite{Ktor}. Alkalmas mind szerver oladli kód írásárá, a REST API-om is ezt használja és kliens oladli kód megvalósítsára is.
@@ -248,7 +248,7 @@ object ApiService {
 }
 \end{lstlisting}
 
-\section{KotlinX Serilizáció}
+\subsection{KotlinX Serilizáció}
 \label{sec:KotlinX}
 
 A serilizáció a JSON formátum konvertálása miatt van szükség. Az alábbiakban a hivatalos dokumentációból olvasható egy részlet ami jól összefoglalja a használatát.
@@ -256,7 +256,7 @@ Ez a technológia is használható Kotlin Multiplatform területen.
 
 "A szerializáció során az alkalmazások adatait egy olyan formátumba alakítjuk, amely hálózaton átvihető vagy tárolható adatbázisban vagy fájlban. Az ellenkező folyamat, a deszerializáció, az adatokat külső forrásból olvassa be és konvertálja futásidejű objektummá. A Kotlinban a szerializációhoz elérhető a kotlinx.serialization eszköz, amely Gradle bővítményt, futásidejű könyvtárakat és fordítói bővítményeket tartalmaz, így segítve a különböző nyelvű rendszerek közötti adatcserét, mint a JSON és a protocol buffers formátumokkal."\cite{Serialization}
 
-\section{CameraX}
+\subsection{CameraX}
 
 A CameraX technológia kizárólag Android platformon használható.
 Itt azonban egy nagyon széles és gazdag APIt biztosít a fejlesztéshez.
@@ -265,7 +265,7 @@ Az Image analysis, azaz képfeldolgozó funkcionalitás. Hozzáférhetünk a buf
 A képeket menetni is tudjuk, hasonlóan a beépített kamera alkalamzáshoz és ugyan úgy videót is tudunk vele rögzíteni.
 Ezek a leírás a Google Android Developers dokumentációja alapján készült. Részletesebb információk itt találhatóak: \cite{CameraX}
 
-\section{ML-Kit}
+\subsection{ML-Kit}
 \label{sec:MLKit}
 
 Az ML-Kit a Google által fejleszett mesterséges intelligiencia alapú API.
@@ -274,7 +274,7 @@ Számtalan felhasználási területtel rendelkezik, ezekeből néhányat felsoro
 Sajnos ez a funkció is Android specifikus így egy iOS alaklamazáson ez a probléma más megközelítést igényelne.
 Messze nem tökéletes még ez a technológia, de kipróbálásra mindenféleképpen érdekes és hasznos lehet.
 
-\section{Accompanist-engedélykezelés}
+\subsection{Accompanist-engedélykezelés}
 
 Az engedélykezelés nem egyszerű feladat az Android rendszerekben így célszerű erre kifejlesztett könyvtárakat használni.
 Egy ilyen könyvtár az Accompanist, amlyet a Google fejleszt.
@@ -290,7 +290,7 @@ Az elkért engedélyeket egy permissionStateben tároljuk el, így innen lehet e
 Egyedül a veszélyes engedélyeket kell ilyen müdon elkérni, mint például a kamera használata, tehát amik a felhasználót veszélyeztetik.
 Vannak nem veszélyes engedélyek is, ilyen az internet használat, ezt csak a manifest fájlban kell rögzíteni.
 
-\section{PdfDocument és PDFBox}
+\subsection{PdfDocument és PDFBox}
 
 A PdfDocument a Google tulajdonában lévő PDF szerkesztő eszköz. Ennek a felhasználsval egy PDF fájlba írhatunk tetszőlegesen elhelyezett szöveget és képeket.
 Létrehozhatók különböző Paint objektumok amik segítségével egyszerűen rajzolható táblázat és formázható a szöveg. Ez a megoldás csak Android eszközökkel kompatibilis. 
@@ -298,7 +298,8 @@ Létrehozhatók különböző Paint objektumok amik segítségével egyszerűen 
 "Az Apache PDFBox® könyvtár egy nyílt forráskódú Java eszköz PDF dokumentumok kezelésére. Lehetővé teszi új PDF dokumentumok létrehozását, meglévő dokumentumok módosítását és tartalom kinyerését a PDF fájlokból. Az Apache PDFBox több parancssori eszközt is tartalmaz, és az Apache License v2.0 alatt került kiadásra." \cite{PDFbox}
 Hasonlóan használható, mint a PdfDocument, de valamelyest eltér a két könyvtát API készlete. Elsőként Androidra készült el az exportálás funkció, de mivel nem sikerül teljesen ugyan azt az eredményt létrehozni mind a két esetben, ezért egy valós projektben a multiplatform rendszerekben is használható PDFBox megoldást használnám minden platformon. 
 
-\section{Kotlin- és Compose Multiplatform}
+\subsection{Kotlin- és Compose Multiplatform}
+\label{sec:KCMP}
 
 Többször beszéltem már a Kotlin- és Compose Multiplatform fogalmakról.
 Legkönnyebben úgy lehet leírni a kapcsolatukat, mint a Compose Multiplatform részhalmaza a Kotlin Multiplatformnak.
@@ -362,7 +363,7 @@ actual fun MainCameraScreen(examId: String, navigateBack: () -> Unit) {
 }
 \end{lstlisting}
 
-\section{Gradle build rendszer}
+\subsection{Gradle build rendszer}
 
 A Compose Multiplatform projektek is a Gradle build rendszert használják, első sorban a függőségek megszerzésere és az alkalmazás létrehozására.
 Egy átlagos fejlesztőnek mindösszesen annyi dolga van, hogy kigyűjti a használt függőségeket és a fejlesztőkörnyezet általában segít a megfelelő verziók megtalálásában.
@@ -412,7 +413,7 @@ androidLibrary = { id = "com.android.library", version.ref = "agp" }
 \end{lstlisting}
 
 
-\section{Fejlesztőkörnyeztek}
+\subsection{Fejlesztőkörnyeztek}
 
 Fejlesztőkörnyezetnek a JetBrains egyik eszközét választottam, a Fleet-et.
 Kifejezetten Multiplatform fejlesztéshez készítettek, szinte az összes nyelvet támogata ami ebben a témában szóba jöhet, és minden funkcióval rendelkezik amivel a natív fejlesztésre készült IDE-ik is.
@@ -435,9 +436,57 @@ Kisebb mértékben a fejlesztéshez és nagyobb mértékben a dokumentációhoz 
 
 
 
-\section{REST API, Postman és adatbázis}
+\subsection{REST API, Postman és adatbázis}
 
-\section{Dokumentáció: \LaTeX, PlantUML}
+A kliens oladli alkalmazásokat egy saját REST API szolgálja ki.
+Ezt az előző félévben készítettem el. Teljesen egészében Kotlin nyelv felhasználásával. A HTTP kommunikáció megvalósítsához a már korábban \refstruc{sec:Ktor}-ban bemutatott Ktor-t használtam.
+Itt a szerver oldali funkcionaliítása került előtérbe. A szerilizáció itt is a \refstruc{sec:KotlinX}-ban leírtak szerint történt.
+Az adatbázis az úgynevezett code-first felfogás alapján készült. Ez azt jelenti, hogy kódban leírtam az adatázis felépítését és a kigenerálását rábíztam a Exposed-ra ami a JetBrains ltal fejlesztett adatbázis elérést lehetővé tevő könyvtár.
+A használt adatbázis javaslatok alapján a PostgreSQL lett.
+Ennek a folyamatnak egy részletesebb leírása a \cite{Backend} forrásban olvasható, ez alapján készíttem el a saját szerveremet.
+
+Mind az adatbázis, mind a REST API egy-egy Docker-konténerben fut egy viruális gépen, így biztosítva a folyamatos elérhetőséget.
+"Mi az a Docker? A Docker egy nyílt platform alkalmazások fejlesztésére, szállítására és futtatására. Lehetővé teszi, hogy az alkalmazásokat elválasszuk az infrastruktúrától, így gyorsabban tudunk szoftvereket szállítani. A Docker segítségével az infrastruktúrát ugyanúgy kezelhetjük, mint az alkalmazásokat. A Docker szállítási, tesztelési és kódtelepítési módszertanait kihasználva jelentősen csökkenthetjük az időt a kód megírása és a termelési környezetben való futtatása között." \cite{Docker}
+"A Docker platform: A Docker lehetőséget biztosít arra, hogy az alkalmazást egy lazán izolált környezetben, úgynevezett konténerben csomagoljuk és futtassuk. Az izoláció és a biztonság lehetővé teszi, hogy egy adott gépen egyszerre több konténert futtassunk. A konténerek könnyűsúlyúak, és mindent tartalmaznak, ami szükséges az alkalmazás futtatásához, így nem kell a gazdagépre telepített környezetre támaszkodni. A konténereket megoszthatjuk munka közben, biztosítva, hogy mindenki ugyanazt a konténert kapja, amely ugyanúgy működik." \cite{Docker}
 
 
-\section{Kipróbált, de végül nem használt egyéb érdekes megoldások}
+Rendelkezik saját DNS címmel is, így könnyen megjegyezhető és elérhető fejlesztés és tesztelés közben is.
+A teszteléshez a Postmant használtam. Ez egy olyan alaklamzás amiben HTTP kéréseket lehet létrehozni, és a mezőket tetszőlegesen testreszabni.
+Gyakran volt rá szükség ebben a félévben is, mert bizonyosadatformátumok/követelmények változtak és ez sokkal hatékonyabb hibakezelést tett lehetőve, mint egy böngészős HTTP kérés vagy az alaklamzásból történő debugolás.
+
+
+\subsection{Kipróbált, de végül nem használt egyéb érdekes megoldások}
+
+Az önálló laboratúrium során elkészített alkalmazás sok technológiát felhasznált, első sorban kisérlétezés miatt.
+Ezek egy részére találtam jól használahtó Multiplatform alternatívát, más részére nem, vagy csak nagyon sok munkával lehetet volna megvalósítani.
+Rendelkezett lokális Room adatbázissal is, erre egy alternatív megoldás KMP területen az SQLDelight technológia, de 2024 őszétől kezdve a Room is támogatott. 
+Ezt userek tárolására használtam Firebase integrációval. A Firebase sajnos sokkal nehezebben használható ebben a környezetben és mivel az alkalamzás jelenlei állapotában a usereknek nincs jelentősség így ezek nem kerültek be a végső alkalamzásba.
+
+Egy korábbi KMP ViewModel alternatíva a moko viewmodel (Mobile Kotlin Model-View-ViewModel architecture) volt, de ennél kényelmesebb az Androidos.
+Mivel nem volt szükséges így a user- és login servicekre és lokális adatbázisra így elvettem a dependency inkection használatát, mert így már nem okozott akorra problémát a viewmodelek létrehozása. Az Androidban használt Hilt itt nem használható még, és a Koin, ami egy hasonló KMP implementáció, nem könnyítené meg annyival ezt a folyamatot, mint a Hilt.
+Ezeknél a függőségeknél már a verziók összehangolása se volt egyértelmű feladat, minél több függőségre van szükség annál nagyobb a valószínűsége, hogy valami összeütközk vagy eltörik egy új frissítés miatt, főleg, ha az nem egy hivatalos függőség a Google vagy JetBrains által.
+Külön-külön rendesen működtek, de az előbb felsorolt pronlémák miatt úgy döntöttem, hogy egy egyszerűbb és letisztultabb megoldást használok a függőségek terén.
+
+\section{Hasonló multiplatform megoldások összehasonlítása}
+\label{sec:SimilarSolutions}
+
+Négy különböző technológiát vizsgáltam meg és a korábbi tapasztalataim és információm alapján próbáltam választani közülök.
+Az első a Compose Multiplatform, a második a MAUI, a haramdik a React Native, a negyedik a Flutter.
+
+Ezek küzül az utolsót zártam ki a leghamrabb, a fenti négy közül ez az egyetlen ami nem natív UI eléményt nyújt a felhasználóknak és egy számomra teljesen ismeretlen nyelven a Google által létrehozott nyelvben a Dartsban kell programozni.
+Első sorban mobilos fejlesztésre használják, a többi része nem a legoptimálisabb és én ennél egy általánosabb megoldást kerestem. \cite{Flutter}
+
+A következő technológia amit kizártam az a React Native volt, ez a React egyfajta változata ami natív élményt tud nyújtani weben, Androidon, iOSen és asztali alkalmazáson is.
+Ez egy JavaScript/TypeScript és HTML alapú megoldás és a korábbi tapasztalataim alapján ezek a nyelvek nem alkalmasak egy nagy mérteű projket fejlesztésre és karabantartására. 
+JavaScriptben gyorsan lehet fejleszteni, de nagyon nehéz utána a kód továbbfejlesztése és karbantartása. \cite{ReactNative}
+
+A MAUI egy .NET alapú megoldás, így C\# nyelven lehet programozni. A UI XAML alapokon nyugszik, hasonlóan, mint a WinUI.
+Így ez a megoldás az Windowsos asztali alkalmazásokhoz hasonlít a legjobban felfogásban és programozásban.
+Volt több elődje is, de jelenleg ez a legújabb változata a Windows alapokon nyugvó multiplatform fejlesztésnek.
+A legfőbb indok az volt, hogy én elsősorban Android fejlesztő vagyok és, ha van lehetőség akkor abból az irányból szerettem volna kiindulni.
+Egy másik érv ellene, hogy webes irányban nincs elmozdulás, míg az eleőző kettőnél igen, illetve a Compose Multiplatform is nyit ebeb az irányba. \cite{MAUI} 
+
+Mindent összevetve a Compose Multiplatform volt számora a legalkalmasabb és legérdekesebb technológia.
+Ebben volt a legtöbb tapasztalatom és a későbbiekben is szeretnék ezen a területen dolgozni, akár natív Android fejlesztés vagy a Compose és Kotlin Multiplatform világában.
+Továbbá mindig érdekes kihívás egy éppen aktívan fejlődő technológit megismerni és dolgozni benne.
+Így azt is ki tudtam próbálni, hogy milyen nehézségek járnak egy natív alkalmazás multiplatformba való átültetésével.

@@ -15,6 +15,8 @@ Reallocating 'name_of_file' (item size: 1) to 25 items.
 A level-1 auxiliary file: content/specifiation.aux
 Reallocating 'name_of_file' (item size: 1) to 19 items.
 A level-1 auxiliary file: content/search.aux
+Reallocating 'name_of_file' (item size: 1) to 25 items.
+A level-1 auxiliary file: content/architecture.aux
 Reallocating 'name_of_file' (item size: 1) to 27 items.
 A level-1 auxiliary file: content/template-usage.aux
 Reallocating 'name_of_file' (item size: 1) to 28 items.
@@ -31,50 +33,50 @@ Reallocating 'wiz_functions' (item size: 4) to 6000 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Database file #1: bib/mybib.bib
 Warning--entry type for "KissPhD" isn't style-file defined
---line 203 of file bib/mybib.bib
+--line 267 of file bib/mybib.bib
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
-You've used 26 entries,
+You've used 33 entries,
             4991 wiz_defined-function locations,
-            1293 strings with 16067 characters,
-and the built_in function-call counts, 62965 in all, are:
-= -- 12004
-> -- 249
+            1330 strings with 16974 characters,
+and the built_in function-call counts, 76971 in all, are:
+= -- 14648
+> -- 298
 < -- 5
-+ -- 4987
-- -- 184
-* -- 809
-:= -- 2259
-add.period$ -- 102
-call.type$ -- 26
-change.case$ -- 105
++ -- 6101
+- -- 219
+* -- 991
+:= -- 2833
+add.period$ -- 130
+call.type$ -- 33
+change.case$ -- 133
 chr.to.int$ -- 0
-cite$ -- 26
-duplicate$ -- 10449
-empty$ -- 1102
-format.name$ -- 83
-if$ -- 13272
+cite$ -- 33
+duplicate$ -- 12738
+empty$ -- 1375
+format.name$ -- 104
+if$ -- 16217
 int.to.chr$ -- 0
-int.to.str$ -- 26
-missing$ -- 27
-newline$ -- 252
-num.names$ -- 54
-pop$ -- 1666
+int.to.str$ -- 33
+missing$ -- 34
+newline$ -- 294
+num.names$ -- 68
+pop$ -- 2021
 preamble$ -- 1
-purify$ -- 81
+purify$ -- 102
 quote$ -- 22
-skip$ -- 417
+skip$ -- 515
 stack$ -- 0
-substring$ -- 6988
-swap$ -- 6899
+substring$ -- 8527
+swap$ -- 8423
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 130
+type$ -- 165
 warning$ -- 0
-while$ -- 301
-width$ -- 28
-write$ -- 406
+while$ -- 378
+width$ -- 35
+write$ -- 490
 (There was 1 warning)
