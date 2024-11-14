@@ -9,6 +9,19 @@ import io.ktor.http.*
 import io.ktor.serialization.kotlinx.json.*
 import kotlinx.serialization.json.Json
 
+class ApiException(message: String) : Exception(message)
+
+private fun handleHttpException(code: HttpStatusCode): String {
+    return when (code) {
+        HttpStatusCode.BadRequest -> "Bad request"
+        HttpStatusCode.Unauthorized -> "Unauthorized. Try logging in again or open the home screen."
+        HttpStatusCode.NotFound -> "Content not found"
+        HttpStatusCode.PreconditionFailed -> "Wrong answer format"
+        HttpStatusCode.InternalServerError -> "Server error"
+        else -> "Unknown error occurred. Please try again later."
+    }
+}
+
 object ApiService {
     private var authToken: String? = null  // Mutable token that can be updated at runtime
 
@@ -33,123 +46,290 @@ object ApiService {
         authToken = newToken
     }
 
-    // API Methods
-    suspend fun authenticate(user: UserDto): Token = httpClient.post("/auth") {
-        contentType(ContentType.Application.Json)
-        setBody(user)
-    }.body()
-
-    suspend fun getAllUsers(): List<UserDto> = httpClient.get("/user").body()
-
-    suspend fun getUser(id: String): UserDto = httpClient.get("/user/$id").body()
-
-    suspend fun getUserByName(userName: String): UserDto? = httpClient.get("/user/name/$userName").body()
-
-    suspend fun postUser(user: UserDto): UserDto? = httpClient.post("/user") {
-        contentType(ContentType.Application.Json)
-        setBody(user)
-    }.body()
-
-    suspend fun updateUser(user: UserDto): HttpResponse = httpClient.put("/user") {
-        contentType(ContentType.Application.Json)
-        setBody(user)
+    // Authentication API végpont
+    suspend fun authenticate(user: UserDto): Token {
+        val response = httpClient.post("/auth") {
+            contentType(ContentType.Application.Json)
+            setBody(user)
+        }
+        if (response.status == HttpStatusCode.OK) return response.body()
+        throw ApiException(handleHttpException(response.status))
     }
 
-    suspend fun deleteUser(id: String): HttpResponse = httpClient.delete("/user/$id")
-
-    suspend fun getAllPoints(): List<PointDto> = httpClient.get("/point").body()
-
-    suspend fun getAllPointNames(): List<NameDto> = httpClient.get("/point/name").body()
-
-    suspend fun getPoint(id: String): PointDto = httpClient.get("/point/$id").body()
-
-    suspend fun deletePoint(id: String): HttpResponse = httpClient.delete("/point/$id")
-
-    suspend fun postPoint(point: PointDto): PointDto? = httpClient.post("/point") {
-        contentType(ContentType.Application.Json)
-        setBody(point)
-    }.body()
-
-    suspend fun updatePoint(point: PointDto): HttpResponse = httpClient.put("/point") {
-        contentType(ContentType.Application.Json)
-        setBody(point)
+    // User API végpontok
+    suspend fun getAllUsers(): List<UserDto> {
+        val response = httpClient.get("/user")
+        if (response.status == HttpStatusCode.OK) return response.body()
+        throw ApiException(handleHttpException(response.status))
     }
 
-    suspend fun getAllTopics(): List<TopicDto> = httpClient.get("/topic").body()
-
-    suspend fun getAllTopicNames(): List<NameDto> = httpClient.get("/topic/name").body()
-
-    suspend fun getTopic(id: String): TopicDto = httpClient.get("/topic/$id").body()
-
-    suspend fun getTopicByTopic(topic: String): TopicDto? = httpClient.get("/topic/name/$topic").body()
-
-    suspend fun deleteTopic(id: String): HttpResponse = httpClient.delete("/topic/$id")
-
-    suspend fun postTopic(topic: TopicDto): TopicDto? = httpClient.post("/topic") {
-        contentType(ContentType.Application.Json)
-        setBody(topic)
-    }.body()
-
-    suspend fun updateTopic(topic: TopicDto): HttpResponse = httpClient.put("/topic") {
-        contentType(ContentType.Application.Json)
-        setBody(topic)
+    suspend fun getUser(id: String): UserDto {
+        val response = httpClient.get("/user/$id")
+        if (response.status == HttpStatusCode.OK) return response.body()
+        throw ApiException(handleHttpException(response.status))
     }
 
-    suspend fun getAllTrueFalse(): List<TrueFalseQuestionDto> = httpClient.get("/trueFalse").body()
-
-    suspend fun getAllTrueFalseNames(): List<NameDto> = httpClient.get("/trueFalse/name").body()
-
-    suspend fun getTrueFalse(id: String): TrueFalseQuestionDto = httpClient.get("/trueFalse/$id").body()
-
-    suspend fun deleteTrueFalse(id: String): HttpResponse = httpClient.delete("/trueFalse/$id")
-
-    suspend fun postTrueFalse(trueFalseQuestion: TrueFalseQuestionDto): TrueFalseQuestionDto? = httpClient.post("/trueFalse") {
-        contentType(ContentType.Application.Json)
-        setBody(trueFalseQuestion)
-    }.body()
-
-    suspend fun updateTrueFalse(trueFalseQuestion: TrueFalseQuestionDto): HttpResponse = httpClient.put("/trueFalse") {
-        contentType(ContentType.Application.Json)
-        setBody(trueFalseQuestion)
+    suspend fun getUserByName(userName: String): UserDto? {
+        val response = httpClient.get("/user/name/$userName")
+        if (response.status == HttpStatusCode.OK) return response.body()
+        throw ApiException(handleHttpException(response.status))
     }
 
-    suspend fun getAllMultipleChoice(): List<MultipleChoiceQuestionDto> = httpClient.get("/multipleChoice").body()
-
-    suspend fun getAllMultipleChoiceNames(): List<NameDto> = httpClient.get("/multipleChoice/name").body()
-
-    suspend fun getMultipleChoice(id: String): MultipleChoiceQuestionDto = httpClient.get("/multipleChoice/$id").body()
-
-    suspend fun deleteMultipleChoice(id: String): HttpResponse = httpClient.delete("/multipleChoice/$id")
-
-    suspend fun postMultipleChoice(mcQuestion: MultipleChoiceQuestionDto): MultipleChoiceQuestionDto? = httpClient.post("/multipleChoice") {
-        contentType(ContentType.Application.Json)
-        setBody(mcQuestion)
-    }.body()
-
-    suspend fun updateMultipleChoice(mcQuestion: MultipleChoiceQuestionDto): HttpResponse = httpClient.put("/multipleChoice") {
-        contentType(ContentType.Application.Json)
-        setBody(mcQuestion)
+    suspend fun postUser(user: UserDto): UserDto? {
+        val response = httpClient.post("/user") {
+            contentType(ContentType.Application.Json)
+            setBody(user)
+        }
+        if (response.status == HttpStatusCode.Created) return response.body()
+        throw ApiException(handleHttpException(response.status))
     }
 
-    suspend fun getAllExams(): List<ExamDto> = httpClient.get("/exam").body()
-
-    suspend fun getAllExamNames(): List<NameDto> = httpClient.get("/exam/name").body()
-
-    suspend fun getExam(id: String): ExamDto = httpClient.get("/exam/$id").body()
-
-    suspend fun getExamQuestions(id: String): ExamDto = httpClient.get("/exam/$id/question").body()
-
-    suspend fun deleteExam(id: String): HttpResponse = httpClient.delete("/exam/$id")
-
-    suspend fun postExam(exam: ExamDto): ExamDto? = httpClient.post("/exam") {
-        contentType(ContentType.Application.Json)
-        setBody(exam)
-    }.body()
-
-    suspend fun updateExam(exam: ExamDto): HttpResponse = httpClient.put("/exam") {
-        contentType(ContentType.Application.Json)
-        setBody(exam)
+    suspend fun updateUser(user: UserDto): HttpResponse {
+        val response = httpClient.put("/user") {
+            contentType(ContentType.Application.Json)
+            setBody(user)
+        }
+        if (response.status == HttpStatusCode.OK) return response
+        throw ApiException(handleHttpException(response.status))
     }
 
-    suspend fun getCorrection(id: String, answers: String): StatisticsDto = httpClient.get("/correction/$id/$answers").body()
+    suspend fun deleteUser(id: String): HttpResponse {
+        val response = httpClient.delete("/user/$id")
+        if (response.status == HttpStatusCode.NoContent) return response
+        throw ApiException(handleHttpException(response.status))
+    }
+
+    // Point API végpontok
+    suspend fun getAllPoints(): List<PointDto> {
+        val response = httpClient.get("/point")
+        if (response.status == HttpStatusCode.OK) return response.body()
+        throw ApiException(handleHttpException(response.status))
+    }
+
+    suspend fun getAllPointNames(): List<NameDto> {
+        val response = httpClient.get("/point/name")
+        if (response.status == HttpStatusCode.OK) return response.body()
+        throw ApiException(handleHttpException(response.status))
+    }
+
+    suspend fun getPoint(id: String): PointDto {
+        val response = httpClient.get("/point/$id")
+        if (response.status == HttpStatusCode.OK) return response.body()
+        throw ApiException(handleHttpException(response.status))
+    }
+
+    suspend fun deletePoint(id: String): HttpResponse {
+        val response = httpClient.delete("/point/$id")
+        if (response.status == HttpStatusCode.NoContent) return response
+        throw ApiException(handleHttpException(response.status))
+    }
+
+    suspend fun postPoint(point: PointDto): PointDto? {
+        val response = httpClient.post("/point") {
+            contentType(ContentType.Application.Json)
+            setBody(point)
+        }
+        if (response.status == HttpStatusCode.Created) return response.body()
+        throw ApiException(handleHttpException(response.status))
+    }
+
+    suspend fun updatePoint(point: PointDto): HttpResponse {
+        val response = httpClient.put("/point") {
+            contentType(ContentType.Application.Json)
+            setBody(point)
+        }
+        if (response.status == HttpStatusCode.OK) return response
+        throw ApiException(handleHttpException(response.status))
+    }
+
+    // Topic API végpontok
+    suspend fun getAllTopics(): List<TopicDto> {
+        val response = httpClient.get("/topic")
+        if (response.status == HttpStatusCode.OK) return response.body()
+        throw ApiException(handleHttpException(response.status))
+    }
+
+    suspend fun getAllTopicNames(): List<NameDto> {
+        val response = httpClient.get("/topic/name")
+        if (response.status == HttpStatusCode.OK) return response.body()
+        throw ApiException(handleHttpException(response.status))
+    }
+
+    suspend fun getTopic(id: String): TopicDto {
+        val response = httpClient.get("/topic/$id")
+        if (response.status == HttpStatusCode.OK) return response.body()
+        throw ApiException(handleHttpException(response.status))
+    }
+
+    suspend fun getTopicByTopic(topic: String): TopicDto? {
+        val response = httpClient.get("/topic/name/$topic")
+        if (response.status == HttpStatusCode.OK) return response.body()
+        throw ApiException(handleHttpException(response.status))
+    }
+
+    suspend fun deleteTopic(id: String): HttpResponse {
+        val response = httpClient.delete("/topic/$id")
+        if (response.status == HttpStatusCode.NoContent) return response
+        throw ApiException(handleHttpException(response.status))
+    }
+
+    suspend fun postTopic(topic: TopicDto): TopicDto? {
+        val response = httpClient.post("/topic") {
+            contentType(ContentType.Application.Json)
+            setBody(topic)
+        }
+        if (response.status == HttpStatusCode.Created) return response.body()
+        throw ApiException(handleHttpException(response.status))
+    }
+
+    suspend fun updateTopic(topic: TopicDto): HttpResponse {
+        val response = httpClient.put("/topic") {
+            contentType(ContentType.Application.Json)
+            setBody(topic)
+        }
+        if (response.status == HttpStatusCode.OK) return response
+        throw ApiException(handleHttpException(response.status))
+    }
+
+    // TrueFalse API végpontok
+    suspend fun getAllTrueFalse(): List<TrueFalseQuestionDto> {
+        val response = httpClient.get("/trueFalse")
+        if (response.status == HttpStatusCode.OK) return response.body()
+        throw ApiException(handleHttpException(response.status))
+    }
+
+    suspend fun getAllTrueFalseNames(): List<NameDto> {
+        val response = httpClient.get("/trueFalse/name")
+        if (response.status == HttpStatusCode.OK) return response.body()
+        throw ApiException(handleHttpException(response.status))
+    }
+
+    suspend fun getTrueFalse(id: String): TrueFalseQuestionDto {
+        val response = httpClient.get("/trueFalse/$id")
+        if (response.status == HttpStatusCode.OK) return response.body()
+        throw ApiException(handleHttpException(response.status))
+    }
+
+    suspend fun deleteTrueFalse(id: String): HttpResponse {
+        val response = httpClient.delete("/trueFalse/$id")
+        if (response.status == HttpStatusCode.NoContent) return response
+        throw ApiException(handleHttpException(response.status))
+    }
+
+    suspend fun postTrueFalse(trueFalseQuestion: TrueFalseQuestionDto): TrueFalseQuestionDto? {
+        val response = httpClient.post("/trueFalse") {
+            contentType(ContentType.Application.Json)
+            setBody(trueFalseQuestion)
+        }
+        if (response.status == HttpStatusCode.Created) return response.body()
+        throw ApiException(handleHttpException(response.status))
+    }
+
+    suspend fun updateTrueFalse(trueFalseQuestion: TrueFalseQuestionDto): HttpResponse {
+        val response = httpClient.put("/trueFalse") {
+            contentType(ContentType.Application.Json)
+            setBody(trueFalseQuestion)
+        }
+        if (response.status == HttpStatusCode.OK) return response
+        throw ApiException(handleHttpException(response.status))
+    }
+
+    // MultipleChoice API végpontok
+    suspend fun getAllMultipleChoice(): List<MultipleChoiceQuestionDto> {
+        val response = httpClient.get("/multipleChoice")
+        if (response.status == HttpStatusCode.OK) return response.body()
+        throw ApiException(handleHttpException(response.status))
+    }
+
+    suspend fun getAllMultipleChoiceNames(): List<NameDto> {
+        val response = httpClient.get("/multipleChoice/name")
+        if (response.status == HttpStatusCode.OK) return response.body()
+        throw ApiException(handleHttpException(response.status))
+    }
+
+    suspend fun getMultipleChoice(id: String): MultipleChoiceQuestionDto {
+        val response = httpClient.get("/multipleChoice/$id")
+        if (response.status == HttpStatusCode.OK) return response.body()
+        throw ApiException(handleHttpException(response.status))
+    }
+
+    suspend fun deleteMultipleChoice(id: String): HttpResponse {
+        val response = httpClient.delete("/multipleChoice/$id")
+        if (response.status == HttpStatusCode.NoContent) return response
+        throw ApiException(handleHttpException(response.status))
+    }
+
+    suspend fun postMultipleChoice(mcQuestion: MultipleChoiceQuestionDto): MultipleChoiceQuestionDto? {
+        val response = httpClient.post("/multipleChoice") {
+            contentType(ContentType.Application.Json)
+            setBody(mcQuestion)
+        }
+        if (response.status == HttpStatusCode.Created) return response.body()
+        throw ApiException(handleHttpException(response.status))
+    }
+
+    suspend fun updateMultipleChoice(mcQuestion: MultipleChoiceQuestionDto): HttpResponse {
+        val response = httpClient.put("/multipleChoice") {
+            contentType(ContentType.Application.Json)
+            setBody(mcQuestion)
+        }
+        if (response.status == HttpStatusCode.OK) return response
+        throw ApiException(handleHttpException(response.status))
+    }
+
+    // Exam API végpontok
+
+    suspend fun getAllExams(): List<ExamDto> {
+        val response = httpClient.get("/exam")
+        if (response.status == HttpStatusCode.OK) return response.body()
+        throw ApiException(handleHttpException(response.status))
+    }
+
+    suspend fun getAllExamNames(): List<NameDto> {
+        val response = httpClient.get("/exam/name")
+        if (response.status == HttpStatusCode.OK) return response.body()
+        throw ApiException(handleHttpException(response.status))
+    }
+
+    suspend fun getExam(id: String): ExamDto  {
+        val response = httpClient.get("/exam/$id")
+        if (response.status == HttpStatusCode.OK) return response.body()
+        throw ApiException(handleHttpException(response.status))
+    }
+
+    suspend fun getExamQuestions(id: String): ExamDto  {
+        val response = httpClient.get("/exam/$id/question")
+        if (response.status == HttpStatusCode.OK) return response.body()
+        throw ApiException(handleHttpException(response.status))
+    }
+
+    suspend fun deleteExam(id: String): HttpResponse {
+        val response = httpClient.delete("/exam/$id")
+        if (response.status == HttpStatusCode.NoContent) return response
+        throw ApiException(handleHttpException(response.status))
+    }
+
+    suspend fun postExam(exam: ExamDto): ExamDto? {
+        val response = httpClient.post("/exam") {
+            contentType(ContentType.Application.Json)
+            setBody(exam)
+        }
+        if (response.status == HttpStatusCode.Created) return response.body()
+        throw ApiException(handleHttpException(response.status))
+    }
+
+    suspend fun updateExam(exam: ExamDto): HttpResponse {
+        val response = httpClient.put("/exam") {
+            contentType(ContentType.Application.Json)
+            setBody(exam)
+        }
+        if (response.status == HttpStatusCode.OK) return response.body()
+        throw ApiException(handleHttpException(response.status))
+    }
+
+    suspend fun getCorrection(id: String, answers: String): StatisticsDto {
+        val response = httpClient.get("/correction/$id/$answers")
+        if (response.status == HttpStatusCode.OK) return response.body()
+        throw ApiException(handleHttpException(response.status))
+    }
 }

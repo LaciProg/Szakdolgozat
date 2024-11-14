@@ -1,5 +1,6 @@
 package hu.bme.aut.android.examapp.ui.viewmodel.truefalsequestion
 
+import ApiException
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -55,16 +56,13 @@ class TrueFalseQuestionEditViewModel(
                 TrueFalseQuestionEditScreenUiState.Success(result)
             } catch (e: IOException) {
                 TrueFalseQuestionEditScreenUiState.Error
-            } /*catch (e: HttpException) {
-                when(e.code()){
-                    400 -> TrueFalseQuestionEditScreenUiState.Error.errorMessage = "Bad request"
-                    401 -> TrueFalseQuestionEditScreenUiState.Error.errorMessage = "Unauthorized try logging in again or open the home screen"
-                    404 -> TrueFalseQuestionEditScreenUiState.Error.errorMessage = "Content not found"
-                    500 -> TrueFalseQuestionEditScreenUiState.Error.errorMessage = "Server error"
-                    else -> TrueFalseQuestionEditScreenUiState.Error
-                }
+            } catch (e: ApiException) {
+                TrueFalseQuestionEditScreenUiState.Error.errorMessage = e.message?: "Unkown error"
                 TrueFalseQuestionEditScreenUiState.Error
-            }*/
+            } catch (e: Exception){
+                TrueFalseQuestionEditScreenUiState.Error.errorMessage = "Network error"
+                TrueFalseQuestionEditScreenUiState.Error
+            }
         }
     }
 
@@ -79,17 +77,16 @@ class TrueFalseQuestionEditViewModel(
                 TrueFalseQuestionEditScreenUiState.Error.errorMessage = "Network error"
                 trueFalseEditScreenUiState = TrueFalseQuestionEditScreenUiState.Error
                 return false
-            } /*catch (e: HttpException) {
-                when(e.code()){
-                    400 -> TrueFalseQuestionEditScreenUiState.Error.errorMessage = "Bad request"
-                    401 -> TrueFalseQuestionEditScreenUiState.Error.errorMessage = "Unauthorized try logging in again or open the home screen"
-                    404 -> TrueFalseQuestionEditScreenUiState.Error.errorMessage = "Content not found"
-                    500 -> TrueFalseQuestionEditScreenUiState.Error.errorMessage = "Server error"
-                    else -> TrueFalseQuestionEditScreenUiState.Error
-                }
+            } catch (e: ApiException) {
+                TrueFalseQuestionEditScreenUiState.Error.errorMessage = e.message?: "Unkown error"
                 trueFalseEditScreenUiState = TrueFalseQuestionEditScreenUiState.Error
                 return false
-            }*/
+
+            } catch (e: Exception){
+                TrueFalseQuestionEditScreenUiState.Error.errorMessage = "Network error"
+                trueFalseEditScreenUiState = TrueFalseQuestionEditScreenUiState.Error
+                return false
+            }
         }
         else {
             trueFalseQuestionUiState = trueFalseQuestionUiState.copy(isEntryValid = false)
@@ -116,17 +113,15 @@ class TrueFalseQuestionEditViewModel(
             TrueFalseQuestionEditScreenUiState.Error.errorMessage = "Network error"
             trueFalseEditScreenUiState = TrueFalseQuestionEditScreenUiState.Error
             false
-        } /*catch (e: HttpException) {
-            when(e.code()){
-                400 -> TrueFalseQuestionEditScreenUiState.Error.errorMessage = "Bad request"
-                401 -> TrueFalseQuestionEditScreenUiState.Error.errorMessage = "Unauthorized try logging in again or open the home screen"
-                404 -> TrueFalseQuestionEditScreenUiState.Error.errorMessage = "Content not found"
-                500 -> TrueFalseQuestionEditScreenUiState.Error.errorMessage = "Server error"
-                else -> TrueFalseQuestionEditScreenUiState.Error
-            }
+        } catch (e: ApiException) {
+            TrueFalseQuestionEditScreenUiState.Error.errorMessage = e.message?: "Unkown error"
             trueFalseEditScreenUiState = TrueFalseQuestionEditScreenUiState.Error
             false
-        }*/
+        } catch (e: Exception){
+            TrueFalseQuestionEditScreenUiState.Error.errorMessage = "Network error"
+            trueFalseEditScreenUiState = TrueFalseQuestionEditScreenUiState.Error
+            false
+        }
     }
 }
 

@@ -1,5 +1,6 @@
 package hu.bme.aut.android.examapp.ui.viewmodel.truefalsequestion
 
+import ApiException
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -50,16 +51,13 @@ class TrueFalseQuestionDetailsViewModel(
             } catch (e: IOException) {
                 TrueFalseQuestionEditScreenUiState.Error.errorMessage = "Network error"
                 TrueFalseQuestionDetailsScreenUiState.Error
-            } /*catch (e: HttpException) {
-                when(e.code()){
-                    400 -> TrueFalseQuestionDetailsScreenUiState.Error.errorMessage = "Bad request"
-                    401 -> TrueFalseQuestionDetailsScreenUiState.Error.errorMessage = "Unauthorized try logging in again or open the home screen"
-                    404 -> TrueFalseQuestionDetailsScreenUiState.Error.errorMessage = "Content not found"
-                    500 -> TrueFalseQuestionDetailsScreenUiState.Error.errorMessage = "Server error"
-                    else -> TrueFalseQuestionDetailsScreenUiState.Error
-                }
+            } catch (e: ApiException) {
+                TrueFalseQuestionDetailsScreenUiState.Error.errorMessage = e.message?: "Unkown error"
                 TrueFalseQuestionDetailsScreenUiState.Error
-            }*/
+            } catch (e: Exception){
+                TrueFalseQuestionDetailsScreenUiState.Error.errorMessage = "Network error"
+                TrueFalseQuestionDetailsScreenUiState.Error
+            }
         }
     }
 
@@ -69,16 +67,13 @@ class TrueFalseQuestionDetailsViewModel(
         } catch (e: IOException) {
             TrueFalseQuestionDetailsScreenUiState.Error.errorMessage = "Network error"
             trueFalseDetailsScreenUiState = TrueFalseQuestionDetailsScreenUiState.Error
-        } /*catch (e: HttpException) {
-            when(e.code()){
-                400 -> TrueFalseQuestionDetailsScreenUiState.Error.errorMessage = "Cant delete this question because it is used in an exam"
-                401 -> TrueFalseQuestionDetailsScreenUiState.Error.errorMessage = "Unauthorized try logging in again or open the home screen"
-                404 -> TrueFalseQuestionDetailsScreenUiState.Error.errorMessage = "Content not found"
-                500 -> TrueFalseQuestionDetailsScreenUiState.Error.errorMessage = "Server error"
-                else -> TrueFalseQuestionDetailsScreenUiState.Error
-            }
+        } catch (e: ApiException) {
+                TrueFalseQuestionDetailsScreenUiState.Error.errorMessage = e.message?: "Unkown error"
+                trueFalseDetailsScreenUiState = TrueFalseQuestionDetailsScreenUiState.Error
+        } catch (e: Exception){
+            TrueFalseQuestionDetailsScreenUiState.Error.errorMessage = "Network error"
             trueFalseDetailsScreenUiState = TrueFalseQuestionDetailsScreenUiState.Error
-        }*/
+        }
     }
 
 }

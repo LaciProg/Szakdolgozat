@@ -1,5 +1,6 @@
 package hu.bme.aut.android.examapp.ui.viewmodel.truefalsequestion
 
+import ApiException
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -42,16 +43,13 @@ class TrueFalseQuestionListViewModel: ViewModel() {
                 TrueFalseQuestionListScreenUiState.Success(result)
             } catch (e: IOException) {
                 TrueFalseQuestionListScreenUiState.Error
-            } /*catch (e: HttpException) {
-                when(e.code()){
-                    400 -> TrueFalseQuestionListScreenUiState.Error.errorMessage = "Bad request"
-                    401 -> TrueFalseQuestionListScreenUiState.Error.errorMessage = "Unauthorized try logging in again or open the home screen"
-                    404 -> TrueFalseQuestionListScreenUiState.Error.errorMessage = "Content not found"
-                    500 -> TrueFalseQuestionListScreenUiState.Error.errorMessage = "Server error"
-                    else -> TrueFalseQuestionListScreenUiState.Error
-                }
+            } catch (e: ApiException) {
+                TrueFalseQuestionListScreenUiState.Error.errorMessage = e.message?: "Unkown error"
                 TrueFalseQuestionListScreenUiState.Error
-            }*/
+            } catch (e: Exception){
+                TrueFalseQuestionListScreenUiState.Error.errorMessage = "Network error"
+                TrueFalseQuestionListScreenUiState.Error
+            }
         }
     }
 

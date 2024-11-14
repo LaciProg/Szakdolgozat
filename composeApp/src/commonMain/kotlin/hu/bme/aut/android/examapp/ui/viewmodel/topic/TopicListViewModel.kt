@@ -1,5 +1,6 @@
 package hu.bme.aut.android.examapp.ui.viewmodel.topic
 
+import ApiException
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -43,16 +44,13 @@ class TopicListViewModel: ViewModel() {
             } catch (e: IOException) {
                 TopicListScreenUiState.Error.errorMessage = e.toString()// "Network error"
                 TopicListScreenUiState.Error
-            }/* catch (e: HttpException) {
-                when(e.code()){
-                    400 -> TopicListScreenUiState.Error.errorMessage = "Bad request"
-                    401 -> TopicListScreenUiState.Error.errorMessage = "Unauthorized try logging in again or open the home screen"
-                    404 -> TopicListScreenUiState.Error.errorMessage = "Content not found"
-                    500 -> TopicListScreenUiState.Error.errorMessage = "Server error"
-                    else -> TopicListScreenUiState.Error
-                }
+            } catch (e: ApiException) {
+                TopicListScreenUiState.Error.errorMessage = e.message?: "Unkown error"
                 TopicListScreenUiState.Error
-            }*/
+            } catch (e: Exception){
+                TopicListScreenUiState.Error.errorMessage = "Network error"
+                TopicListScreenUiState.Error
+            }
         }
     }
 

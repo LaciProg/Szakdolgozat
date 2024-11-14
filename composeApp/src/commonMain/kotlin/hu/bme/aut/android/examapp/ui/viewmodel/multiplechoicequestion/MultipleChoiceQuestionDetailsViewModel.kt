@@ -1,5 +1,6 @@
 package hu.bme.aut.android.examapp.ui.viewmodel.multiplechoicequestion
 
+import ApiException
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -49,16 +50,13 @@ class MultipleChoiceQuestionDetailsViewModel(
                 MultipleChoiceQuestionDetailsScreenUiState.Success(result)
             } catch (e: IOException) {
                 MultipleChoiceQuestionDetailsScreenUiState.Error
-            } /*catch (e: HttpException) {
-                when(e.code()){
-                    400 -> MultipleChoiceQuestionDetailsScreenUiState.Error.errorMessage = "Bad request"
-                    401 -> MultipleChoiceQuestionDetailsScreenUiState.Error.errorMessage = "Unauthorized try logging in again or open the home screen"
-                    404 -> MultipleChoiceQuestionDetailsScreenUiState.Error.errorMessage = "Content not found"
-                    500 -> MultipleChoiceQuestionDetailsScreenUiState.Error.errorMessage = "Server error"
-                    else -> MultipleChoiceQuestionDetailsScreenUiState.Error
-                }
+            } catch (e: ApiException) {
+                MultipleChoiceQuestionDetailsScreenUiState.Error.errorMessage = e.message?: "Unkown error"
                 MultipleChoiceQuestionDetailsScreenUiState.Error
-            }*/
+            } catch (e: Exception){
+                MultipleChoiceQuestionDetailsScreenUiState.Error.errorMessage = "Network error"
+                MultipleChoiceQuestionDetailsScreenUiState.Error
+            }
         }
     }
 
@@ -68,16 +66,13 @@ class MultipleChoiceQuestionDetailsViewModel(
         } catch (e: IOException) {
             MultipleChoiceQuestionDetailsScreenUiState.Error.errorMessage = "Network error"
             multipleChoiceDetailsScreenUiState = MultipleChoiceQuestionDetailsScreenUiState.Error
-        } /*catch (e: HttpException) {
-            when(e.code()){
-                400 -> MultipleChoiceQuestionDetailsScreenUiState.Error.errorMessage = "You can't delete this question because it is used in a test."
-                401 -> MultipleChoiceQuestionDetailsScreenUiState.Error.errorMessage = "Unauthorized try logging in again or open the home screen"
-                404 -> MultipleChoiceQuestionDetailsScreenUiState.Error.errorMessage = "Content not found"
-                500 -> MultipleChoiceQuestionDetailsScreenUiState.Error.errorMessage = "Server error"
-                else -> MultipleChoiceQuestionDetailsScreenUiState.Error
-            }
+        } catch (e: ApiException) {
+            MultipleChoiceQuestionDetailsScreenUiState.Error.errorMessage = e.message?: "Unkown error"
             multipleChoiceDetailsScreenUiState = MultipleChoiceQuestionDetailsScreenUiState.Error
-        }*/
+        } catch (e: Exception){
+            MultipleChoiceQuestionDetailsScreenUiState.Error.errorMessage = "Network error"
+            multipleChoiceDetailsScreenUiState = MultipleChoiceQuestionDetailsScreenUiState.Error
+        }
     }
 
 }

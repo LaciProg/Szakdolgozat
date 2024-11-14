@@ -1,5 +1,6 @@
 package hu.bme.aut.android.examapp.ui.viewmodel.multiplechoicequestion
 
+import ApiException
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -44,16 +45,13 @@ class MultipleChoiceQuestionListViewModel: ViewModel() {
                 MultipleChoiceQuestionListScreenUiState.Success(result)
             } catch (e: IOException) {
                 MultipleChoiceQuestionListScreenUiState.Error
-            } /*catch (e: HttpException) {
-                when(e.code()){
-                    400 -> MultipleChoiceQuestionListScreenUiState.Error.errorMessage = "Bad request"
-                    401 -> MultipleChoiceQuestionListScreenUiState.Error.errorMessage = "Unauthorized try logging in again or open the home screen"
-                    404 -> MultipleChoiceQuestionListScreenUiState.Error.errorMessage = "Content not found"
-                    500 -> MultipleChoiceQuestionListScreenUiState.Error.errorMessage = "Server error"
-                    else -> MultipleChoiceQuestionListScreenUiState.Error
-                }
+            } catch (e: ApiException) {
+                MultipleChoiceQuestionListScreenUiState.Error.errorMessage = e.message?: "Unkown error"
                 MultipleChoiceQuestionListScreenUiState.Error
-            }*/
+            } catch (e: Exception){
+                MultipleChoiceQuestionListScreenUiState.Error.errorMessage = "Network error"
+                MultipleChoiceQuestionListScreenUiState.Error
+            }
         }
     }
 

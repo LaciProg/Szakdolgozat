@@ -1,5 +1,6 @@
 package hu.bme.aut.android.examapp.ui.viewmodel.topic
 
+import ApiException
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -48,16 +49,13 @@ class TopicDetailsViewModel(
             } catch (e: IOException) {
                 TopicDetailsScreenUiState.Error.errorMessage = "Network error"
                 TopicDetailsScreenUiState.Error
-            } /*catch (e: HttpException) {
-                when(e.code()){
-                    400 -> TopicDetailsScreenUiState.Error.errorMessage = "You can't delete a topic because it is used in a question, exam or topic."
-                    401 -> TopicDetailsScreenUiState.Error.errorMessage = "Unauthorized try logging in again or open the home screen"
-                    404 -> TopicDetailsScreenUiState.Error.errorMessage = "Content not found"
-                    500 -> TopicDetailsScreenUiState.Error.errorMessage = "Server error"
-                    else -> TopicDetailsScreenUiState.Error
-                }
+            } catch (e: ApiException) {
+                TopicDetailsScreenUiState.Error.errorMessage = e.message?: "Unkown error"
                 TopicDetailsScreenUiState.Error
-            }*/
+            } catch (e: Exception){
+                TopicDetailsScreenUiState.Error.errorMessage = "Network error"
+                TopicDetailsScreenUiState.Error
+            }
         }
     }
 
@@ -67,16 +65,13 @@ class TopicDetailsViewModel(
         } catch (e: IOException){
             TopicDetailsScreenUiState.Error.errorMessage = "Network error"
             topicDetailsScreenUiState = TopicDetailsScreenUiState.Error
-        } /*catch (e: HttpException){
-            when(e.code()){
-                400 -> TopicDetailsScreenUiState.Error.errorMessage = "Bad request"
-                401 -> TopicDetailsScreenUiState.Error.errorMessage = "Unauthorized try logging in again or open the home screen"
-                404 -> TopicDetailsScreenUiState.Error.errorMessage = "Content not found"
-                500 -> TopicDetailsScreenUiState.Error.errorMessage = "Server error"
-                else -> TopicDetailsScreenUiState.Error
-            }
+        } catch (e: ApiException) {
+            TopicDetailsScreenUiState.Error.errorMessage = e.message?: "Unkown error"
+        topicDetailsScreenUiState = TopicDetailsScreenUiState.Error
+        } catch (e: Exception){
+            TopicDetailsScreenUiState.Error.errorMessage = "Network error"
             topicDetailsScreenUiState = TopicDetailsScreenUiState.Error
-        }*/
+        }
     }
 
 }

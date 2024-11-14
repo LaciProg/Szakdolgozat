@@ -1,5 +1,6 @@
 package hu.bme.aut.android.examapp.ui.viewmodel.point
 
+import ApiException
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -39,16 +40,13 @@ class PointListViewModel: ViewModel() {
                 PointListScreenUiState.Success(result)
             } catch (e: IOException) {
                 PointListScreenUiState.Error
-            } /*catch (e: HttpException) {
-                when(e.code()){
-                    400 -> PointListScreenUiState.Error.errorMessage = "Bad request"
-                    401 -> PointListScreenUiState.Error.errorMessage = "Unauthorized try logging in again or open the home screen"
-                    404 -> PointListScreenUiState.Error.errorMessage = "Content not found"
-                    500 -> PointListScreenUiState.Error.errorMessage = "Server error"
-                    else -> PointListScreenUiState.Error
-                }
+            } catch (e: ApiException) {
+                PointListScreenUiState.Error.errorMessage = e.message?: "Unkown error"
                 PointListScreenUiState.Error
-            }*/
+            } catch (e: Exception){
+                PointListScreenUiState.Error.errorMessage = "Network error"
+                PointListScreenUiState.Error
+            }
         }
     }
 

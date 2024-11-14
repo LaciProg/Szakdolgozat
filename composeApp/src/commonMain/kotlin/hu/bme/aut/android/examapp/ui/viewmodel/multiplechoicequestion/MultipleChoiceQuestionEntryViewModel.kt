@@ -1,5 +1,6 @@
 package hu.bme.aut.android.examapp.ui.viewmodel.multiplechoicequestion
 
+import ApiException
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -43,17 +44,15 @@ class MultipleChoiceQuestionEntryViewModel: ViewModel(){
                 MultipleChoiceQuestionEntryScreenUiState.Error.errorMessage = "Network error"
                 multipleChoiceQuestionScreenUiState = MultipleChoiceQuestionEntryScreenUiState.Error
                 false
-            } /*catch (e: HttpException){
-                when(e.code()){
-                    400 -> MultipleChoiceQuestionEntryScreenUiState.Error.errorMessage = "Bad request"
-                    401 -> MultipleChoiceQuestionEntryScreenUiState.Error.errorMessage = "Unauthorized try logging in again or open the home screen"
-                    404 -> MultipleChoiceQuestionEntryScreenUiState.Error.errorMessage = "Content not found"
-                    500 -> MultipleChoiceQuestionEntryScreenUiState.Error.errorMessage = "Server error"
-                    else -> MultipleChoiceQuestionEntryScreenUiState.Error
-                }
+            } catch (e: ApiException) {
+                MultipleChoiceQuestionEntryScreenUiState.Error.errorMessage = e.message?: "Unkown error"
                 multipleChoiceQuestionScreenUiState = MultipleChoiceQuestionEntryScreenUiState.Error
                 false
-            }*/
+            } catch (e: Exception){
+                MultipleChoiceQuestionEntryScreenUiState.Error.errorMessage = "Network error"
+                multipleChoiceQuestionScreenUiState = MultipleChoiceQuestionEntryScreenUiState.Error
+                false
+            }
         } else {
             multipleChoiceQuestionUiState = multipleChoiceQuestionUiState.copy(isEntryValid = false)
             false
@@ -74,17 +73,15 @@ class MultipleChoiceQuestionEntryViewModel: ViewModel(){
             MultipleChoiceQuestionEntryScreenUiState.Error.errorMessage = "Network error"
             multipleChoiceQuestionScreenUiState = MultipleChoiceQuestionEntryScreenUiState.Error
             false
-        } /*catch (e: HttpException){
-            when(e.code()){
-                400 -> MultipleChoiceQuestionEntryScreenUiState.Error.errorMessage = "Bad request"
-                401 -> MultipleChoiceQuestionEntryScreenUiState.Error.errorMessage = "Unauthorized try logging in again or open the home screen"
-                404 -> MultipleChoiceQuestionEntryScreenUiState.Error.errorMessage = "Content not found"
-                500 -> MultipleChoiceQuestionEntryScreenUiState.Error.errorMessage = "Server error"
-                else -> MultipleChoiceQuestionEntryScreenUiState.Error
-            }
+        } catch (e: ApiException) {
+            MultipleChoiceQuestionEntryScreenUiState.Error.errorMessage = e.message?: "Unkown error"
             multipleChoiceQuestionScreenUiState = MultipleChoiceQuestionEntryScreenUiState.Error
             false
-        }*/
+        } catch (e: Exception){
+            MultipleChoiceQuestionEntryScreenUiState.Error.errorMessage = "Network error"
+            multipleChoiceQuestionScreenUiState = MultipleChoiceQuestionEntryScreenUiState.Error
+            false
+        }
     }
 
 }

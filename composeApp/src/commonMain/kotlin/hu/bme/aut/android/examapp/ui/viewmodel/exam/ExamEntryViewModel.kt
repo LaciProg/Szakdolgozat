@@ -1,5 +1,6 @@
 package hu.bme.aut.android.examapp.ui.viewmodel.exam
 
+import ApiException
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -41,17 +42,15 @@ class ExamEntryViewModel: ViewModel(){
                 ExamEntryScreenUiState.Error.errorMessage = "Network error"
                 examEntryScreenUiState = ExamEntryScreenUiState.Error
                 false
-            } /*catch (e: HttpException){
-                when(e.code()){
-                    400 -> ExamEntryScreenUiState.Error.errorMessage = "Bad request"
-                    401 -> ExamEntryScreenUiState.Error.errorMessage = "Unauthorized try logging in again or open the home screen"
-                    404 -> ExamEntryScreenUiState.Error.errorMessage = "Content not found"
-                    500 -> ExamEntryScreenUiState.Error.errorMessage = "Server error"
-                    else -> ExamEntryScreenUiState.Error
-                }
+            } catch (e: ApiException) {
+                ExamEntryScreenUiState.Error.errorMessage = e.message?: "Unkown error"
                 examEntryScreenUiState = ExamEntryScreenUiState.Error
                 false
-            }*/
+            } catch (e: Exception){
+                ExamEntryScreenUiState.Error.errorMessage = "Network error"
+                examEntryScreenUiState = ExamEntryScreenUiState.Error
+                false
+            }
         } else {
             examUiState = examUiState.copy(isEntryValid = false)
             false
@@ -65,16 +64,15 @@ class ExamEntryViewModel: ViewModel(){
             ExamEntryScreenUiState.Error.errorMessage = "Network error"
             examEntryScreenUiState = ExamEntryScreenUiState.Error
             ""
-        } /*catch (e: HttpException){
-            when(e.code()){
-                400 -> ExamEntryScreenUiState.Error.errorMessage = "Bad request"
-                401 -> ExamEntryScreenUiState.Error.errorMessage = "Unauthorized try logging in again or open the home screen"
-                404 -> ExamEntryScreenUiState.Error.errorMessage = "Content not found"
-                500 -> ExamEntryScreenUiState.Error.errorMessage = "Server error"
-                else -> ExamEntryScreenUiState.Error
-            }
+        } catch (e: ApiException) {
+            ExamEntryScreenUiState.Error.errorMessage = e.message?: "Unkown error"
+            examEntryScreenUiState = ExamEntryScreenUiState.Error
             ""
-        }*/
+        } catch (e: Exception){
+            ExamEntryScreenUiState.Error.errorMessage = "Network error"
+            examEntryScreenUiState = ExamEntryScreenUiState.Error
+            ""
+        }
     }
 
     private fun validateInput(uiState: ExamDetails = examUiState.examDetails): Boolean {
@@ -90,17 +88,15 @@ class ExamEntryViewModel: ViewModel(){
             ExamEntryScreenUiState.Error.errorMessage = "Network error"
             examEntryScreenUiState = ExamEntryScreenUiState.Error
             false
-        } /*catch (e: HttpException){
-            when(e.code()){
-                400 -> ExamEntryScreenUiState.Error.errorMessage = "Bad request"
-                401 -> ExamEntryScreenUiState.Error.errorMessage = "Unauthorized try logging in again or open the home screen"
-                404 -> ExamEntryScreenUiState.Error.errorMessage = "Content not found"
-                500 -> ExamEntryScreenUiState.Error.errorMessage = "Server error"
-                else -> ExamEntryScreenUiState.Error
-            }
+        } catch (e: ApiException) {
+            ExamEntryScreenUiState.Error.errorMessage = e.message?: "Unkown error"
             examEntryScreenUiState = ExamEntryScreenUiState.Error
             false
-        }*/
+        } catch (e: Exception){
+            ExamEntryScreenUiState.Error.errorMessage = "Network error"
+            examEntryScreenUiState = ExamEntryScreenUiState.Error
+            false
+        }
     }
 
 
@@ -167,16 +163,15 @@ private suspend fun toTrueFalseQuestion(id: String) : TrueFalseQuestionDto? {
         ExamEntryScreenUiState.Error.errorMessage = "Network error"
         ExamEntryScreenUiState.Error
         null
-    } /*catch (e: HttpException){
-        when(e.code()){
-            400 -> ExamEntryScreenUiState.Error.errorMessage = "Bad request"
-            401 -> ExamEntryScreenUiState.Error.errorMessage = "Unauthorized try logging in again or open the home screen"
-            404 -> ExamEntryScreenUiState.Error.errorMessage = "Content not found"
-            500 -> ExamEntryScreenUiState.Error.errorMessage = "Server error"
-            else -> ExamEntryScreenUiState.Error
-        }
+    } catch (e: ApiException) {
+        ExamEntryScreenUiState.Error.errorMessage = e.message?: "Unkown error"
+        ExamEntryScreenUiState.Error
         null
-    }*/
+    } catch (e: Exception){
+        ExamEntryScreenUiState.Error.errorMessage = "Network error"
+        ExamEntryScreenUiState.Error
+        null
+    }
 }
 
 private suspend fun toMultipleChoiceQuestion(id: String) : MultipleChoiceQuestionDto? {
@@ -186,14 +181,13 @@ private suspend fun toMultipleChoiceQuestion(id: String) : MultipleChoiceQuestio
         ExamEntryScreenUiState.Error.errorMessage = "Network error"
         ExamEntryScreenUiState.Error
         null
-    } /*catch (e: HttpException){
-        when(e.code()){
-            400 -> ExamEntryScreenUiState.Error.errorMessage = "Bad request"
-            401 -> ExamEntryScreenUiState.Error.errorMessage = "Unauthorized try logging in again or open the home screen"
-            404 -> ExamEntryScreenUiState.Error.errorMessage = "Content not found"
-            500 -> ExamEntryScreenUiState.Error.errorMessage = "Server error"
-            else -> ExamEntryScreenUiState.Error
-        }
+    } catch (e: ApiException) {
+        ExamEntryScreenUiState.Error.errorMessage = e.message?: "Unkown error"
+        ExamEntryScreenUiState.Error
         null
-    }*/
+    } catch (e: Exception){
+        ExamEntryScreenUiState.Error.errorMessage = "Network error"
+        ExamEntryScreenUiState.Error
+        null
+    }
 }

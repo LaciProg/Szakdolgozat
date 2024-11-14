@@ -1,5 +1,6 @@
 package hu.bme.aut.android.examapp.ui.viewmodel.point
 
+import ApiException
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -47,16 +48,13 @@ class PointEditViewModel(
                 PointEditScreenUiState.Success(result)
             } catch (e: IOException) {
                 PointEditScreenUiState.Error
-            } /*catch (e: HttpException) {
-                when(e.code()){
-                    400 -> PointEditScreenUiState.Error.errorMessage = "Bad request"
-                    401 -> PointEditScreenUiState.Error.errorMessage = "Unauthorized try logging in again or open the home screen"
-                    404 -> PointEditScreenUiState.Error.errorMessage = "Content not found"
-                    500 -> PointEditScreenUiState.Error.errorMessage = "Server error"
-                    else -> PointEditScreenUiState.Error
-                }
+            } catch (e: ApiException) {
+                PointEditScreenUiState.Error.errorMessage = e.message?: "Unkown error"
                 PointEditScreenUiState.Error
-            }*/
+            } catch (e: Exception){
+                PointEditScreenUiState.Error.errorMessage = "Network error"
+                PointEditScreenUiState.Error
+            }
         }
     }
 
@@ -71,17 +69,15 @@ class PointEditViewModel(
                 PointEditScreenUiState.Error.errorMessage = "Network error"
                 pointEditScreenUiState = PointEditScreenUiState.Error
                 return false
-            } /*catch (e: HttpException) {
-                when(e.code()){
-                    400 -> PointEditScreenUiState.Error.errorMessage = "Bad request"
-                    401 -> PointEditScreenUiState.Error.errorMessage = "Unauthorized try logging in again or open the home screen"
-                    404 -> PointEditScreenUiState.Error.errorMessage = "Content not found"
-                    500 -> PointEditScreenUiState.Error.errorMessage = "Server error"
-                    else -> PointEditScreenUiState.Error
-                }
+            } catch (e: ApiException) {
+                PointEditScreenUiState.Error.errorMessage = e.message?: "Unkown error"
+               pointEditScreenUiState = PointEditScreenUiState.Error
+                return false
+            } catch (e: Exception){
+                PointEditScreenUiState.Error.errorMessage = "Network error"
                 pointEditScreenUiState = PointEditScreenUiState.Error
                 return false
-            }*/
+            }
         }
         else{
             pointUiState = pointUiState.copy(isEntryValid = false)
@@ -108,16 +104,14 @@ class PointEditViewModel(
             PointEditScreenUiState.Error.errorMessage = "Network error"
             pointEditScreenUiState = PointEditScreenUiState.Error
             false
-        } /*catch (e: HttpException) {
-            when(e.code()){
-                400 -> PointEditScreenUiState.Error.errorMessage = "Bad request"
-                401 -> PointEditScreenUiState.Error.errorMessage = "Unauthorized try logging in again or open the home screen"
-                404 -> PointEditScreenUiState.Error.errorMessage = "Content not found"
-                500 -> PointEditScreenUiState.Error.errorMessage = "Server error"
-                else -> PointEditScreenUiState.Error
-            }
+        } catch (e: ApiException) {
+            PointEditScreenUiState.Error.errorMessage = e.message?: "Unkown error"
             pointEditScreenUiState = PointEditScreenUiState.Error
             false
-        }*/
+        } catch (e: Exception){
+            PointEditScreenUiState.Error.errorMessage = "Network error"
+            pointEditScreenUiState = PointEditScreenUiState.Error
+            false
+        }
     }
 }

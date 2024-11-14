@@ -1,5 +1,6 @@
 package hu.bme.aut.android.examapp.ui.viewmodel.point
 
+import ApiException
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -38,17 +39,15 @@ class PointEntryViewModel: ViewModel(){
                 PointEntryScreenUiState.Error.errorMessage = "Network error"
                 pointScreenUiState = PointEntryScreenUiState.Error
                 false
-            } /*catch (e: HttpException){
-                when(e.code()){
-                    400 -> PointEntryScreenUiState.Error.errorMessage = "Bad request"
-                    401 -> PointEntryScreenUiState.Error.errorMessage = "Unauthorized try logging in again or open the home screen"
-                    404 -> PointEntryScreenUiState.Error.errorMessage = "Content not found"
-                    500 -> PointEntryScreenUiState.Error.errorMessage = "Server error"
-                    else -> PointEntryScreenUiState.Error
-                }
+            }  catch (e: ApiException) {
+                PointEntryScreenUiState.Error.errorMessage = e.message?: "Unkown error"
                 pointScreenUiState = PointEntryScreenUiState.Error
                 false
-            }*/
+            } catch (e: Exception){
+                PointEntryScreenUiState.Error.errorMessage = "Network error"
+                pointScreenUiState = PointEntryScreenUiState.Error
+                false
+            }
         }
         else{
             pointUiState = pointUiState.copy(isEntryValid = false)
@@ -69,17 +68,15 @@ class PointEntryViewModel: ViewModel(){
             PointEntryScreenUiState.Error.errorMessage = "Network error"
             pointScreenUiState = PointEntryScreenUiState.Error
             false
-        } /*catch (e: HttpException){
-            when(e.code()){
-                400 -> PointEntryScreenUiState.Error.errorMessage = "Bad request"
-                401 -> PointEntryScreenUiState.Error.errorMessage = "Unauthorized try logging in again or open the home screen"
-                404 -> PointEntryScreenUiState.Error.errorMessage = "Content not found"
-                500 -> PointEntryScreenUiState.Error.errorMessage = "Server error"
-                else -> PointEntryScreenUiState.Error
-            }
+        } catch (e: ApiException) {
+                PointEntryScreenUiState.Error.errorMessage = e.message?: "Unkown error"
+                pointScreenUiState = PointEntryScreenUiState.Error
+                false
+        } catch (e: Exception){
+            PointEntryScreenUiState.Error.errorMessage = "Network error"
             pointScreenUiState = PointEntryScreenUiState.Error
             false
-        }*/
+        }
     }
 
 }

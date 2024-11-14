@@ -1,5 +1,6 @@
 package hu.bme.aut.android.examapp.ui.viewmodel.submission
 
+import ApiException
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -71,29 +72,15 @@ class SubmissionViewModel(
                         answers.answers.add("")
                     }
                 }
-                //Log.i("Answers3", gottenAnswers.answers.toString())
-                //if(gottenAnswers.answers.isNotEmpty()) {
-                //    gottenAnswers.answers.forEachIndexed { index, it ->
-                //        Log.i("Answer", it)
-                //        answers.answers[index] = it
-                //    }
-                //}
-
-
                 SubmissionScreenUiState.Success(result)
             } catch (e: IOException) {
+                SubmissionScreenUiState.Error.errorMessage = "IO error"
                 SubmissionScreenUiState.Error
-            } /*catch (e: HttpException) {
-                when(e.code()){
-                    400 -> SubmissionScreenUiState.Error.errorMessage = "Bad request"
-                    401 -> SubmissionScreenUiState.Error.errorMessage = "Unauthorized try logging in again or open the home screen"
-                    404 -> SubmissionScreenUiState.Error.errorMessage = "Content not found"
-                    500 -> SubmissionScreenUiState.Error.errorMessage = "Server error"
-                    else -> SubmissionScreenUiState.Error
-                }
+            }catch (e: ApiException) {
+                SubmissionScreenUiState.Error.errorMessage = e.message?: "Unkown error"
                 SubmissionScreenUiState.Error
-            }*/ catch (e: IllegalArgumentException){
-                SubmissionScreenUiState.Error.errorMessage = "Server type"
+            } catch (e: Exception){
+                SubmissionScreenUiState.Error.errorMessage = "Network error"
                 SubmissionScreenUiState.Error
             }
         }
@@ -102,23 +89,22 @@ class SubmissionViewModel(
     fun submitAnswers(answers: String): StatisticsDto?{
         statisticsDialogUiState = SubmissionResultScreenUiState.Loading
         viewModelScope.launch {
-            try {
+            statisticsDialogUiState = try {
                 statisticsDto = ApiService.getCorrection(id = examId, answers = answers)
-                statisticsDialogUiState = SubmissionResultScreenUiState.Success(statisticsDto!!)
+                SubmissionResultScreenUiState.Success(statisticsDto!!)
             } catch (e: IOException) {
-                SubmissionScreenUiState.Error.errorMessage = "Network error"
-                statisticsDialogUiState = SubmissionResultScreenUiState.Error
-            } /*catch (e: HttpException) {
-                when(e.code()){
-                    400 -> SubmissionResultScreenUiState.Error.errorMessage = "Bad request"
-                    401 -> SubmissionResultScreenUiState.Error.errorMessage = "Unauthorized try logging in again or open the home screen"
-                    404 -> SubmissionResultScreenUiState.Error.errorMessage = "Content not found"
-                    412 -> SubmissionResultScreenUiState.Error.errorMessage = "Wrong answers format"
-                    500 -> SubmissionResultScreenUiState.Error.errorMessage = "Server error"
-                    else -> SubmissionResultScreenUiState.Error
-                }
-                statisticsDialogUiState = SubmissionResultScreenUiState.Error
-            }*/
+                SubmissionResultScreenUiState.Error.errorMessage = "Network error"
+                SubmissionResultScreenUiState.Error
+            } catch (e: IOException) {
+                SubmissionResultScreenUiState.Error.errorMessage = "IO error"
+                SubmissionResultScreenUiState.Error
+            }catch (e: ApiException) {
+                SubmissionResultScreenUiState.Error.errorMessage = e.message?: "Unkown error"
+                SubmissionResultScreenUiState.Error
+            } catch (e: Exception){
+                SubmissionResultScreenUiState.Error.errorMessage = "Network error"
+                SubmissionResultScreenUiState.Error
+            }
         }
         return statisticsDto
     }
@@ -142,17 +128,24 @@ class SubmissionViewModel(
             SubmissionScreenUiState.Error.errorMessage = "Network error"
             submissionScreenUiState = SubmissionScreenUiState.Error
             null
-        } /*catch (e: HttpException) {
-            when(e.code()){
-                400 -> SubmissionScreenUiState.Error.errorMessage = "Bad request"
-                401 -> SubmissionScreenUiState.Error.errorMessage = "Unauthorized try logging in again or open the home screen"
-                404 -> SubmissionScreenUiState.Error.errorMessage = "Content not found"
-                500 -> SubmissionScreenUiState.Error.errorMessage = "Server error"
-                else -> SubmissionScreenUiState.Error
-            }
+        } catch (e: IOException) {
+            SubmissionScreenUiState.Error.errorMessage = "Network error"
             submissionScreenUiState = SubmissionScreenUiState.Error
             null
-        }*/
+        } catch (e: IOException) {
+            SubmissionScreenUiState.Error.errorMessage = "IO error"
+            submissionScreenUiState = SubmissionScreenUiState.Error
+            null
+        }catch (e: ApiException) {
+            SubmissionScreenUiState.Error.errorMessage = e.message?: "Unkown error"
+            submissionScreenUiState = SubmissionScreenUiState.Error
+            null
+        } catch (e: Exception){
+            SubmissionScreenUiState.Error.errorMessage = "Network error"
+            submissionScreenUiState = SubmissionScreenUiState.Error
+            null
+        }
+
     }
 
     private suspend fun toMultipleChoiceQuestion(id: String) : MultipleChoiceQuestionDto? {
@@ -162,17 +155,23 @@ class SubmissionViewModel(
             SubmissionScreenUiState.Error.errorMessage = "Network error"
             submissionScreenUiState = SubmissionScreenUiState.Error
             null
-        } /*catch (e: HttpException) {
-            when(e.code()){
-                400 -> SubmissionScreenUiState.Error.errorMessage = "Bad request"
-                401 -> SubmissionScreenUiState.Error.errorMessage = "Unauthorized try logging in again or open the home screen"
-                404 -> SubmissionScreenUiState.Error.errorMessage = "Content not found"
-                500 -> SubmissionScreenUiState.Error.errorMessage = "Server error"
-                else -> SubmissionScreenUiState.Error
-            }
+        } catch (e: IOException) {
+                SubmissionScreenUiState.Error.errorMessage = "Network error"
+                submissionScreenUiState = SubmissionScreenUiState.Error
+                null
+        } catch (e: IOException) {
+            SubmissionScreenUiState.Error.errorMessage = "IO error"
             submissionScreenUiState = SubmissionScreenUiState.Error
             null
-        }*/
+        }catch (e: ApiException) {
+            SubmissionScreenUiState.Error.errorMessage = e.message?: "Unkown error"
+            submissionScreenUiState = SubmissionScreenUiState.Error
+            null
+        } catch (e: Exception){
+            SubmissionScreenUiState.Error.errorMessage = "Network error"
+            submissionScreenUiState = SubmissionScreenUiState.Error
+            null
+        }
     }
 
 }

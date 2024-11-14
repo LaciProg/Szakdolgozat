@@ -1,5 +1,6 @@
 package hu.bme.aut.android.examapp.ui.viewmodel.topic
 
+import ApiException
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -38,17 +39,15 @@ class TopicEntryViewModel: ViewModel(){
                 TopicEntryScreenUiState.Error.errorMessage = "Network error"
                 topicScreenUiState = TopicEntryScreenUiState.Error
                 false
-            } /*catch (e: HttpException){
-                when(e.code()){
-                    400 -> TopicEntryScreenUiState.Error.errorMessage = "Bad request"
-                    401 -> TopicEntryScreenUiState.Error.errorMessage = "Unauthorized try logging in again or open the home screen"
-                    404 -> TopicEntryScreenUiState.Error.errorMessage = "Content not found"
-                    500 -> TopicEntryScreenUiState.Error.errorMessage = "Server error"
-                    else -> TopicEntryScreenUiState.Error
-                }
-                TopicEntryScreenUiState.Error
+            } catch (e: ApiException) {
+                TopicEntryScreenUiState.Error.errorMessage = e.message?: "Unkown error"
+                topicScreenUiState = TopicEntryScreenUiState.Error
                 false
-            }*/
+            } catch (e: Exception){
+                TopicEntryScreenUiState.Error.errorMessage = "Network error"
+                topicScreenUiState = TopicEntryScreenUiState.Error
+                false
+            }
         } else {
             topicUiState = topicUiState.copy(isEntryValid = false)
             false
@@ -63,17 +62,15 @@ class TopicEntryViewModel: ViewModel(){
             TopicEntryScreenUiState.Error.errorMessage = "Network error"
             topicScreenUiState = TopicEntryScreenUiState.Error
             ""
-        } /*catch (e: HttpException){
-            when(e.code()){
-                400 -> TopicEntryScreenUiState.Error.errorMessage = "Bad request"
-                401 -> TopicEntryScreenUiState.Error.errorMessage = "Unauthorized try logging in again or open the home screen"
-                404 -> TopicEntryScreenUiState.Error.errorMessage = "Content not found"
-                500 -> TopicEntryScreenUiState.Error.errorMessage = "Server error"
-                else -> TopicEntryScreenUiState.Error
-            }
+        } catch (e: ApiException) {
+                TopicEntryScreenUiState.Error.errorMessage = e.message?: "Unkown error"
+                topicScreenUiState = TopicEntryScreenUiState.Error
+                ""
+        } catch (e: Exception){
+            TopicEntryScreenUiState.Error.errorMessage = "Network error"
             topicScreenUiState = TopicEntryScreenUiState.Error
             ""
-        }*/
+        }
 
     }
 
@@ -90,17 +87,15 @@ class TopicEntryViewModel: ViewModel(){
             TopicEntryScreenUiState.Error.errorMessage = "Network error"
             topicScreenUiState = TopicEntryScreenUiState.Error
             false
-        } /*catch (e: HttpException) {
-            when(e.code()){
-                400 -> TopicEntryScreenUiState.Error.errorMessage = "Bad request"
-                401 -> TopicEntryScreenUiState.Error.errorMessage = "Unauthorized try logging in again or open the home screen"
-                404 -> TopicEntryScreenUiState.Error.errorMessage = "Content not found"
-                500 -> TopicEntryScreenUiState.Error.errorMessage = "Server error"
-                else -> TopicEntryScreenUiState.Error
-            }
+        } catch (e: ApiException) {
+                TopicEntryScreenUiState.Error.errorMessage = e.message?: "Unkown error"
+                topicScreenUiState = TopicEntryScreenUiState.Error
+                false
+        } catch (e: Exception){
+            TopicEntryScreenUiState.Error.errorMessage = "Network error"
             topicScreenUiState = TopicEntryScreenUiState.Error
             false
-        }*/
+        }
     }
 
 }

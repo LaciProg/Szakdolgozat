@@ -1,5 +1,6 @@
 package hu.bme.aut.android.examapp.ui.viewmodel.exam
 
+import ApiException
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -53,16 +54,13 @@ class ExamEditViewModel(
                 ExamEditScreenUiState.Success(result)
             } catch (e: IOException) {
                 ExamEditScreenUiState.Error
-            } /*catch (e: HttpException) {
-                when(e.code()){
-                    400 -> ExamEditScreenUiState.Error.errorMessage = "Bad request"
-                    401 -> ExamEditScreenUiState.Error.errorMessage = "Unauthorized try logging in again or open the home screen"
-                    404 -> ExamEditScreenUiState.Error.errorMessage = "Content not found"
-                    500 -> ExamEditScreenUiState.Error.errorMessage = "Server error"
-                    else -> ExamEditScreenUiState.Error
-                }
+            } catch (e: ApiException) {
+                ExamEditScreenUiState.Error.errorMessage = e.message?: "Unkown error"
                 ExamEditScreenUiState.Error
-            }*/ catch (e: IllegalArgumentException){
+            } catch (e: Exception){
+                ExamEditScreenUiState.Error.errorMessage = "Network error"
+                ExamEditScreenUiState.Error
+            } catch (e: IllegalArgumentException){
                 ExamEditScreenUiState.Error.errorMessage = "Server or connection error"
                 ExamEditScreenUiState.Error
             }
@@ -78,17 +76,15 @@ class ExamEditViewModel(
                 ExamEditScreenUiState.Error.errorMessage = "Network error"
                 examEditScreenUiState = ExamEditScreenUiState.Error
                 false
-            } /*catch (e: HttpException) {
-                when(e.code()){
-                    400 -> ExamEditScreenUiState.Error.errorMessage = "Bad request"
-                    401 -> ExamEditScreenUiState.Error.errorMessage = "Unauthorized try logging in again or open the home screen"
-                    404 -> ExamEditScreenUiState.Error.errorMessage = "Content not found"
-                    500 -> ExamEditScreenUiState.Error.errorMessage = "Server error"
-                    else -> ExamEditScreenUiState.Error
-                }
-                examEditScreenUiState = ExamEditScreenUiState.Error
+            } catch (e: ApiException) {
+                ExamEditScreenUiState.Error.errorMessage = e.message?: "Unkown error"
+                ExamEditScreenUiState.Error
                 false
-            }*/
+            } catch (e: Exception){
+                ExamEditScreenUiState.Error.errorMessage = "Network error"
+                ExamEditScreenUiState.Error
+                false
+            }
         }
         else {
             examUiState = examUiState.copy(isEntryValid = false)
@@ -114,17 +110,15 @@ class ExamEditViewModel(
             ExamEditScreenUiState.Error.errorMessage = "Network error"
             examEditScreenUiState = ExamEditScreenUiState.Error
             false
-        } /*catch (e: HttpException) {
-            when(e.code()){
-                400 -> ExamEditScreenUiState.Error.errorMessage = "Bad request"
-                401 -> ExamEditScreenUiState.Error.errorMessage = "Unauthorized try logging in again or open the home screen"
-                404 -> ExamEditScreenUiState.Error.errorMessage = "Content not found"
-                500 -> ExamEditScreenUiState.Error.errorMessage = "Server error"
-                else -> ExamEditScreenUiState.Error
-            }
-            examEditScreenUiState = ExamEditScreenUiState.Error
+        } catch (e: ApiException) {
+            ExamEditScreenUiState.Error.errorMessage = e.message?: "Unkown error"
+            ExamEditScreenUiState.Error
             false
-        }*/
+        } catch (e: Exception){
+            ExamEditScreenUiState.Error.errorMessage = "Network error"
+            ExamEditScreenUiState.Error
+            false
+        }
     }
 }
 

@@ -1,5 +1,6 @@
 package hu.bme.aut.android.examapp.ui.viewmodel.exam
 
+import ApiException
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -46,16 +47,13 @@ class ExamDetailsViewModel(
         } catch (e: IOException) {
             ExamDetailsScreenUiState.Error.errorMessage = "Network error"
             examDetailsScreenUiState = ExamDetailsScreenUiState.Error
-        } /*catch (e: HttpException) {
-            when(e.code()){
-                400 -> ExamDetailsScreenUiState.Error.errorMessage = "Bad request"
-                401 -> ExamDetailsScreenUiState.Error.errorMessage = "Unauthorized try logging in again or open the home screen"
-                404 -> ExamDetailsScreenUiState.Error.errorMessage = "Content not found"
-                500 -> ExamDetailsScreenUiState.Error.errorMessage = "Server error"
-                else -> ExamDetailsScreenUiState.Error
-            }
+        } catch (e: ApiException) {
+            ExamDetailsScreenUiState.Error.errorMessage = e.message?: "Unkown error"
             examDetailsScreenUiState = ExamDetailsScreenUiState.Error
-        }*/
+        } catch (e: Exception){
+            ExamDetailsScreenUiState.Error.errorMessage = "Network error"
+            examDetailsScreenUiState = ExamDetailsScreenUiState.Error
+        }
     }
 
     fun setId(id: String){
@@ -78,16 +76,13 @@ class ExamDetailsViewModel(
                 ExamDetailsScreenUiState.Success(result)
             } catch (e: IOException) {
                 ExamDetailsScreenUiState.Error
-            } /*catch (e: HttpException) {
-                when(e.code()){
-                    400 -> ExamDetailsScreenUiState.Error.errorMessage = "Bad request"
-                    401 -> ExamDetailsScreenUiState.Error.errorMessage = "Unauthorized try logging in again or open the home screen"
-                    404 -> ExamDetailsScreenUiState.Error.errorMessage = "Content not found"
-                    500 -> ExamDetailsScreenUiState.Error.errorMessage = "Server error"
-                    else -> ExamDetailsScreenUiState.Error
-                }
+            } catch (e: ApiException) {
+                ExamDetailsScreenUiState.Error.errorMessage = e.message?: "Unkown error"
                 ExamDetailsScreenUiState.Error
-            }*/ catch (e: IllegalArgumentException){
+            } catch (e: Exception){
+                ExamDetailsScreenUiState.Error.errorMessage = "Network error"
+                ExamDetailsScreenUiState.Error
+            } catch (e: IllegalArgumentException){
                 ExamDetailsScreenUiState.Error.errorMessage = "Server type"
                 ExamDetailsScreenUiState.Error
             }
@@ -112,16 +107,13 @@ class ExamDetailsViewModel(
         } catch (e: IOException) {
             ExamDetailsScreenUiState.Error.errorMessage = "Network error"
             examDetailsScreenUiState = ExamDetailsScreenUiState.Error
-        } /*catch (e: HttpException) {
-            when(e.code()){
-                400 -> ExamDetailsScreenUiState.Error.errorMessage = "Bad request"
-                401 -> ExamDetailsScreenUiState.Error.errorMessage = "Unauthorized try logging in again or open the home screen"
-                404 -> ExamDetailsScreenUiState.Error.errorMessage = "Content not found"
-                500 -> ExamDetailsScreenUiState.Error.errorMessage = "Server error"
-                else -> ExamDetailsScreenUiState.Error
-            }
+        } catch (e: ApiException) {
+            ExamDetailsScreenUiState.Error.errorMessage = e.message?: "Unkown error"
             examDetailsScreenUiState = ExamDetailsScreenUiState.Error
-        }*/
+        } catch (e: Exception){
+            ExamDetailsScreenUiState.Error.errorMessage = "Network error"
+            examDetailsScreenUiState = ExamDetailsScreenUiState.Error
+        }
     }
 
     private suspend fun toTrueFalseQuestion(id: String) : TrueFalseQuestionDto? {
@@ -131,17 +123,15 @@ class ExamDetailsViewModel(
             ExamDetailsScreenUiState.Error.errorMessage = "Network error"
             examDetailsScreenUiState = ExamDetailsScreenUiState.Error
             null
-        } /*catch (e: HttpException) {
-            when(e.code()){
-                400 -> ExamDetailsScreenUiState.Error.errorMessage = "Bad request"
-                401 -> ExamDetailsScreenUiState.Error.errorMessage = "Unauthorized try logging in again or open the home screen"
-                404 -> ExamDetailsScreenUiState.Error.errorMessage = "Content not found"
-                500 -> ExamDetailsScreenUiState.Error.errorMessage = "Server error"
-                else -> ExamDetailsScreenUiState.Error
-            }
+        } catch (e: ApiException) {
+            ExamDetailsScreenUiState.Error.errorMessage = e.message?: "Unkown error"
             examDetailsScreenUiState = ExamDetailsScreenUiState.Error
             null
-        }*/
+        } catch (e: Exception){
+            ExamDetailsScreenUiState.Error.errorMessage = "Network error"
+            examDetailsScreenUiState = ExamDetailsScreenUiState.Error
+            null
+        }
     }
 
     private suspend fun toMultipleChoiceQuestion(id: String) : MultipleChoiceQuestionDto? {
@@ -151,17 +141,15 @@ class ExamDetailsViewModel(
             ExamDetailsScreenUiState.Error.errorMessage = "Network error"
             examDetailsScreenUiState = ExamDetailsScreenUiState.Error
             null
-        } /*catch (e: HttpException) {
-            when(e.code()){
-                400 -> ExamDetailsScreenUiState.Error.errorMessage = "Bad request"
-                401 -> ExamDetailsScreenUiState.Error.errorMessage = "Unauthorized try logging in again or open the home screen"
-                404 -> ExamDetailsScreenUiState.Error.errorMessage = "Content not found"
-                500 -> ExamDetailsScreenUiState.Error.errorMessage = "Server error"
-                else -> ExamDetailsScreenUiState.Error
-            }
+        } catch (e: ApiException) {
+            ExamDetailsScreenUiState.Error.errorMessage = e.message?: "Unkown error"
             examDetailsScreenUiState = ExamDetailsScreenUiState.Error
             null
-        }*/
+        } catch (e: Exception){
+            ExamDetailsScreenUiState.Error.errorMessage = "Network error"
+            examDetailsScreenUiState = ExamDetailsScreenUiState.Error
+            null
+        }
     }
 
     suspend fun saveQuestion(ordinal: Int, question: String) {
@@ -184,16 +172,13 @@ class ExamDetailsViewModel(
         } catch (e: IOException) {
             ExamDetailsScreenUiState.Error.errorMessage = "Network error"
             examDetailsScreenUiState = ExamDetailsScreenUiState.Error
-        } /*catch (e: HttpException) {
-            when(e.code()){
-                400 -> ExamDetailsScreenUiState.Error.errorMessage = "Bad request"
-                401 -> ExamDetailsScreenUiState.Error.errorMessage = "Unauthorized try logging in again or open the home screen"
-                404 -> ExamDetailsScreenUiState.Error.errorMessage = "Content not found"
-                500 -> ExamDetailsScreenUiState.Error.errorMessage = "Server error"
-                else -> ExamDetailsScreenUiState.Error
-            }
+        } catch (e: ApiException) {
+            ExamDetailsScreenUiState.Error.errorMessage = e.message?: "Unkown error"
             examDetailsScreenUiState = ExamDetailsScreenUiState.Error
-        }*/
+        } catch (e: Exception){
+            ExamDetailsScreenUiState.Error.errorMessage = "Network error"
+            examDetailsScreenUiState = ExamDetailsScreenUiState.Error
+        }
 
     }
 
@@ -220,16 +205,13 @@ class ExamDetailsViewModel(
         } catch (e: IOException) {
             ExamDetailsScreenUiState.Error.errorMessage = "Network error"
             examDetailsScreenUiState = ExamDetailsScreenUiState.Error
-        } /*catch (e: HttpException) {
-            when(e.code()){
-                400 -> ExamDetailsScreenUiState.Error.errorMessage = "Bad request"
-                401 -> ExamDetailsScreenUiState.Error.errorMessage = "Unauthorized try logging in again or open the home screen"
-                404 -> ExamDetailsScreenUiState.Error.errorMessage = "Content not found"
-                500 -> ExamDetailsScreenUiState.Error.errorMessage = "Server error"
-                else -> ExamDetailsScreenUiState.Error
-            }
+        } catch (e: ApiException) {
+            ExamDetailsScreenUiState.Error.errorMessage = e.message?: "Unkown error"
             examDetailsScreenUiState = ExamDetailsScreenUiState.Error
-        }*/
+        } catch (e: Exception){
+            ExamDetailsScreenUiState.Error.errorMessage = "Network error"
+            examDetailsScreenUiState = ExamDetailsScreenUiState.Error
+        }
 
 
     }
@@ -240,16 +222,13 @@ class ExamDetailsViewModel(
         } catch (e: IOException) {
             ExamDetailsScreenUiState.Error.errorMessage = "Network error"
             examDetailsScreenUiState = ExamDetailsScreenUiState.Error
-        } /*catch (e: HttpException) {
-            when(e.code()){
-                400 -> ExamDetailsScreenUiState.Error.errorMessage = "Bad request"
-                401 -> ExamDetailsScreenUiState.Error.errorMessage = "Unauthorized try logging in again or open the home screen"
-                404 -> ExamDetailsScreenUiState.Error.errorMessage = "Content not found"
-                500 -> ExamDetailsScreenUiState.Error.errorMessage = "Server error"
-                else -> ExamDetailsScreenUiState.Error
-            }
+        } catch (e: ApiException) {
+            ExamDetailsScreenUiState.Error.errorMessage = e.message?: "Unkown error"
             examDetailsScreenUiState = ExamDetailsScreenUiState.Error
-        }*/
+        } catch (e: Exception){
+            ExamDetailsScreenUiState.Error.errorMessage = "Network error"
+            examDetailsScreenUiState = ExamDetailsScreenUiState.Error
+        }
     }
 
 }

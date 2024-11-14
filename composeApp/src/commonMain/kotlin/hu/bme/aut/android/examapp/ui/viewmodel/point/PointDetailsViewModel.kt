@@ -1,5 +1,6 @@
 package hu.bme.aut.android.examapp.ui.viewmodel.point
 
+import ApiException
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -40,16 +41,13 @@ class PointDetailsViewModel(
                 PointDetailsScreenUiState.Success(result)
             } catch (e: IOException) {
                 PointDetailsScreenUiState.Error
-            } /*catch (e: HttpException) {
-                 when(e.code()){
-                     400 -> PointDetailsScreenUiState.Error.errorMessage = "Bad request"
-                     401 -> PointDetailsScreenUiState.Error.errorMessage = "Unauthorized try logging in again or open the home screen"
-                     404 -> PointDetailsScreenUiState.Error.errorMessage = "Content not found"
-                     500 -> PointDetailsScreenUiState.Error.errorMessage = "Server error"
-                     else -> PointDetailsScreenUiState.Error
-                 }
+            } catch (e: ApiException) {
+                PointDetailsScreenUiState.Error.errorMessage = e.message?: "Unkown error"
                 PointDetailsScreenUiState.Error
-            }*/
+            } catch (e: Exception){
+                PointDetailsScreenUiState.Error.errorMessage = "Network error"
+                PointDetailsScreenUiState.Error
+            }
         }
     }
 
@@ -61,16 +59,13 @@ class PointDetailsViewModel(
         } catch (e: IOException) {
             PointDetailsScreenUiState.Error.errorMessage = "Network error"
             pointDetailsScreenUiState = PointDetailsScreenUiState.Error
-        } /*catch (e: HttpException) {
-            when(e.code()){
-                400 -> PointDetailsScreenUiState.Error.errorMessage = "You can't delete this point because it is used in a question"
-                401 -> PointDetailsScreenUiState.Error.errorMessage = "Unauthorized try logging in again or open the home screen"
-                404 -> PointDetailsScreenUiState.Error.errorMessage = "Content not found"
-                500 -> PointDetailsScreenUiState.Error.errorMessage = "Server error"
-                else -> PointDetailsScreenUiState.Error
-            }
-            pointDetailsScreenUiState = PointDetailsScreenUiState.Error
-        }*/
+        } catch (e: ApiException) {
+                PointDetailsScreenUiState.Error.errorMessage = e.message?: "Unkown error"
+                PointDetailsScreenUiState.Error
+        } catch (e: Exception){
+            PointDetailsScreenUiState.Error.errorMessage = "Network error"
+            PointDetailsScreenUiState.Error
+        }
 
     }
 

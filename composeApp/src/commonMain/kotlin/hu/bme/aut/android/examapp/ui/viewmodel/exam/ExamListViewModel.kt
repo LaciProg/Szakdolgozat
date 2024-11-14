@@ -1,5 +1,6 @@
 package hu.bme.aut.android.examapp.ui.viewmodel.exam
 
+import ApiException
 import androidx.lifecycle.ViewModel
 
 import androidx.compose.runtime.getValue
@@ -47,16 +48,13 @@ class ExamListViewModel: ViewModel() {
                 ExamListScreenUiState.Success(result)
             } catch (e: IOException) {
                 ExamListScreenUiState.Error
-            } /*catch (e: HttpException) {
-                when(e.code()){
-                    400 -> ExamListScreenUiState.Error.errorMessage = "Bad request"
-                    401 -> ExamListScreenUiState.Error.errorMessage = "Unauthorized try logging in again or open the home screen"
-                    404 -> ExamListScreenUiState.Error.errorMessage = "Content not found"
-                    500 -> ExamListScreenUiState.Error.errorMessage = "Server error"
-                    else -> ExamListScreenUiState.Error
-                }
+            } catch (e: ApiException) {
+                ExamListScreenUiState.Error.errorMessage = e.message?: "Unkown error"
                 ExamListScreenUiState.Error
-            }*/
+            } catch (e: Exception){
+                ExamListScreenUiState.Error.errorMessage = "Network error"
+                ExamListScreenUiState.Error
+            }
         }
     }
 
