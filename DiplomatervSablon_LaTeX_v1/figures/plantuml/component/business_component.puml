@@ -1,0 +1,16 @@
+@startuml Business Component
+package "Application" #D2E9BA {
+  
+  package "Service" {
+    [API] as api
+    [Navigation] as navigation
+    [PDF] as pdf
+    [TextRecognition] as textRecognition
+  }
+  
+  [ViewModels] as viewmodels
+}
+
+viewmodels ..> Service
+
+@enduml

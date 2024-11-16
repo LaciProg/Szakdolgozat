@@ -1,0 +1,33 @@
+@startuml Component
+
+left to right direction
+
+package "Compose Multiplatform App" {
+    [Mobile Client] as mobile #E9BABA
+    [Business Logic] as business #D2E9BA
+    [Desktop Client] as desktop #E9BABA
+    [Common Client] as common #BAE9E9
+}
+
+package "REST API" {
+    [Data] as data #D1BAE9
+}
+
+
+mobile -[hidden]down- business
+business -[hidden]down- mobile
+common -[hidden]left- business
+
+common -[hidden]left- business
+
+
+business <.[#BAE9E9]. common
+business .[#D2E9BA].> data
+
+common <.[#E9BABA]. mobile
+common <.[#E9BABA]. desktop
+
+
+
+
+@enduml

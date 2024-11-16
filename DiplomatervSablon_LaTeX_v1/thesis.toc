@@ -2,54 +2,59 @@
 \select@language {english} \contentsline {chapter}{Abstract}{ii}{chapter*.3}%
 \select@language {magyar} \contentsline {chapter}{\numberline {1}Bevezetés}{1}{chapter.1}%
 \select@language {magyar} \contentsline {section}{\numberline {1.1}Témaválasztás indoklása}{1}{section.1.1}%
-\select@language {magyar} \contentsline {section}{\numberline {1.2}Felhasznált technológia jelentősége/elterjedtsége}{1}{section.1.2}%
+\select@language {magyar} \contentsline {section}{\numberline {1.2}Felhasznált technológia jelentősége/elterjedtsége}{2}{section.1.2}%
 \select@language {magyar} \contentsline {section}{\numberline {1.3}Dolgozat felépítése}{3}{section.1.3}%
 \select@language {magyar} \contentsline {chapter}{\numberline {2}Feladatspecifikáció}{4}{chapter.2}%
 \select@language {magyar} \contentsline {section}{\numberline {2.1}Feladat részletes leírása}{4}{section.2.1}%
 \select@language {magyar} \contentsline {subsection}{\numberline {2.1.1}Általános célok bemutatása}{4}{subsection.2.1.1}%
-\select@language {magyar} \contentsline {subsection}{\numberline {2.1.2}Egy feladatsor felépítése}{4}{subsection.2.1.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {2.1.2}Egy feladatsor felépítése}{5}{subsection.2.1.2}%
 \select@language {magyar} \contentsline {subsection}{\numberline {2.1.3}Komponensek létrehozásának lépései}{5}{subsection.2.1.3}%
 \select@language {magyar} \contentsline {subsubsection}{\numberline {2.1.3.1}Pont}{5}{subsubsection.2.1.3.1}%
 \select@language {magyar} \contentsline {subsubsection}{\numberline {2.1.3.2}Témakör}{6}{subsubsection.2.1.3.2}%
 \select@language {magyar} \contentsline {subsubsection}{\numberline {2.1.3.3}Igaz-hamis kérdés}{6}{subsubsection.2.1.3.3}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {2.1.3.4}Feleletválasztós kérdés}{6}{subsubsection.2.1.3.4}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {2.1.3.4}Feleletválasztós kérdés}{7}{subsubsection.2.1.3.4}%
 \select@language {magyar} \contentsline {subsubsection}{\numberline {2.1.3.5}Feladatsor}{7}{subsubsection.2.1.3.5}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {2.1.3.6}Válaszok ellenőrzése}{7}{subsubsection.2.1.3.6}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {2.1.3.7}Feladatsorok exportálása}{7}{subsubsection.2.1.3.7}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {2.1.3.6}Válaszok ellenőrzése}{8}{subsubsection.2.1.3.6}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {2.1.3.7}Feladatsorok exportálása}{8}{subsubsection.2.1.3.7}%
 \select@language {magyar} \contentsline {section}{\numberline {2.2}Diagramok}{8}{section.2.2}%
-\select@language {magyar} \contentsline {chapter}{\numberline {3}Irodalomkutatás}{9}{chapter.3}%
-\select@language {magyar} \contentsline {section}{\numberline {3.1}Felhasznált technológiák}{9}{section.3.1}%
-\select@language {magyar} \contentsline {subsection}{\numberline {3.1.1}Jetpack Compose}{9}{subsection.3.1.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {3.1.1.1}State és StateFlow}{10}{subsubsection.3.1.1.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {3.1.1.2}ViewModel}{11}{subsubsection.3.1.1.2}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {3.1.1.3}Navigation and routing}{12}{subsubsection.3.1.1.3}%
-\select@language {magyar} \contentsline {subsection}{\numberline {3.1.2}Ktor}{14}{subsection.3.1.2}%
-\select@language {magyar} \contentsline {subsection}{\numberline {3.1.3}KotlinX Serilizáció}{14}{subsection.3.1.3}%
-\select@language {magyar} \contentsline {subsection}{\numberline {3.1.4}CameraX}{14}{subsection.3.1.4}%
-\select@language {magyar} \contentsline {subsection}{\numberline {3.1.5}ML-Kit}{15}{subsection.3.1.5}%
-\select@language {magyar} \contentsline {subsection}{\numberline {3.1.6}Accompanist-engedélykezelés}{15}{subsection.3.1.6}%
-\select@language {magyar} \contentsline {subsection}{\numberline {3.1.7}PdfDocument és PDFBox}{15}{subsection.3.1.7}%
-\select@language {magyar} \contentsline {subsection}{\numberline {3.1.8}Kotlin- és Compose Multiplatform}{16}{subsection.3.1.8}%
-\select@language {magyar} \contentsline {subsection}{\numberline {3.1.9}Gradle build rendszer}{17}{subsection.3.1.9}%
-\select@language {magyar} \contentsline {subsection}{\numberline {3.1.10}Fejlesztőkörnyeztek}{18}{subsection.3.1.10}%
-\select@language {magyar} \contentsline {subsection}{\numberline {3.1.11}REST API, Postman és adatbázis}{18}{subsection.3.1.11}%
-\select@language {magyar} \contentsline {subsection}{\numberline {3.1.12}Kipróbált, de végül nem használt egyéb érdekes megoldások}{19}{subsection.3.1.12}%
-\select@language {magyar} \contentsline {section}{\numberline {3.2}Hasonló multiplatform megoldások összehasonlítása}{20}{section.3.2}%
-\select@language {magyar} \contentsline {chapter}{\numberline {4}Felsőszintű architektúra}{21}{chapter.4}%
-\select@language {magyar} \contentsline {section}{\numberline {4.1}High level architektúra}{21}{section.4.1}%
-\select@language {magyar} \contentsline {section}{\numberline {4.2}Rendszer felépítései, komponensei}{23}{section.4.2}%
-\select@language {magyar} \contentsline {chapter}{\numberline {5}A \LaTeX -sablon használata}{24}{chapter.5}%
-\select@language {magyar} \contentsline {section}{\numberline {5.1}Címkék és hivatkozások}{24}{section.5.1}%
-\select@language {magyar} \contentsline {section}{\numberline {5.2}Ábrák és táblázatok}{24}{section.5.2}%
-\select@language {magyar} \contentsline {section}{\numberline {5.3}Felsorolások és listák}{26}{section.5.3}%
-\select@language {magyar} \contentsline {section}{\numberline {5.4}Képletek}{27}{section.5.4}%
-\select@language {magyar} \contentsline {section}{\numberline {5.5}Irodalmi hivatkozások}{28}{section.5.5}%
-\select@language {magyar} \contentsline {section}{\numberline {5.6}A dolgozat szerkezete és a forrásfájlok}{31}{section.5.6}%
-\select@language {magyar} \contentsline {section}{\numberline {5.7}Alapadatok megadása}{33}{section.5.7}%
-\select@language {magyar} \contentsline {section}{\numberline {5.8}Új fejezet írása}{33}{section.5.8}%
-\select@language {magyar} \contentsline {section}{\numberline {5.9}Definíciók, tételek, példák}{33}{section.5.9}%
-\select@language {magyar} \contentsline {chapter}{Köszönetnyilvánítás}{34}{chapter*.14}%
-\select@language {magyar} \contentsline {chapter}{Irodalomjegyz\'ek}{37}{chapter*.15}%
-\select@language {magyar} \contentsline {chapter}{Függelék}{38}{appendix*.16}%
-\select@language {magyar} \contentsline {section}{\numberline {F.1}A TeXstudio felülete}{38}{section.F.1}%
-\select@language {magyar} \contentsline {section}{\numberline {F.2}Válasz az ,,Élet, a világmindenség, meg minden'' kérdésére}{39}{section.F.2}%
+\select@language {magyar} \contentsline {chapter}{\numberline {3}Irodalomkutatás}{10}{chapter.3}%
+\select@language {magyar} \contentsline {section}{\numberline {3.1}Felhasznált technológiák}{10}{section.3.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.1.1}Jetpack Compose}{10}{subsection.3.1.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.1.1.1}State és StateFlow}{11}{subsubsection.3.1.1.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.1.1.2}ViewModel}{12}{subsubsection.3.1.1.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.1.1.3}Navigation and routing}{14}{subsubsection.3.1.1.3}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.1.2}Ktor}{15}{subsection.3.1.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.1.3}KotlinX Serilizáció}{15}{subsection.3.1.3}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.1.4}CameraX}{16}{subsection.3.1.4}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.1.5}ML-Kit}{16}{subsection.3.1.5}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.1.6}Accompanist-engedélykezelés}{16}{subsection.3.1.6}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.1.7}PdfDocument és PDFBox}{16}{subsection.3.1.7}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.1.8}Kotlin- és Compose Multiplatform}{17}{subsection.3.1.8}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.1.9}Gradle build rendszer}{18}{subsection.3.1.9}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.1.10}Fejlesztőkörnyeztek}{19}{subsection.3.1.10}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.1.11}REST API, Postman és adatbázis}{20}{subsection.3.1.11}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.1.12}Kipróbált, de végül nem használt egyéb érdekes megoldások}{21}{subsection.3.1.12}%
+\select@language {magyar} \contentsline {section}{\numberline {3.2}Hasonló multiplatform megoldások összehasonlítása}{21}{section.3.2}%
+\select@language {magyar} \contentsline {chapter}{\numberline {4}Felsőszintű architektúra}{23}{chapter.4}%
+\select@language {magyar} \contentsline {section}{\numberline {4.1}High level architektúra}{23}{section.4.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.1.1}A program struktúrális szervezése}{23}{subsection.4.1.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.1.1.1}A Kotlin Multiplatform alkalmazások felépítése}{23}{subsubsection.4.1.1.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.1.1.2}Követett tervezési minták}{25}{subsubsection.4.1.1.2}%
+\select@language {magyar} \contentsline {section}{\numberline {4.2}Rendszer felépítései, komponensei}{30}{section.4.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.2.1}Általános komponensek felépítése}{30}{subsection.4.2.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.2.2}Business logic komponensek felépítése}{31}{subsection.4.2.2}%
+\select@language {magyar} \contentsline {chapter}{\numberline {5}A \LaTeX -sablon használata}{33}{chapter.5}%
+\select@language {magyar} \contentsline {section}{\numberline {5.1}Címkék és hivatkozások}{33}{section.5.1}%
+\select@language {magyar} \contentsline {section}{\numberline {5.2}Ábrák és táblázatok}{33}{section.5.2}%
+\select@language {magyar} \contentsline {section}{\numberline {5.3}Felsorolások és listák}{35}{section.5.3}%
+\select@language {magyar} \contentsline {section}{\numberline {5.4}Képletek}{36}{section.5.4}%
+\select@language {magyar} \contentsline {section}{\numberline {5.5}Irodalmi hivatkozások}{37}{section.5.5}%
+\select@language {magyar} \contentsline {section}{\numberline {5.6}A dolgozat szerkezete és a forrásfájlok}{40}{section.5.6}%
+\select@language {magyar} \contentsline {section}{\numberline {5.7}Alapadatok megadása}{42}{section.5.7}%
+\select@language {magyar} \contentsline {section}{\numberline {5.8}Új fejezet írása}{42}{section.5.8}%
+\select@language {magyar} \contentsline {section}{\numberline {5.9}Definíciók, tételek, példák}{42}{section.5.9}%
+\select@language {magyar} \contentsline {chapter}{Köszönetnyilvánítás}{43}{chapter*.17}%
+\select@language {magyar} \contentsline {chapter}{Irodalomjegyz\'ek}{46}{chapter*.18}%
+\select@language {magyar} \contentsline {chapter}{Függelék}{47}{appendix*.19}%
+\select@language {magyar} \contentsline {section}{\numberline {F.1}A TeXstudio felülete}{47}{section.F.1}%
+\select@language {magyar} \contentsline {section}{\numberline {F.2}Válasz az ,,Élet, a világmindenség, meg minden'' kérdésére}{48}{section.F.2}%

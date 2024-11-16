@@ -18,10 +18,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.SavedStateHandle
 import examapp.composeapp.generated.resources.Res
 import examapp.composeapp.generated.resources.*
-import hu.bme.aut.android.examapp.api.dto.MultipleChoiceQuestionDto
-import hu.bme.aut.android.examapp.api.dto.PointDto
-import hu.bme.aut.android.examapp.api.dto.Question
-import hu.bme.aut.android.examapp.api.dto.TrueFalseQuestionDto
+import hu.bme.aut.android.examapp.service.api.dto.*
 import hu.bme.aut.android.examapp.ui.components.ExportedMultipleChoiceQuestion
 import hu.bme.aut.android.examapp.ui.components.ExportedTrueFalseQuestion
 import hu.bme.aut.android.examapp.ui.components.TopAppBarContent

@@ -3,16 +3,27 @@
 \label{sec:Sepcification}
 %----------------------------------------------------------------------------
 
+Ebben a fejezetben bemutatom az alkalamzás céljait. Az első részben általános összefoglalom a felhasználói elvárásokat és legfőbb építőköveket a programzó szemszögéből.
+Ezt követően megmutatom a használati Usecaseeket.
+
+Kitérek a főbb funkciókra, azok felépítésére és elvárt használati módjaira.
+Az utolsó fejezetben mindezt egy Usecase UML diagramban összefoglalom.
+Megtalálható benne az összes fent leírt használati eset, jól látható lesz, hogy a funkciók hasonlítanak egymásra így a felhasználó könnyen meg tudja tanulni az alkalmazás használatát.
+
 \section{Feladat részletes leírása}
 \label{sec:SepcificationDescription}
 
+Ebben az alszakaszban részletesen kitérek az alkalamazás komponenseinek megtervezésére, és azok használatára.
+Bemutatom, hogy milyen egy feladatsor felépítése, és annak a részei milyen mezőket vagy értékeket tartalmaznak.
+Ebben a részben szövegesen végig éehet kísérni a \ref{fig:UsecaseDiagram}.~ábrán látható felépítést.
 
 \subsection{Általános célok bemutatása}
 
 
 A program célja az, hogy egy vagy több felhasználó létre tudjon hozni igaz-hamis illetve feleletválasztós (tetszőleges számú válaszopcióval) kérdésekből álló feladatsort.
 Az alaklamazás csak papír alapú kitöltést támogat, ezt olyan formában teszi, hogy az összeállító a kész kérdéssort ki tudja exportálni PDF formátumba.
-Ezen kívül rendelkezik egy automtizált javítási rendszerrel, okostelefont használva a Google ML Kit\cite{MLKit} segítségével be lehet scannelni egy megfelelően formázott választ, és az belekerül egy form-ba amit a szervernek elküldve visszaküldi az eredményt.
+
+A szoftver a fent leírtakon kívül rendelkezik egy automtizált javítási rendszerrel, okostelefont használva a Google ML Kit\cite{MLKit} segítségével be lehet scannelni egy megfelelően formázott választ, és az belekerül egy form-ba amit a szervernek elküldve visszaküldi az eredményt.
 A kézírásos szövegfelismerés sok esetben nem szolgáltatott megfelelően pontos eredményt, így ez a funkció csak alpha verzióban támogatott.
 Hibásan felismert, vagy felismerhetetlen váaszok esetén kézzel is szerkeszthető a válasz a kiértékelés előtt.
 
@@ -144,6 +155,7 @@ A feladatsor létrehozása után látható lesz a listás nézetben, ahol kivál
 Itt van lehetőségünk a kérdések hozzáadására és eltávolítására a feladatsorból.
 A témákra és kérdéstípusokra szűrve válogathatunk a kérdéseink között.
 Hozzáadás után a kérdések mozgathatóak a listában.
+A más típusuba tartozó kérdések más színnel vannak jelölve ezzel is segítve a felhasználót a kérdés típusának gyors felmérésében.
 A feladatsorok szabadon törölhetők.
 Innen léphetünk át a szerkesztés oldalra, ahol a nevet és a témakört tudjuk módosítani.
 
@@ -151,21 +163,36 @@ Innen léphetünk át a szerkesztés oldalra, ahol a nevet és a témakört tudj
 
 Amennyiben ezt a menüpontot választjuk, akkor a \refstruc{sec:SpecificationExamDescription}-ban is leírt feladatsor listát látjuk, innen is létre lehet hozni új feladatsort.
 Az itt kiválasztott elem viszont egy form beküldő oldalra navigál, ahol egymás alatt látszanak a kérdések.
+A más típusuba tartozó kérdések más színnel vannak jelölve ezzel is segítve a felhasználót a kérdés típusának gyors felmérésében.
+
 Itt lehet megadni a válaszainkat, illetve mobil eszközön a szövegfelismerés funkciója gyorsíthatja meg a kitöltést.
+A lehetséges formátumra, amit a szoftver elvár található segítség, így nehezebb ezért rossz megoldást megadni.
+Ha mégis hibás formátumban küldi be a felhasználó a válaszokat kap róla figyelmeztetést.
 A beküldést követően hamarosan megjelenik az eredmény a képernyőn.
 
 \subsubsection{Feladatsorok exportálása}
 
 Amennyiben ezt a menüpontot választjuk, akkor a \refstruc{sec:SpecificationExamDescription}-ban is leírt feladatsor listát látjuk, innen is létre lehet hozni új feladatsort.
 Az itt kiválasztott elem viszont egy előzetes feladatsor megjelenítő oldalra navigál.
-Ha az itt látottakkal elégedettek vagyunk, rendben vannak a pontok és a kérdések, akkor exportálhatjuk is a munkát PDF formátumban.
+
+Amennyiben az itt látottakkal elégedettek vagyunk, rendben vannak a pontok és a kérdések, akkor exportálhatjuk is a munkát PDF formátumban.
 Az itt látottak csak egy vázlatos elrendezést adnak; az adatok ellenőrzésére szolgálnak.
 Előfordulhat, hogy a mobilos és az asztali verzió kis mértékben eltér egymástól a megjelenésben.
 
-\pagebreak
-
 \section{Diagramok}
 \label{sec:SepcificationDiagrams}
+
+Ebben az alfejezetben az elkészült alkalamzás használati eseteit bemutató diagram található.
+A Usecase diagram segítségével egy tapasztalt fejlesztő gyorsan fel tudja mérni az alkalamzás fő felépítésétm funkcióit és megközelítő struktúráját.
+
+A csak a magas szintű használati esetek jelennek meg a diagramon az átláthatóság miatt.
+A képernyők közötti navigáció az ábra átláthatóságán jelentősen rontana, így arról csak a szöveges leírásban esett szó.
+
+A PlantUML segítségével elkészített diagramokon látható, hogy létezik öt egymáshoz hasonló működésű használati eset, így ezek származhatnak egy általános elemből vagy usecaseből.
+Az azonos színekkel jelölt esetek hasonló funkcionalitást jeleznek ezzel is segítve a gyors megértését a szoftvernek.
+A Felhasználóból induló nyilak a lehetséges cselekedeteket jelölik, míg az ezekből a usecasekből induló nyilak az általános cselekedetekből való leszármazást. 
+
+\pagebreak
 
 \begin{figure}[!ht]
     \centering

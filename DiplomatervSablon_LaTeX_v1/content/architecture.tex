@@ -3,8 +3,27 @@
 \label{sec:Architecture}
 %----------------------------------------------------------------------------
 
+Ebben a fejezetben bemutatom a szoftver felépítését.
+Ez a rész első sorban az architektúrális- és programszervezési megoldásokra fókuszál.
+Hasonlóan a \refstruc{sec:Sepcification} fejezethez ez is csak egy átfogó képet fog adni a szoftverről, a részletekbe nem merül el.
+
+
 \section{High level architektúra}
 \label{sec:HighLevelArchitecture}
+
+Ez az alfejezet bemutatja a forráskód szerevzését és a legfontosabb követet tervezési mintákat.
+
+\subsection{A program struktúrális szervezése}
+
+Ez a rész a kód forrásfájlokba szervezését mutatja be.
+A hatékony munkához elengedhetetlen egy jól felépített és követett mintát konzisztensen használni a fejlesztés során.
+
+\subsubsection{A Kotlin Multiplatform alkalmazások felépítése}
+
+Minden Kotlin Multiplatform projekt tartalmaz legalább 3 Main könyvtárat az src mappán belül.
+Szükséges egy commonMain mappa, ami a közös kódrészleteket tartalmazza. Minél több tartalom található ebben megvalóstíva és nem külön kiszervezve annál jobb a kód újrafelhasználhatóságunk.
+A többi Main mappa a platform specifikus kódrészleteket tartalmazza. Az én alaklamazásomban van egy androidMain és egy desktopMain, ez a jvmMain-nek felelthető meg.
+Sajnos eszközhiány miatt iOS-re nem tudtam elkészíteni az alkalamzást, mivel annak lebuildeléséhez szükség van egy Mac számítógépre.
 
 \begin{figure}[!ht]
     \centering
@@ -17,10 +36,8 @@
     \label{fig:FileStructure}
 \end{figure}
 
-Minden Kotlin Multiplatform projekt tartalmaz legalább 3 Main könyvtárat az src mappán belül.
-Szükséges egy commonMain mappa, ami a közös kódrészleteket tartalmazza. Minél több tartalom található ebben megvalóstíva és nem külön kiszervezve annál jobb a kód újrafelhasználhatóságunk.
-A többi Main mappa a platform specifikus kódrészleteket tartalmazza. Az én alaklamazásomban van egy androidMain és egy desktopMain, ez a jvmMain-nek felelthető meg.
-Sajnos eszközhiány miatt iOS-re nem tudtam elkészíteni az alkalamzást, mivel annak lebuildeléséhez szükség van egy Mac számítógépre.
+A build megfelelő működéséért a Run Configurations fájlok és a build.gradle.kts fájlok felelnek.
+A gradel fájlokban kell a függőségeket megadni, a verziók támogatására használható a libs.version.toml fájl.
 
 A \ref{fig:FileStructure}.~ábrán is látható a build.gradle.kts fájlt (\ref{lst:Gradle}.~kódrészlet) is. Az ebben lévő Kotlin DSL-lel létrehozott Gradlenek is tükrözni kell ezt a felépítést.
 
@@ -79,10 +96,151 @@ Egy egyszerűbb alkalamzásnál, ahol megfelelő közös nézetet tudunk létreh
 Az optimális a fenti lenne, de ez általban nem lehetséges, így szükség van a közös kódból való "kilépésre" és a platform specifikus kód meghívására.
 Ez egyszerűen megvalósítható az expect és actual függvények és osztályok segítségével (\refstruc{sec:KCMP}).
 
-A mai lehetőségeket kihasználva a ViewModeleket elegendő egyszer, a commonMain alatt létrehozni és megvalósítani.
-Az ezekhez tartozó esetleges függvényeket, amennyiben szükség van rá elegendő egy actual/expect párral lecserélni, nálam a kamera és a PDF exportális is így működik. (\ref{lst:ExpectActualSample}.~kódrészlet)
-Ilyenkor is elég egy közös ViewModel és a buils rendszer behelyesíti a megfelelő függényt a platformnak megfelelően.
-Mindennek hála így elegendő néhány speciális esetet kezelni a háttérben futó függvényeken és igény esetén egy-egy képrenyőt más-más módon megjeleníteni.
+
+A fő mappastruktúrán belül is fontos a tervezés.
+2 fő részből tevődik össze a UI és a Service mappákból.
+A Service tartalmaz minden közvetlenül nem a megjelenített képernyőkkel foglalkozó részeket.
+Itt található a navigáció, a PDF rendrelése, és kivételesen itt van az ahhoz tartozó képernyő is.
+Továbbá a szövegfelismerés és a HTTP kommunikáció is itt található.
+Az utóbb az api mappában és ezen belül találhatók a dto-k (data transfer object) amik az alkalmazás modell rétegét adják.
+
+A UI mappában minden használati esetre van egy saját mappa ami a képernyőket tartalmazza, ezen kívül itt van a viewmodel mappa is ahol hasonló szervezési struktúrban találhatóak a képenyőkhöz tartozó ViewModelek.
+Erre is több lehetséges megoldás lenne, például egy közös ViewModel a közös tematikájú képernyőkhöz.
+Ebben a mappában van még a components menü is ami azokat a Composable függvényeket tartalmazza amit több képernyő is fel tud használni, például egy dropdown lista vagy a navigációs TopAppBar.
+
+Egy másfajta tervezés lehet az is, hogy a képernyőt leíró fájlok mellett közvetlenül vannak a viewmodelek és ezek vannak közös mappákba szervezve.
+Ezt elvettem, mivel így is túl sok mappa volt és nehezebben láttam át ezzel a második megoldással a program szerkezetét.
+
+A legtöbb fájl a commonMainben van, így a platform specifikus mappákban nem találhatóó meg minden mappa a fentiek közül, de a szükség actual függvények ennek megfelelő szerkezetben találhatóak meg itt is.
+
+\subsubsection{Követett tervezési minták}
+
+Az első és legfontosabb tervezési minta az \textbf{MVVM architektúra}.
+Ebben a mintában három fő komponenst lehet elkülöníteni egymástól: View, ViewModel és Model.
+Mindegyiknek megvan a szerepe és egy jól müködő és karabantartható szoftver esetén mindegyik létfontosságú.
+Ezek a rétegek egymást között tudnak kommunikálni, a leggyakoribb irány a View -> ViewModel -> Model -> ViewModel -> View.
+Tehát a View kér adatot valamilyen felhasználói esemény hatására, és a ViewModel ennek teljesítése érdekében a Modeltől kéri el a megjelenítendő adatokat.
+Ennek a láncnak azonban szinte bármely része megtörténhet akár tetszőleges irányban is, attól függően, hogy milyen funkcionalítással rendelkezik.
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=150mm, keepaspectratio]{figures/MVVM-architectural-pattern.png}
+    \caption{MVVM minta. \cite{MVVMArchitecture}}
+    \label{fig:MVVMArchitecture}
+\end{figure}
+
+Ezek közül a legegyszerűbb a \textbf{Model réteg}. (\ref{lst:Model}.~kódrészlet)
+Ennek egyetlen célja az adatok tárolása a memóriában. 
+Célszerű ezt olyan formában megtenni ami már nem igányel sok átalakítást a köztes, ViewModel rétegben.
+Az adatok gyakran valamilyen REST APIból érkeznek, tehát egy másik szoftvertől.
+Ehhez úgynevezett DTO-kat (data transfer object) használunk, az én programomban ezek lényegében megegyeznek a modellekkel, mivel kifejzetten erre készült a REST API.
+Természetesen így is van szükség egyéb data classokra vagyis valós modellekre. A UInak szüksége lehet egyéb értékekre, például, hogy megfelelő módon van-e kitöltve létrehozás során az objektum vagy sem. Továbbá az összetett elemek esetén a hivatkozásokat a uuidkon keresztül fel kell oldani megjelenítés előtt. Ezt a szerepet általában már a ViewModel végzi el.
+Amennyiben nem saját adatforrást használunk, vagy komplexebb adatokat kapunk érdemes külön modell osztályokat létrehozni csak a szükséges adatokkal tovább dolgozni. Ezt még a HTTP kommunikáciárt felelős komponensben érdemes megtenni.
+
+\begin{lstlisting}[caption={Egy dto struktúrája. Szerilizáció: \refstruc{sec:KotlinX}}, label={lst:Model}, language=Kotlin]
+    import kotlinx.serialization.Serializable // Szerilizáció
+
+    @Serializable // Szerilizációért felelős kódrész
+    data class TopicDto(    // Kotlin data class
+        val uuid: String = "",
+        val topic: String,
+        val description: String,
+        val parentTopic: String = ""
+    )
+\end{lstlisting}
+
+A leggyakoribb mód erre a HTTP alapú kommunikáció, ahol az adatok JSON formátumban érkeznek.
+Elképezelehtő erre más alternatíve, például az adatok XML formátumban érkeznek.
+Más módon működő rendszerek is lehetnek, példéul WebSocketek, ahol az első csatlakozás során kialakul egy kétirányú csatorna ahol, mind a szerver mind a kliens tud kommunikácót kezdeményezni.
+IoT környezetben az MQTT protocolt szokás alkalamazni. "Ez egy pub/sub protokoll, amely kis csomagmérettel és alacsony sávszélességgel rendelkezik, így ideális korlátozott hálózatokhoz és alacsony feldolgozási teljesítményű eszközökhöz. Az MQTT képes kezelni a szakaszos hálózati kapcsolódást, és támogatja a szolgáltatásminőség (QoS) szinteket a megbízható üzenettovábbítás biztosítása érdekében." \cite{RESTAPIAlternatives}
+Egy további megoldás a gRPC ami valós alternatíva lehet a REST API kommunikációra ebben a környezetben is. "A gRPC egy nyílt forráskódú keretrendszer, amelyet a Google fejlesztett RPC API-k építésére. Lehetővé teszi a fejlesztők számára, hogy szolgáltatás-interfészeket definiáljanak, valamint kliens- és szerveroldali kódot generáljanak több programozási nyelven. A gRPC protokoll buffereket és nyelvfüggetlen adat-szerializációs formátumot használ a hatékony adatátvitel érdekében, ami ideálissá teszi magas teljesítményt igénylő alkalmazások számára. A gRPC nem feltétlenül a legjobb választás nagy mennyiségű adatmanipulációhoz vagy olyan alkalmazásokhoz, amelyek széleskörű kliens támogatást igényelnek. Ugyanakkor a gRPC magas teljesítményéről és alacsony erőforrásigényéről ismert, így jó választás azokhoz az alkalmazásokhoz, amelyek gyors és hatékony kommunikációt igényelnek a szolgáltatások között." \cite{RESTAPIAlternatives}
+
+A köztes szinten a \textbf{ViewModel} található.
+Megoldáshoz az Android ViewModel Kotlin Multiplatform implementációját használtam fel (\refstruc{sec:ViewModel}), de bármi hasonló megoldás megfelel.
+Ennek a rétegnek számos feladata van.
+Az adatok lekérdezése itt valósul meg. Úgynevezett coroutine scopeokban kezdeményezhetünk hosszabb ideig tartó függvényhívásokat. 
+"A Kotlin standard könyvtára csak minimális alacsony szintű API-kat biztosít, hogy más könyvtárak használhassák a koroutinekat. Ellentétben sok más hasonló képességű nyelvvel, az async és await nem kulcsszavak a Kotlinban, és még a standard könyvtár részei sem. Ezenkívül a Kotlin felfüggeszthető függvény (suspending function) koncepciója biztonságosabb és kevésbé hibára hajlamos absztrakciót kínál az aszinkron műveletekhez, mint a jövők (futures) és ígéretek (promises). A kotlinx.coroutines egy JetBrains által fejlesztett gazdag könyvtár koroutinekhoz. Számos magas szintű, koroutine-kompatibilis primitívet tartalmaz, amelyeket ez az útmutató is tárgyal, beleértve a launch, async és más függvényeket." \cite{Coroutine}
+Röviden összefoglalva aszinkron módon működnek így és nem UI szálon hajtódnak végre ezáltal nem blokkolják azt és reszponzív marad a teljes idő alatt.
+Mindebből következik, hogy a REST API service hívásai innen indulnak, majd kerülnek bele Statekbe vagy StateFlowkba (\refstruc{sec:State}).
+Egy érdekesebb megközelítés a LiveData. Ez az eszköz az Observer mintát valósítja meg. Amennyiben például egy WebSocket alapú megoldást választottam volna, akkor a szerver autmoatiksan tudna üzenetet üldeni amiben leküldi az új adatot a kliensnek és egyéb frissétés nélkül megjelnne az új adat. Ez egy példa a Model -> ViewModel -> View irányra. A legtöbb chat applikáció (például Messenger) is hasonéó megközelítést alkalmazhat.
+
+A ViewModelnek további feladatai közé tartozik az adatok transzformálása.
+Szükség lehet a hivatkozások feloldására például egy kérdés esetén nem egy uuid-t szeretne a felhasználó látni, a pont és a téma mezőkben, hanem azok neveit.
+Ezen kívül biztosíthat egyéb függvényeket az adatok módosítására, tovább navigálásra vagy bármilyen általános célokra.
+Ezzel elkerülehtő, hogy logikát leíró kódot a Viewn kelljen definálni, elég egy összefogó részben levő függvényt meghívni. (\ref{lst:TransformationAndFunction}.~kódrészlet)
+
+\begin{lstlisting}[caption={Példa az dto átalakítására a valós UIon használt modellé és egy példa logikát leíró függvényre. Az eredeti dto: \ref{lst:Model}.~kódrészlet}, label={lst:TransformationAndFunction}, language=Kotlin]
+data class TopicDetails(
+    val id: String = "",
+    val topic: String = "",
+    val parent: String = "",            //Ez itt még egy uuid
+    val description: String = "",
+    val parentTopicName : String = ""   //Itt már fel lett oldva, ez fog a UI-on megjelenni
+)
+
+fun TopicDetails.toTopic(): TopicDto = //Ez egy extension function ami visszaalakítja a UIon mgejelenő adatot a REST API által kezelhrtő formára
+    TopicDto(
+        uuid = id,
+        topic = topic,
+        parentTopic = if (parent == "null") "" else parent,
+        description = description,
+    )
+
+// A névfeloldott változat kiégszül egy valid mezővel, mivel ez egy szrekeszthető nézethez tartozó modell lesz
+fun TopicDto.toTopicUiState(isEntryValid: Boolean = false, parentName: String): TopicUiState = TopicUiState(
+    topicDetails = this.toTopicDetails(parentName),
+    isEntryValid = isEntryValid
+)
+
+//Biztosított függvény az adatok módosítására
+fun updateUiState(topicDetails: TopicDetails) {
+    topicUiState =
+        TopicUiState(topicDetails = topicDetails, isEntryValid = validateInput(topicDetails))
+}
+\end{lstlisting}
+
+
+A \textbf{View} a megjelenítési réteg, a felhasználó ezzel a résszel tud közvetlenül interakcióba lépni. 
+Általános működési elve a következő: amikor a felhasználó az adott képernyőre navigál az ViewModel betölti az adatokat.
+Ezt kövtően a felhasználó szabadon végezhet műveleteket rajta. Ahogy a \ref{fig:UsecaseDiagram}.~ábrán is látható megtekintheti az adott oldalt, esetenként törülheti vagy szerkesztheti az adatokat vagy felvehet újat.
+Ezeket a funkciókat a megfelelő ViewModel beli függvény meghívásával érhetjük el és valamely felhasználói interakció váltja ki például egy gomb megnyomása.
+
+\begin{lstlisting}[caption={Egy a View rétegbe tartozó felület leírásának részlete}, label={lst:ExampleUI}, language=Kotlin]
+@Composable
+private fun NewTopicScreenUiState(
+    viewModel: TopicEntryViewModel, ...     // A használt ViewModel
+) {
+    ...
+    Scaffold(...) { innerPadding ->
+        TopicEntryBody(
+            topicUiState = viewModel.topicUiState,          // A megjelenítendő UI adat
+            onTopicValueChange = viewModel::updateUiState,  // ViewModelben definált függvény paraméterként való átadása
+            onSaveClick = {
+                coroutineScope.launch {                     // Aszinkron módon történő hívás, mentés funkció. Szintén a ViewModel függvényét hívja meg
+                    if (viewModel.saveTopic()) {
+                        navigateBack()
+                    } else {
+                        showNotify = true
+                        notifyMessage = "Topic with this name already exists"
+                    }
+                }
+            },
+            modifier = Modifier                             // Fontos az igényes megjelenítés
+                .padding(innerPadding)
+                .verticalScroll(rememberScrollState())
+                .fillMaxWidth()
+        )
+    }
+}
+\end{lstlisting}
+
+
+
+Összefoglalva az MVVM tervezési mintát azt lehet mondani, hogy nagyon hatékonyan használható és önmagában ezzel jelentősen növelhető a kód újrafelhasználhatósága.
+A mai lehetőségeket kihasználva a Compose Multiplatform területén ViewModeleket, dto-kat és Modeleket elegendő egyszer, a commonMain alatt létrehozni és megvalósítani.
+Az ezekhez tartozó esetleges függvényeket, amennyiben szükség van rá elegendő egy actual/expect párral lecserélni, nálam a kamera és a PDF exportális is így működik. (\ref{lst:ExpectActualSample}.~kódrészlet) 
+Az \textbf{expect/actual tervezési elv} működik minden rétegben, de általában csak a UI és néhány specifikus funkció megvalósítására van szükség a logika megvalósításához.
+Ilyenkor is elég egy közös ViewModel és a build rendszer behelyesíti a megfelelő függényt a platformnak megfelelően.
 
 \begin{lstlisting}[caption={Alkalamzás elindítása}, label={lst:Start}, language=Kotlin]
 // Tipikus Android compose alkalamzás. (androidMain)
@@ -143,12 +301,105 @@ internal actual fun Notify(message: String) {
 }
 \end{lstlisting}
 
-\begin{figure}[!ht]
-    \centering
-    \includegraphics[width=150mm, keepaspectratio]{figures/MVVM-architectural-pattern.png}
-    \caption{MVVM minta. \cite{MVVMArchitecture}}
-    \label{fig:MVVMArchitecture}
-\end{figure}
+
+A másik legfontosabb architekturális elem a UiState használata. (\ref{lst:UiState}.~kódrészlet)
+Ezzel a mintával egyszerűen kezelhető több fajta képernyő ugyan azon az oldalon. 
+A megvalóstíása sealed interfészek segítségével történik, így a Kotlinban a switc-case szerkezetnek megfeleltethető when használatával egyszerűen válthatunk közöttük.
+Ebben a mintában gyakran három állapta van a képernyőnek: loading, succes és error. 
+
+A hosszú ideig tartó HTTP kérések ideje alatt így egy töltőképernyőt mutathatunk egy látszólag lefagyott vagy hiányos oldal helyett.
+Az adatok megérkezése után átadhatjuk azokat a Succes képernyőnek, hiba esetén pedig mutathatjuk a hiba képernyőt ahol található valamilyen magyarázat a felhasználó számára, példál "Nem sikerült betölteni a kért oladlt mert a hálózat állapota nem megfelelő".
+
+\begin{lstlisting}[caption={UiState megvalóstása}, label={lst:UiState}, language=Kotlin]
+sealed interface TopicDetailsScreenUiState {
+    data class Success(val point: TopicDto) : TopicDetailsScreenUiState
+    data object Error : TopicDetailsScreenUiState{var errorMessage: String = ""}
+    data object Loading : TopicDetailsScreenUiState
+}
+\end{lstlisting}
+
+
+
+A képernyő állaptát a ViewModelből lehet szabályozni, ahol felveszünk erre egy State-et. A képernyőre navigálás során az alapértelmezett érték a töltés.
+Az adatok megérkezése után a staten beéllítjuk a megfelelő értéket és a View erről kap egy értesítést és lefut a recomposoition. Ennek hatására megjelenik az új nézet.
+(\ref{lst:UiStateSetting}.~kódrészlet)
+
+\begin{lstlisting}[caption={UiState beállítása}, label={lst:UiStateSetting}, language=Kotlin]
+var topicDetailsScreenUiState: TopicDetailsScreenUiState by mutableStateOf(TopicDetailsScreenUiState.Loading) // State alap loading értékkel
+fun getTopic(topicId: String){
+    topicDetailsScreenUiState = TopicDetailsScreenUiState.Loading   // Ha nem lenne beállítva beállítjuk a loadingot
+    viewModelScope.launch { // Aszinkron hívás környezete, így a loading animációt nemblokkoljuk
+        topicDetailsScreenUiState = try{    // Az eredméyn megérkezése után vagy mutatjuk az adatot...
+            val result = ApiService.getTopic(topicId)
+            ...
+        TopicDetailsScreenUiState.Success(result)
+        } catch (e: ApiException) { // ...vagy egy hiba képernyőt
+            TopicDetailsScreenUiState.Error.errorMessage = e.message ?: "Unkown error"
+            TopicDetailsScreenUiState.Error
+        } 
+    }
+}
+\end{lstlisting}
+
+Összefoglalva ezt a mintát: a felhasználót aktívan tudjuk tájékoztatni az program állapotáról.
+A töltő képernyő miatt tudni fogja, hogy a háttérben tart az adatok betöltése és nem lesz olyan érzése mintha lefagyott volna az alkalmazás.
+Hiba esetén is tudunk tájékoztatást adni így lehetőséget adunk a felhasználónak, hogyha nála van a hiba (nincs internet) megoldja, vagy esetlegesen tudja jelezni a megadott elérhetőségen, hogy problémát tapasztal a működésben és a megjelenített információ miatt ezt vszonylag pontosan meg tudja tenni.
+Ezek hatására a felhasználói élmény jelentősen javulni tud.
 
 \section{Rendszer felépítései, komponensei}
-\label{sec:Komponents}
+\label{sec:Components}
+
+Ebben az alfejezetben komponens diagramokon keresztül mutatom be az alaklamzást.
+Elsőnek adok egy általános nézetet, majd a fontosabb, több tartalommal rendelkező egységeket a kisebb alegységein is bemutatom.
+
+"Az UML komponensdiagramokat az objektumorientált rendszerek fizikai aspektusainak modellezésére használják, amelyek célja a komponensalapú rendszerek vizualizálása, specifikálása és dokumentálása, valamint végrehajtható rendszerek létrehozása előre- és visszafelé történő tervezéssel. A komponensdiagramok lényegében osztálydiagramok, amelyek a rendszer komponenseire összpontosítanak, és gyakran a rendszer statikus implementációs nézetének modellezésére használják." \cite{ComponentDiagram}
+
+Ebből az idézetből kiderül, hogy ebben a diagram típusban a fizikai egységek jelennek meg.
+Ezt érthetjük szó szerint is, például más gépen futó backend és frontend, de akár önálló fordítási egységet is érthetünk alatta.
+Ilyen önálló egység lehet a bussines logic réteg, .NET környezetben ez egy teljesen általános megoldás, ahol valódi fordítási egységet alkot és önálló DLL jön belőle létre.
+Hasonló módon foghatjuk fel a Compose Multiplatformban szereplő közös és specifikus kódokat is.
+
+\subsection{Általános komponensek felépítése}
+
+Két fő komponensből áll az alklamazás, a Compose Multiplatform applikációból és az adatokat kiszolgáló REST APIból. (\refstruc{fig:ComponentDiagram})
+Ebben a félévben a klines oldalon volt a hangsúly, ezért a backend részt nem bontom fel további részekre, kezelhetjük egyfajta  \emph{"black box"}-ként.
+
+A kliens oldalon a bussines logic komponens kommunikál a backenddel, így függ tőle. Az abban történő változás vagy hiba kihat ennek a komponensnek a működésére.
+Többek között ebben az egységben találhatóak a ViewModelek és a Servicek közé sorolt funkciók.
+
+A Common Client rész tartalmazza a View réteget.
+Itt találhatóak a Composable függényekkel leírt képernyők.
+Mivel ezeken az elemeken a ViewModelből származó adatok jelnnek meg a helyes működés szerint, ezért függ a Business Logictól. 
+Ezáltal tranzitívan függ a a backend helyes működésétől is. 
+Ennek a felépítéséről és komponenseirpl lesz egy részletesebb ábra.
+
+Megjelnnek még az ábrán a Mobile Client és Desktop Client részek is.
+Ez a két komponens valósítja meg a platform specifikus kódrészletek megvalósításáért és a belépési pontok megvalósításáért felel.
+Itt is érdemes észrevenni, hogy ezek a komponensek függnek a közös kódtól.
+Ha megváltozik valami benne az minden platform specifikus kódra hatással lesz, ha létrehozunk egy expect függvényt azt minden más komponensben meg kell valósítani.
+Ezekről nem fogok ebben a fejezetben részletesebben foglalkozni.
+
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=150mm, keepaspectratio]{figures/Component.png}
+    \caption{Átfogó komponens diagram.}
+    \label{fig:ComponentDiagram}
+\end{figure}
+
+\subsection{Business logic komponensek felépítése}
+
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=100mm, keepaspectratio]{figures/Business Component.png}
+    \caption{Business logic komponens diagram.}
+    \label{fig:BusinessComponentDiagram}
+\end{figure}
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=100mm, keepaspectratio]{figures/Common Component.png}
+    \caption{Közös UI komponens diagram.}
+    \label{fig:CommonComponentDiagram}
+\end{figure}

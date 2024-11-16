@@ -1,0 +1,13 @@
+@startuml Common Component
+package "Common Client" #BAE9E9 {
+  package "UI" {
+    [Camera] as camera
+    [Components] as components
+    [Exam] as exam
+    [MultipleChoiceQuestion] as multiplechoicequestion
+    [Point] as point
+    [Submission] as submission
+    [Topic] as topic
+  }
+}
+@enduml

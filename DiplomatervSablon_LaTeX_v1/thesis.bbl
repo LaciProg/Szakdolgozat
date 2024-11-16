@@ -126,6 +126,12 @@ Husayn Fakher:
 \bibNewBlock
   \url{https://medium.com/@husayn.fakher/compose-state-vs-stateflow-state-management-in-jetpack-compose-c99740732023}.
 
+\bibitem{Coroutine}
+JetBrains:
+\bibNewBlock Coroutines guide.
+\bibNewBlock {\em Official libraries}, 2022.\ 02.
+\bibNewBlock \url{https://kotlinlang.org/docs/coroutines-guide.html}.
+
 \bibitem{BasicProject}
 JetBrains:
 \bibNewBlock The basics of kotlin multiplatform project structure.
@@ -160,6 +166,13 @@ JetBrains:
 \bibNewBlock
   \url{https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-navigation-routing.html}.
 
+\bibitem{KotlinCrossPlatformFrameworks}
+JetBrains:
+\bibNewBlock Popular cross-platform app development frameworks.
+\bibNewBlock {\em Kotlin Multiplatform Documentation}, 2024.\ 09.
+\bibNewBlock
+  \url{https://www.jetbrains.com/help/kotlin-multiplatform-dev/cross-platform-frameworks.html#popular-cross-platform-app-development-frameworks}.
+
 \bibitem{Serialization}
 JetBrains:
 \bibNewBlock Serialization.
@@ -177,6 +190,12 @@ JetBrains:
 Peter Kiss:
 \bibNewBlock Adaptive digital compensation of analog circuit imperfections for
   cascaded delta-sigma analog-to-digital converters, 2000.\ 04.
+
+\bibitem{RESTAPIAlternatives}
+Markus Kohler:
+\bibNewBlock 7 alternatives to rest apis.
+\bibNewBlock {\em PubNub}, 2024.\ 01.
+\bibNewBlock \url{https://www.pubnub.com/blog/7-alternatives-to-rest-apis/}.
 
 \bibitem{Lee87}
 Wai~L. Lee\bibAnd 1Charles~G. Sodini:
@@ -283,13 +302,6 @@ Flutter Team:
 \bibNewBlock {\em Flutter}, 2024.\ 11.
 \bibNewBlock \url{https://flutter.dev/}.
 
-\bibitem{KotlinCrossPlatformFrameworks}
-JetBrains~Documentation Team:
-\bibNewBlock Popular cross-platform app development frameworks.
-\bibNewBlock {\em Kotlin Multiplatform Documentation}, 2024.\ 09.
-\bibNewBlock
-  \url{https://www.jetbrains.com/help/kotlin-multiplatform-dev/cross-platform-frameworks.html#popular-cross-platform-app-development-frameworks}.
-
 \bibitem{KotlinMultiplatformRelease}
 Kotlin~Documentation Team:
 \bibNewBlock Update to the new release.
@@ -302,6 +314,13 @@ React~Native Team:
 \bibNewBlock React native.
 \bibNewBlock {\em React Native}, 2024.\ 11.
 \bibNewBlock \url{https://reactnative.dev/}.
+
+\bibitem{ComponentDiagram}
+Unknown:
+\bibNewBlock What is component diagram?
+\bibNewBlock {\em Visual Paradigm}, 2024.\ 11.
+\bibNewBlock
+  \url{https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-component-diagram/}.
 
 \bibitem{MVVMArchitecture}
 Antoine van~der Lee:

@@ -3,10 +3,14 @@
 \label{sec:Search}
 %----------------------------------------------------------------------------
 
+Ebben a fejezetben bemutatom az általam használt forrásokat és technológiákat.
+Esetenként ábrákkal és kódrészletekkel ilusztrálom az adott technológiát a könnyebb érthetőség kedvéért.
+Az alfejezet végén bemutatok néhány alternatív megoldást a multiplatform fejlesztésre.
+
 \section{Felhasznált technológiák}
 \label{sec:Technologies}
 
-Ebben a fejezetben bemutatom az általam használt technológiákat amiket használtam és segítettek ennek a dolgozatnak a megírásában és elkészítésében.
+Ez az elfejezet a használt technológiák bemutatására fókuszál, a könnyebb érhetőség kedvéért ábrák, képek és forráshivatkozásokkal kiegészítve. 
 
 \subsection{Jetpack Compose}
 \label{sec:Compose}
@@ -79,7 +83,8 @@ Kitérek arra, hogy mire jó, miért ezt használtam és hogyan lehet őket hat�
 A State és a StateFlow hasnló problémára ad megoldást.
 A State alapvetően Compose sepcifikus megoldás, ha változik az értéke akkor a lefut a recomposoition.
 Ezzel szemben a StateFlow a Kotlin nyelvben általánosan használt eszköz és sokkal bővebb felhasználással rendelkezik, mint az egyszerű State.
-Az egyszerű Stateet általában egy Composable függvényen belül használják, míg a a StateFlowt ViewModelekben.
+Az egyszerű State-et általában egy Composable függvényen belül használják, míg a a StateFlowt ViewModelekben.
+
 Ennek ellénére mind a két megoldás tökéletesen alkalmazható, jelenleg már Compose Multiplatform alkalmazásokban is.
 Mivel ViewModelben használva az adatok nem besznek el a képernyő elforgatása során ezért egyszerűbb műveletekre és adaokra nincs lényegi különbség a működésben. 
 
@@ -368,6 +373,7 @@ actual fun MainCameraScreen(examId: String, navigateBack: () -> Unit) {
 A Compose Multiplatform projektek is a Gradle build rendszert használják, első sorban a függőségek megszerzésere és az alkalmazás létrehozására.
 Egy átlagos fejlesztőnek mindösszesen annyi dolga van, hogy kigyűjti a használt függőségeket és a fejlesztőkörnyezet általában segít a megfelelő verziók megtalálásában.
 Újbban a Kotlin DSL használata terjedt el.
+
 "A DSL (Domain-Specific Language) egy programozási nyelv, amely egy meghatározott problémakör megoldására összpontosít. Az általános célú nyelvektől eltérően a DSL-ek, például az SQL és a regexek, csak egy szűk területre fókuszálnak, ami lehetővé teszi a problémák deklaratív módon való megoldását."\cite{KotlinDSL}
 Ennek a segítségével egyszerűbben tudjuk megadni a Gradle függőségeket.(\ref{lst:KotlinDSL}.~kódrészlet)
 
@@ -418,7 +424,9 @@ androidLibrary = { id = "com.android.library", version.ref = "agp" }
 Fejlesztőkörnyezetnek a JetBrains egyik eszközét választottam, a Fleet-et.
 Kifejezetten Multiplatform fejlesztéshez készítettek, szinte az összes nyelvet támogata ami ebben a témában szóba jöhet, és minden funkcióval rendelkezik amivel a natív fejlesztésre készült IDE-ik is.
 Többek között kódkiegészítéssel és kód kiemeléssel is, így nem kell IDE-t váltani, ha más nyelven kell éppen dolgozni.
+
 "Amikor az Smart Mode engedélyezve van, a Fleet nyelvspecifikus funkciókat kínál, mint például a kódkiegészítés, navigáció, hibakeresés és refaktorálás. Ha ez a mód le van tiltva, a Fleet egyszerű szövegszerkesztőként működik; gyorsan meg lehet nyitni fájlokat és módosításokat végezni, de a fejlettebb funkciók nélkül. A háttérben a Fleet kiválasztja a kód feldolgozásához szükséges háttérmotort. Intelligens módban például a Kotlin feldolgozási motorja az IntelliJ IDEA-hoz használt motor, így ismerős funkciók maradnak elérhetők." \cite{Fleet}
+
 Egy másik hasznos funkció, hogy egy helyről lehet minden platformra buildelni az alkalamzást (\refstruc{fig:RunConfigs}) így nem kell egy külön Android Studiot és egy Xcodeot is megynitni, ha szeretnéd tesztelni az alaklamzást az adott eszközön.
 
 A fő fejlesztőkörnyezeten kívül amíg csak az Android applikációt fejleszettem az Android Studiot használtam.
@@ -447,6 +455,7 @@ Ennek a folyamatnak egy részletesebb leírása a \cite{Backend} forrásban olva
 
 Mind az adatbázis, mind a REST API egy-egy Docker-konténerben fut egy viruális gépen, így biztosítva a folyamatos elérhetőséget.
 "Mi az a Docker? A Docker egy nyílt platform alkalmazások fejlesztésére, szállítására és futtatására. Lehetővé teszi, hogy az alkalmazásokat elválasszuk az infrastruktúrától, így gyorsabban tudunk szoftvereket szállítani. A Docker segítségével az infrastruktúrát ugyanúgy kezelhetjük, mint az alkalmazásokat. A Docker szállítási, tesztelési és kódtelepítési módszertanait kihasználva jelentősen csökkenthetjük az időt a kód megírása és a termelési környezetben való futtatása között." \cite{Docker}
+
 "A Docker platform: A Docker lehetőséget biztosít arra, hogy az alkalmazást egy lazán izolált környezetben, úgynevezett konténerben csomagoljuk és futtassuk. Az izoláció és a biztonság lehetővé teszi, hogy egy adott gépen egyszerre több konténert futtassunk. A konténerek könnyűsúlyúak, és mindent tartalmaznak, ami szükséges az alkalmazás futtatásához, így nem kell a gazdagépre telepített környezetre támaszkodni. A konténereket megoszthatjuk munka közben, biztosítva, hogy mindenki ugyanazt a konténert kapja, amely ugyanúgy működik." \cite{Docker}
 
 
@@ -472,6 +481,20 @@ Külön-külön rendesen működtek, de az előbb felsorolt pronlémák miatt ú
 
 Négy különböző technológiát vizsgáltam meg és a korábbi tapasztalataim és információm alapján próbáltam választani közülök.
 Az első a Compose Multiplatform, a második a MAUI, a haramdik a React Native, a negyedik a Flutter.
+Az alábbiakban található egy rövid összefoglalás ezekről a technológiákról.
+
+Kotlin- és Compose Multiplatform: A JetBrains és a Google által fejlesztett technológiák, amelyek lehetővé teszik a kód megosztását platformok között anélkül, hogy új nyelvet kellene bevezetni. Nemrégiben stabilizálták, és támogatja a felhasználói felület megosztását a Compose Multiplatform segítségével. \cite{KotlinCrossPlatformFrameworks}
+
+.NET MAUI: A Microsoft C\# és XAML alapú keretrendszere, amely cross-platform API-kat, hot reload-ot biztosít, és asztali, illetve mobil platformokra céloz. \cite{KotlinCrossPlatformFrameworks}
+
+React Native: A Meta JavaScript alapú keretrendszere, amely a natív UI-t helyezi előtérbe, erős közösségi támogatással, a Fast Refresh-t használja, és a Flipper-t integrálja hibakereséshez. \cite{KotlinCrossPlatformFrameworks}
+
+Flutter: A Google Dart alapú keretrendszere, amely a hot reload és az egyéni renderelés révén ismert, támogatja a Material Design-t, és széles körben használják cross-platform alkalmazásokhoz (pl. eBay, Alibaba). \cite{KotlinCrossPlatformFrameworks}
+
+A kiválásztás során számos szempontot figyelembe vettem. Fontos volt a tanulási lehetőség a témából, lehetőleg olyan módon, hogy azt később is tudjam kamatoztatni.
+Egy másik szempont volt, hogy ne legyen teljesen ismeretlen a hasznát eszköz és környezet, ennek célja az volt, hogy az időm nagy részét ne tutorial videók nézésvel töltesem az alapoktól kezdve, hanem a dokumentációk alapján is el tudjak igazodni hatékonyan.
+Nem utolsó szempont volt, hogy szerettem volna folytatni az előző félévben elkezdett alkalmazásomat.
+Az összes opció megvizsgálása után alkalmasnak találtam a Compose Multiplatformot a szakdolgozat témájaként.
 
 Ezek küzül az utolsót zártam ki a leghamrabb, a fenti négy közül ez az egyetlen ami nem natív UI eléményt nyújt a felhasználóknak és egy számomra teljesen ismeretlen nyelven a Google által létrehozott nyelvben a Dartsban kell programozni.
 Első sorban mobilos fejlesztésre használják, a többi része nem a legoptimálisabb és én ennél egy általánosabb megoldást kerestem. \cite{Flutter}
