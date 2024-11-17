@@ -211,6 +211,9 @@ INPUT content\search.aux
 INPUT .\content\architecture.aux
 INPUT .\content\architecture.aux
 INPUT content\architecture.aux
+INPUT .\content\details.aux
+INPUT .\content\details.aux
+INPUT content\details.aux
 INPUT .\content\template-usage.aux
 INPUT .\content\template-usage.aux
 INPUT content\template-usage.aux
@@ -471,6 +474,12 @@ INPUT .\figures\Common Component.png
 INPUT .\figures\Common Component.png
 INPUT .\figures\Common Component.png
 INPUT .\figures\Common Component.png
+INPUT .\content\details.tex
+INPUT .\content\details.tex
+OUTPUT content\details.aux
+INPUT .\content\details.tex
+INPUT .\content\details.tex
+INPUT content\details.tex
 INPUT .\content\template-usage.tex
 INPUT .\content\template-usage.tex
 OUTPUT content\template-usage.aux
@@ -613,6 +622,9 @@ INPUT content\search.aux
 INPUT .\content\architecture.aux
 INPUT .\content\architecture.aux
 INPUT content\architecture.aux
+INPUT .\content\details.aux
+INPUT .\content\details.aux
+INPUT content\details.aux
 INPUT .\content\template-usage.aux
 INPUT .\content\template-usage.aux
 INPUT content\template-usage.aux

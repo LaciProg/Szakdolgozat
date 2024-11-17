@@ -389,6 +389,14 @@ Ezekről nem fogok ebben a fejezetben részletesebben foglalkozni.
 
 \subsection{Business logic komponensek felépítése}
 
+A \textbf{bussines logic komponens} összetett és több alkotóelemből épül fel. (\refstruc{fig:BusinessComponentDiagram})
+A ViewModelek önmagukban lehetnek komponensek, akár külön-külön is, de a diagramon egybe tüntetem fel.
+Ezek a viewModelek függnek a Servicektől. 
+
+A Serviceek közé tartozik az API kommunikáció, a navigáciért felelős komponens is.
+A PDF elkészítéséért felelős kódrészek is egy komponensként kezelhető, hasonló módon, mint a szövegfelismerésért felelős funkció is.
+Az ebben az egységebn levő komponensek nagyrészt nem függnek szorosan más komponensektől, ez alól kivétel a HTTP kommunikáció ami a backendtől függ.
+
 
 \begin{figure}[!ht]
     \centering
@@ -396,6 +404,20 @@ Ezekről nem fogok ebben a fejezetben részletesebben foglalkozni.
     \caption{Business logic komponens diagram.}
     \label{fig:BusinessComponentDiagram}
 \end{figure}
+
+\subsection{Common Client komponensek felépítése}
+
+A \textbf{common Client komponens} is számos részből épül fel. (\refstruc{fig:CommonComponentDiagram})
+Ebben a részben találhatóak a képernyőn megjelenő elemek leírásásért felelős részek.
+
+A kisebb komponenseket tartalmazó résztőll több másik is függ, ez az ábrán az átláthatósag miatt nem szerepel.
+Egy-egy ilyen UI komponens egy vagy több viewModeltől is függhet, de egymás között nincs egyéb függőség, így szabadan eltávilíthatóak vagy hozzáadhatóak új nézetek.
+
+Ezektől a komponensektől a tényleges implementációk függnek, így a Mobil és asztali komponens is.
+Az itt történt bármilyen változás kihatással van a valós implementációkra.
+A közös elemek módosítása megváltoztatja minden platformon a képernyő kinézetét.
+Ha új expect függvényt veszünk fel, a többi kompenenst is külön el kell készítenünk.
+
 
 \begin{figure}[!ht]
     \centering
