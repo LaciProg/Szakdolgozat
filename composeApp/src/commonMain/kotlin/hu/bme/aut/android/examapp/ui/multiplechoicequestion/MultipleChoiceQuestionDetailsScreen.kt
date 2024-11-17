@@ -34,7 +34,7 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import examapp.composeapp.generated.resources.Res
 import examapp.composeapp.generated.resources.*
-import hu.bme.aut.android.examapp.api.dto.MultipleChoiceQuestionDto
+import hu.bme.aut.android.examapp.service.api.dto.*
 import hu.bme.aut.android.examapp.ui.components.TopAppBarContent
 import hu.bme.aut.android.examapp.ui.viewmodel.multiplechoicequestion.MultipleChoiceQuestionDetails
 import hu.bme.aut.android.examapp.ui.viewmodel.multiplechoicequestion.MultipleChoiceQuestionDetailsScreenUiState

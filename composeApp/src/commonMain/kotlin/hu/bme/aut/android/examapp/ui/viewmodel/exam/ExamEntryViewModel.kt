@@ -6,11 +6,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import hu.bme.aut.android.examapp.Type
-import hu.bme.aut.android.examapp.api.dto.ExamDto
-import hu.bme.aut.android.examapp.api.dto.MultipleChoiceQuestionDto
-import hu.bme.aut.android.examapp.api.dto.Question
-import hu.bme.aut.android.examapp.api.dto.TrueFalseQuestionDto
+import hu.bme.aut.android.examapp.service.api.dto.*
 import kotlinx.coroutines.launch
 import java.io.IOException
 sealed interface ExamEntryScreenUiState {
@@ -115,12 +111,13 @@ data class ExamDetails(
     val topicName : String = ""
 )
 
-fun ExamDetails.toExam(): ExamDto = ExamDto(
-    uuid = id,
-    name = name,
-    questionList = questionList.joinToString("#") { it.toQuestionString() },
-    topicId = topicId
-)
+fun ExamDetails.toExam(): ExamDto =
+    ExamDto(
+        uuid = id,
+        name = name,
+        questionList = questionList.joinToString("#") { it.toQuestionString() },
+        topicId = topicId
+    )
 
 fun Question.toQuestionString(): String = when(this){
     is TrueFalseQuestionDto -> "${Type.trueFalseQuestion.ordinal}~$uuid"

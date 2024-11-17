@@ -6,7 +6,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import hu.bme.aut.android.examapp.api.dto.TopicDto
+import hu.bme.aut.android.examapp.service.api.dto.*
 import io.ktor.utils.io.errors.IOException
 import kotlinx.coroutines.launch
 
@@ -113,12 +113,13 @@ data class TopicDetails(
     val parentTopicName : String = ""
 )
 
-fun TopicDetails.toTopic(): TopicDto = TopicDto(
-    uuid = id,
-    topic = topic,
-    parentTopic = if(parent == "null") "" else parent,
-    description = description,
-)
+fun TopicDetails.toTopic(): TopicDto =
+    TopicDto(
+        uuid = id,
+        topic = topic,
+        parentTopic = if (parent == "null") "" else parent,
+        description = description,
+    )
 
 fun TopicDto.toTopicUiState(isEntryValid: Boolean = false, parentName: String): TopicUiState = TopicUiState(
     topicDetails = this.toTopicDetails(parentName),

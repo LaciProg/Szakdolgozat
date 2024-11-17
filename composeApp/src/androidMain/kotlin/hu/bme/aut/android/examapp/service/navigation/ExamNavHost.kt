@@ -1,4 +1,4 @@
-package hu.bme.aut.android.examapp.navigation
+package hu.bme.aut.android.examapp.service.navigation
 
 import android.util.Log
 import androidx.compose.runtime.Composable

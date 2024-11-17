@@ -1,4 +1,4 @@
-package hu.bme.aut.android.examapp.pdf
+package hu.bme.aut.android.examapp.service.pdf
 
 import android.content.ContentValues
 import android.content.Context

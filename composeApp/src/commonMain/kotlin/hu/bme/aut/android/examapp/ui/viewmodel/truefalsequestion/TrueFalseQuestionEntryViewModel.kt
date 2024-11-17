@@ -6,8 +6,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import hu.bme.aut.android.examapp.Type
-import hu.bme.aut.android.examapp.api.dto.TrueFalseQuestionDto
+import hu.bme.aut.android.examapp.service.api.dto.*
 import io.ktor.utils.io.errors.IOException
 import kotlinx.coroutines.launch
 
@@ -102,14 +101,15 @@ data class TrueFalseQuestionDetails(
     val topicName: String = ""
 )
 
-fun TrueFalseQuestionDetails.toTrueFalseQuestion(): TrueFalseQuestionDto = TrueFalseQuestionDto(
-    uuid = id,
-    question = question,
-    correctAnswer = correctAnswer,
-    point = point,
-    topic = topic,
-    type = Type.trueFalseQuestion.name,
-)
+fun TrueFalseQuestionDetails.toTrueFalseQuestion(): TrueFalseQuestionDto =
+    TrueFalseQuestionDto(
+        uuid = id,
+        question = question,
+        correctAnswer = correctAnswer,
+        point = point,
+        topic = topic,
+        type = Type.trueFalseQuestion.name,
+    )
 
 fun TrueFalseQuestionDto.toTrueFalseQuestionUiState(isEntryValid: Boolean = false, pointName: String, topicName: String, isAnswerChosen: Boolean = false): TrueFalseQuestionUiState = TrueFalseQuestionUiState(
     trueFalseQuestionDetails = this.toTrueFalseQuestionDetails(pointName = pointName, topicName =  topicName, isAnswerChosen),

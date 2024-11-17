@@ -1,4 +1,4 @@
-import hu.bme.aut.android.examapp.api.dto.*
+import hu.bme.aut.android.examapp.service.api.dto.*
 import io.ktor.client.*
 import io.ktor.client.call.*
 import io.ktor.client.plugins.*
@@ -291,13 +291,13 @@ object ApiService {
         throw ApiException(handleHttpException(response.status))
     }
 
-    suspend fun getExam(id: String): ExamDto  {
+    suspend fun getExam(id: String): ExamDto {
         val response = httpClient.get("/exam/$id")
         if (response.status == HttpStatusCode.OK) return response.body()
         throw ApiException(handleHttpException(response.status))
     }
 
-    suspend fun getExamQuestions(id: String): ExamDto  {
+    suspend fun getExamQuestions(id: String): ExamDto {
         val response = httpClient.get("/exam/$id/question")
         if (response.status == HttpStatusCode.OK) return response.body()
         throw ApiException(handleHttpException(response.status))

@@ -19,17 +19,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import examapp.composeapp.generated.resources.Res
 import examapp.composeapp.generated.resources.*
-import hu.bme.aut.android.examapp.MainCameraScreen
+import hu.bme.aut.android.examapp.ui.camera.MainCameraScreen
 //import hu.bme.aut.android.examapp.MainCameraScreen
-import hu.bme.aut.android.examapp.Type
-import hu.bme.aut.android.examapp.api.dto.MultipleChoiceQuestionDto
-import hu.bme.aut.android.examapp.api.dto.Question
-import hu.bme.aut.android.examapp.api.dto.StatisticsDto
-import hu.bme.aut.android.examapp.api.dto.TrueFalseQuestionDto
+import hu.bme.aut.android.examapp.service.api.dto.*
 import hu.bme.aut.android.examapp.ui.components.TopAppBarContent
 import hu.bme.aut.android.examapp.ui.theme.Green
 import hu.bme.aut.android.examapp.ui.theme.PaleDogwood
@@ -39,7 +34,6 @@ import hu.bme.aut.android.examapp.ui.viewmodel.submission.SubmissionResultScreen
 import hu.bme.aut.android.examapp.ui.viewmodel.submission.SubmissionScreenUiState
 import hu.bme.aut.android.examapp.ui.viewmodel.submission.SubmissionViewModel
 import org.jetbrains.compose.resources.stringResource
-import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
 fun SubmissionScreen (
@@ -112,7 +106,8 @@ fun SubmissionScreenContent(
                 }
 
                 Button(onClick = {
-                    viewModel.statisticsDto = StatisticsDto(0.0,0.0)
+                    viewModel.statisticsDto =
+                        StatisticsDto(0.0, 0.0)
                     viewModel.statisticsDialogUiState = SubmissionResultScreenUiState.Loading
                     println(viewModel.answers.answers)
                     viewModel.submitAnswers(answers = viewModel.answers.answers.joinToString("-"))

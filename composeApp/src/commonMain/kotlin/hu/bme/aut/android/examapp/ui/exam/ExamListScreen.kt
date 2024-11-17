@@ -15,7 +15,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import examapp.composeapp.generated.resources.Res
 import examapp.composeapp.generated.resources.exam_list
-import hu.bme.aut.android.examapp.api.dto.NameDto
+import hu.bme.aut.android.examapp.service.api.dto.*
 import hu.bme.aut.android.examapp.ui.components.TopAppBarContent
 import hu.bme.aut.android.examapp.ui.viewmodel.exam.ExamListScreenUiState
 import hu.bme.aut.android.examapp.ui.viewmodel.exam.ExamListViewModel

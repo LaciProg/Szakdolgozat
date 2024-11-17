@@ -1,0 +1,15 @@
+{
+    "configurations": [
+
+        {
+            "name": "composeApp [WasmJs] (1)",
+            "type": "gradle",
+            "workingDir": "C:\\Users\\Dell\\Desktop\\KotlinProject",
+            "tasks": ["wasmJsBrowserDevelopmentRun"],
+            "args": ["-p", "C:\\Users\\Dell\\Desktop\\KotlinProject\\composeApp"],
+            "initScripts": {
+                "flmapper": "ext.mapPath = { path -> path }"
+            }
+        }
+    ]
+}

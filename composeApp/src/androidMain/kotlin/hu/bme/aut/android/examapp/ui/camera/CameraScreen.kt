@@ -1,4 +1,4 @@
-package hu.bme.aut.android.examapp
+package hu.bme.aut.android.examapp.ui.camera
 
 import android.content.Context
 import android.graphics.Color
@@ -30,13 +30,12 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.LifecycleOwner
-import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewmodel.compose.viewModel
+import hu.bme.aut.android.examapp.service.textRecognition.TextRecognitionAnalyzer
 import hu.bme.aut.android.examapp.ui.viewmodel.submission.SubmissionViewModel
 
 @Composable

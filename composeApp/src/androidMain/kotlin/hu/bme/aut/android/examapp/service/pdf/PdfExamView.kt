@@ -1,4 +1,4 @@
-package hu.bme.aut.android.examapp.pdf
+package hu.bme.aut.android.examapp.service.pdf
 
 import android.content.Context
 import android.util.AttributeSet
@@ -9,8 +9,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.AbstractComposeView
-import PointDto
-import Question
+import hu.bme.aut.android.examapp.service.api.dto.*
 
 
 class PDFExamView@JvmOverloads constructor(

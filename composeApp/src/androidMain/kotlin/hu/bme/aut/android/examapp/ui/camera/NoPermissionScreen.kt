@@ -1,4 +1,4 @@
-package hu.bme.aut.android.examapp
+package hu.bme.aut.android.examapp.ui.camera
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box

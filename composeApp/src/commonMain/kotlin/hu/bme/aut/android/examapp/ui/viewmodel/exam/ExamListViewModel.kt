@@ -7,7 +7,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.viewModelScope
-import hu.bme.aut.android.examapp.api.dto.NameDto
+import hu.bme.aut.android.examapp.service.api.dto.*
 import kotlinx.coroutines.launch
 import java.io.IOException
 

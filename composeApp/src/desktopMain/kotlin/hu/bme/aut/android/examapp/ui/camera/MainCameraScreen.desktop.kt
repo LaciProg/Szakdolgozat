@@ -1,10 +1,9 @@
-package hu.bme.aut.android.examapp
+package hu.bme.aut.android.examapp.ui.camera
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.lifecycle.SavedStateHandle
 import examapp.composeapp.generated.resources.Res
 import examapp.composeapp.generated.resources.camera
 import hu.bme.aut.android.examapp.ui.components.TopAppBarContent

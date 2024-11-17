@@ -12,7 +12,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import hu.bme.aut.android.examapp.logDebug
-import hu.bme.aut.android.examapp.pdf.ExportExamDetailsScreen
+import hu.bme.aut.android.examapp.service.pdf.ExportExamDetailsScreen
 import hu.bme.aut.android.examapp.ui.exam.ExamDetailsScreen
 import hu.bme.aut.android.examapp.ui.exam.ExamEditScreen
 import hu.bme.aut.android.examapp.ui.exam.ExamListScreen

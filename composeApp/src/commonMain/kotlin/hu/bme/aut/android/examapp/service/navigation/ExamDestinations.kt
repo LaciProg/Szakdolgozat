@@ -1,94 +1,94 @@
-package hu.bme.aut.android.examapp.navigation
+package hu.bme.aut.android.examapp.service.navigation
 
 sealed class ExamDestination(val route: String) {
-    data object LoginScreenDestination : ExamDestination("LoginScreen")
+    data object LoginScreenDestination : hu.bme.aut.android.examapp.service.navigation.ExamDestination("LoginScreen")
 
-    data object RegisterScreenDestination : ExamDestination("RegisterScreen")
+    data object RegisterScreenDestination : hu.bme.aut.android.examapp.service.navigation.ExamDestination("RegisterScreen")
 
-    data object MainScreenDestination : ExamDestination("MainScreen")
+    data object MainScreenDestination : hu.bme.aut.android.examapp.service.navigation.ExamDestination("MainScreen")
 
-    data object TopicListDestination : ExamDestination("TopicList")
+    data object TopicListDestination : hu.bme.aut.android.examapp.service.navigation.ExamDestination("TopicList")
 
-    data object TopicDetailsDestination : ExamDestination("TopicDetails") {
+    data object TopicDetailsDestination : hu.bme.aut.android.examapp.service.navigation.ExamDestination("TopicDetails") {
         const val topicIdArg = "0"
-        val routeWithArgs = "$route/{$topicIdArg}"
+        val routeWithArgs = "$route/{${hu.bme.aut.android.examapp.service.navigation.ExamDestination.TopicDetailsDestination.topicIdArg}}"
     }
 
-    data object TopicEditDestination : ExamDestination("TopicEdit") {
+    data object TopicEditDestination : hu.bme.aut.android.examapp.service.navigation.ExamDestination("TopicEdit") {
         const val topicIdArg = "0"
-        val routeWithArgs = "$route/{$topicIdArg}"
+        val routeWithArgs = "$route/{${hu.bme.aut.android.examapp.service.navigation.ExamDestination.TopicEditDestination.topicIdArg}}"
     }
 
-    data object NewTopicDestination : ExamDestination("NewTopic")
+    data object NewTopicDestination : hu.bme.aut.android.examapp.service.navigation.ExamDestination("NewTopic")
 
-    data object PointListDestination : ExamDestination("PointList")
+    data object PointListDestination : hu.bme.aut.android.examapp.service.navigation.ExamDestination("PointList")
 
-    data object PointDetailsDestination : ExamDestination("PointDetails") {
+    data object PointDetailsDestination : hu.bme.aut.android.examapp.service.navigation.ExamDestination("PointDetails") {
         const val pointIdArg = "0"
-        val routeWithArgs = "$route/{$pointIdArg}"
+        val routeWithArgs = "$route/{${hu.bme.aut.android.examapp.service.navigation.ExamDestination.PointDetailsDestination.pointIdArg}}"
     }
 
-    data object PointEditDestination : ExamDestination("PointEdit") {
+    data object PointEditDestination : hu.bme.aut.android.examapp.service.navigation.ExamDestination("PointEdit") {
         const val pointIdArg = "0"
-        val routeWithArgs = "$route/{$pointIdArg}"
+        val routeWithArgs = "$route/{${hu.bme.aut.android.examapp.service.navigation.ExamDestination.PointEditDestination.pointIdArg}}"
     }
 
-    data object NewPointDestination : ExamDestination("NewPoint")
+    data object NewPointDestination : hu.bme.aut.android.examapp.service.navigation.ExamDestination("NewPoint")
 
-    data object TrueFalseQuestionListDestination : ExamDestination("TrueFalseQuestionList")
+    data object TrueFalseQuestionListDestination : hu.bme.aut.android.examapp.service.navigation.ExamDestination("TrueFalseQuestionList")
 
-    data object TrueFalseQuestionDetailsDestination : ExamDestination("TrueFalseQuestionDetails") {
+    data object TrueFalseQuestionDetailsDestination : hu.bme.aut.android.examapp.service.navigation.ExamDestination("TrueFalseQuestionDetails") {
         const val trueFalseQuestionIdArg = "0"
-        val routeWithArgs = "$route/{$trueFalseQuestionIdArg}"
+        val routeWithArgs = "$route/{${hu.bme.aut.android.examapp.service.navigation.ExamDestination.TrueFalseQuestionDetailsDestination.trueFalseQuestionIdArg}}"
     }
 
-    data object TrueFalseQuestionEditDestination : ExamDestination("TrueFalseQuestionEdit") {
+    data object TrueFalseQuestionEditDestination : hu.bme.aut.android.examapp.service.navigation.ExamDestination("TrueFalseQuestionEdit") {
         const val trueFalseQuestionIdArg = "0"
-        val routeWithArgs = "$route/{$trueFalseQuestionIdArg}"
+        val routeWithArgs = "$route/{${hu.bme.aut.android.examapp.service.navigation.ExamDestination.TrueFalseQuestionEditDestination.trueFalseQuestionIdArg}}"
     }
 
-    data object NewTrueFalseQuestionDestination : ExamDestination("NewTrueFalseQuestion")
+    data object NewTrueFalseQuestionDestination : hu.bme.aut.android.examapp.service.navigation.ExamDestination("NewTrueFalseQuestion")
 
-    data object MultipleChoiceQuestionListDestination : ExamDestination("MultipleChoiceQuestionList")
+    data object MultipleChoiceQuestionListDestination : hu.bme.aut.android.examapp.service.navigation.ExamDestination("MultipleChoiceQuestionList")
 
-    data object MultipleChoiceQuestionDetailsDestination : ExamDestination("MultipleChoiceQuestionDetails") {
+    data object MultipleChoiceQuestionDetailsDestination : hu.bme.aut.android.examapp.service.navigation.ExamDestination("MultipleChoiceQuestionDetails") {
         const val multipleChoiceQuestionIdArg = "0"
-        val routeWithArgs = "$route/{$multipleChoiceQuestionIdArg}"
+        val routeWithArgs = "$route/{${hu.bme.aut.android.examapp.service.navigation.ExamDestination.MultipleChoiceQuestionDetailsDestination.multipleChoiceQuestionIdArg}}"
     }
 
-    data object MultipleChoiceQuestionEditDestination : ExamDestination("MultipleChoiceQuestionEdit") {
+    data object MultipleChoiceQuestionEditDestination : hu.bme.aut.android.examapp.service.navigation.ExamDestination("MultipleChoiceQuestionEdit") {
         const val multipleChoiceQuestionIdArg = "0"
-        val routeWithArgs = "$route/{$multipleChoiceQuestionIdArg}"
+        val routeWithArgs = "$route/{${hu.bme.aut.android.examapp.service.navigation.ExamDestination.MultipleChoiceQuestionEditDestination.multipleChoiceQuestionIdArg}}"
     }
 
-    data object NewMultipleChoiceQuestionDestination : ExamDestination("NewMultipleChoiceQuestion")
+    data object NewMultipleChoiceQuestionDestination : hu.bme.aut.android.examapp.service.navigation.ExamDestination("NewMultipleChoiceQuestion")
 
 
-    data object ExamListDestination : ExamDestination("ExamList")
+    data object ExamListDestination : hu.bme.aut.android.examapp.service.navigation.ExamDestination("ExamList")
 
-    data object ExamDetailsDestination : ExamDestination("ExamDetails") {
+    data object ExamDetailsDestination : hu.bme.aut.android.examapp.service.navigation.ExamDestination("ExamDetails") {
         const val examIdArg = "0"
-        val routeWithArgs = "$route/{$examIdArg}"
+        val routeWithArgs = "$route/{${hu.bme.aut.android.examapp.service.navigation.ExamDestination.ExamDetailsDestination.examIdArg}}"
     }
 
-    data object ExamEditDestination : ExamDestination("ExamEdit") {
+    data object ExamEditDestination : hu.bme.aut.android.examapp.service.navigation.ExamDestination("ExamEdit") {
         const val examIdArg = "0"
-        val routeWithArgs = "$route/{$examIdArg}"
+        val routeWithArgs = "$route/{${hu.bme.aut.android.examapp.service.navigation.ExamDestination.ExamEditDestination.examIdArg}}"
     }
 
-    data object NewExamDestination : ExamDestination("NewExam")
+    data object NewExamDestination : hu.bme.aut.android.examapp.service.navigation.ExamDestination("NewExam")
 
-    data object SubmissionListDestination : ExamDestination("SubmissionLis")
+    data object SubmissionListDestination : hu.bme.aut.android.examapp.service.navigation.ExamDestination("SubmissionLis")
 
-    data object SubmissionDestination : ExamDestination("Submission") {
+    data object SubmissionDestination : hu.bme.aut.android.examapp.service.navigation.ExamDestination("Submission") {
         const val examIdArg = "0"
-        val routeWithArgs = "$route/{$examIdArg}"
+        val routeWithArgs = "$route/{${hu.bme.aut.android.examapp.service.navigation.ExamDestination.SubmissionDestination.examIdArg}}"
     }
 
-    data object ExportExamListDestination : ExamDestination("ExportExamList")
+    data object ExportExamListDestination : hu.bme.aut.android.examapp.service.navigation.ExamDestination("ExportExamList")
 
-    data object ExportExamDetailsDestination : ExamDestination("ExportExamDetails") {
+    data object ExportExamDetailsDestination : hu.bme.aut.android.examapp.service.navigation.ExamDestination("ExportExamDetails") {
         const val examIdArg = "0"
-        val routeWithArgs = "$route/{$examIdArg}"
+        val routeWithArgs = "$route/{${hu.bme.aut.android.examapp.service.navigation.ExamDestination.ExportExamDetailsDestination.examIdArg}}"
     }
 }

@@ -6,7 +6,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import hu.bme.aut.android.examapp.api.dto.PointDto
+import hu.bme.aut.android.examapp.service.api.dto.*
 import kotlinx.coroutines.launch
 import java.io.IOException
 
@@ -94,13 +94,14 @@ data class PointDetails(
     val badAnswer: String = "0"
 )
 
-fun PointDetails.toPoint(): PointDto = PointDto(
-    uuid = id,
-    point = point.toDouble(),
-    type = type,
-    goodAnswer = goodAnswer.toDouble(),
-    badAnswer = badAnswer.toDouble()
-)
+fun PointDetails.toPoint(): PointDto =
+    PointDto(
+        uuid = id,
+        point = point.toDouble(),
+        type = type,
+        goodAnswer = goodAnswer.toDouble(),
+        badAnswer = badAnswer.toDouble()
+    )
 
 fun PointDto.toPointUiState(isEntryValid: Boolean = false): PointUiState = PointUiState(
     pointDetails = this.toPointDetails(),

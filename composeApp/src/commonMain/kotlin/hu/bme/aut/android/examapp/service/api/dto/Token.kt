@@ -1,4 +1,4 @@
-package hu.bme.aut.android.examapp.api.dto
+package hu.bme.aut.android.examapp.service.api.dto
 import kotlinx.serialization.Serializable
 
 @Serializable

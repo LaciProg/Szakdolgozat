@@ -1,10 +1,8 @@
 @file:OptIn(ExperimentalPermissionsApi::class)
 
-package hu.bme.aut.android.examapp
+package hu.bme.aut.android.examapp.ui.camera
 
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.lifecycle.SavedStateHandle
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
 import com.google.accompanist.permissions.PermissionState
 import com.google.accompanist.permissions.isGranted

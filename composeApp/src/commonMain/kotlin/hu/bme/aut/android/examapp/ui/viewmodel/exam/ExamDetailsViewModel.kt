@@ -4,17 +4,9 @@ import ApiException
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
-import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import hu.bme.aut.android.examapp.Type
-import hu.bme.aut.android.examapp.api.dto.ExamDto
-import hu.bme.aut.android.examapp.api.dto.MultipleChoiceQuestionDto
-import hu.bme.aut.android.examapp.api.dto.PointDto
-import hu.bme.aut.android.examapp.api.dto.Question
-import hu.bme.aut.android.examapp.api.dto.TopicDto
-import hu.bme.aut.android.examapp.api.dto.TrueFalseQuestionDto
-import hu.bme.aut.android.examapp.navigation.ExamDestination
+import hu.bme.aut.android.examapp.service.api.dto.*
 import kotlinx.coroutines.launch
 import java.io.IOException
 

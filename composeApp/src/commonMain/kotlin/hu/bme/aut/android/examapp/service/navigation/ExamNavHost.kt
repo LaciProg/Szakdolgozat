@@ -1,4 +1,4 @@
-package hu.bme.aut.android.examapp.navigation
+package hu.bme.aut.android.examapp.service.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier

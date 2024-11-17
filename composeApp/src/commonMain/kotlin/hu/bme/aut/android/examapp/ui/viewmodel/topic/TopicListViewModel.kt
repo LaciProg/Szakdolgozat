@@ -6,13 +6,11 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-//import dagger.hilt.android.lifecycle.HiltViewModel
-import hu.bme.aut.android.examapp.api.dto.NameDto
+import hu.bme.aut.android.examapp.service.api.dto.*
 import io.ktor.utils.io.errors.IOException
 import kotlinx.coroutines.launch
 import io.ktor.http.*
-//import retrofit2.HttpException
-//import javax.inject.Inject
+
 
 sealed interface TopicListScreenUiState {
     data class Success(val topics: List<NameDto>) : TopicListScreenUiState

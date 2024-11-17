@@ -1,7 +1,6 @@
-package hu.bme.aut.android.examapp.api.dto
+package hu.bme.aut.android.examapp.service.api.dto
 
 
-import hu.bme.aut.android.examapp.Type
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 

@@ -1,4 +1,4 @@
-package hu.bme.aut.android.examapp.pdf
+package hu.bme.aut.android.examapp.service.pdf
 
 import androidx.annotation.StringRes
 import androidx.compose.foundation.horizontalScroll

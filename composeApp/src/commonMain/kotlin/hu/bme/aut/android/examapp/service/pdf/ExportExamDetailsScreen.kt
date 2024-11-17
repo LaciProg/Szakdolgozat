@@ -1,4 +1,4 @@
-package hu.bme.aut.android.examapp.pdf
+package hu.bme.aut.android.examapp.service.pdf
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
