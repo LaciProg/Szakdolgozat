@@ -19,8 +19,6 @@ Reallocating 'name_of_file' (item size: 1) to 25 items.
 A level-1 auxiliary file: content/architecture.aux
 Reallocating 'name_of_file' (item size: 1) to 20 items.
 A level-1 auxiliary file: content/details.aux
-Reallocating 'name_of_file' (item size: 1) to 27 items.
-A level-1 auxiliary file: content/template-usage.aux
 Reallocating 'name_of_file' (item size: 1) to 28 items.
 A level-1 auxiliary file: content/acknowledgement.aux
 Reallocating 'name_of_file' (item size: 1) to 10 items.
@@ -34,51 +32,48 @@ Reallocating 'global_strs' (item size: 1) to 4000000 items.
 Reallocating 'wiz_functions' (item size: 4) to 6000 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Database file #1: bib/mybib.bib
-Warning--entry type for "KissPhD" isn't style-file defined
---line 293 of file bib/mybib.bib
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
-You've used 36 entries,
+You've used 29 entries,
             4991 wiz_defined-function locations,
-            1346 strings with 17380 characters,
-and the built_in function-call counts, 82049 in all, are:
-= -- 15582
-> -- 319
-< -- 5
-+ -- 6506
-- -- 234
-* -- 1069
-:= -- 3079
-add.period$ -- 142
-call.type$ -- 36
-change.case$ -- 145
+            1292 strings with 16143 characters,
+and the built_in function-call counts, 62966 in all, are:
+= -- 11985
+> -- 203
+< -- 0
++ -- 5114
+- -- 145
+* -- 812
+:= -- 2398
+add.period$ -- 116
+call.type$ -- 29
+change.case$ -- 116
 chr.to.int$ -- 0
-cite$ -- 36
-duplicate$ -- 13575
-empty$ -- 1492
-format.name$ -- 113
-if$ -- 17280
+cite$ -- 29
+duplicate$ -- 10487
+empty$ -- 1132
+format.name$ -- 87
+if$ -- 13233
 int.to.chr$ -- 0
-int.to.str$ -- 36
-missing$ -- 37
-newline$ -- 312
-num.names$ -- 74
-pop$ -- 2118
+int.to.str$ -- 29
+missing$ -- 29
+newline$ -- 270
+num.names$ -- 58
+pop$ -- 1498
 preamble$ -- 1
-purify$ -- 111
+purify$ -- 87
 quote$ -- 22
-skip$ -- 557
+skip$ -- 405
 stack$ -- 0
-substring$ -- 9059
-swap$ -- 8949
-text.length$ -- 5
+substring$ -- 6902
+swap$ -- 6843
+text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 180
+type$ -- 145
 warning$ -- 0
-while$ -- 411
-width$ -- 38
-write$ -- 526
-(There was 1 warning)
+while$ -- 319
+width$ -- 31
+write$ -- 441

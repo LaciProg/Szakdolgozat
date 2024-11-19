@@ -99,19 +99,6 @@ Apache:
 \bibNewBlock {\em Apache PDFBox®}, 2024.\ 07.
 \bibNewBlock \url{https://pdfbox.apache.org/}.
 
-\bibitem{DipPortal}
-{Budapesti Műszaki és Gazdaságtudományi Egyetem Villamosmérnöki és
-  Informatikai Kar}:
-\bibNewBlock Diplomaterv portál (2011. február 26.).
-\bibNewBlock \url{http://diplomaterv.vik.bme.hu/}.
-
-\bibitem{Candy86}
-James~C. Candy:
-\bibNewBlock Decimation for sigma delta modulation.
-\bibNewBlock {\em {IEEE} Trans.\ on Communications}, 34. \'evf. (1986.\ 01) 1.
-  sz., 72--76.~p.
-\bibNewBlock \doi{10.1109/TCOM.1986.1096432}.
-
 \bibitem{FlutterVsCompose}
 Droid Chef:
 \bibNewBlock Flutter vs jetpack compose: The battle of the century.
@@ -186,23 +173,11 @@ JetBrains:
 \bibNewBlock
   \url{https://www.jetbrains.com/help/kotlin-multiplatform-dev/fleet.html#prepare-your-development-environment}.
 
-\bibitem{KissPhD}
-Peter Kiss:
-\bibNewBlock Adaptive digital compensation of analog circuit imperfections for
-  cascaded delta-sigma analog-to-digital converters, 2000.\ 04.
-
 \bibitem{RESTAPIAlternatives}
 Markus Kohler:
 \bibNewBlock 7 alternatives to rest apis.
 \bibNewBlock {\em PubNub}, 2024.\ 01.
 \bibNewBlock \url{https://www.pubnub.com/blog/7-alternatives-to-rest-apis/}.
-
-\bibitem{Lee87}
-Wai~L. Lee\bibAnd 1Charles~G. Sodini:
-\bibNewBlock A topology for higher order interpolative coders.
-\bibNewBlock In {\em Proc.\ of the IEEE International Symposium on Circuits and
-  Systems} (kon\-fe\-ren\-cia\-anyag).
-\bibNewBlock 1987.\ 4-7~05., 459--462.~p.
 
 \bibitem{CameraX}
 Google LLC:
@@ -236,17 +211,6 @@ Microsoft:
 \bibNewBlock .net multi-platform app ui.
 \bibNewBlock {\em .NET MAUI}, 2024.\ 11.
 \bibNewBlock \url{https://dotnet.microsoft.com/en-us/apps/maui}.
-
-\bibitem{Mkrtychev:1997}
-Alexey Mkrtychev:
-\bibNewBlock Models for the logic of proofs.
-\bibNewBlock In Sergei Adian\bibAnd 1Anil Nerode\bibEd 1: {\em Logical
-  Foundations of Computer Science}.
-\bibNewBlock Lecture Notes in Computer Science sorozat, \bibVolume {1234.}.
-\bibNewBlock 1997, Springer Berlin Heidelberg, 266--275.~p.
-\bibNewBlock ISBN 978-3-540-63045-6.
-\bibNewBlock
-\bibUrll{URL} >http://dx.doi.org/10.1007/3-540-63045-7_27>.
 
 \bibitem{ComposeMultiplatformRelease}
 Elvira Mustafina:
@@ -283,12 +247,6 @@ Ekaterina Petrova:
 \bibNewBlock {\em Kotlin Blog}, 2023.\ 11.
 \bibNewBlock
   \url{https://blog.jetbrains.com/kotlin/2023/11/kotlin-multiplatform-stable/}.
-
-\bibitem{Schreier00}
-Richard Schreier:
-\bibNewBlock {\em The Delta-Sigma Toolbox v5.2}.
-\bibNewBlock Oregon State University, 2000.\ 01.
-\bibNewBlock \url{http://www.mathworks.com/matlabcentral/fileexchange/}.
 
 \bibitem{Docker}
 Docker Team:
@@ -328,10 +286,5 @@ Antoine van~der Lee:
 \bibNewBlock {\em SwiftLee}, 2024.\ 05.
 \bibNewBlock
   \url{https://www.avanderlee.com/swiftui/mvvm-architectural-coding-pattern-to-structure-views/}.
-
-\bibitem{Wettl04}
-Ferenc Wettl\bibAnd 0Gyula Mayer\bibAnd 2Péter Szabó:
-\bibNewBlock {\em \LaTeX~kézikönyv}.
-\bibNewBlock 2004, Panem Könyvkiadó.
 
 \end{thebibliography}
