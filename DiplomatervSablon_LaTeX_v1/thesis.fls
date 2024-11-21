@@ -216,6 +216,12 @@ INPUT content\architecture.aux
 INPUT .\content\details.aux
 INPUT .\content\details.aux
 INPUT content\details.aux
+INPUT .\content\future.aux
+INPUT .\content\future.aux
+INPUT content\future.aux
+INPUT .\content\summary.aux
+INPUT .\content\summary.aux
+INPUT content\summary.aux
 INPUT .\content\acknowledgement.aux
 INPUT .\content\acknowledgement.aux
 INPUT content\acknowledgement.aux
@@ -527,6 +533,67 @@ INPUT .\figures\Details_Desktop_framed.png
 INPUT .\figures\Details_Desktop_framed.png
 INPUT .\figures\Details_Desktop_framed.png
 INPUT .\figures\Details_Desktop_framed.png
+INPUT .\figures\Edit_Android.png
+INPUT .\figures\Edit_Android.png
+INPUT .\figures\Edit_Android.png
+INPUT .\figures\Edit_Android.png
+INPUT .\figures\Edit_Android.png
+INPUT .\figures\Edit_Android.png
+INPUT .\figures\Edit_Android.png
+INPUT .\figures\Edit_Desktop_framed.png
+INPUT .\figures\Edit_Desktop_framed.png
+INPUT .\figures\Edit_Desktop_framed.png
+INPUT .\figures\Edit_Desktop_framed.png
+INPUT .\figures\Edit_Desktop_framed.png
+INPUT .\figures\Edit_Desktop_framed.png
+INPUT .\figures\Edit_Desktop_framed.png
+INPUT .\figures\New_Android.png
+INPUT .\figures\New_Android.png
+INPUT .\figures\New_Android.png
+INPUT .\figures\New_Android.png
+INPUT .\figures\New_Android.png
+INPUT .\figures\New_Android.png
+INPUT .\figures\New_Android.png
+INPUT .\figures\New_Desktop_framed.png
+INPUT .\figures\New_Desktop_framed.png
+INPUT .\figures\New_Desktop_framed.png
+INPUT .\figures\New_Desktop_framed.png
+INPUT .\figures\New_Desktop_framed.png
+INPUT .\figures\New_Desktop_framed.png
+INPUT .\figures\New_Desktop_framed.png
+INPUT .\figures\Submission_Android.png
+INPUT .\figures\Submission_Android.png
+INPUT .\figures\Submission_Android.png
+INPUT .\figures\Submission_Android.png
+INPUT .\figures\Submission_Android.png
+INPUT .\figures\Submission_Android.png
+INPUT .\figures\Submission_Android.png
+INPUT .\figures\Submission_Desktop_framed.png
+INPUT .\figures\Submission_Desktop_framed.png
+INPUT .\figures\Submission_Desktop_framed.png
+INPUT .\figures\Submission_Desktop_framed.png
+INPUT .\figures\Submission_Desktop_framed.png
+INPUT .\figures\Submission_Desktop_framed.png
+INPUT .\figures\Submission_Desktop_framed.png
+INPUT .\figures\Defaut Communication.png
+INPUT .\figures\Defaut Communication.png
+INPUT .\figures\Defaut Communication.png
+INPUT .\figures\Defaut Communication.png
+INPUT .\figures\Defaut Communication.png
+INPUT .\figures\Defaut Communication.png
+INPUT .\figures\Defaut Communication.png
+INPUT .\content\future.tex
+INPUT .\content\future.tex
+OUTPUT content\future.aux
+INPUT .\content\future.tex
+INPUT .\content\future.tex
+INPUT content\future.tex
+INPUT .\content\summary.tex
+INPUT .\content\summary.tex
+OUTPUT content\summary.aux
+INPUT .\content\summary.tex
+INPUT .\content\summary.tex
+INPUT content\summary.tex
 INPUT .\content\acknowledgement.tex
 INPUT .\content\acknowledgement.tex
 OUTPUT content\acknowledgement.aux
@@ -583,6 +650,12 @@ INPUT content\architecture.aux
 INPUT .\content\details.aux
 INPUT .\content\details.aux
 INPUT content\details.aux
+INPUT .\content\future.aux
+INPUT .\content\future.aux
+INPUT content\future.aux
+INPUT .\content\summary.aux
+INPUT .\content\summary.aux
+INPUT content\summary.aux
 INPUT .\content\acknowledgement.aux
 INPUT .\content\acknowledgement.aux
 INPUT content\acknowledgement.aux

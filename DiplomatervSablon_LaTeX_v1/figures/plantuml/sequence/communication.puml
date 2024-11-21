@@ -1,0 +1,28 @@
+@startuml Általános kommunikáció
+actor Felhasználó as F
+
+participant "Főképernyő" as S1
+participant "Adatmegtekintés képernyő" as S2
+participant "Új adat felvétele képernyő" as S3
+participant "Megtekintés ViewModel" as V2
+participant "Új elem ViewModel" as V3
+participant "Távoli Szerver" as Sz
+
+F -> S1 : Főképernyő megtekintése
+F -> S1 : Tevékenység kiválasztása
+S1 -> S2 : Navigáció, új képernyő betöltése
+S2 -> V2 : Adatok megjelenítése
+V2 -> Sz : Adatok lekérése a szervertől
+Sz --> V2 : Adatok megjelennek a ViewModelben
+V2 --> S2 : Adatok megjelennek a kijelzőn
+
+F -> S2 : Új adat felvétel oldalra navigálás
+S2 -> S3 : Üres adat betöltése
+
+F -> S3 : Adatok megadása a képernyőn
+S3 -> V3 : Adatok felvétele a ViewModelben
+F -> V3 : Mentés funkció
+V3 -> Sz : Adatok mentése az adatbázisba
+Sz --> V3 : Sikeres művelet
+V3 --> S2 : Visszanavigálás az adatok megtekintésére
+@enduml
