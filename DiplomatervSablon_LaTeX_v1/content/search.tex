@@ -3,43 +3,43 @@
 \label{sec:Search}
 %----------------------------------------------------------------------------
 
-Ebben a fejezetben bemutatom az általam használt forrásokat és technológiákat.
-Esetenként ábrákkal és kódrészletekkel ilusztrálom az adott technológiát a könnyebb érthetőség kedvéért.
+Ebben a fejezetben bemutatom az általam használt forrásokat és technológiákat.  
+Esetenként ábrákkal és kódrészletekkel illusztrálom az adott technológiát a könnyebb érthetőség kedvéért.  
 Az alfejezet végén bemutatok néhány alternatív megoldást a multiplatform fejlesztésre.
 
 \section{Felhasznált technológiák}
 \label{sec:Technologies}
 
-Ez az elfejezet a használt technológiák bemutatására fókuszál, a könnyebb érhetőség kedvéért ábrák, képek és forráshivatkozásokkal kiegészítve. 
+Ez az alfejezet a használt technológiák bemutatására fókuszál, a könnyebb érthetőség kedvéért ábrák, képek és forráshivatkozásokkal kiegészítve. 
 
 \subsection{Jetpack Compose}
 \label{sec:JetpackCompose}
 
-A Jetpack Compose a korábbi Android fejlesztési módszer mellett hozott létre egy alternatív megoldást.
-Kezedtebn nem lehetett tudni, hogy a fejlesztők hogyan fognak reagálni az új irányra.
-Korábban a Java nyelv mellett megjelent a Kotlin nyelv is, ami később szinte teljesen leváltotta az elődjét.
-Ebből arra lehetett következtetni, hogy egy új és modernebb megoldás meg tudja állni a helyét az XML View megoldást ellenében.
-Jelenleg mind a két megoldás támogatott, de a fejlsztések iránya egyértelműen a Compose felé húz.
+A Jetpack Compose a korábbi Android fejlesztési módszer mellett hozott létre egy alternatív megoldást.  
+Kezdetben nem lehetett tudni, hogyan reagálnak majd a fejlesztők az új irányra.  
+Korábban a Java nyelv mellett megjelent a Kotlin nyelv is, ami később szinte teljesen leváltotta az elődjét.  
+Ebből arra lehetett következtetni, hogy egy új és modernebb megoldás képes lehet felváltani az XML-alapú nézeteket.  
+Jelenleg mindkét megoldás támogatott, de a fejlesztések iránya egyértelműen a Compose felé mutat.
 
-"A Jetpack Compose egy új, deklaratív UI toolkit, amit a Google hozott létre kifejezetten natív Android alkalmazások fejlesztéséhez."\cite{GettingStartedWithJetpackCompose}
-A deklaratív nyelvekhez hasonlóan, azt kellmegadnunk, hogy mit szeretnénk látni és nem azt leírni, hogy ez hogyan történjen meg.
-Nekünk elegendő azt leírni, hogy a gomb hogyan nézzen ki és hol legyen és megadni egy lambda paraméternek, hogy a megnyomása soránmi történjen.
-Mivel ez egy UI toolkit, ezért az összes vezerlő és szerkezeti elem hasonlóan néz ki, hasonlóan lehet használni így a fejlesztői és a felhasználói élmény is egységes és megszokott minőségű lesz minden alkalommal.
-A Google ezt a Material design segítségével hozta létre, illetve annak újabb változataival. Erről részletesebben itt találhatók információk: \url{https://m3.material.io/}.
+"A Jetpack Compose egy új, deklaratív UI toolkit, amit a Google hozott létre kifejezetten natív Android alkalmazások fejlesztéséhez." \cite{GettingStartedWithJetpackCompose}  
+A deklaratív nyelvekhez hasonlóan azt kell megadnunk, mit szeretnénk látni, és nem azt, hogyan történjen meg.  
+Elég meghatároznunk, hogy a gomb hogyan nézzen ki, hol helyezkedjen el, és megadnunk egy lambda paraméternek, hogy a megnyomása során mi történjen.  
+Mivel ez egy UI toolkit, az összes vezérlő és szerkezeti elem hasonló megjelenésű és működésű, ami egységes fejlesztői és felhasználói élményt biztosít.  
+A Google ezt a Material Design keretrendszer segítségével hozta létre, amelynek újabb verzióiról itt találhatók részletes információk: \url{https://m3.material.io/}.
 
-Az alábbiakban egy a Google által írt rövid kódrészleten (\ref{lst:compose}.~kódrészlet) bemutatom a legfontosabb részeit a Compose alapjainak.\cite{BasicCodelab}
-Az első lépése az alaklamzás elkészítésének az a Composable függvény megírása.
-Minden a UI-t megjelenítő függvény a @Composable annotációt viseli.
-Innentől kezdve hagyományos Kotlin függvényként viselkedik, megadahatunk tetszőleges paramétereket (name, modifier) és alapértelmezett értékeket is.
-Egy Composable függvényből tetszőleges másik Composable függvény meghívható megfelelőláthatóság esetén.
-Ilyen például a Text() is ami a Material könyvtárnak egyik tagja és egyszerű szöveget jelenít meg.
+Az alábbiakban egy, a Google által készített rövid kódrészleten (\ref{lst:compose}.~kódrészlet) bemutatom a Compose alapjainak legfontosabb részeit. \cite{BasicCodelab}  
+Az alkalmazás elkészítésének első lépése a Composable függvény megírása.  
+Minden UI-t megjelenítő függvény a @Composable annotációt viseli.  
+Innentől kezdve hagyományos Kotlin-függvényként viselkedik: megadhatunk tetszőleges paramétereket (például `name`, `modifier`) és alapértelmezett értékeket is.  
+Egy Composable függvényből tetszőleges másik Composable függvény meghívható, amennyiben azok láthatósága megfelelő.  
+Ilyen például a `Text()` függvény, amely a Material Design könyvtár egyik tagja, és egyszerű szöveget jelenít meg.
 
-A UI megírása után ezt a megfelelő helyen meg is kell jelenítenünk, erre az alkalmazás belépési pontja után van lehetőségünk.
-Android esetén ez az activity onCreate függvénye.
-A setContent vár egy lambda függvényt, aminek viselnie kell a @Composable annotációt, használhatjuk hozzá a Kotlin trailing lambda megoldását, aholis, ha az utolsó paramétere a függvénynek egy lambda, akkor a többi paraméter megadása után {} között megadhatjuk afüggvény törzsét.
-A BasicsCodelabTheme is egy Composable függvény amiben az alap beállítások után meghívhatjuk a saját Greeting függvényünket.
-A UI felépítse innentől kezdve már egyszerű.
-A Composable függvények megírása után egymásból meghívva azokat előáll az alkalmazás.
+A UI megírása után azt a megfelelő helyen meg is kell jelenítenünk, erre az alkalmazás belépési pontja után van lehetőségünk.  
+Android esetén ez az `Activity` `onCreate` függvénye.  
+A `setContent` metódus egy lambda függvényt vár, amelyet a @Composable annotációval kell ellátni.  
+Használhatjuk hozzá a Kotlin trailing lambda szintaxisát, ahol is, ha egy függvény utolsó paramétere lambda, akkor {} között megadhatjuk a függvény törzsét.  
+A `BasicsCodelabTheme` is egy Composable függvény, amelyben az alapbeállítások után meghívhatjuk a saját `Greeting` függvényünket.  
+A UI felépítése innentől kezdve már egyszerű. A Composable függvények megírása és egymásból való meghívása után az alkalmazás összeáll.
 
 \begin{lstlisting}[caption={Példa a Compose használatára.}, label={lst:compose}, language=Kotlin]
     @Composable
@@ -55,10 +55,10 @@ A Composable függvények megírása után egymásból meghívva azokat előáll
             super.onCreate(savedInstanceState)
             setContent {
                 BasicsCodelabTheme {
-                    // A surface container using the 'background' color from the theme
-                    Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
+
+                Surface(
+                        modifier = Modifier.fillMaxSize(),
+                        color = MaterialTheme.colorScheme.background
                     ) {
                         Greeting("Android")
                     }
@@ -74,32 +74,32 @@ A Composable függvények megírása után egymásból meghívva azokat előáll
     )
 \end{lstlisting}
 
-A következőkben bemutatom a UI toolkit fontosabb általam használt részeit.
-Kitérek arra, hogy mire jó, miért ezt használtam és hogyan lehet őket hatékonyan felhasználni a legújabb Compose Multiplatform verziókban.
+A következőkben bemutatom a UI toolkit fontosabb, általam használt részeit.  
+Kitérek arra, hogy mire jók, miért ezeket választottam, és hogyan lehet őket hatékonyan alkalmazni a legújabb Compose Multiplatform verziókban.
 
 \subsubsection{State és StateFlow}
 \label{sec:State}
 
-A State és a StateFlow hasnló problémára ad megoldást.
-A State alapvetően Compose sepcifikus megoldás, ha változik az értéke akkor a lefut a recomposoition.
-Ezzel szemben a StateFlow a Kotlin nyelvben általánosan használt eszköz és sokkal bővebb felhasználással rendelkezik, mint az egyszerű State.
-Az egyszerű State-et általában egy Composable függvényen belül használják, míg a a StateFlowt ViewModelekben.
+A State és a StateFlow hasonló problémára kínálnak megoldást.  
+A State alapvetően Compose-specifikus megoldás; ha változik az értéke, akkor újracomponálás (recomposition) történik.  
+Ezzel szemben a StateFlow a Kotlin nyelvben általánosan használt eszköz, amely sokkal szélesebb körű alkalmazási lehetőségeket kínál.  
+Az egyszerű State-et általában egy Composable függvényen belül használják, míg a StateFlow-t inkább ViewModelekben alkalmazzák.
 
-Ennek ellénére mind a két megoldás tökéletesen alkalmazható, jelenleg már Compose Multiplatform alkalmazásokban is.
-Mivel ViewModelben használva az adatok nem besznek el a képernyő elforgatása során ezért egyszerűbb műveletekre és adaokra nincs lényegi különbség a működésben. 
+Ennek ellenére mindkét megoldás tökéletesen használható, és jelenleg már Compose Multiplatform alkalmazásokban is működnek.  
+Mivel a ViewModel használata esetén az adatok nem vesznek el például a képernyő elforgatása során, egyszerűbb műveleteknél és adatoknál nincs lényegi különbség a két megoldás működése között.
 
-"A StateFlow előnyei:"\cite{StateVsStateFlow}
+"A StateFlow előnyei:" \cite{StateVsStateFlow}
 \begin{itemize}
     \item \emph{"Flow operátorok:} A StateFlow támogat olyan operátorokat, mint a map, filter, és combine, lehetővé téve az adatok rugalmas feldolgozását és összetett adatfolyamok létrehozását."
     \item \emph{"Folyamat-megszakadás kezelése:} A SavedStateHandle-lel kombinálva biztosítja az UI állapot megőrzését, még a képernyő elforgatása vagy újraindítás esetén is."
     \item \emph{"ViewModel újrafelhasználhatóság:} A StateFlow lehetővé teszi a ViewModel függetlenítését a UI-rétegtől, ami elősegíti a moduláris, tesztelhető és újrafelhasználható architektúrát."
 \end{itemize}
 
-A lenti kódban (\ref{lst:state}.~kódrészlet) láthatunk példát mind az egyszerű State használatára, ebben az esetben a Screen állapotát tárolom el Statekben.
-A megjelnített adatok itt a StateFlow logikáját követik. 
-Létezik egy privát MutableStateFlow amin történnek a változások például, ha adat érkezik.
-Van egy másik azonos nevű érték is ami ugyan annak a StateFlownak egy immutábilis változata, ehhez fér hozzá a UI, így onnan nem érkezhet változás közvetlenül a StateFlowba.
-Amennyiben erre szükség van, a viewmodel biztosíthat erre vonatkozóan függvényeket és beállíthatja a privát MutableStateFlow értékét.
+Az alábbi kódrészletben (\ref{lst:state}.~kódrészlet) példát találhatunk az egyszerű State használatára, amelyben például a képernyő állapotát tároljuk State-ek formájában.  
+A megjelenített adatok itt a StateFlow logikáját követik.  
+Létezik egy privát MutableStateFlow, amelyben az állapotváltozások történnek, például ha új adat érkezik.  
+Ezen kívül van egy másik, azonos nevű érték is, amely ugyanannak a StateFlownak egy immutábilis változata. Ehhez fér hozzá a UI-réteg, így a UI közvetlenül nem módosíthatja a StateFlow-t.  
+Ha módosításra van szükség, a ViewModel biztosíthat ehhez függvényeket, amelyek beállítják a privát MutableStateFlow értékét.
 
 \begin{lstlisting}[caption={Példa a State és StateFlow használatára.}, label={lst:state}, language=Kotlin]
 class TopicListViewModel: ViewModel() {
@@ -108,11 +108,11 @@ class TopicListViewModel: ViewModel() {
     val topicListUiState: StateFlow<TopicListUiState> = _topicListUiState
 ...
     fun getAllTopicList(){
-        topicListScreenUiState = TopicListScreenUiState.Loading // State Változás
+        topicListScreenUiState = TopicListScreenUiState.Loading // State változás
         viewModelScope.launch {
             topicListScreenUiState = try{    // State Változás
                 val result = ApiService.getAllTopicNames()
-                _topicListUiState.value = TopicListUiState(     //StateFlow Változás
+                _topicListUiState.value = TopicListUiState(     //StateFlow változás
                     topicList = result.map { nameDto ->
                         TopicRowUiState(
                             topic = nameDto.name,
@@ -120,49 +120,57 @@ class TopicListViewModel: ViewModel() {
                         )
                     }
                 )
-                TopicListScreenUiState.Success(result) // State Változás
+                TopicListScreenUiState.Success(result) // State változás
             } catch (e: IOException) {
                 TopicListScreenUiState.Error.errorMessage = e.toString()// "Network error"
-                TopicListScreenUiState.Error // State Változás
+                TopicListScreenUiState.Error // State változás
             }
         }
     }
 }
 \end{lstlisting}
 
+
 \subsubsection{ViewModel}
 \label{sec:ViewModel}
 
-Az Android ViewModel már használható Kotlin- és Compose Multiplatform környezetekben is\cite{ViewModelKMP}, így természetesen ezt a jól bevált megoldást választottam.
-Egy rövid összefoglalót szeretnék adni a hivatalos dokumentáció alapján a képességeiről:\cite{ViewModelAndroid}
+Az Android ViewModel már használható Kotlin- és Compose Multiplatform környezetekben is \cite{ViewModelKMP}, így természetesen ezt a jól bevált megoldást választottam.  
+Egy rövid összefoglalót szeretnék adni a hivatalos dokumentáció alapján a ViewModel képességeiről \cite{ViewModelAndroid}.
 
-A ViewModel az Android Jetpack része, és az UI állapotának megőrzésére szolgál konfigurációs változások során, például képernyőforgatáskor. \refstruc{fig:ViewModel} Fő előnyei közé tartozik az állapot tartósítása és az üzleti logika elérése a UI-rétegben. A ViewModel segít elválasztani az adatkezelést a UI-rétegtől, ehhez a ViewModelben felhasználható a Kotlin coroutine ami egyfajta aszinkron működést tesz lehetővé, és kompatibilis olyan Jetpack könyvtárakkal, mint a Hilt, Compose, és a Navigation. Best practice szerint kerülni kell az életciklushoz kötött objektumok tárolását benne, hogy elkerüljük a memóriaszivárgást. 
+A ViewModel az Android Jetpack része, és az UI állapotának megőrzésére szolgál konfigurációs változások során, például képernyőforgatáskor (\ref{fig:ViewModel}).  
+Fő előnyei közé tartozik az állapot tartósítása és az üzleti logika kezelése a UI-rétegben.  
+A ViewModel segít elválasztani az adatkezelést a UI-rétegtől, ehhez a ViewModelben használható a Kotlin coroutine, amely aszinkron működést tesz lehetővé.  
+Ezen kívül kompatibilis olyan Jetpack könyvtárakkal, mint a Hilt, Compose, és Navigation.  
+A legjobb gyakorlat szerint kerülni kell az életciklushoz kötött objektumok tárolását a ViewModelben, hogy elkerüljük a memóriaszivárgást.  
 
-Mint minden MVM és MVVM architektúrában az adatok elérése, átalakítása a UI számára, tartós tárolása a ViewModel feladata.
-Több megközelítés is lehetséges: minden képernyő kapjon egy saját ViewModelt; egy ViewModel tudjon többet és legyen újra felhasznáva több képernyőn.
-Én az első megoldást választottam, így könnyebb kezeleni a különböző képrenyők állaptait és egyszerűbb átlátni egy-egy egységet.
+Mint minden MVI és MVVM architektúrában, az adatok elérése, átalakítása a UI számára és tartós tárolása a ViewModel feladata.  
+Több megközelítés is lehetséges: minden képernyő kapjon saját ViewModelt, vagy egyetlen ViewModel legyen újrahasználva több képernyőn.  
+Én az első megoldást választottam, mert így könnyebb kezelni a különböző képernyők állapotait, és egyszerűbb átlátni az egyes modulokat.
 
 \begin{figure}[!ht]
     \centering
-    \includegraphics[width=150mm, keepaspectratio]{figures/viewmodel-lifecycle.png}
-    \caption{A ViewModel álltalánosságban véve hosszabb életű, mint egy View. Ez különsöen igaz Android környezetben, ahol számolni kell a képernyő elforgatással és az alaklmazás háttérbe kerülésével. A tartósan tárolnikívánt adatokat ezért mindig ViewModel kell tárolni. \cite{ViewModelAndroid}}
+    \includegraphics[width=130mm, keepaspectratio]{figures/viewmodel-lifecycle.png}
+    \caption{A ViewModel általában hosszabb életű, mint egy View. Ez különösen igaz Android környezetben, ahol számolni kell a képernyő elforgatásával és az alkalmazás háttérbe kerülésével. A tartósan tárolni kívánt adatokat ezért mindig ViewModel-ben kell tárolni. \cite{ViewModelAndroid}}
     \label{fig:ViewModel}
 \end{figure}
+
+\pagebreak
 
 \subsubsection{Navigation and routing}
 \label{sec:Navigation}
 
-Az Androidban már jól műküdő navigációrt felelős könyvtárak már használhatóak a Kotlin Multiplatform fejlesztéséhez \cite{NavigationKMP}.
-Ennk mindösszesen pár egyszerű lépése van, így könnyű használni és rugalamsan működik minden környezettel.
-Mindezt kódvab is bemutatom. (\ref{lst:nav}.~kódrészlet)
-A következők a szükséges lépések: \cite{NavigationKMP}.
+Az Androidban már jól működő, navigációért felelős könyvtárak Kotlin Multiplatform fejlesztéshez is használhatóak \cite{NavigationKMP}.  
+Ennek mindössze néhány egyszerű lépése van, így könnyen alkalmazható és rugalmasan működik minden környezetben.  
+Az alábbi kódrészletben (\ref{lst:nav}.~kódrészlet) bemutatom a folyamatot.  
+A szükséges lépések a következők \cite{NavigationKMP}:  
+
 \begin{enumerate}
-    \item "Sorold fel a navigációs gráfban szereplő útvonalakat, mindegyik egyedi string határozza meg az útvonalat."
-    \item "Hozz létre egy NavHostController példányt a navigáció kezeléséhez"
-    \item "Adj hozzá egy NavHost komponenst az alkalmazásodhoz:"
+    \item Sorold fel a navigációs gráfban szereplő útvonalakat; mindegyik útvonalat egyedi string azonosít.
+    \item Hozz létre egy \texttt{NavHostController} példányt, amely a navigáció kezeléséért felel.
+    \item Adj hozzá egy \texttt{NavHost} komponenst az alkalmazásodhoz:
         \begin{itemize}
-            \item "Válaszd ki a kezdő útvonalat a korábban definiált útvonalak közül."
-            \item "Hozd létre a navigációs gráfot közvetlenül a NavHost részeként vagy programozottan a NavController.createGraph() függvénnyel."
+            \item Válaszd ki a kezdő útvonalat a korábban definiált útvonalak közül.
+            \item Hozd létre a navigációs gráfot közvetlenül a \texttt{NavHost} komponensen belül, vagy programozottan a \texttt{NavController.createGraph()} függvénnyel.
         \end{itemize}
 \end{enumerate}
 
@@ -173,13 +181,11 @@ A következők a szükséges lépések: \cite{NavigationKMP}.
 sealed class ExamDestination(val route: String) {
     //Lehet egyszerű
     data object LoginScreenDestination : ExamDestination("LoginScreen")
-
     //Vagy paraméterekkel és adatokkal ellátott
     data object TopicDetailsDestination : ExamDestination("TopicDetails") {
         const val topicIdArg = "0"
         val routeWithArgs = "$route/{$topicIdArg}"
-    }
-}
+}}
 
 //Második lépés: NavController létrehozása
 fun NavigationComponent() {
@@ -190,9 +196,7 @@ fun NavigationComponent() {
                 navController = navController,
                 modifier = Modifier.padding(innerPadding)
             )
-        }
-    }
-}
+}}}
 
 //Harmadik lépés: NavHost komponens hozzáadása
 actual fun ExamNavHost(
@@ -204,8 +208,7 @@ actual fun ExamNavHost(
         startDestination = ExamDestination.MainScreenDestination.route, //Kezdő útvonal beállítása
         modifier = modifier
     ) {
-        //Navigácós gráf egy elemének létrehozása
-        composable(
+        composable(        //Navigácós gráf egy elemének létrehozása
             route = ExamDestination.TopicListDestination.route,
         ) {
             TopicListScreen(
@@ -215,20 +218,17 @@ actual fun ExamNavHost(
                 },
                 navigateBack = { navController.popBackStack() }
             )
-        }
-    }
-}
+}}}
 \end{lstlisting}
-
 \subsection{Ktor}
 \label{sec:Ktor}
 
-A Ktor egy Kotlin HTTP kommunikációt megvalósító könyvtár\cite{Ktor}. Alkalmas mind szerver oladli kód írásárá, a REST API-om is ezt használja és kliens oladli kód megvalósítsára is.
-A használata nagyon egyszerű, és testreszabható.
-Én egy Kotlin objectet használtam, ami magában foglalja az ApiServicet.
-Létre kellett hozni egy http klienst és beállítani a base url-t, illetve a content typenak a JSON üzenet formátumot.
-Ezt követően a végpont hívásokat kellett már csak létrehozni.
+A Ktor egy Kotlin-alapú HTTP-kommunikációt megvalósító könyvtár\cite{Ktor}. Alkalmas mind szerver oldali kód írására – például a REST API-m is ezt használja –, mind kliens oldali kód megvalósítására.  
+A használata rendkívül egyszerű és testreszabható.  
 
+Én egy Kotlin \texttt{object}-et használtam, amely magában foglalja az \texttt{ApiService}-et.  
+Először létre kellett hozni egy HTTP-klienst, majd beállítani az alap URL-t és a tartalomtípusnak a JSON üzenetformátumot.  
+Ezt követően már csak a végpont-hívásokat kellett létrehozni.
 
 \begin{lstlisting}[caption={Példa a Ktor használatára.}, label={lst:ktor}, language=Kotlin]
 object ApiService {
@@ -243,7 +243,7 @@ object ApiService {
         }
 
         defaultRequest {    // Base url beálítása
-            url("http://mlaci.sch.bme.hu:46258")  // Set the base URL   152.66.182.70:46258   192.168.1.17:46258
+            url("http://mlaci.sch.bme.hu:46258")  // Set the base URL
             authToken?.let { token ->
                 header(HttpHeaders.Authorization, "Bearer $token")  // Add the Bearer token if it's not null
             }
@@ -253,75 +253,79 @@ object ApiService {
 }
 \end{lstlisting}
 
-\subsection{KotlinX Serilizáció}
+\subsection{KotlinX-szerializáció}
 \label{sec:KotlinX}
 
-A serilizáció a JSON formátum konvertálása miatt van szükség. Az alábbiakban a hivatalos dokumentációból olvasható egy részlet ami jól összefoglalja a használatát.
-Ez a technológia is használható Kotlin Multiplatform területen.
+A szerializációra a JSON formátum konvertálására van szükség. Az alábbiakban a hivatalos dokumentációból olvasható egy részlet, amely jól összefoglalja a használatát.  
+Ez a technológia Kotlin Multiplatform környezetben is használható.
 
 "A szerializáció során az alkalmazások adatait egy olyan formátumba alakítjuk, amely hálózaton átvihető vagy tárolható adatbázisban vagy fájlban. Az ellenkező folyamat, a deszerializáció, az adatokat külső forrásból olvassa be és konvertálja futásidejű objektummá. A Kotlinban a szerializációhoz elérhető a kotlinx.serialization eszköz, amely Gradle bővítményt, futásidejű könyvtárakat és fordítói bővítményeket tartalmaz, így segítve a különböző nyelvű rendszerek közötti adatcserét, mint a JSON és a protocol buffers formátumokkal."\cite{Serialization}
 
 \subsection{CameraX}
 
-A CameraX technológia kizárólag Android platformon használható.
-Itt azonban egy nagyon széles és gazdag APIt biztosít a fejlesztéshez.
-A legfontosabb felhasználható funkciói az Preview azaz előnézet, amikor kép készítése nélkül megkelenik a képernyőn a kamera képe.
-Az Image analysis, azaz képfeldolgozó funkcionalitás. Hozzáférhetünk a buffer tartalmához így fel tudjuk azt használni egyéb célokra különböző algoritmusok futtatásához és összekapcsolható a Google ML-Kit technológiákkal. \refstruc{sec:MLKit}
-A képeket menetni is tudjuk, hasonlóan a beépített kamera alkalamzáshoz és ugyan úgy videót is tudunk vele rögzíteni.
-Ezek a leírás a Google Android Developers dokumentációja alapján készült. Részletesebb információk itt találhatóak: \cite{CameraX}
+A CameraX technológia kizárólag Android platformon használható.  
+Itt azonban egy nagyon széles és gazdag API-t biztosít a fejlesztéshez.  
+A legfontosabb felhasználható funkciói a Preview, azaz előnézet, amikor kép készítése nélkül megjelenik a képernyőn a kamera képe, valamint az Image Analysis, azaz képfeldolgozó funkcionalitás.  
+Hozzáférhetünk a buffer tartalmához, így felhasználhatjuk azt különböző algoritmusok futtatásához, vagy összekapcsolhatjuk a Google ML-Kit technológiákkal (\refstruc{sec:MLKit}).  
+A képeket menteni is tudjuk, hasonlóan a beépített kamera alkalmazáshoz, és ugyanúgy videót is rögzíthetünk vele.  
+Ez a leírás a Google Android Developers dokumentációja alapján készült. Részletesebb információk itt találhatók: \cite{CameraX}
 
 \subsection{ML-Kit}
 \label{sec:MLKit}
 
-Az ML-Kit a Google által fejleszett mesterséges intelligiencia alapú API.
-Számtalan felhasználási területtel rendelkezik, ezekeből néhányat felsorolok: szöveg- és arcfelismerés, dokumentom szkennelés, kép feliraotozás, fordítás, nyelv detekció és még számos más lehetőség.
-Én ezek közül az Androidos alaklamazásban a képen történő szövegfelismerést próbáltam ki.\cite{MLKit}
-Sajnos ez a funkció is Android specifikus így egy iOS alaklamazáson ez a probléma más megközelítést igényelne.
-Messze nem tökéletes még ez a technológia, de kipróbálásra mindenféleképpen érdekes és hasznos lehet.
+Az ML-Kit a Google által fejlesztett mesterséges intelligencia alapú API.  
+Számtalan felhasználási területtel rendelkezik, ezek közül néhányat felsorolok: szöveg- és arcfelismerés, dokumentum szkennelés, kép feliratozás, fordítás, nyelv detekció és még számos más lehetőség.  
+Én ezek közül az Androidos alkalmazásban a képen történő szövegfelismerést próbáltam ki \cite{MLKit}.  
+Sajnos ez a funkció is Android-specifikus, így egy iOS alkalmazásban ez a probléma más megközelítést igényelne.  
+Ez a technológia még messze nem tökéletes, de kipróbálásra mindenképpen érdekes és hasznos lehet.
 
 \subsection{Accompanist-engedélykezelés}
 
-Az engedélykezelés nem egyszerű feladat az Android rendszerekben így célszerű erre kifejlesztett könyvtárakat használni.
-Egy ilyen könyvtár az Accompanist, amlyet a Google fejleszt.
-A használata sokkal egyszerűbbé teszi ezt a bonyolut folyamotot.
-Néhány egyszerű lépéssel egy kész megoldás kapunk.
+Az engedélykezelés nem egyszerű feladat az Android rendszerekben, ezért célszerű erre kifejlesztett könyvtárakat használni.  
+Egy ilyen könyvtár az Accompanist, amelyet a Google fejlesztett.  
+A használata jelentősen leegyszerűsíti ezt a bonyolult folyamatot, néhány egyszerű lépéssel egy kész megoldást kapunk.
 
-Elsőként az szükséges engedélyeket be kell jegyezni a manifest fájlba.
-Következő lépésként ellenőrizni kell, hogy az alkalmazásunk rendelkezik a szükséges engedélyekkel vagy sem.
-Amenyiben nem akkor a használat előtt ezt kérnünk kell, de ezt csakúgy tehetjük meh, hogy a öbbi funkció elérető legyen.
-Az én esetemben, csak a szövegfelismerő funkcióra kattintás után kérem el az engedélyt, de maga a válaszokat elküldő képernyő használható az engedélyek nélkül is.
-Az elkért engedélyeket egy permissionStateben tároljuk el, így innen lehet ellenőrizni, hogy korábban már megadta-e a felhasználó, így legközelebb nem kell elkérni tőle. \cite{Permissions}
+Elsőként a szükséges engedélyeket be kell jegyezni a manifest fájlba.  
+Következő lépésként ellenőrizni kell, hogy az alkalmazás rendelkezik-e a szükséges engedélyekkel vagy sem.  
+Amennyiben nem, akkor a használat előtt ezt kérnünk kell, de ezt csak úgy tehetjük meg, hogy a többi funkció elérhető legyen.  
+Az én esetemben csak a szövegfelismerő funkcióra kattintás után kérem el az engedélyt, de maga a válaszokat elküldő képernyő használható az engedélyek nélkül is.  
 
-Egyedül a veszélyes engedélyeket kell ilyen müdon elkérni, mint például a kamera használata, tehát amik a felhasználót veszélyeztetik.
-Vannak nem veszélyes engedélyek is, ilyen az internet használat, ezt csak a manifest fájlban kell rögzíteni.
+Az elkért engedélyeket egy \texttt{permissionState}-ben tároljuk, így innen ellenőrizhető, hogy korábban a felhasználó már megadta-e őket.  
+Egyedül a veszélyes engedélyeket kell ilyen módon elkérni, mint például a kamera használata.  
+Nem veszélyes engedélyek, például az internet hozzáférés, egyszerűen a manifest fájlban rögzíthetők \cite{Permissions}.
 
 \subsection{PdfDocument és PDFBox}
 
-A PdfDocument a Google tulajdonában lévő PDF szerkesztő eszköz. Ennek a felhasználsval egy PDF fájlba írhatunk tetszőlegesen elhelyezett szöveget és képeket.
-Létrehozhatók különböző Paint objektumok amik segítségével egyszerűen rajzolható táblázat és formázható a szöveg. Ez a megoldás csak Android eszközökkel kompatibilis. 
+A PdfDocument a Google által fejlesztett PDF-szerkesztő eszköz.  
+Segítségével egy PDF fájlba tetszőlegesen elhelyezett szöveget és képeket írhatunk.  
+Létrehozhatók különböző \texttt{Paint} objektumok, amelyekkel egyszerűen rajzolhatók táblázatok, és formázható a szöveg.  
+Ez a megoldás csak Android eszközökkel kompatibilis.
 
-"Az Apache PDFBox® könyvtár egy nyílt forráskódú Java eszköz PDF dokumentumok kezelésére. Lehetővé teszi új PDF dokumentumok létrehozását, meglévő dokumentumok módosítását és tartalom kinyerését a PDF fájlokból. Az Apache PDFBox több parancssori eszközt is tartalmaz, és az Apache License v2.0 alatt került kiadásra." \cite{PDFbox}
-Hasonlóan használható, mint a PdfDocument, de valamelyest eltér a két könyvtát API készlete. Elsőként Androidra készült el az exportálás funkció, de mivel nem sikerül teljesen ugyan azt az eredményt létrehozni mind a két esetben, ezért egy valós projektben a multiplatform rendszerekben is használható PDFBox megoldást használnám minden platformon. 
+"Az Apache PDFBox® könyvtár egy nyílt forráskódú Java eszköz PDF dokumentumok kezelésére. Lehetővé teszi új PDF dokumentumok létrehozását, meglévő dokumentumok módosítását, és tartalom kinyerését a PDF fájlokból. Az Apache PDFBox több parancssori eszközt is tartalmaz, és az Apache License v2.0 alatt került kiadásra." \cite{PDFbox}  
+
+Hasonlóan használható, mint a PdfDocument, de az API készletük némileg eltér.  
+Bár az Androidra kifejlesztett exportálás funkció korábban elkészült, egy multiplatform rendszerben a PDFBox megoldást javasolnám minden platformon, hogy konzisztens eredményeket érjünk el.
 
 \subsection{Kotlin- és Compose Multiplatform}
 \label{sec:KCMP}
 
-Többször beszéltem már a Kotlin- és Compose Multiplatform fogalmakról.
-Legkönnyebben úgy lehet leírni a kapcsolatukat, mint a Compose Multiplatform részhalmaza a Kotlin Multiplatformnak.
-Rengeteg nagy cég használja a KMP technológiát köztük a Netflix, 9GAG, McDonalds' és Philips. \cite{KotlinMultiplatformStable}
-Az általam korábban felsororlt techonólógiák közül, ami leginkább ebbe a kategóriába esik az a Ktor (\refstruc{sec:Ktor}) és a KotlinX szerilizáció (\refstruc{sec:KotlinX}).
-Mivel 2024 őszén elérhetővé vált az Android ViewModel (\refstruc{sec:ViewModel}) és a navigáció (\refstruc{sec:Navigation}) is így ezeket is ide sorolhatjuk már a statekkel együtt (\refstruc{sec:State}).
+Többször beszéltem már a Kotlin Multiplatform és a Compose Multiplatform fogalmakról.  
+Legkönnyebben úgy lehet leírni a kapcsolatukat, mint a Compose Multiplatform részhalmazát a Kotlin Multiplatformnak.  
+Számos nagy cég használja a KMP technológiát, köztük a Netflix, a 9GAG, a McDonald's és a Philips \cite{KotlinMultiplatformStable}.  
 
-Az egyetlen fontosabb rész amit kihagytam, az maga a Compose deklaratív UI toolkit (\refstruc{sec:JetpackCompose}), ami a Compose Multiplatformot alkotja.
-2021-ben vált lehetővé a Compose használata nem csak Android alapú rendszerekhez, a KMP viszont 2017-ben kezdte meg az úját.
-Nagy jelentősége van a CMP-nek mivel így kizárolóag Kotlin nyelven Android fejlesztők tudnak iOS és asztali alkalmazást fejleszteni minimális natív kóddal, de mégis natív élményt nyújtva.
-Jelenleg a webes irány még alpha verzióban van, de jelenleg is folyik a fejlesztés a Kotlin WASM-re (Web Assembly) valóhatékony fordításán. A Kotlint JavaScript kóddá is le lehet fordítani a Java mellett.
+Az általam korábban felsorolt technológiák közül, amelyek leginkább ebbe a kategóriába esnek, a Ktor (\refstruc{sec:Ktor}) és a KotlinX szerializáció (\refstruc{sec:KotlinX}).  
+Mivel 2024 őszén elérhetővé vált az Android ViewModel (\refstruc{sec:ViewModel}) és a navigáció (\refstruc{sec:Navigation}) is, ezek is ide sorolhatók már a state-ekkel együtt (\refstruc{sec:State}).  
 
-Három féle módon lehet Kotlin Multiplatform kódbázist fejleszteni (\refstruc{fig:KMPTypes}).
-Az első, bal oldali ábra értelmezése, hogy a kódbázis egy kis része íródik KMP-ben, például csak az adatbázis vagy REST API elérés.
-A következő ábra azt mutatja, hogy a logika teljes egészben KMP-ben íródik, így például használjak a ViewModeleket (\refstruc{sec:ViewModel}), de a UI natív módon készül, Androidra Composeban iOS-ben SwiftUIban.
-Az utolsó ábra már a Compose Multiplatform megjelnése, amikor minden platformra Composeban készül el a felhasználói felület.
-Balről jobbra haladva egyre nő a kód újrafelhasználhatósága, így kevesebb munka szükséges és könnyebb is a kód karbantartása, mivel előre láthatólag egyre kevesebb helyen kell megváltozatni azt.
+Az egyetlen fontosabb rész, amit kihagytam, az maga a Compose deklaratív UI toolkit (\refstruc{sec:JetpackCompose}), amely a Compose Multiplatform alapját képezi.  
+2021-ben vált lehetővé a Compose használata nem csak Android alapú rendszerekhez, míg a KMP 2017-ben kezdte meg az útját.  
+Nagy jelentősége van a CMP-nek, mivel így kizárólag Kotlin nyelven Android fejlesztők tudnak iOS és asztali alkalmazást fejleszteni minimális natív kóddal, de mégis natív élményt nyújtva.  
+Jelenleg a webes irány még alpha verzióban van, de jelenleg is folyik a fejlesztés a Kotlin WASM-re (WebAssembly) való hatékony fordításán. A Kotlint JavaScript kóddá is le lehet fordítani, a Java mellett.  
+
+Háromféle módon lehet Kotlin Multiplatform kódbázist fejleszteni (\refstruc{fig:KMPTypes}).  
+Az első, bal oldali ábra értelmezése szerint a kódbázis egy kis része íródik KMP-ben, például csak az adatbázis vagy REST API elérés.  
+A következő ábra azt mutatja, hogy a logika teljes egészében KMP-ben íródik, így például használják a ViewModeleket (\refstruc{sec:ViewModel}), de a UI natív módon készül: Androidra Compose-ban, iOS-re SwiftUI-ban.  
+Az utolsó ábra már a Compose Multiplatform megjelenése, amikor minden platformra Compose-ban készül el a felhasználói felület.  
+Balról jobbra haladva egyre nő a kód újrafelhasználhatósága, így kevesebb munka szükséges, és könnyebb is a kód karbantartása, mivel előreláthatólag egyre kevesebb helyen kell módosítani azt.
 
 \begin{figure}[!ht]
     \centering
@@ -330,14 +334,14 @@ Balről jobbra haladva egyre nő a kód újrafelhasználhatósága, így keveseb
     \label{fig:KMPTypes}
 \end{figure}
 
-Semmi sem teljesen tökéletes így előfordulaht, hogy az egyik platformna máshogy, nem lehet vagy nem érdemes valamit megvalósítani, mint például egy asztali alaklmazáson egy fotó elkészítését az én példámban.
-Ilyenkor jöhetnek szóba az expect és actual függvények. A közös kódan ilyenkor egy függvénytörzset definiálunk, csak itt lehet ebben az esetben alapértelmezett paramétereket beálítani, például egy Modifiert Composable függvény esetén.
-A megvalósítás ilyenkor az alaklamzás specifikus kódban történik (androidMain, desktopMain, iOSMain). (\ref{lst:ExpectActual}.~kódrészlet)
-Ehhez az actual functiont kell megvalósítani, és a platformtól függően ezek fognak meghívódni automatikusan, mivel a build során ezek lesznek behelyesítve az expect függvény helyére.
-Már létezik actual és expect osztály is, én alkalmaztam is, de ez még kisérleti verzióban van.
+Semmi sem teljesen tökéletes, így előfordulhat, hogy az egyik platformon máshogy nem lehet vagy nem érdemes valamit megvalósítani, mint például egy asztali alkalmazáson egy fotó elkészítését az én példámban.  
+Ilyenkor jöhetnek szóba az \texttt{expect} és \texttt{actual} függvények. A közös kódban ilyenkor egy függvénytörzset definiálunk, és csak itt lehet alapértelmezett paramétereket beállítani, például egy \texttt{Modifier}-t egy \texttt{Composable} függvény esetén.  
+A megvalósítás ilyenkor az alkalmazás-specifikus kódban történik (\texttt{androidMain}, \texttt{desktopMain}, \texttt{iOSMain}) (\ref{lst:ExpectActual}.~kódrészlet).  
+Ehhez az \texttt{actual} függvényt kell megvalósítani, és a platformtól függően ezek fognak automatikusan meghívódni, mivel a build során ezek kerülnek behelyettesítésre az \texttt{expect} függvény helyére.  
+Már léteznek \texttt{actual} és \texttt{expect} osztályok is, amelyeket én alkalmaztam, de ez még kísérleti verzióban van.
 
 \begin{lstlisting}[caption={Expect és actual használata}, label={lst:ExpectActual}, language=Kotlin]
-//commonMain-ben lévű expect függvénytörzs, alapértelmezett paraméterrel.
+//commonMain-ben lévő expect függvénytörzs, alapértelmezett paraméterrel.
 @Composable
 expect fun MainCameraScreen(examId: String = "0", navigateBack: () -> Unit)
 
@@ -361,21 +365,22 @@ actual fun MainCameraScreen(examId: String, navigateBack: () -> Unit) {
     Scaffold(
         topBar = {
             TopAppBarContent(stringResource(Res.string.camera), navigateBack)
-                 },
-        ){innerPadding ->
+        },
+        content = { innerPadding ->
             UnsupportedFeatureScreen(modifier = Modifier.padding(innerPadding))
-    }
+        }
+    )
 }
 \end{lstlisting}
 
 \subsection{Gradle build rendszer}
 
-A Compose Multiplatform projektek is a Gradle build rendszert használják, első sorban a függőségek megszerzésere és az alkalmazás létrehozására.
-Egy átlagos fejlesztőnek mindösszesen annyi dolga van, hogy kigyűjti a használt függőségeket és a fejlesztőkörnyezet általában segít a megfelelő verziók megtalálásában.
-Újbban a Kotlin DSL használata terjedt el.
+A Compose Multiplatform projektek is a Gradle build rendszert használják, elsősorban a függőségek megszerzésére és az alkalmazás létrehozására.  
+Egy átlagos fejlesztőnek mindössze annyi a dolga, hogy kigyűjti a használt függőségeket, és a fejlesztőkörnyezet általában segít a megfelelő verziók megtalálásában.  
+Újabban a Kotlin DSL használata terjedt el.
 
-"A DSL (Domain-Specific Language) egy programozási nyelv, amely egy meghatározott problémakör megoldására összpontosít. Az általános célú nyelvektől eltérően a DSL-ek, például az SQL és a regexek, csak egy szűk területre fókuszálnak, ami lehetővé teszi a problémák deklaratív módon való megoldását."\cite{KotlinDSL}
-Ennek a segítségével egyszerűbben tudjuk megadni a Gradle függőségeket.(\ref{lst:KotlinDSL}.~kódrészlet)
+"A DSL (Domain-Specific Language) egy programozási nyelv, amely egy meghatározott problémakör megoldására összpontosít. Az általános célú nyelvektől eltérően a DSL-ek, például az SQL és a regexek, csak egy szűk területre fókuszálnak, ami lehetővé teszi a problémák deklaratív módon való megoldását."\cite{KotlinDSL}  
+Ennek segítségével egyszerűbben adhatjuk meg a Gradle-függőségeket (\ref{lst:KotlinDSL}.~kódrészlet).
 
 \begin{lstlisting}[caption={Kotlin DSL}, label={lst:KotlinDSL}, language=Kotlin]
 kotlin {    //Részlet a build.gradle fájlból
@@ -392,9 +397,9 @@ kotlin {    //Részlet a build.gradle fájlból
 }
 \end{lstlisting}
 
-Ezen kívül a verziók egyszerűbb karbantartására használhatunk version catalog fájlt, ez a libs.version.toml.
-A toml a "Tom's Obvious, Minimal Language" rövidítése, ezt első sorban egyszerűbb konfigurációs fájlok esetében használják, ha úgy tetszik egy "butább" yaml formátum.
-Az szükséges részei a [versions] és a [libraries], illeve szükség lehet [plugins]-re is. (\ref{lst:toml}.~kódrészlet) Az itt felvett értékekre lehet hivatkozni a build.gradle fájl(ok)ban.
+Ezen kívül a verziók egyszerűbb karbantartására használhatunk egy version catalog fájlt, ez a \texttt{libs.version.toml}.  
+A TOML a "Tom's Obvious, Minimal Language" rövidítése, és elsősorban egyszerűbb konfigurációs fájlok esetében használják; egyfajta "butább" YAML-formátum.  
+A szükséges részei a \texttt{[versions]} és a \texttt{[libraries]}, illetve szükség lehet a \texttt{[plugins]}-re is (\ref{lst:toml}.~kódrészlet). Az itt megadott értékekre lehet hivatkozni a \texttt{build.gradle} fájl(ok)ban.
 
 \begin{lstlisting}[caption={Version catalog}, label={lst:toml}, language=Kotlin]
 #Részlet a libs.version.toml fájlból
@@ -418,98 +423,90 @@ androidApplication = { id = "com.android.application", version.ref = "agp" }
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
 \end{lstlisting}
 
+\subsection{Fejlesztőkörnyezetek}
 
-\subsection{Fejlesztőkörnyeztek}
-
-Fejlesztőkörnyezetnek a JetBrains egyik eszközét választottam, a Fleet-et.
-Kifejezetten Multiplatform fejlesztéshez készítettek, szinte az összes nyelvet támogata ami ebben a témában szóba jöhet, és minden funkcióval rendelkezik amivel a natív fejlesztésre készült IDE-ik is.
-Többek között kódkiegészítéssel és kód kiemeléssel is, így nem kell IDE-t váltani, ha más nyelven kell éppen dolgozni.
+Fejlesztőkörnyezetként a JetBrains egyik eszközét, a Fleet-et választottam.  
+Ezt kifejezetten multiplatform fejlesztéshez készítették, és támogatja azokat a nyelveket, amelyek ebben a témában szóba jöhetnek.  
+Minden funkcióval rendelkezik, amit a JetBrains natív fejlesztésre készült IDE-i is nyújtanak, például kódkiegészítéssel és kódkiemeléssel, így nem kell IDE-t váltani, ha éppen más nyelven kell dolgozni.
 
 "Amikor az Smart Mode engedélyezve van, a Fleet nyelvspecifikus funkciókat kínál, mint például a kódkiegészítés, navigáció, hibakeresés és refaktorálás. Ha ez a mód le van tiltva, a Fleet egyszerű szövegszerkesztőként működik; gyorsan meg lehet nyitni fájlokat és módosításokat végezni, de a fejlettebb funkciók nélkül. A háttérben a Fleet kiválasztja a kód feldolgozásához szükséges háttérmotort. Intelligens módban például a Kotlin feldolgozási motorja az IntelliJ IDEA-hoz használt motor, így ismerős funkciók maradnak elérhetők." \cite{Fleet}
 
-Egy másik hasznos funkció, hogy egy helyről lehet minden platformra buildelni az alkalamzást (\refstruc{fig:RunConfigs}) így nem kell egy külön Android Studiot és egy Xcodeot is megynitni, ha szeretnéd tesztelni az alaklamzást az adott eszközön.
+Egy másik hasznos funkció, hogy egy helyről lehet minden platformra buildelni az alkalmazást (\refstruc{fig:RunConfigs}), így nem kell egy külön Android Studio-t és Xcode-ot is megnyitni, ha szeretnéd tesztelni az alkalmazást az adott eszközön.
 
-A fő fejlesztőkörnyezeten kívül amíg csak az Android applikációt fejleszettem az Android Studiot használtam.
-A REST API megírásához és karbantarásához szintén a JetBrains termékét az IntelliJ IDEA Ultimate-et használtam, ami kifejezetten Java és Kotlin projekezhez készült.
-Kisebb mértékben a fejlesztéshez és nagyobb mértékben a dokumentációhoz és a szakdolgozat megírásához A Visual Studio Code-ot használtam, mivel sok hasznos bővítménnyel rendelkezik például \LaTeX és PlantUML használatához.
-
+A fő fejlesztőkörnyezeten kívül, amíg csak az Android applikációt fejlesztettem, az Android Studio-t használtam.  
+A REST API fejlesztéséhez és karbantartásához szintén a JetBrains termékét, az IntelliJ IDEA Ultimate-et használtam, amely kifejezetten Java és Kotlin projektekhez készült.  
+Kisebb mértékben a fejlesztéshez, és nagyobb mértékben a dokumentációhoz és a szakdolgozat megírásához a Visual Studio Code-ot használtam, mivel sok hasznos bővítménnyel rendelkezik, például \LaTeX és PlantUML használatához.
 
 \begin{figure}[!ht]
     \centering
     \includegraphics[width=150mm, keepaspectratio]{figures/fleet-run-configurations.png}
-    \caption{A különböző eszközökre egy helyen lehet buildelni és futtani az alkalmazást. \cite{Fleet}}
+    \caption{A különböző eszközökre egy helyen lehet buildelni és futtatni az alkalmazást. \cite{Fleet}}
     \label{fig:RunConfigs}
 \end{figure}
 
 
-
-
 \subsection{REST API, Postman és adatbázis}
 
-A kliens oladli alkalmazásokat egy saját REST API szolgálja ki.
-Ezt az előző félévben készítettem el. Teljesen egészében Kotlin nyelv felhasználásával. A HTTP kommunikáció megvalósítsához a már korábban \refstruc{sec:Ktor}-ban bemutatott Ktor-t használtam.
-Itt a szerver oldali funkcionaliítása került előtérbe. A szerilizáció itt is a \refstruc{sec:KotlinX}-ban leírtak szerint történt.
-Az adatbázis az úgynevezett code-first felfogás alapján készült. Ez azt jelenti, hogy kódban leírtam az adatázis felépítését és a kigenerálását rábíztam a Exposed-ra ami a JetBrains ltal fejlesztett adatbázis elérést lehetővé tevő könyvtár.
-A használt adatbázis javaslatok alapján a PostgreSQL lett.
-Ennek a folyamatnak egy részletesebb leírása a \cite{Backend} forrásban olvasható, ez alapján készíttem el a saját szerveremet.
+A kliens oldali alkalmazásokat egy saját REST API szolgálja ki.  
+Ezt az előző félévben készítettem el, teljes egészében Kotlin nyelv felhasználásával. A HTTP kommunikáció megvalósításához a már korábban \refstruc{sec:Ktor}-ban bemutatott Ktor-t használtam.  
+Itt a szerver oldali funkcionalitás került előtérbe. A szerializáció itt is a \refstruc{sec:KotlinX}-ban leírtak szerint történt.  
+Az adatbázis az úgynevezett code-first felfogás alapján készült. Ez azt jelenti, hogy kódban leírtam az adatbázis felépítését, és a kigenerálását rábíztam az Exposed-ra, ami a JetBrains által fejlesztett, adatbázis-elérést lehetővé tevő könyvtár.  
+A használt adatbázis a javaslatok alapján a PostgreSQL lett. Ennek a folyamatnak egy részletesebb leírása a \cite{Backend} forrásban olvasható, ez alapján készítettem el a saját szerveremet.
 
-Mind az adatbázis, mind a REST API egy-egy Docker-konténerben fut egy viruális gépen, így biztosítva a folyamatos elérhetőséget.
-"Mi az a Docker? A Docker egy nyílt platform alkalmazások fejlesztésére, szállítására és futtatására. Lehetővé teszi, hogy az alkalmazásokat elválasszuk az infrastruktúrától, így gyorsabban tudunk szoftvereket szállítani. A Docker segítségével az infrastruktúrát ugyanúgy kezelhetjük, mint az alkalmazásokat. A Docker szállítási, tesztelési és kódtelepítési módszertanait kihasználva jelentősen csökkenthetjük az időt a kód megírása és a termelési környezetben való futtatása között." \cite{Docker}
+Mind az adatbázis, mind a REST API egy-egy Docker-konténerben fut egy virtuális gépen, így biztosítva a folyamatos elérhetőséget.  
+"Mi az a Docker? A Docker egy nyílt platform alkalmazások fejlesztésére, szállítására és futtatására. Lehetővé teszi, hogy az alkalmazásokat elválasszuk az infrastruktúrától, így gyorsabban tudunk szoftvereket szállítani. A Docker segítségével az infrastruktúrát ugyanúgy kezelhetjük, mint az alkalmazásokat. A Docker szállítási, tesztelési és kódtelepítési módszertanait kihasználva jelentősen csökkenthetjük az időt a kód megírása és a termelési környezetben való futtatása között." \cite{Docker}  
 
 "A Docker platform: A Docker lehetőséget biztosít arra, hogy az alkalmazást egy lazán izolált környezetben, úgynevezett konténerben csomagoljuk és futtassuk. Az izoláció és a biztonság lehetővé teszi, hogy egy adott gépen egyszerre több konténert futtassunk. A konténerek könnyűsúlyúak, és mindent tartalmaznak, ami szükséges az alkalmazás futtatásához, így nem kell a gazdagépre telepített környezetre támaszkodni. A konténereket megoszthatjuk munka közben, biztosítva, hogy mindenki ugyanazt a konténert kapja, amely ugyanúgy működik." \cite{Docker}
 
-
-Rendelkezik saját DNS címmel is, így könnyen megjegyezhető és elérhető fejlesztés és tesztelés közben is.
-A teszteléshez a Postmant használtam. Ez egy olyan alaklamzás amiben HTTP kéréseket lehet létrehozni, és a mezőket tetszőlegesen testreszabni.
-Gyakran volt rá szükség ebben a félévben is, mert bizonyosadatformátumok/követelmények változtak és ez sokkal hatékonyabb hibakezelést tett lehetőve, mint egy böngészős HTTP kérés vagy az alaklamzásból történő debugolás.
-
+Az API saját DNS-címmel is rendelkezik, így könnyen megjegyezhető és elérhető a fejlesztés és tesztelés során is.  
+A teszteléshez a Postmant használtam. Ez egy olyan alkalmazás, amiben HTTP-kéréseket lehet létrehozni, és a mezőket tetszőlegesen testreszabni.  
+Gyakran volt rá szükség ebben a félévben is, mert bizonyos adatformátumok vagy követelmények változtak, és ez sokkal hatékonyabb hibakezelést tett lehetővé, mint egy böngészős HTTP-kérés vagy az alkalmazásból történő debugolás.
 
 \subsection{Kipróbált, de végül nem használt egyéb érdekes megoldások}
 
-Az önálló laboratúrium során elkészített alkalmazás sok technológiát felhasznált, első sorban kisérlétezés miatt.
-Ezek egy részére találtam jól használahtó Multiplatform alternatívát, más részére nem, vagy csak nagyon sok munkával lehetet volna megvalósítani.
-Rendelkezett lokális Room adatbázissal is, erre egy alternatív megoldás KMP területen az SQLDelight technológia, de 2024 őszétől kezdve a Room is támogatott. 
-Ezt userek tárolására használtam Firebase integrációval. A Firebase sajnos sokkal nehezebben használható ebben a környezetben és mivel az alkalamzás jelenlei állapotában a usereknek nincs jelentősség így ezek nem kerültek be a végső alkalamzásba.
+Az önálló laboratórium során elkészített alkalmazás sok technológiát felhasznált, elsősorban kísérletezés miatt.  
+Ezek egy részére találtam jól használható multiplatform alternatívát, más részükre nem, vagy csak nagyon sok munkával lehetett volna megvalósítani.  
+Rendelkezett lokális Room-adatbázissal is; erre egy alternatív megoldás a multiplatform területen az SQLDelight technológia. 2024 őszétől azonban a Room is támogatott.  
+Ezt felhasználók tárolására használtam Firebase-integrációval. A Firebase sajnos sokkal nehezebben használható ebben a környezetben, és mivel az alkalmazás jelenlegi állapotában a felhasználóknak nincs jelentősége, ezek nem kerültek be a végső alkalmazásba.
 
-Egy korábbi KMP ViewModel alternatíva a moko viewmodel (Mobile Kotlin Model-View-ViewModel architecture) volt, de ennél kényelmesebb az Androidos.
-Mivel nem volt szükséges így a user- és login servicekre és lokális adatbázisra így elvettem a dependency inkection használatát, mert így már nem okozott akorra problémát a viewmodelek létrehozása. Az Androidban használt Hilt itt nem használható még, és a Koin, ami egy hasonló KMP implementáció, nem könnyítené meg annyival ezt a folyamatot, mint a Hilt.
-Ezeknél a függőségeknél már a verziók összehangolása se volt egyértelmű feladat, minél több függőségre van szükség annál nagyobb a valószínűsége, hogy valami összeütközk vagy eltörik egy új frissítés miatt, főleg, ha az nem egy hivatalos függőség a Google vagy JetBrains által.
-Külön-külön rendesen működtek, de az előbb felsorolt pronlémák miatt úgy döntöttem, hogy egy egyszerűbb és letisztultabb megoldást használok a függőségek terén.
+Egy korábbi multiplatform ViewModel alternatíva a moko-viewmodel (Mobile Kotlin Model-View-ViewModel architecture) volt, de ennél kényelmesebb az Androidos.  
+Mivel nem volt szükség felhasználó- és login-szolgáltatásokra, illetve lokális adatbázisra, így elvetettem a dependency injection használatát. Ezért a ViewModel-ek létrehozása sem okozott akkora problémát. Az Androidban használt Hilt itt nem használható, és a Koin, ami egy hasonló multiplatform implementáció, nem könnyítette volna meg annyira a folyamatot, mint a Hilt.  
+Ezeknél a függőségeknél a verziók összehangolása sem volt egyértelmű feladat. Minél több függőségre van szükség, annál nagyobb a valószínűsége, hogy valami összeütközik vagy eltörik egy új frissítés miatt, főleg, ha az nem egy hivatalos függőség a Google vagy a JetBrains által.  
+Külön-külön rendesen működtek, de az előbb felsorolt problémák miatt úgy döntöttem, hogy egyszerűbb és letisztultabb megoldásokat használok a függőségek terén.
 
 \section{Hasonló multiplatform megoldások összehasonlítása}
 \label{sec:SimilarSolutions}
 
-Négy különböző technológiát vizsgáltam meg és a korábbi tapasztalataim és információm alapján próbáltam választani közülök.
-Az első a Compose Multiplatform, a második a MAUI, a haramdik a React Native, a negyedik a Flutter.
+Négy különböző technológiát vizsgáltam meg, és korábbi tapasztalataim, illetve információim alapján próbáltam választani közülük.  
+Az első a Compose Multiplatform, a második a MAUI, a harmadik a React Native, a negyedik a Flutter.  
 Az alábbiakban található egy rövid összefoglalás ezekről a technológiákról.
 
-Kotlin- és Compose Multiplatform: A JetBrains és a Google által fejlesztett technológiák, amelyek lehetővé teszik a kód megosztását platformok között anélkül, hogy új nyelvet kellene bevezetni. Nemrégiben stabilizálták, és támogatja a felhasználói felület megosztását a Compose Multiplatform segítségével. \cite{KotlinCrossPlatformFrameworks}
+\textbf{Kotlin és Compose Multiplatform}: A JetBrains és a Google által fejlesztett technológiák, amelyek lehetővé teszik a kód megosztását platformok között, anélkül hogy új nyelvet kellene bevezetni. Nemrégiben stabilizálták, és támogatja a felhasználói felület megosztását a Compose Multiplatform segítségével. \cite{KotlinCrossPlatformFrameworks}  
 
-.NET MAUI: A Microsoft C\# és XAML alapú keretrendszere, amely cross-platform API-kat, hot reload-ot biztosít, és asztali, illetve mobil platformokra céloz. \cite{KotlinCrossPlatformFrameworks}
+\textbf{.NET MAUI}: A Microsoft C\# és XAML alapú keretrendszere, amely cross-platform API-kat, hot reload funkciót biztosít, és asztali és mobil platformokra is céloz. \cite{KotlinCrossPlatformFrameworks}  
 
-React Native: A Meta JavaScript alapú keretrendszere, amely a natív UI-t helyezi előtérbe, erős közösségi támogatással, a Fast Refresh-t használja, és a Flipper-t integrálja hibakereséshez. \cite{KotlinCrossPlatformFrameworks}
+\textbf{React Native}: A Meta JavaScript alapú keretrendszere, amely a natív UI-t helyezi előtérbe, erős közösségi támogatással. A Fast Refresh funkciót használja, és a Flipper-t integrálja hibakereséshez. \cite{KotlinCrossPlatformFrameworks}  
 
-Flutter: A Google Dart alapú keretrendszere, amely a hot reload és az egyéni renderelés révén ismert, támogatja a Material Design-t, és széles körben használják cross-platform alkalmazásokhoz (pl. eBay, Alibaba). \cite{KotlinCrossPlatformFrameworks}
+\textbf{Flutter}: A Google Dart alapú keretrendszere, amely a hot reload és az egyéni renderelés révén ismert. Támogatja a Material Design-t, és széles körben használják cross-platform alkalmazásokhoz (pl. eBay, Alibaba). \cite{KotlinCrossPlatformFrameworks}  
 
-A kiválásztás során számos szempontot figyelembe vettem. Fontos volt a tanulási lehetőség a témából, lehetőleg olyan módon, hogy azt később is tudjam kamatoztatni.
-Egy másik szempont volt, hogy ne legyen teljesen ismeretlen a hasznát eszköz és környezet, ennek célja az volt, hogy az időm nagy részét ne tutorial videók nézésvel töltesem az alapoktól kezdve, hanem a dokumentációk alapján is el tudjak igazodni hatékonyan.
-Nem utolsó szempont volt, hogy szerettem volna folytatni az előző félévben elkezdett alkalmazásomat.
+A kiválasztás során számos szempontot figyelembe vettem. Fontos volt a tanulási lehetőség a témából, lehetőleg olyan módon, hogy azt később is tudjam kamatoztatni.  
+Egy másik szempont volt, hogy ne legyen teljesen ismeretlen az használt eszköz és környezet, ennek célja az volt, hogy az időm nagy részét ne tutorial videók nézésével töltsem az alapoktól kezdve, hanem a dokumentációk alapján is el tudjak igazodni hatékonyan.  
+Nem utolsó szempont volt, hogy szerettem volna folytatni az előző félévben elkezdett alkalmazásomat.  
 Az összes opció megvizsgálása után alkalmasnak találtam a Compose Multiplatformot a szakdolgozat témájaként.
 
-Ezek küzül az utolsót zártam ki a leghamrabb, a fenti négy közül ez az egyetlen ami nem natív UI eléményt nyújt a felhasználóknak és egy számomra teljesen ismeretlen nyelven a Google által létrehozott nyelvben a Dartsban kell programozni.
-Első sorban mobilos fejlesztésre használják, a többi része nem a legoptimálisabb és én ennél egy általánosabb megoldást kerestem. \cite{Flutter}
+Ezek közül az utolsót zártam ki a leghamarabb. A fenti négy közül ez az egyetlen, amely nem natív UI élményt nyújt a felhasználóknak, és egy számomra teljesen ismeretlen Dart nyelven kell programozni. Elsősorban mobilos fejlesztésre használják, de a többi része nem optimális, én pedig ennél egy általánosabb megoldást kerestem. \cite{Flutter}  
 
-A következő technológia amit kizártam az a React Native volt, ez a React egyfajta változata ami natív élményt tud nyújtani weben, Androidon, iOSen és asztali alkalmazáson is.
-Ez egy JavaScript/TypeScript és HTML alapú megoldás és a korábbi tapasztalataim alapján ezek a nyelvek nem alkalmasak egy nagy mérteű projket fejlesztésre és karabantartására. 
-JavaScriptben gyorsan lehet fejleszteni, de nagyon nehéz utána a kód továbbfejlesztése és karbantartása. \cite{ReactNative}
+A következő technológia, amit kizártam, a React Native volt. Ez a React egyfajta változata, amely natív élményt tud nyújtani weben, Androidon, iOS-en és asztali alkalmazásokon is.  
+Ez egy JavaScript/TypeScript és HTML alapú megoldás. Korábbi tapasztalataim alapján ezek a nyelvek nem alkalmasak egy nagy méretű projekt fejlesztésére és karbantartására.  
+JavaScriptben gyorsan lehet fejleszteni, de nagyon nehéz utána a kód továbbfejlesztése és karbantartása. \cite{ReactNative}  
 
-A MAUI egy .NET alapú megoldás, így C\# nyelven lehet programozni. A UI XAML alapokon nyugszik, hasonlóan, mint a WinUI.
-Így ez a megoldás az Windowsos asztali alkalmazásokhoz hasonlít a legjobban felfogásban és programozásban.
-Volt több elődje is, de jelenleg ez a legújabb változata a Windows alapokon nyugvó multiplatform fejlesztésnek.
-A legfőbb indok az volt, hogy én elsősorban Android fejlesztő vagyok és, ha van lehetőség akkor abból az irányból szerettem volna kiindulni.
-Egy másik érv ellene, hogy webes irányban nincs elmozdulás, míg az eleőző kettőnél igen, illetve a Compose Multiplatform is nyit ebeb az irányba. \cite{MAUI} 
+A MAUI egy .NET alapú megoldás, így C\# nyelven lehet programozni. A UI XAML alapokon nyugszik, hasonlóan a WinUI-hoz.  
+Ez a megoldás a Windowsos asztali alkalmazásokhoz hasonlít leginkább felfogásban és programozásban.  
+Volt több elődje is, de jelenleg ez a legújabb változata a Windows alapokon nyugvó multiplatform fejlesztésnek.  
+A legfőbb indok az elvetésére az volt, hogy én elsősorban Android-fejlesztő vagyok, és ha van lehetőség, akkor abból az irányból szerettem volna kiindulni.  
+Egy másik érv ellene, hogy webes irányban nincs elmozdulás, míg az előző kettőnél igen, illetve a Compose Multiplatform is nyit ebbe az irányba. \cite{MAUI}  
 
-Mindent összevetve a Compose Multiplatform volt számora a legalkalmasabb és legérdekesebb technológia.
-Ebben volt a legtöbb tapasztalatom és a későbbiekben is szeretnék ezen a területen dolgozni, akár natív Android fejlesztés vagy a Compose és Kotlin Multiplatform világában.
-Továbbá mindig érdekes kihívás egy éppen aktívan fejlődő technológit megismerni és dolgozni benne.
-Így azt is ki tudtam próbálni, hogy milyen nehézségek járnak egy natív alkalmazás multiplatformba való átültetésével.
+Mindent összevetve a Compose Multiplatform volt számomra a legalkalmasabb és legérdekesebb technológia.  
+Ebben volt a legtöbb tapasztalatom, és a későbbiekben is szeretnék ezen a területen dolgozni, akár natív Android fejlesztés, akár a Compose és Kotlin Multiplatform világában.  
+Továbbá mindig érdekes kihívás egy éppen aktívan fejlődő technológiát megismerni és dolgozni benne.  
+Így azt is ki tudtam próbálni, hogy milyen nehézségekkel jár egy natív alkalmazás multiplatformba való átültetése.

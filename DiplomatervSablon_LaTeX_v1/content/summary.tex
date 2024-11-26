@@ -2,3 +2,28 @@
 \chapter{Összefoglalás}
 \label{sec:Summary}
 %----------------------------------------------------------------------------
+
+A félévet az Android alkalmazás kisebb bővítésével kezdtem, ekkor készült el a szövegfelismerő rendszer integrálva a javításba.
+Szintén ekkor készült el az ehhez tartozó számonkérés PDF formátumba való exportálásának megvalósítása is.
+
+A dolgozat megírása előtt Android fejlesztés terén volt már tapasztalatom, azonban nagyobb méretű asztali alkalmazást még nem készítettem.
+Korábban nem használtam semmilyen multiplatform környezetet sem.
+A Kotlin nyelv és a Compose Multiplatform szerencsére könnyen megtanulható, és alap szinten gyorsan elsajátítható. Innen lépésről lépésre tanulva és egy projektet fokozatosan felépítve már folytonos és dinamikus haladás érhető el.
+
+A félév során számos nehézségbe ütköztem; több irányból is próbáltam a már meglévő alkalmazást működésre bírni ebben a környezetben.
+Az első próbálkozások nem jártak sikerrel, ugyanis egy ekkora méretű kódbázist számos függőséggel nem lehet egyszerűen átmigrálni egy másik környezetbe.
+A siker kulcsa abban rejlett, hogy lépésről lépésre vizsgáltam meg, hogy egy-egy kis részlet milyen függőséggel rendelkezik, és ezt milyen módon lehet kezelni a Kotlin Multiplatform világában.
+Amikor elkészült az adatelérés, egy komponensnyi View és ViewModel, amelyek már megfelelően működtek, megismételtem a folyamatot az alkalmazás többi részére is.
+
+A legtöbb bonyodalmat a függőségek verzióbeli különbsége és inkompatibilitása okozta a multiplatform rendszerrel.
+Voltak megoldások, amelyek csak Android rendszeren működtek (például szövegfelismerés, PDF exportálás), így ezekre más megoldásokat kellett adni (PDF esetében), vagy felismerni, hogy a funkció nem is lenne célszerű az adott eszközön.
+Számos esetben lehetett közös megoldást találni, amikor a csak Android-specifikus megoldás nem felelt meg.
+Erre egy példa, amikor a Retrofit hálózati kommunikációs könyvtárat az általános Kotlinban jól ismert Ktor váltotta fel.
+
+A dolgozat megírása során számos hasznos új tudás birtokába kerültem, és a korábbi ismereteimet is tudtam tovább bővíteni.
+Ezen a területen még rengeteg új lehetőség található, és folyamatosan fejlődik.
+Voltak olyan technológiák, amelyek a szakdolgozat elkészítése közben jelentek meg, és ezzel új lehetőségeknek adtak teret.
+A legfontosabb ezek közül szerintem az Androidból átvett navigációs könyvtár megjelenése volt a Kotlin Multiplatform fejlesztésben.
+
+Kihívást jelentő, de érdekes és hasznos területe az informatikának.
+Szerettem ezzel a technológiával dolgozni, és napról napra új dolgokat felfedezni és megtanulni.

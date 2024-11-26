@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.11.5)  21 NOV 2024 05:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.11.5)  23 NOV 2024 23:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -463,9 +463,9 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 39.
 \c@currtheoremctr=\count314
 \c@endtheoremctr=\count315
 \c@theorem=\count316
-) (include/kotlin.tex (C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex/latex/graphics\dvipsnam.def
+ (include/kotlin.tex (C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex/latex/graphics\dvipsnam.def
 File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
-))
+)))
 LaTeX Font Info:    Trying to load font information for T1+lmr on input line 38.
  (C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -641,32 +641,32 @@ File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 <figures/Point Diagram.png, id=474, 329.23pt x 637.38126pt>
 File: figures/Point Diagram.png Graphic file (type png)
 <use figures/Point Diagram.png>
-Package pdftex.def Info: figures/Point Diagram.png  used on input line 201.
+Package pdftex.def Info: figures/Point Diagram.png  used on input line 202.
 (pdftex.def)             Requested size: 128.0425pt x 277.06409pt.
 <figures/Topic Diagram.png, id=475, 350.30875pt x 656.4525pt>
 File: figures/Topic Diagram.png Graphic file (type png)
 <use figures/Topic Diagram.png>
-Package pdftex.def Info: figures/Topic Diagram.png  used on input line 202.
+Package pdftex.def Info: figures/Topic Diagram.png  used on input line 203.
 (pdftex.def)             Requested size: 128.0407pt x 277.07043pt.
 <figures/TrueFalseQuestion Diagram.png, id=476, 402.50375pt x 696.6025pt>
 File: figures/TrueFalseQuestion Diagram.png Graphic file (type png)
 <use figures/TrueFalseQuestion Diagram.png>
-Package pdftex.def Info: figures/TrueFalseQuestion Diagram.png  used on input line 203.
+Package pdftex.def Info: figures/TrueFalseQuestion Diagram.png  used on input line 204.
 (pdftex.def)             Requested size: 128.03612pt x 277.07356pt.
 <figures/MultipleChoiceQuestion Diagram.png, id=477, 434.62375pt x 723.70375pt>
 File: figures/MultipleChoiceQuestion Diagram.png Graphic file (type png)
 <use figures/MultipleChoiceQuestion Diagram.png>
-Package pdftex.def Info: figures/MultipleChoiceQuestion Diagram.png  used on input line 206.
+Package pdftex.def Info: figures/MultipleChoiceQuestion Diagram.png  used on input line 207.
 (pdftex.def)             Requested size: 128.04047pt x 277.07529pt.
 <figures/Exam Diagram.png, id=478, 361.35pt x 664.4825pt>
 File: figures/Exam Diagram.png Graphic file (type png)
 <use figures/Exam Diagram.png>
-Package pdftex.def Info: figures/Exam Diagram.png  used on input line 207.
+Package pdftex.def Info: figures/Exam Diagram.png  used on input line 208.
 (pdftex.def)             Requested size: 128.0403pt x 277.07318pt.
 <figures/AnswerCheck Diagram.png, id=479, 399.4925pt x 505.89pt>
 File: figures/AnswerCheck Diagram.png Graphic file (type png)
 <use figures/AnswerCheck Diagram.png>
-Package pdftex.def Info: figures/AnswerCheck Diagram.png  used on input line 208.
+Package pdftex.def Info: figures/AnswerCheck Diagram.png  used on input line 209.
 (pdftex.def)             Requested size: 128.03526pt x 277.07474pt.
 ) [10 <./figures/Point Diagram.png (PNG copy)> <./figures/Topic Diagram.png (PNG copy)> <./figures/TrueFalseQuestion Diagram.png (PNG copy)> <./figures/MultipleChoiceQuestion Diagram.png (PNG copy)> <./figures/Exam Diagram.png (PNG copy)> <./figures/AnswerCheck Diagram.png (PNG copy)>]
 \openout2 = `content/search.aux'.
@@ -686,40 +686,40 @@ Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on in
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <8> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 46.
  [12] [13]
-<figures/viewmodel-lifecycle.png, id=568, 523.9575pt x 545.03625pt>
+<figures/viewmodel-lifecycle.png, id=567, 523.9575pt x 545.03625pt>
 File: figures/viewmodel-lifecycle.png Graphic file (type png)
 <use figures/viewmodel-lifecycle.png>
-Package pdftex.def Info: figures/viewmodel-lifecycle.png  used on input line 147.
-(pdftex.def)             Requested size: 426.79134pt x 443.97192pt.
+Package pdftex.def Info: figures/viewmodel-lifecycle.png  used on input line 152.
+(pdftex.def)             Requested size: 369.88582pt x 384.77455pt.
  [14 <./figures/viewmodel-lifecycle.png>] [15] [16] [17]
-<figures/KMP-types.png, id=684, 1606.0pt x 467.7475pt>
+<figures/KMP-types.png, id=678, 1606.0pt x 467.7475pt>
 File: figures/KMP-types.png Graphic file (type png)
 <use figures/KMP-types.png>
-Package pdftex.def Info: figures/KMP-types.png  used on input line 328.
+Package pdftex.def Info: figures/KMP-types.png  used on input line 332.
 (pdftex.def)             Requested size: 426.79134pt x 124.30222pt.
  [18 <./figures/KMP-types.png>] [19]
-<figures/fleet-run-configurations.png, id=742, 970.62625pt x 472.76625pt>
+<figures/fleet-run-configurations.png, id=741, 970.62625pt x 472.76625pt>
 File: figures/fleet-run-configurations.png Graphic file (type png)
 <use figures/fleet-run-configurations.png>
-Package pdftex.def Info: figures/fleet-run-configurations.png  used on input line 439.
+Package pdftex.def Info: figures/fleet-run-configurations.png  used on input line 442.
 (pdftex.def)             Requested size: 426.79134pt x 207.88072pt.
  [20] [21 <./figures/fleet-run-configurations.png>] [22]) [23]
 \openout2 = `content/architecture.aux'.
 
  (content/architecture.tex
 4. fejezet.
-<figures/KmpFileStructure.png, id=804, 319.79475pt x 115.632pt>
+<figures/KmpFileStructure.png, id=798, 319.79475pt x 115.632pt>
 File: figures/KmpFileStructure.png Graphic file (type png)
 <use figures/KmpFileStructure.png>
-Package pdftex.def Info: figures/KmpFileStructure.png  used on input line 32.
+Package pdftex.def Info: figures/KmpFileStructure.png  used on input line 31.
 (pdftex.def)             Requested size: 149.37958pt x 54.01357pt.
-<figures/specific-target-diagram.png, id=805, 708.6475pt x 292.09125pt>
+<figures/specific-target-diagram.png, id=799, 708.6475pt x 292.09125pt>
 File: figures/specific-target-diagram.png Graphic file (type png)
 <use figures/specific-target-diagram.png>
-Package pdftex.def Info: figures/specific-target-diagram.png  used on input line 33.
+Package pdftex.def Info: figures/specific-target-diagram.png  used on input line 32.
 (pdftex.def)             Requested size: 277.41176pt x 114.34299pt.
 
-Overfull \hbox (24.00002pt too wide) in paragraph at lines 30--35
+Overfull \hbox (24.00002pt too wide) in paragraph at lines 29--34
  [][] 
  []
 
@@ -729,27 +729,27 @@ Overfull \hbox (24.00002pt too wide) in paragraph at lines 30--35
 
 
  <./figures/KmpFileStructure.png> <./figures/specific-target-diagram.png>] [25]
-<figures/MVVM-architectural-pattern.png, id=869, 1144.39917pt x 335.2732pt>
+<figures/MVVM-architectural-pattern.png, id=863, 1144.39917pt x 335.2732pt>
 File: figures/MVVM-architectural-pattern.png Graphic file (type png)
 <use figures/MVVM-architectural-pattern.png>
-Package pdftex.def Info: figures/MVVM-architectural-pattern.png  used on input line 127.
+Package pdftex.def Info: figures/MVVM-architectural-pattern.png  used on input line 125.
 (pdftex.def)             Requested size: 426.79134pt x 125.03648pt.
  [26 <./figures/MVVM-architectural-pattern.png (PNG copy)>] [27] [28] [29] [30]
-<figures/Component.png, id=1049, 569.12625pt x 320.19624pt>
+<figures/Component.png, id=1043, 569.12625pt x 320.19624pt>
 File: figures/Component.png Graphic file (type png)
 <use figures/Component.png>
-Package pdftex.def Info: figures/Component.png  used on input line 385.
+Package pdftex.def Info: figures/Component.png  used on input line 383.
 (pdftex.def)             Requested size: 426.79134pt x 240.12703pt.
  [31]
-<figures/Business Component.png, id=1056, 378.41376pt x 377.41pt>
+<figures/Business Component.png, id=1050, 378.41376pt x 377.41pt>
 File: figures/Business Component.png Graphic file (type png)
 <use figures/Business Component.png>
-Package pdftex.def Info: figures/Business Component.png  used on input line 403.
+Package pdftex.def Info: figures/Business Component.png  used on input line 401.
 (pdftex.def)             Requested size: 284.52756pt x 283.77664pt.
-<figures/Common Component.png, id=1058, 538.01pt x 397.485pt>
+<figures/Common Component.png, id=1052, 538.01pt x 397.485pt>
 File: figures/Common Component.png Graphic file (type png)
 <use figures/Common Component.png>
-Package pdftex.def Info: figures/Common Component.png  used on input line 424.
+Package pdftex.def Info: figures/Common Component.png  used on input line 422.
 (pdftex.def)             Requested size: 284.52756pt x 210.21115pt.
 ) [32 <./figures/Component.png (PNG copy)>] [33 <./figures/Business Component.png (PNG copy)> <./figures/Common Component.png (PNG copy)>]
 \openout2 = `content/details.aux'.
@@ -762,75 +762,75 @@ Package pdftex.def Info: figures/Common Component.png  used on input line 424.
 
 
 ] [35]
-<figures/MainScreen_Desktop2_framed.png, id=1110, 2196.205pt x 1464.47125pt>
+<figures/MainScreen_Desktop2_framed.png, id=1104, 2196.205pt x 1464.47125pt>
 File: figures/MainScreen_Desktop2_framed.png Graphic file (type png)
 <use figures/MainScreen_Desktop2_framed.png>
 Package pdftex.def Info: figures/MainScreen_Desktop2_framed.png  used on input line 104.
 (pdftex.def)             Requested size: 213.39568pt x 142.277pt.
-<figures/MainScreen_Android.png, id=1111, 1215.54124pt x 2483.2775pt>
+<figures/MainScreen_Android.png, id=1105, 1215.54124pt x 2483.2775pt>
 File: figures/MainScreen_Android.png Graphic file (type png)
 <use figures/MainScreen_Android.png>
 Package pdftex.def Info: figures/MainScreen_Android.png  used on input line 112.
 (pdftex.def)             Requested size: 128.0387pt x 261.5665pt.
-<figures/MainScreen_Desktop1_framed.png, id=1112, 2196.205pt x 1464.47125pt>
+<figures/MainScreen_Desktop1_framed.png, id=1106, 2196.205pt x 1464.47125pt>
 File: figures/MainScreen_Desktop1_framed.png Graphic file (type png)
 <use figures/MainScreen_Desktop1_framed.png>
 Package pdftex.def Info: figures/MainScreen_Desktop1_framed.png  used on input line 113.
 (pdftex.def)             Requested size: 213.39568pt x 142.277pt.
  [36 <./figures/MainScreen_Desktop2_framed.png>] [37 <./figures/MainScreen_Android.png> <./figures/MainScreen_Desktop1_framed.png>]
-<figures/List_Android.png, id=1156, 1215.54124pt x 2483.2775pt>
+<figures/List_Android.png, id=1150, 1215.54124pt x 2483.2775pt>
 File: figures/List_Android.png Graphic file (type png)
 <use figures/List_Android.png>
 Package pdftex.def Info: figures/List_Android.png  used on input line 166.
 (pdftex.def)             Requested size: 128.0387pt x 261.5665pt.
-<figures/ListView_Desktop_framed.png, id=1157, 2196.205pt x 1464.47125pt>
+<figures/ListView_Desktop_framed.png, id=1151, 2196.205pt x 1464.47125pt>
 File: figures/ListView_Desktop_framed.png Graphic file (type png)
 <use figures/ListView_Desktop_framed.png>
 Package pdftex.def Info: figures/ListView_Desktop_framed.png  used on input line 167.
 (pdftex.def)             Requested size: 256.07741pt x 170.7458pt.
  [38 <./figures/List_Android.png> <./figures/ListView_Desktop_framed.png>]
-<figures/Details_Android.png, id=1176, 1215.54124pt x 2483.2775pt>
+<figures/Details_Android.png, id=1172, 1215.54124pt x 2483.2775pt>
 File: figures/Details_Android.png Graphic file (type png)
 <use figures/Details_Android.png>
 Package pdftex.def Info: figures/Details_Android.png  used on input line 249.
 (pdftex.def)             Requested size: 128.0387pt x 261.5665pt.
-<figures/Details_Desktop_framed.png, id=1177, 2196.205pt x 1464.47125pt>
+<figures/Details_Desktop_framed.png, id=1173, 2196.205pt x 1464.47125pt>
 File: figures/Details_Desktop_framed.png Graphic file (type png)
 <use figures/Details_Desktop_framed.png>
 Package pdftex.def Info: figures/Details_Desktop_framed.png  used on input line 250.
 (pdftex.def)             Requested size: 256.07741pt x 170.7458pt.
-<figures/Edit_Android.png, id=1178, 1215.54124pt x 2483.2775pt>
+<figures/Edit_Android.png, id=1174, 1215.54124pt x 2483.2775pt>
 File: figures/Edit_Android.png Graphic file (type png)
 <use figures/Edit_Android.png>
 Package pdftex.def Info: figures/Edit_Android.png  used on input line 262.
 (pdftex.def)             Requested size: 128.0387pt x 261.5665pt.
-<figures/Edit_Desktop_framed.png, id=1179, 2196.205pt x 1464.47125pt>
+<figures/Edit_Desktop_framed.png, id=1175, 2196.205pt x 1464.47125pt>
 File: figures/Edit_Desktop_framed.png Graphic file (type png)
 <use figures/Edit_Desktop_framed.png>
 Package pdftex.def Info: figures/Edit_Desktop_framed.png  used on input line 263.
 (pdftex.def)             Requested size: 256.07741pt x 170.7458pt.
  [39] [40 <./figures/Details_Android.png> <./figures/Details_Desktop_framed.png> <./figures/Edit_Android.png> <./figures/Edit_Desktop_framed.png>] [41]
-<figures/New_Android.png, id=1274, 1215.54124pt x 2483.2775pt>
+<figures/New_Android.png, id=1268, 1215.54124pt x 2483.2775pt>
 File: figures/New_Android.png Graphic file (type png)
 <use figures/New_Android.png>
 Package pdftex.def Info: figures/New_Android.png  used on input line 332.
 (pdftex.def)             Requested size: 128.0387pt x 261.5665pt.
-<figures/New_Desktop_framed.png, id=1275, 2196.205pt x 1464.47125pt>
+<figures/New_Desktop_framed.png, id=1269, 2196.205pt x 1464.47125pt>
 File: figures/New_Desktop_framed.png Graphic file (type png)
 <use figures/New_Desktop_framed.png>
 Package pdftex.def Info: figures/New_Desktop_framed.png  used on input line 333.
 (pdftex.def)             Requested size: 256.07741pt x 170.7458pt.
-<figures/Submission_Android.png, id=1276, 1215.54124pt x 2483.2775pt>
+<figures/Submission_Android.png, id=1270, 1215.54124pt x 2483.2775pt>
 File: figures/Submission_Android.png Graphic file (type png)
 <use figures/Submission_Android.png>
 Package pdftex.def Info: figures/Submission_Android.png  used on input line 352.
 (pdftex.def)             Requested size: 128.0387pt x 261.5665pt.
-<figures/Submission_Desktop_framed.png, id=1277, 2196.205pt x 1464.47125pt>
+<figures/Submission_Desktop_framed.png, id=1271, 2196.205pt x 1464.47125pt>
 File: figures/Submission_Desktop_framed.png Graphic file (type png)
 <use figures/Submission_Desktop_framed.png>
 Package pdftex.def Info: figures/Submission_Desktop_framed.png  used on input line 353.
 (pdftex.def)             Requested size: 256.07741pt x 170.7458pt.
-<figures/Defaut Communication.png, id=1278, 1228.59pt x 640.3925pt>
+<figures/Defaut Communication.png, id=1272, 1228.59pt x 640.3925pt>
 File: figures/Defaut Communication.png Graphic file (type png)
 <use figures/Defaut Communication.png>
 Package pdftex.def Info: figures/Defaut Communication.png  used on input line 366.
@@ -1006,7 +1006,7 @@ Underfull \hbox (badness 1931) in paragraph at lines 284--289
 \openout2 = `content/appendices.aux'.
 
  (content/appendices.tex
-<figures/TeXstudio.png, id=1536, 1002.74625pt x 799.98875pt>
+<figures/TeXstudio.png, id=1530, 1002.74625pt x 799.98875pt>
 File: figures/TeXstudio.png Graphic file (type png)
 <use figures/TeXstudio.png>
 Package pdftex.def Info: figures/TeXstudio.png  used on input line 17.
@@ -1026,20 +1026,20 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 5F24310A42CA66E0996A74D737B9BB2D;12448.
+(rerunfilecheck)             Checksum: 1F0C7222C884FB70A42E0EB4238B2282;12457.
  ) 
 Here is how much of TeX's memory you used:
- 19305 strings out of 474485
- 321343 string characters out of 5744206
- 2646542 words of memory out of 5000000
- 40414 multiletter control sequences out of 15000+600000
+ 19312 strings out of 474485
+ 321414 string characters out of 5744206
+ 2645542 words of memory out of 5000000
+ 40427 multiletter control sequences out of 15000+600000
  624810 words of font info for 76 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
  80i,12n,82p,1164b,2100s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx8.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtl10.pfb>
-Output written on thesis.pdf (62 pages, 6637861 bytes).
+Output written on thesis.pdf (62 pages, 6641305 bytes).
 PDF statistics:
- 1798 PDF objects out of 2073 (max. 8388607)
- 820 named destinations out of 1000 (max. 500000)
+ 1791 PDF objects out of 2073 (max. 8388607)
+ 814 named destinations out of 1000 (max. 500000)
  718 words of extra memory for PDF output out of 10000 (max. 10000000)
 

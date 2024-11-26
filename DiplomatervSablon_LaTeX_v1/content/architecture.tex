@@ -3,27 +3,26 @@
 \label{sec:Architecture}
 %----------------------------------------------------------------------------
 
-Ebben a fejezetben bemutatom a szoftver felépítését.
-Ez a rész első sorban az architektúrális- és programszervezési megoldásokra fókuszál.
-Hasonlóan a \refstruc{sec:Sepcification} fejezethez ez is csak egy átfogó képet fog adni a szoftverről, a részletekbe nem merül el.
+Ebben a fejezetben bemutatom a szoftver felépítését.  
+Ez a rész elsősorban az architektúrális és programszervezési megoldásokra fókuszál.  
+Hasonlóan a \refstruc{sec:Sepcification} fejezethez, ez is csak egy átfogó képet ad a szoftverről, a részletekbe nem merül el.
 
-
-\section{High level architektúra}
+\section{High-level architektúra}
 \label{sec:HighLevelArchitecture}
 
-Ez az alfejezet bemutatja a forráskód szerevzését és a legfontosabb követet tervezési mintákat.
+Ez az alfejezet bemutatja a forráskód szervezését és a legfontosabb követett tervezési mintákat.
 
 \subsection{A program struktúrális szervezése}
 
-Ez a rész a kód forrásfájlokba szervezését mutatja be.
-A hatékony munkához elengedhetetlen egy jól felépített és követett mintát konzisztensen használni a fejlesztés során.
+Ez a rész a kód forrásfájlokba szervezését mutatja be.  
+A hatékony munkához elengedhetetlen egy jól felépített és követett mintát konzisztensen alkalmazni a fejlesztés során.
 
 \subsubsection{A Kotlin Multiplatform alkalmazások felépítése}
 
-Minden Kotlin Multiplatform projekt tartalmaz legalább 3 Main könyvtárat az src mappán belül.
-Szükséges egy commonMain mappa, ami a közös kódrészleteket tartalmazza. Minél több tartalom található ebben megvalóstíva és nem külön kiszervezve annál jobb a kód újrafelhasználhatóságunk.
-A többi Main mappa a platform specifikus kódrészleteket tartalmazza. Az én alaklamazásomban van egy androidMain és egy desktopMain, ez a jvmMain-nek felelthető meg.
-Sajnos eszközhiány miatt iOS-re nem tudtam elkészíteni az alkalamzást, mivel annak lebuildeléséhez szükség van egy Mac számítógépre.
+Minden Kotlin Multiplatform projekt tartalmaz legalább 3 fő könyvtárat az src mappán belül.  
+Szükséges egy commonMain mappa, amely a közös kódrészleteket tartalmazza. Minél több tartalom található ebben megvalósítva, és nem külön kiszervezve, annál jobb a kód újrafelhasználhatósága.  
+A többi fő mappa a platform-specifikus kódrészleteket tartalmazza. Az én alkalmazásomban van egy androidMain és egy desktopMain, ezek a jvmMain-nek felelhetők meg.  
+Sajnos eszközhiány miatt iOS-re nem tudtam elkészíteni az alkalmazást, mivel annak lefordításához szükség van egy Mac számítógépre.
 
 \begin{figure}[!ht]
     \centering
@@ -89,29 +88,28 @@ compose.desktop { application {mmainClass = "hu.bme.aut.android.examapp.MainKt"
 }
 \end{lstlisting}
 
-Az alkalamzást az összes platformra le kell fordítani, így szükség van egy belépési pontra minden eszköznél.
-Ez értelem szerűen nem lehet a közös kódbázisban, mivel minden platform más módon tud inicializálódni.
-Ellenben az a kód amit itt meg kell hívni, az már lehet egy közös Composable függvény. (\ref{lst:Start}.~kódrészlet)
-Egy egyszerűbb alkalamzásnál, ahol megfelelő közös nézetet tudunk létrehozni ennyi platform specifikus kód elég is.
-Az optimális a fenti lenne, de ez általban nem lehetséges, így szükség van a közös kódból való "kilépésre" és a platform specifikus kód meghívására.
+Az alkalmazást az összes platformra le kell fordítani, így szükség van egy belépési pontra minden eszköznél.  
+Ez értelemszerűen nem lehet a közös kódbázisban, mivel minden platform más módon tud inicializálódni.  
+Ellenben az a kód, amit itt meg kell hívni, már lehet egy közös Composable függvény (\ref{lst:Start}.~kódrészlet).  
+Egy egyszerűbb alkalmazásnál, ahol megfelelő közös nézetet tudunk létrehozni, ennyi platform-specifikus kód elég is.  
+Az optimális a fenti lenne, de ez általában nem lehetséges, így szükség van a közös kódból való 'kilépésre' és a platform-specifikus kód meghívására.  
 Ez egyszerűen megvalósítható az expect és actual függvények és osztályok segítségével (\refstruc{sec:KCMP}).
 
+A fő mappastruktúrán belül is fontos a tervezés.  
+Két fő részből tevődik össze: a UI és a Service mappákból.  
+A Service tartalmaz minden olyan részt, amely közvetlenül nem a megjelenített képernyőkkel foglalkozik.  
+Itt található a navigáció, a PDF rendezése, és kivételesen itt van az ahhoz tartozó képernyő is.  
+Továbbá a szövegfelismerés és a HTTP-kommunikáció is itt található.  
+Az utóbbi az api mappában, és ezen belül találhatók a DTO-k (Data Transfer Object), amelyek az alkalmazás modell rétegét adják.
 
-A fő mappastruktúrán belül is fontos a tervezés.
-2 fő részből tevődik össze a UI és a Service mappákból.
-A Service tartalmaz minden közvetlenül nem a megjelenített képernyőkkel foglalkozó részeket.
-Itt található a navigáció, a PDF rendrelése, és kivételesen itt van az ahhoz tartozó képernyő is.
-Továbbá a szövegfelismerés és a HTTP kommunikáció is itt található.
-Az utóbb az api mappában és ezen belül találhatók a dto-k (data transfer object) amik az alkalmazás modell rétegét adják.
+A UI mappában minden használati esetre van egy saját mappa, amely a képernyőket tartalmazza; ezen kívül itt található a viewmodel mappa is, ahol hasonló szervezési struktúrában találhatók a képernyőkhöz tartozó ViewModel-ek.  
+Erre is több lehetséges megoldás lenne, például egy közös ViewModel a közös tematikájú képernyőkhöz.  
+Ebben a mappában található még a components mappa is, amely azokat a Composable függvényeket tartalmazza, amelyeket több képernyő is fel tud használni, például egy dropdown lista vagy a navigációs TopAppBar.
 
-A UI mappában minden használati esetre van egy saját mappa ami a képernyőket tartalmazza, ezen kívül itt van a viewmodel mappa is ahol hasonló szervezési struktúrban találhatóak a képenyőkhöz tartozó ViewModelek.
-Erre is több lehetséges megoldás lenne, például egy közös ViewModel a közös tematikájú képernyőkhöz.
-Ebben a mappában van még a components menü is ami azokat a Composable függvényeket tartalmazza amit több képernyő is fel tud használni, például egy dropdown lista vagy a navigációs TopAppBar.
+Egy másfajta tervezés lehet az is, hogy a képernyőt leíró fájlok mellett közvetlenül találhatók a viewmodel-ek, és ezek közös mappákba vannak szervezve.  
+Ezt elvetettem, mivel így is túl sok mappa volt, és nehezebben láttam át ezzel a második megoldással a program szerkezetét.
 
-Egy másfajta tervezés lehet az is, hogy a képernyőt leíró fájlok mellett közvetlenül vannak a viewmodelek és ezek vannak közös mappákba szervezve.
-Ezt elvettem, mivel így is túl sok mappa volt és nehezebben láttam át ezzel a második megoldással a program szerkezetét.
-
-A legtöbb fájl a commonMainben van, így a platform specifikus mappákban nem találhatóó meg minden mappa a fentiek közül, de a szükség actual függvények ennek megfelelő szerkezetben találhatóak meg itt is.
+A legtöbb fájl a commonMain-ben van, így a platform-specifikus mappákban nem található meg minden mappa a fentiek közül, de a szükséges actual függvények ennek megfelelő szerkezetben találhatók meg itt is.
 
 \subsubsection{Követett tervezési minták}
 
