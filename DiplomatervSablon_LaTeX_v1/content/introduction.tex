@@ -2,7 +2,15 @@
 \chapter{\bevezetes}
 %----------------------------------------------------------------------------
 
-Ebben a fejezetben kitérek arra, hogy miért ezt a témát választottam. Utána bemutatom a használt Compose Multiplatform jelentősségét és elterjedtségét. A legvégén összefoglalom a dolgozat ezt követő témáit.
+A digitális eszközök térhódítása napjainkban az élet szinte minden területére kihat, és különösen nagy szerepet kaphatana az oktatásban is.
+Mindig is fontosnak tartottam, hogy az oktatás teljes mértékben kihasználja a digitalizációban rejlő lehetőségeket, ezért esett a választásom erre a témára.
+
+Úgy látom, hogy napjainkabn nincs eleggé kihasználva a technológiákban rejlő számtalan lehetőség az oktatás területén.
+A családban erről több oldalról is kaptam visszajelzést.
+Mivel nekem van lehetőségem informatikusként ezt a folyamatot segíteni és gyorsítani ezért kötelességemnek is tartom, hogy a digitalizáció integrálásával az oktatásba segítsem a legújabb generációkat.
+
+A program, amelyet ebben a dolgozatban bemutatok, egy mobil- és egy asztali alkalmazás segítségével teszi lehetővé feladatsorok és dolgozatok előállítását PDF formátumban, nyomtatható változatban. Ebben a fejezetben kitérek arra, hogy miért döntöttem a Compose Multiplatform használata mellett, és ismertetem annak jelentőségét és elterjedtségét.
+A fejezet végén rövid áttekintést nyújtok a dolgozat további szerkezeti elemeiről.
 
 \section{Témaválasztás indoklása}
 
@@ -56,33 +64,12 @@ Például az Androidon futó alkalmazás az Androidos gombokat, görgetést stb.
 
 \section{Dolgozat felépítése}
 
-Az alábbiakban bemutatom a dolgozat felépítését.
+A dolgozat felépítését az alábbi szerkezet szerint mutatom be. Az első fő rész a \textbf{feladatspecifikáció} (\refstruc{sec:Sepcification}), amelyben bemutatom a kitűzött feladatot, annak céljait és elvárásait. Ez a fejezet két alfejezetre oszlik: az elsőben részletesen ismertetem a feladatot (\refstruc{sec:SepcificationDescription}), míg a másodikban olyan diagramokat és ábrákat mutatok be (\refstruc{sec:SpecificationDiagrams}), amelyek segítik az alkalmazás felépítésének megértését.
 
-\begin{enumerate}
-	\item \emph{Feladatspecifikáció: (\refstruc{sec:Sepcification})} 
-        \begin{enumerate}
-            \item \emph{Feladat részletes leírása: (\refstruc{sec:SepcificationDescription})} 
-            \item \emph{Diagramok: (\refstruc{sec:SpecificationDiagrams})} Bemutatok néhány diagramot és ábrát, amelyek segítik az alkalmazás felépítésének megértését.
-        \end{enumerate}
-	\item \emph{Irodalomkutatás: (\refstruc{sec:Search})} 
-        \begin{enumerate}
-            \item \emph{Felhasznált technológiák: (\refstruc{sec:Technologies})} \az+\refstruc{sec:IntroductionTechnologies}ban leírtak és a használt könyvtárak részletes bemutatása 
-            \item \emph{Hasonló megoldások: (\refstruc{sec:SimilarSolutions})} Rövid összevetés a többi hasonló cross-platform megoldással.
-        \end{enumerate}
-    \item \emph{Felsőszintű architektúra: (\refstruc{sec:Architecture})} Nagyvonalakban bemuattom az alakalmazás fő vázát és felépítéséét.
-        \begin{enumerate}
-            \item \emph{High level architektúra: (\refstruc{sec:HighLevelArchitecture})} 
-            \item \emph{Rendszer felépítései, komponensei: (\refstruc{sec:Components})}
-        \end{enumerate}
-    \item \emph{Részletes megvalósítás: (\refstruc{sec:Details})} Kitérek minden az eddigiekben bemutatott technológia pontos használatára, és arra, hogy nálam milyen formában jelentek meg.
-        \begin{enumerate}
-            \item \emph{Compose: (\refstruc{sec:Compose})} 
-            \item \emph{Navigáció: (\refstruc{sec:Nav})}
-            \item \emph{ViewModel: (\refstruc{sec:VM})}
-            \item \emph{HTTP kliens: (\refstruc{sec:HTTP})}
-            \item \emph{PDF: (\refstruc{sec:PDF})}
-            \item \emph{Szövegfelismerés: (\refstruc{sec:TextRec})}
-        \end{enumerate}
-    \item \emph{Továbbfejlesztési lehetőségek: (\refstruc{sec:Future})} 
-    \item \emph{Összefoglalás: (\refstruc{sec:Summary})} 
-\end{enumerate}
+Ezt követi az \textbf{irodalomkutatás} (\refstruc{sec:Search}), amely során részletezem az általam felhasznált technológiákat (\refstruc{sec:Technologies}), beleértve a \refstruc{sec:IntroductionTechnologies} szakaszban ismertetett könyvtárakat. Továbbá rövid összevetést készítek a hasonló cross-platform megoldásokkal (\refstruc{sec:SimilarSolutions}).
+
+A harmadik fejezet a \textbf{felsőszintű architektúra} (\refstruc{sec:Architecture}), amelyben nagyvonalakban bemutatom az alkalmazás fő vázát és felépítését. Ez a rész két alfejezetből áll: az első a high-level architektúrával (\refstruc{sec:HighLevelArchitecture}), a második pedig a rendszer komponenseinek és azok kapcsolódásainak bemutatásával (\refstruc{sec:Components}) foglalkozik.
+
+A dolgozat egyik központi része a \textbf{részletes megvalósítás} (\refstruc{sec:Details}), ahol minden korábban ismertetett technológia alkalmazását pontosan bemutatom, és részletezem, hogy ezek nálam milyen formában jelennek meg. Ennek a fejezetnek számos alfejezete van, amelyek a következő témákat fedik le: a Compose keretrendszer (\refstruc{sec:Compose}), a navigáció megvalósítása (\refstruc{sec:Nav}), a ViewModel használata (\refstruc{sec:VM}), az HTTP kliens implementációja (\refstruc{sec:HTTP}), a PDF-kezelés (\refstruc{sec:PDF}), valamint a szövegfelismerési funkciók (\refstruc{sec:TextRec}).
+
+A dolgozat utolsó előtti fejezete a \textbf{továbbfejlesztési lehetőségek} (\refstruc{sec:Future}), amelyben áttekintem, milyen irányokba fejleszthető tovább az alkalmazás. Végül az összefoglalás (\refstruc{sec:Summary}) fejezetben összegzem a dolgozat legfontosabb eredményeit és megfogalmazom a levont tanulságokat.

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.11.5)  23 NOV 2024 23:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.11.5)  29 NOV 2024 16:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -616,12 +616,12 @@ Package hyperref Info: Option `pageanchor' set `false' on input line 30.
 <figures/flutter-vs-jetpack-compose-google-search-trends.png, id=389, 803.0pt x 407.02063pt>
 File: figures/flutter-vs-jetpack-compose-google-search-trends.png Graphic file (type png)
 <use figures/flutter-vs-jetpack-compose-google-search-trends.png>
-Package pdftex.def Info: figures/flutter-vs-jetpack-compose-google-search-trends.png  used on input line 39.
+Package pdftex.def Info: figures/flutter-vs-jetpack-compose-google-search-trends.png  used on input line 47.
 (pdftex.def)             Requested size: 426.79134pt x 216.33475pt.
 <figures/Libraries-2800x995.png, id=393, 2810.5pt x 998.73125pt>
 File: figures/Libraries-2800x995.png Graphic file (type png)
 <use figures/Libraries-2800x995.png>
-Package pdftex.def Info: figures/Libraries-2800x995.png  used on input line 46.
+Package pdftex.def Info: figures/Libraries-2800x995.png  used on input line 54.
 (pdftex.def)             Requested size: 426.79134pt x 151.66243pt.
  [2 <./figures/flutter-vs-jetpack-compose-google-search-trends.png>]) [3 <./figures/Libraries-2800x995.png>] [4]
 \openout2 = `content/specifiation.aux'.
@@ -638,32 +638,32 @@ LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 50
  (C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [6{C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}] [7] [8] [9]
-<figures/Point Diagram.png, id=474, 329.23pt x 637.38126pt>
+<figures/Point Diagram.png, id=456, 329.23pt x 637.38126pt>
 File: figures/Point Diagram.png Graphic file (type png)
 <use figures/Point Diagram.png>
 Package pdftex.def Info: figures/Point Diagram.png  used on input line 202.
 (pdftex.def)             Requested size: 128.0425pt x 277.06409pt.
-<figures/Topic Diagram.png, id=475, 350.30875pt x 656.4525pt>
+<figures/Topic Diagram.png, id=457, 350.30875pt x 656.4525pt>
 File: figures/Topic Diagram.png Graphic file (type png)
 <use figures/Topic Diagram.png>
 Package pdftex.def Info: figures/Topic Diagram.png  used on input line 203.
 (pdftex.def)             Requested size: 128.0407pt x 277.07043pt.
-<figures/TrueFalseQuestion Diagram.png, id=476, 402.50375pt x 696.6025pt>
+<figures/TrueFalseQuestion Diagram.png, id=458, 402.50375pt x 696.6025pt>
 File: figures/TrueFalseQuestion Diagram.png Graphic file (type png)
 <use figures/TrueFalseQuestion Diagram.png>
 Package pdftex.def Info: figures/TrueFalseQuestion Diagram.png  used on input line 204.
 (pdftex.def)             Requested size: 128.03612pt x 277.07356pt.
-<figures/MultipleChoiceQuestion Diagram.png, id=477, 434.62375pt x 723.70375pt>
+<figures/MultipleChoiceQuestion Diagram.png, id=459, 434.62375pt x 723.70375pt>
 File: figures/MultipleChoiceQuestion Diagram.png Graphic file (type png)
 <use figures/MultipleChoiceQuestion Diagram.png>
 Package pdftex.def Info: figures/MultipleChoiceQuestion Diagram.png  used on input line 207.
 (pdftex.def)             Requested size: 128.04047pt x 277.07529pt.
-<figures/Exam Diagram.png, id=478, 361.35pt x 664.4825pt>
+<figures/Exam Diagram.png, id=460, 361.35pt x 664.4825pt>
 File: figures/Exam Diagram.png Graphic file (type png)
 <use figures/Exam Diagram.png>
 Package pdftex.def Info: figures/Exam Diagram.png  used on input line 208.
 (pdftex.def)             Requested size: 128.0403pt x 277.07318pt.
-<figures/AnswerCheck Diagram.png, id=479, 399.4925pt x 505.89pt>
+<figures/AnswerCheck Diagram.png, id=461, 399.4925pt x 505.89pt>
 File: figures/AnswerCheck Diagram.png Graphic file (type png)
 <use figures/AnswerCheck Diagram.png>
 Package pdftex.def Info: figures/AnswerCheck Diagram.png  used on input line 209.
@@ -686,19 +686,19 @@ Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on in
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <8> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 46.
  [12] [13]
-<figures/viewmodel-lifecycle.png, id=567, 523.9575pt x 545.03625pt>
+<figures/viewmodel-lifecycle.png, id=549, 523.9575pt x 545.03625pt>
 File: figures/viewmodel-lifecycle.png Graphic file (type png)
 <use figures/viewmodel-lifecycle.png>
 Package pdftex.def Info: figures/viewmodel-lifecycle.png  used on input line 152.
 (pdftex.def)             Requested size: 369.88582pt x 384.77455pt.
  [14 <./figures/viewmodel-lifecycle.png>] [15] [16] [17]
-<figures/KMP-types.png, id=678, 1606.0pt x 467.7475pt>
+<figures/KMP-types.png, id=660, 1606.0pt x 467.7475pt>
 File: figures/KMP-types.png Graphic file (type png)
 <use figures/KMP-types.png>
 Package pdftex.def Info: figures/KMP-types.png  used on input line 332.
 (pdftex.def)             Requested size: 426.79134pt x 124.30222pt.
  [18 <./figures/KMP-types.png>] [19]
-<figures/fleet-run-configurations.png, id=741, 970.62625pt x 472.76625pt>
+<figures/fleet-run-configurations.png, id=723, 970.62625pt x 472.76625pt>
 File: figures/fleet-run-configurations.png Graphic file (type png)
 <use figures/fleet-run-configurations.png>
 Package pdftex.def Info: figures/fleet-run-configurations.png  used on input line 442.
@@ -708,12 +708,12 @@ Package pdftex.def Info: figures/fleet-run-configurations.png  used on input lin
 
  (content/architecture.tex
 4. fejezet.
-<figures/KmpFileStructure.png, id=798, 319.79475pt x 115.632pt>
+<figures/KmpFileStructure.png, id=780, 319.79475pt x 115.632pt>
 File: figures/KmpFileStructure.png Graphic file (type png)
 <use figures/KmpFileStructure.png>
 Package pdftex.def Info: figures/KmpFileStructure.png  used on input line 31.
 (pdftex.def)             Requested size: 149.37958pt x 54.01357pt.
-<figures/specific-target-diagram.png, id=799, 708.6475pt x 292.09125pt>
+<figures/specific-target-diagram.png, id=781, 708.6475pt x 292.09125pt>
 File: figures/specific-target-diagram.png Graphic file (type png)
 <use figures/specific-target-diagram.png>
 Package pdftex.def Info: figures/specific-target-diagram.png  used on input line 32.
@@ -729,24 +729,24 @@ Overfull \hbox (24.00002pt too wide) in paragraph at lines 29--34
 
 
  <./figures/KmpFileStructure.png> <./figures/specific-target-diagram.png>] [25]
-<figures/MVVM-architectural-pattern.png, id=863, 1144.39917pt x 335.2732pt>
+<figures/MVVM-architectural-pattern.png, id=845, 1144.39917pt x 335.2732pt>
 File: figures/MVVM-architectural-pattern.png Graphic file (type png)
 <use figures/MVVM-architectural-pattern.png>
 Package pdftex.def Info: figures/MVVM-architectural-pattern.png  used on input line 125.
 (pdftex.def)             Requested size: 426.79134pt x 125.03648pt.
  [26 <./figures/MVVM-architectural-pattern.png (PNG copy)>] [27] [28] [29] [30]
-<figures/Component.png, id=1043, 569.12625pt x 320.19624pt>
+<figures/Component.png, id=1025, 569.12625pt x 320.19624pt>
 File: figures/Component.png Graphic file (type png)
 <use figures/Component.png>
 Package pdftex.def Info: figures/Component.png  used on input line 383.
 (pdftex.def)             Requested size: 426.79134pt x 240.12703pt.
  [31]
-<figures/Business Component.png, id=1050, 378.41376pt x 377.41pt>
+<figures/Business Component.png, id=1032, 378.41376pt x 377.41pt>
 File: figures/Business Component.png Graphic file (type png)
 <use figures/Business Component.png>
 Package pdftex.def Info: figures/Business Component.png  used on input line 401.
 (pdftex.def)             Requested size: 284.52756pt x 283.77664pt.
-<figures/Common Component.png, id=1052, 538.01pt x 397.485pt>
+<figures/Common Component.png, id=1034, 538.01pt x 397.485pt>
 File: figures/Common Component.png Graphic file (type png)
 <use figures/Common Component.png>
 Package pdftex.def Info: figures/Common Component.png  used on input line 422.
@@ -762,75 +762,75 @@ Package pdftex.def Info: figures/Common Component.png  used on input line 422.
 
 
 ] [35]
-<figures/MainScreen_Desktop2_framed.png, id=1104, 2196.205pt x 1464.47125pt>
+<figures/MainScreen_Desktop2_framed.png, id=1086, 2196.205pt x 1464.47125pt>
 File: figures/MainScreen_Desktop2_framed.png Graphic file (type png)
 <use figures/MainScreen_Desktop2_framed.png>
 Package pdftex.def Info: figures/MainScreen_Desktop2_framed.png  used on input line 104.
 (pdftex.def)             Requested size: 213.39568pt x 142.277pt.
-<figures/MainScreen_Android.png, id=1105, 1215.54124pt x 2483.2775pt>
+<figures/MainScreen_Android.png, id=1087, 1215.54124pt x 2483.2775pt>
 File: figures/MainScreen_Android.png Graphic file (type png)
 <use figures/MainScreen_Android.png>
 Package pdftex.def Info: figures/MainScreen_Android.png  used on input line 112.
 (pdftex.def)             Requested size: 128.0387pt x 261.5665pt.
-<figures/MainScreen_Desktop1_framed.png, id=1106, 2196.205pt x 1464.47125pt>
+<figures/MainScreen_Desktop1_framed.png, id=1088, 2196.205pt x 1464.47125pt>
 File: figures/MainScreen_Desktop1_framed.png Graphic file (type png)
 <use figures/MainScreen_Desktop1_framed.png>
 Package pdftex.def Info: figures/MainScreen_Desktop1_framed.png  used on input line 113.
 (pdftex.def)             Requested size: 213.39568pt x 142.277pt.
  [36 <./figures/MainScreen_Desktop2_framed.png>] [37 <./figures/MainScreen_Android.png> <./figures/MainScreen_Desktop1_framed.png>]
-<figures/List_Android.png, id=1150, 1215.54124pt x 2483.2775pt>
+<figures/List_Android.png, id=1132, 1215.54124pt x 2483.2775pt>
 File: figures/List_Android.png Graphic file (type png)
 <use figures/List_Android.png>
 Package pdftex.def Info: figures/List_Android.png  used on input line 166.
 (pdftex.def)             Requested size: 128.0387pt x 261.5665pt.
-<figures/ListView_Desktop_framed.png, id=1151, 2196.205pt x 1464.47125pt>
+<figures/ListView_Desktop_framed.png, id=1133, 2196.205pt x 1464.47125pt>
 File: figures/ListView_Desktop_framed.png Graphic file (type png)
 <use figures/ListView_Desktop_framed.png>
 Package pdftex.def Info: figures/ListView_Desktop_framed.png  used on input line 167.
 (pdftex.def)             Requested size: 256.07741pt x 170.7458pt.
  [38 <./figures/List_Android.png> <./figures/ListView_Desktop_framed.png>]
-<figures/Details_Android.png, id=1172, 1215.54124pt x 2483.2775pt>
+<figures/Details_Android.png, id=1154, 1215.54124pt x 2483.2775pt>
 File: figures/Details_Android.png Graphic file (type png)
 <use figures/Details_Android.png>
 Package pdftex.def Info: figures/Details_Android.png  used on input line 249.
 (pdftex.def)             Requested size: 128.0387pt x 261.5665pt.
-<figures/Details_Desktop_framed.png, id=1173, 2196.205pt x 1464.47125pt>
+<figures/Details_Desktop_framed.png, id=1155, 2196.205pt x 1464.47125pt>
 File: figures/Details_Desktop_framed.png Graphic file (type png)
 <use figures/Details_Desktop_framed.png>
 Package pdftex.def Info: figures/Details_Desktop_framed.png  used on input line 250.
 (pdftex.def)             Requested size: 256.07741pt x 170.7458pt.
-<figures/Edit_Android.png, id=1174, 1215.54124pt x 2483.2775pt>
+<figures/Edit_Android.png, id=1156, 1215.54124pt x 2483.2775pt>
 File: figures/Edit_Android.png Graphic file (type png)
 <use figures/Edit_Android.png>
 Package pdftex.def Info: figures/Edit_Android.png  used on input line 262.
 (pdftex.def)             Requested size: 128.0387pt x 261.5665pt.
-<figures/Edit_Desktop_framed.png, id=1175, 2196.205pt x 1464.47125pt>
+<figures/Edit_Desktop_framed.png, id=1157, 2196.205pt x 1464.47125pt>
 File: figures/Edit_Desktop_framed.png Graphic file (type png)
 <use figures/Edit_Desktop_framed.png>
 Package pdftex.def Info: figures/Edit_Desktop_framed.png  used on input line 263.
 (pdftex.def)             Requested size: 256.07741pt x 170.7458pt.
  [39] [40 <./figures/Details_Android.png> <./figures/Details_Desktop_framed.png> <./figures/Edit_Android.png> <./figures/Edit_Desktop_framed.png>] [41]
-<figures/New_Android.png, id=1268, 1215.54124pt x 2483.2775pt>
+<figures/New_Android.png, id=1250, 1215.54124pt x 2483.2775pt>
 File: figures/New_Android.png Graphic file (type png)
 <use figures/New_Android.png>
 Package pdftex.def Info: figures/New_Android.png  used on input line 332.
 (pdftex.def)             Requested size: 128.0387pt x 261.5665pt.
-<figures/New_Desktop_framed.png, id=1269, 2196.205pt x 1464.47125pt>
+<figures/New_Desktop_framed.png, id=1251, 2196.205pt x 1464.47125pt>
 File: figures/New_Desktop_framed.png Graphic file (type png)
 <use figures/New_Desktop_framed.png>
 Package pdftex.def Info: figures/New_Desktop_framed.png  used on input line 333.
 (pdftex.def)             Requested size: 256.07741pt x 170.7458pt.
-<figures/Submission_Android.png, id=1270, 1215.54124pt x 2483.2775pt>
+<figures/Submission_Android.png, id=1252, 1215.54124pt x 2483.2775pt>
 File: figures/Submission_Android.png Graphic file (type png)
 <use figures/Submission_Android.png>
 Package pdftex.def Info: figures/Submission_Android.png  used on input line 352.
 (pdftex.def)             Requested size: 128.0387pt x 261.5665pt.
-<figures/Submission_Desktop_framed.png, id=1271, 2196.205pt x 1464.47125pt>
+<figures/Submission_Desktop_framed.png, id=1253, 2196.205pt x 1464.47125pt>
 File: figures/Submission_Desktop_framed.png Graphic file (type png)
 <use figures/Submission_Desktop_framed.png>
 Package pdftex.def Info: figures/Submission_Desktop_framed.png  used on input line 353.
 (pdftex.def)             Requested size: 256.07741pt x 170.7458pt.
-<figures/Defaut Communication.png, id=1272, 1228.59pt x 640.3925pt>
+<figures/Defaut Communication.png, id=1254, 1228.59pt x 640.3925pt>
 File: figures/Defaut Communication.png Graphic file (type png)
 <use figures/Defaut Communication.png>
 Package pdftex.def Info: figures/Defaut Communication.png  used on input line 366.
@@ -864,82 +864,97 @@ Package pdftex.def Info: figures/Defaut Communication.png  used on input line 36
 
 
 ] (thesis.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 103--108
+Underfull \hbox (badness 10000) in paragraph at lines 104--110
 []\T1/lmr/m/n/10.95 Droid Chef: Flut-ter vs jet-pack com-po-se: The batt-le of the cent-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 103--108
+Underfull \hbox (badness 10000) in paragraph at lines 104--110
 \T1/lmr/m/n/10.95 ury. \T1/lmr/m/it/10.95 Is-han Khan-na\T1/lmr/m/n/10.95 , 2022. 11. [][]$\T1/lmtt/m/n/10.95 https : / / blog . droidchef . dev /
  []
 
 
-Underfull \hbox (badness 6792) in paragraph at lines 110--115
+Underfull \hbox (badness 5119) in paragraph at lines 104--110
+\T1/lmtt/m/n/10.95 flutter-[]vs-[]jetpack-[]compose-[]the-[]battle-[]of-[]the-[]century/$[][] \T1/lmr/m/n/10.95 (last vi-si-ted on
+ []
+
+
+Underfull \hbox (badness 6792) in paragraph at lines 112--118
 []\T1/lmr/m/n/10.95 Husayn Fak-her: Com-po-se sta-te vs sta-tef-low: Sta-te ma-nag-ement in jet-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 110--115
+Underfull \hbox (badness 10000) in paragraph at lines 112--118
 \T1/lmr/m/n/10.95 pack com-po-se. \T1/lmr/m/it/10.95 Me-di-um\T1/lmr/m/n/10.95 , 2024. 04. [][]$\T1/lmtt/m/n/10.95 https : / / medium . com / @husayn . fakher /
  []
 
 
-Overfull \hbox (34.41357pt too wide) in paragraph at lines 110--115
-\T1/lmtt/m/n/10.95 compose-[]state-[]vs-[]stateflow-[]state-[]management-[]in-[]jetpack-[]compose-[]c99740732023$[][]\T1/lmr/m/n/10.95 . 
+Overfull \hbox (31.37193pt too wide) in paragraph at lines 112--118
+\T1/lmtt/m/n/10.95 compose-[]state-[]vs-[]stateflow-[]state-[]management-[]in-[]jetpack-[]compose-[]c99740732023$[][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 123--128
+Underfull \hbox (badness 10000) in paragraph at lines 127--133
 []\T1/lmr/m/n/10.95 JetBrains: The ba-sics of kot-lin mul-ti-plat-form pro-ject struc-tu-re. \T1/lmr/m/it/10.95 Mul-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 123--128
+Underfull \hbox (badness 10000) in paragraph at lines 127--133
 \T1/lmr/m/it/10.95 ti-plat-form De-ve-lop-ment\T1/lmr/m/n/10.95 , 2024. 09. [][]$\T1/lmtt/m/n/10.95 https : / / kotlinlang . org / docs /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 130--135
+Underfull \hbox (badness 10000) in paragraph at lines 127--133
+\T1/lmtt/m/n/10.95 multiplatform-[]discover-[]project . html # compilation-[]to-[]a-[]specific-[]target$[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--141
 \T1/lmtt/m/n/10.95 / / www . jetbrains . com / help / kotlin-[]multiplatform-[]dev / compose-[]viewmodel .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 150--155
+Underfull \hbox (badness 1275) in paragraph at lines 143--149
+[]\T1/lmr/m/n/10.95 JetBrains: Creat-ing a cross-platform mo-bi-le app-li-ca-ti-on. \T1/lmr/m/it/10.95 Ktor Do-cu-men-ta-ti-on\T1/lmr/m/n/10.95 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 158--164
 []\T1/lmr/m/n/10.95 JetBrains: Na-vi-ga-ti-on and ro-u-ting. \T1/lmr/m/it/10.95 Kot-lin Mul-ti-plat-form De-ve-lop-ment\T1/lmr/m/n/10.95 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 150--155
+Underfull \hbox (badness 10000) in paragraph at lines 158--164
 \T1/lmr/m/n/10.95 2024. 10. [][]$\T1/lmtt/m/n/10.95 https : / / www . jetbrains . com / help / kotlin-[]multiplatform-[]dev /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 157--162
+Underfull \hbox (badness 10000) in paragraph at lines 166--172
 []\T1/lmr/m/n/10.95 JetBrains: Po-pu-lar cross-platform app de-ve-lop-ment fra-me-works. \T1/lmr/m/it/10.95 Kot-lin
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 157--162
+Underfull \hbox (badness 10000) in paragraph at lines 166--172
 \T1/lmr/m/it/10.95 Mul-ti-plat-form Do-cu-men-ta-ti-on\T1/lmr/m/n/10.95 , 2024. 09. [][]$\T1/lmtt/m/n/10.95 https : / / www . jetbrains . com /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 157--162
+Underfull \hbox (badness 10000) in paragraph at lines 166--172
 \T1/lmtt/m/n/10.95 help / kotlin-[]multiplatform-[]dev / cross-[]platform-[]frameworks . html #
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--175
+Underfull \hbox (badness 10000) in paragraph at lines 181--187
 []\T1/lmr/m/n/10.95 JetBrains: Use fle-et for mul-ti-plat-form de-ve-lop-ment ^^V tuto-ri-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--175
+Underfull \hbox (badness 10000) in paragraph at lines 181--187
 \T1/lmr/m/n/10.95 al. \T1/lmr/m/it/10.95 Kot-lin Mul-ti-plat-form De-ve-lop-ment\T1/lmr/m/n/10.95 , 2024. 10. [][]$\T1/lmtt/m/n/10.95 https : / / www .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--175
+Underfull \hbox (badness 10000) in paragraph at lines 181--187
 \T1/lmtt/m/n/10.95 jetbrains . com / help / kotlin-[]multiplatform-[]dev / fleet . html #
  []
 
@@ -948,73 +963,93 @@ Underfull \hbox (badness 10000) in paragraph at lines 170--175
 
 
 ]
-Underfull \hbox (badness 1590) in paragraph at lines 189--194
+Underfull \hbox (badness 1590) in paragraph at lines 203--209
 []\T1/lmr/m/n/10.95 Google LLC: Jet-pack com-po-se ba-sics. \T1/lmr/m/it/10.95 And-ro-id co-del-abs\T1/lmr/m/n/10.95 , 2024. 01. [][]$\T1/lmtt/m/n/10.95 https : / /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 216--221
+Underfull \hbox (badness 1009) in paragraph at lines 203--209
+\T1/lmtt/m/n/10.95 developer . android . com / codelabs / jetpack-[]compose-[]basics # 0$[][] \T1/lmr/m/n/10.95 (last vi-si-ted on
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 234--240
 []\T1/lmr/m/n/10.95 Elvira Mus-ta-fi-na: Com-po-se mul-ti-plat-form 1.7.0 re-le-as-ed. \T1/lmr/m/it/10.95 Jet-Bra-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 216--221
+Underfull \hbox (badness 10000) in paragraph at lines 234--240
 \T1/lmr/m/it/10.95 ins Blog\T1/lmr/m/n/10.95 , 2024. 10. [][]$\T1/lmtt/m/n/10.95 https : / / blog . jetbrains . com / kotlin / 2024 / 10 /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 223--229
+Underfull \hbox (badness 10000) in paragraph at lines 242--249
 []\T1/lmr/m/n/10.95 Lukoh Nam: Jet-pack com-po-se per-mis-sions us-ing ac-com-pa-nist lib-rary,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 223--229
+Underfull \hbox (badness 10000) in paragraph at lines 242--249
 \T1/lmr/m/n/10.95 mo-dal-bot-tom-s-he-et. \T1/lmr/m/it/10.95 Me-di-um\T1/lmr/m/n/10.95 , 2023. 05. [][]$\T1/lmtt/m/n/10.95 https : / / medium . com / @lukohnam /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 264--269
+Underfull \hbox (badness 10000) in paragraph at lines 242--249
+\T1/lmtt/m/n/10.95 jetpack-[]compose-[]permissions-[]using-[]accompanist-[]library-[]b1c0fbbe8831$[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 287--293
 []\T1/lmr/m/n/10.95 Kotlin Do-cu-men-ta-ti-on Team: Up-date to the new re-le-a-se. \T1/lmr/m/it/10.95 Kot-lin Mul-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 264--269
+Underfull \hbox (badness 10000) in paragraph at lines 287--293
 \T1/lmr/m/it/10.95 ti-plat-form Plu-gin Re-le-as-es\T1/lmr/m/n/10.95 , 2024. 09. [][]$\T1/lmtt/m/n/10.95 https : / / kotlinlang . org / docs /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 277--282
+Underfull \hbox (badness 10000) in paragraph at lines 287--293
+\T1/lmtt/m/n/10.95 multiplatform-[]plugin-[]releases . html # update-[]to-[]the-[]new-[]release$[][] \T1/lmr/m/n/10.95 (last
+ []
+
+[53]
+Underfull \hbox (badness 10000) in paragraph at lines 301--307
 []\T1/lmr/m/n/10.95 Unknown: What is com-po-nent di-ag-ram? \T1/lmr/m/it/10.95 Vi-su-al Pa-ra-digm\T1/lmr/m/n/10.95 , 2024. 11.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 277--282
+Underfull \hbox (badness 10000) in paragraph at lines 301--307
 [][]$\T1/lmtt/m/n/10.95 https : / / www . visual-[]paradigm . com / guide / uml-[]unified-[]modeling-[]language /
  []
 
 
-Underfull \hbox (badness 2828) in paragraph at lines 284--289
+Underfull \hbox (badness 2828) in paragraph at lines 309--315
 []\T1/lmr/m/n/10.95 Antoine van der Lee: Mvvm: An ar-chi-tec-tu-ral co-ding pat-tern to struc-tu-
  []
 
 
-Underfull \hbox (badness 1931) in paragraph at lines 284--289
+Underfull \hbox (badness 1931) in paragraph at lines 309--315
 \T1/lmr/m/n/10.95 re swif-tui views. \T1/lmr/m/it/10.95 Swift-Lee\T1/lmr/m/n/10.95 , 2024. 05. [][]$\T1/lmtt/m/n/10.95 https : / / www . avanderlee . com / swiftui /
  []
 
-) [53]
+
+Underfull \hbox (badness 5924) in paragraph at lines 309--315
+\T1/lmtt/m/n/10.95 mvvm-[]architectural-[]coding-[]pattern-[]to-[]structure-[]views/$[][] \T1/lmr/m/n/10.95 (last vi-si-ted on
+ []
+
+) [54]
 \openout2 = `content/appendices.aux'.
 
  (content/appendices.tex
-<figures/TeXstudio.png, id=1530, 1002.74625pt x 799.98875pt>
+<figures/TeXstudio.png, id=1517, 1002.74625pt x 799.98875pt>
 File: figures/TeXstudio.png Graphic file (type png)
 <use figures/TeXstudio.png>
 Package pdftex.def Info: figures/TeXstudio.png  used on input line 17.
 (pdftex.def)             Requested size: 426.79134pt x 340.4973pt.
- [54
+ [55
 
 
- <./figures/TeXstudio.png (PNG copy)>]) [55
+ <./figures/TeXstudio.png (PNG copy)>]) [56
 
 {C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}]
 \tf@thm=\write5
@@ -1026,20 +1061,20 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 1F0C7222C884FB70A42E0EB4238B2282;12457.
+(rerunfilecheck)             Checksum: C06FB23B69B5766451164C44A1638587;12873.
  ) 
 Here is how much of TeX's memory you used:
- 19312 strings out of 474485
- 321414 string characters out of 5744206
+ 19294 strings out of 474485
+ 321289 string characters out of 5744206
  2645542 words of memory out of 5000000
  40427 multiletter control sequences out of 15000+600000
  624810 words of font info for 76 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
  80i,12n,82p,1164b,2100s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx8.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/Dell/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtl10.pfb>
-Output written on thesis.pdf (62 pages, 6641305 bytes).
+Output written on thesis.pdf (63 pages, 6639996 bytes).
 PDF statistics:
- 1791 PDF objects out of 2073 (max. 8388607)
- 814 named destinations out of 1000 (max. 500000)
+ 1774 PDF objects out of 2073 (max. 8388607)
+ 796 named destinations out of 1000 (max. 500000)
  718 words of extra memory for PDF output out of 10000 (max. 10000000)
 
