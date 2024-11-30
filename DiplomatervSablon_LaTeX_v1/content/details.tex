@@ -3,47 +3,47 @@
 \label{sec:Details}
 %----------------------------------------------------------------------------
 
-Ebben a fejezetben a korábban röviden bemutatott építőelemekről adok egy részletsebb leírást.
-Bemutatom, hogy az én projektemben milyen megoldásokat valósítottam meg a használatukkal.
-Ahol van értelme diagramokon keresztül mutatom be a működését, ami látványos azt képekkel is illsóusztrálom.
-Több kódrészet is szerepelni fog a fejezetben amiknek célja a kód működésének jobb mégétése.
+Ebben a fejezetben a korábban röviden bemutatott építőelemekről adok egy részletesebb leírást.  
+Bemutatom, hogy az én projektemben milyen megoldásokat valósítottam meg a használatukkal.  
+Ahol van értelme, diagramokon keresztül mutatom be a működésüket, ami látványos, azt képekkel is illusztrálom.  
+Több kódrészlet is szerepelni fog a fejezetben, amelyek célja a kód működésének jobb megértése.  
 
 \section{Compose}
 \label{sec:Compose}
 
-A Composeról korában már adtam egy átfogó leírást a \refstruc{sec:JetpackCompose}ban, most ebben a részben részleesebben bemutatom az alapaeleveket, használtatát és a keletekező képernyőket.
+A Composeról korábban már adtam egy átfogó leírást a \refstruc{sec:JetpackCompose}-ban. Most ebben a részben részletesebben bemutatom az alapelemeket, használatát és a következő képernyőket.  
 
-\subsection{Compose alapelvek, használata valós környezeteben}
+\subsection{Compose alapelvek, használata valós környezetben}
 
-Mivel a Compose egy deklreatív UI kit ezért összefoglalnám a legfontosabb részeit.
-A UI elmeket nem lehet lehet direktben példányosítani, és kódból később elérni és ezen a referncián eresztül módosítani a tulajdonságait.
-Minden egyes elem egy függvényhívást jelent, az állapotát és tulajdonságait pedig ezen belül lehet szábályozni és bállítani egyéb objektumokon és stateken keresztül.
-Ezeket az állapotokat általában nem a Composable függvéyne belül tároljuk hanem egy ViewModelben, mivel az tartósabb. (\refstruc{fig:ViewModel})
-Egy figyelt állapot hatására meghívódik a recomposoition, azaz a függvény újra meghívódik és frissíti a UI állapotát.
-Az általános elv az, hogy egy Composable függvény nagy betűvel kezdődik, és attól lesz egy függvéyn Composable, hogy elé helyezzük a @Composable anntotációt.
+Mivel a Compose egy deklaratív UI kit, ezért összefoglalnám a legfontosabb részeit.  
+A UI elemeket nem lehet direktben példányosítani és kódból később elérni, illetve ezen a referencián keresztül módosítani a tulajdonságaikat.  
+Minden egyes elem egy függvényhívást jelent, az állapotát és tulajdonságait pedig ezen belül lehet szabályozni és beállítani egyéb objektumokon és state-eken keresztül.  
+Ezeket az állapotokat általában nem a Composable függvényen belül tároljuk, hanem egy ViewModelben, mivel az tartósabb. (\refstruc{fig:ViewModel})  
+Egy figyelt állapot hatására meghívódik a recomposition, azaz a függvény újra meghívódik, és frissíti a UI állapotát.  
+Az általános elv az, hogy egy Composable függvény nagy betűvel kezdődik, és attól lesz egy függvény Composable, hogy elé helyezzük a @Composable annotációt.  
 
-Mi is az a recomposoition?
-Röviden valamilyen állapotváltozást követő újra kirajzolódás.
-Gyakran valamilyen felhasználói interakció váltja ki (gomb megnyomása, görgetés), de a ViewModelből is jöhet ez a változás (megérkezik a kezdeti adat, folyamotson frissülő információk jönnek), de okozhatja egy animáció is.
+Mi is az a recomposition?  
+Röviden, valamilyen állapotváltozást követő újra kirajzolódás.  
+Gyakran valamilyen felhasználói interakció váltja ki (gomb megnyomása, görgetés), de a ViewModelből is jöhet ez a változás (megérkezik a kezdeti adat, folyamatosan frissülő információk jönnek), illetve okozhatja egy animáció is.  
 
-A Compose hasznátának van 5 fontos alapszáblya amelyek betartásával nem csak helyes, de gyors és dinamikus frissülő képernyőket tudunk egyszerűen létrehozni.
+A Compose használatának van 5 fontos alapszabálya, amelyek betartásával nemcsak helyes, de gyors és dinamikusan frissülő képernyőket tudunk egyszerűen létrehozni.  
 \begin{enumerate}
-    \item A Composable függvények bármilyen sorrendben végrehajthatók.
-    \item A Composable függvények párhuzamosan hajthatók végre.
-    \item A Recomposition kihagyja a lehető legtöbb Composable függvényt és lambdát.
-    \item A Recomposition optimista, és leállítható menet közben.
-    \item Egy Composable függvény nagyon gyakran is futhat/ismétlődhet, olyan gyakran is, mint egy animáció minden képkockája.
+    \item A Composable függvények bármilyen sorrendben végrehajthatók.  
+    \item A Composable függvények párhuzamosan hajthatók végre.  
+    \item A Recomposition kihagyja a lehető legtöbb Composable függvényt és lambdát.  
+    \item A Recomposition optimista, és leállítható menet közben.  
+    \item Egy Composable függvény nagyon gyakran is futhat/ismétlődhet, olyan gyakran is, mint egy animáció minden képkockája.  
 \end{enumerate}
 
 Pontosan mit is jelentenek ezek a szabályok?
-Az 1. és 2. pont alapján következik, hogy minden Composable függvény önálló legyen, nem függhet egy másik Composable függvénytől sem.
-Továbbá fontos, hogy ha ugyan azon stateet változtatják akkor az ne fusson le minden recomposoition során, ha ezt nem tartjuk be akkor folyamoatosn újra kirajzolódik a képernyő és lefagy az eszköz.
-A 3. pont értelmezése, hogy csak a szükséges és részek renderelődnek újra, ezzel gyorsítva a folyamatot. Így amennyiben több függvényt is meghívnk egy másikon belül csak azok fognak újra rajzolódni amik függnek a változott állapottól.
-Elő fordulhat, hogy mindent szeretnénk újra firissíteni, vagy több függvényt ami nem függ tőle, ehez használhatunk az állapottól függő Launched effectet vagy átadhatjuk az állaptot ezekenk a függvényknek is, és ott sinálhatumk vele egy egyszerű és gyors műveletet.
-A 4. és 5. pont összefügg, ha új állapot érkezik és nem fejeződött be a recomposoition akkor előrről kedzi a folyamatot. Ne itt hajtsunk végre egy hosszú műveletet (HTTP kérések indítása), ez feleslges overheadet jelent mert senki nem állítja le az aszinkron hívást, és nem is tud hova visszaérkezni az adat így feleslgesen használtuk az erőforrsáokat mind a két oldalon.
-Ne állítsunk be egy olyan értéet sem itt amire szükségünk lehet később, mivel nem biztos, hogy eljut a futás addig vagy, lehet, hogy a következő másodpercben már felül lett írva mással.
+Az 1. és 2. pont alapján következik, hogy minden Composable függvény önálló legyen, nem függhet egy másik Composable függvénytől sem.  
+Továbbá fontos, hogy ha ugyanazon state-et változtatják, akkor az ne fusson le minden recomposition során. Ha ezt nem tartjuk be, akkor folyamatosan újra kirajzolódik a képernyő, és lefagy az eszköz.  
+A 3. pont értelmezése, hogy csak a szükséges részek renderelődnek újra, ezzel gyorsítva a folyamatot. Így, amennyiben több függvényt is meghívunk egy másikon belül, csak azok fognak újra kirajzolódni, amelyek függnek a változott állapottól.  
+Előfordulhat, hogy mindent szeretnénk újra frissíteni, vagy több függvényt, amelyek nem függnek tőle. Ehhez használhatunk az állapottól függő LaunchedEffect-et, vagy átadhatjuk az állapotot ezeknek a függvényeknek is, és ott csinálhatunk velük egy egyszerű és gyors műveletet.  
+A 4. és 5. pont összefügg: ha új állapot érkezik, és nem fejeződött be a recomposition, akkor elölről kezdi a folyamatot. Ne itt hajtsunk végre hosszú műveletet (HTTP kérések indítása), mert ez felesleges overhead-et jelent, mivel senki nem állítja le az aszinkron hívást, és nem tud hova visszaérkezni az adat, így feleslegesen használtuk az erőforrásokat mindkét oldalon.  
+Ne állítsunk be egy olyan értéket sem itt, amire szükségünk lehet később, mivel nem biztos, hogy eljut a futás addig, vagy lehet, hogy a következő másodpercben már felül lett írva mással.
 
-Az alábbi kódrészetben bemutatom, hogy milyen részekből tevődik össze egy Composable függvény.
+Az alábbi kódrészletben bemutatom, hogy milyen részekből tevődik össze egy Composable függvény.
 \begin{lstlisting}[caption={Composable függvény részei.}, label={lst:ComposableParts}, language=Kotlin]
 @Composable     // A kötelező annotáció
 fun ExamEditResultScreen(   // Függvényparaméterek
@@ -51,20 +51,20 @@ fun ExamEditResultScreen(   // Függvényparaméterek
     viewModel: ExamEditViewModel,   // ViewModel átadása paraméterként
     modifier: Modifier = Modifier   // Modifier amivel a kinézetet lehet testre szabdni.
 ) {
-    val coroutineScope = rememberCoroutineScope()           // Coroutine scope lekérése, így lambda függényben használható, mivel annak a törzse nem Composable függvény.
+    val coroutineScope = rememberCoroutineScope()           // Coroutine scope lekérése, így lambda függvényben használható, mivel annak a törzse nem Composable függvény.
     var showNotify by remember { mutableStateOf(false) }    // Statek amit el lehet tárolni a Composable függvényben mivel ezen kívül nincs használva.
     var notifyMessage by remember { mutableStateOf("") }    // Statek amit el lehet tárolni a Composable függvényben mivel ezen kívül nincs használva.
     if (showNotify) { Notify(notifyMessage); showNotify = false} // Állapottól függő megjelenítés
     Scaffold(   // Beépített Composable elem amivel egy általános Android nézetet könnyen létre lehet hozni.
         topBar = { TopAppBarContent(stringResource(Res.string.exam_edit), navigateBack) },  // Itt egy topBart lehet könnyen megadni.
-    ){innerPadding ->   // Ez a belső része a képenyőnek, a fő része az alkalmazásnak.
-        ExamEntryBody(      // Egy másik Composable elem meghívása, ami a megjelnésért felel.
+    ){innerPadding ->   // Ez a belső része a képernyőnek, a fő része az alkalmazásnak.
+        ExamEntryBody(      // Egy másik Composable elem meghívása, ami a megjelenésért felel.
             examUiState = viewModel.examUiState,           // Szüksége van viewModelben lévő statere
             onExamValueChange = viewModel::updateUiState,  // Nevesített függvényt így lehet átadni egy lambda függvénynek
             onSaveClick = {     // Lambda függvényt helyben is megadhatunk
                 coroutineScope.launch { // Itt látható egy példa a trailing lambda használatára
                     if(viewModel.updateExam()){ navigateBack() }    // If-else szerkezet is nyugodtan használhatunk. Siker esetén visszanavigál
-                    else{   // Egyéként a sikerttelenséget közli a felhasználóval
+                    else{   // Egyébként a sikertelenséget közli a felhasználóval
                         showNotify = true
                         notifyMessage =  "Exam with this name already exists"
                     }
@@ -79,13 +79,13 @@ Ebben az alfejezetben bemutatom az elkészült képernyőket és a hozzájuk tar
 
 \subsubsection{A fő képernyők}
 
-A két alkalamzás típusra más-más a felhasználói igény.
-Androidon, ahol általában egy álló képernyő van (\refstruc{fig:MainScreen} jobb oldal) és a telefont a jobb alsó sarokban fogjuk meg nem esik kézre a fent bekapcsolható menü (bár oldalra huzással is előhozható). 
-Asztali alaklamzás estén viszont jobban mutat ez a megoláds, és egy nagyobb képernyő ahol a kiválasztott funkció képernyője meg tud jelenni. (\refstruc{fig:MainScreen} bal oldal és \refstruc{fig:OpenMenu})
-Későbbiekben a mavigálásban is segít, így könnyebb képernyőt váltani, a fenti vissza gomb használata kevésbé kényelmes, mint Androidon egy gyos mozdulat a telefon alján, ahol a kenzünkkel tartjuk azt.
+A két alkalmazás típusra más-más a felhasználói igény.
+Androidon, ahol általában egy álló képernyő van (\refstruc{fig:MainScreen} jobb oldal), és a telefont a jobb alsó sarokban fogjuk meg, nem esik kézre a fent bekapcsolható menü (bár oldalra húzással is előhozható). 
+Asztali alkalmazás esetén viszont jobban mutat ez a megoldás, és egy nagyobb képernyőn a kiválasztott funkció képernyője meg tud jelenni (\refstruc{fig:MainScreen} bal oldal és \refstruc{fig:OpenMenu}).
+Későbbiekben a navigálásban is segít, így könnyebb képernyőt váltani. A fenti vissza gomb használata kevésbé kényelmes, mint Androidon, egy gyors mozdulat a telefon alján, ahol a kezünkkel tartjuk azt.
 
-Ennek megfelelőn a MainScreen függvény a közös kódban egy expect függvény és így minden platformra az oda illő actual implementációt tudjuk megírni és alkalmazni.
-Végül más megoldást váasztottam a navigációhoz, így az asztali alaklamzásnál a szintén expect/actual NavHost létrehozáskor nem kapnak értéket a függvények.
+Ennek megfelelően a MainScreen függvény a közös kódban egy expect függvény, és így minden platformra az oda illő actual implementációt tudjuk megírni és alkalmazni.
+Végül más megoldást választottam a navigációhoz, így az asztali alkalmazásnál a szintén expect/actual NavHost létrehozásakor nem kapnak értéket a függvények.
 \begin{lstlisting}[caption={Expect Főképernyő.}, label={lst:ExpectMainScreen}, language=Kotlin]
 @Composable
 expect fun MainScreen(
@@ -121,44 +121,36 @@ expect fun MainScreen(
 
 \subsubsection{Elemek listázása}
 
-Az elemek felsorolásáért egy LazyColumn felel. (\ref{lst:ListScreen}.~kódrészet)
-Ez egy előre létrehozott, beépített Composable függvéy.
+Az elemek felsorolásáért egy LazyColumn felelős. (\ref{lst:ListScreen}.~kódrészlet)
+Ez egy előre létrehozott, beépített Composable függvény.
 Több hasznos tulajdonsággal rendelkezik. Alapértelmezett módon görgethetővé válik, ha több elem van benne, mint amennyi kifér egy képernyőre. (\refstruc{fig:ListScreen})
-Alkalmas nagyon sok, akár végtelen elem megjelenítésére, bár ehhez szükség van az adtaok ügyes betöltésére is. 
-Mindig csak annyi elemet renderel ki amennyi éppen szükséges, látszódik. Előtte és utána van egy kis tartalék puffer, így görgetés esetén nem kell várni az új adtaok betöltésére.
-Az elemek testre is szabhatók benne, tökéltes alaklmaási területe lehet egy chat alkalmazás, ahol az elemeket az üzenet küldője alapján lehet színezni.
+Alkalmas nagyon sok, akár végtelen elem megjelenítésére, bár ehhez szükség van az adatok ügyes betöltésére is. 
+Mindig csak annyi elemet renderel ki, amennyi éppen szükséges, látszódik. Előtte és utána van egy kis tartalék puffer, így görgetés esetén nem kell várni az új adatok betöltésére.
+Az elemek testre is szabhatók benne, tökéletes alkalmazási területe lehet egy chat alkalmazás, ahol az elemeket az üzenet küldője alapján lehet színezni.
 
-Ezen a képrenyőn is a Scaffold megoldást választottam így kényelemsen elfér egy navigációs sáv és egy Folating Action Button az új elemek felvételéhez.
-Ezeken túl több korábban is bemutaott elem megjelenik ebben a kódrészletben is.
-Ahogy látszik az alábbi kódrészetben is, attól függően lehet elemeket beállítani, hogy milyen feltételhet kötjöük az elemek megjelnítését.
-\begin{lstlisting}[caption={Listázó képernyő.}, label={lst:ListScreen}, language=Kotlin]
+\begin{lstlisting}[caption={Listázó képernyő.}, label={lst:ListScreen}, language=Kotlin, float]
 @Composable
-fun MultipleChoiceQuestionListResultScreen(
-    ...
+fun MultipleChoiceQuestionListResultScreen( ...
 ) {
     Scaffold(
-        topBar = { TopAppBarContent(stringResource(Res.string.multiple_choice_question_list), navigateBack) },
+        topBar = { TopAppBarContent(stringResource(Res.string.mc_question_list), navigateBack) },
         floatingActionButton = {
             FloatingActionButton(
                 onClick = { addNewQuestion() }, ...
-            ) {Icon(Icons.Filled.Add, contentDescription = "Add") }
-        }
+            ) {Icon(Icons.Filled.Add, contentDescription = "Add") } }
     ) { padding ->
         LazyColumn(
-            contentPadding = padding,
-            ...
-        ) {
-            if (questions.isEmpty()) {
-                item { Box(modifier = Modifier ...) { Text(...) } }
+            contentPadding = padding, ...) {
+            if (questions.isEmpty()) {  item { Box(modifier = Modifier ...) { Text(...) } }
             } else {
                 items(questions) { question ->
-                    TextButton(
-                        onClick = { navigateToMultipleChoiceQuestionDetails(question.uuid) },
-                        modifier = Modifier ...
-                    ) {
-                        Text(text = question.name, ...)
+                    TextButton( onClick = { navigateToMultipleChoiceQuestionDetails(question.uuid) }, ... ) { Text(text = question.name, ...) 
 }}}}}}
 \end{lstlisting}
+
+Ezen a képernyőn is a Scaffold megoldást választottam, így kényelmesen elfér egy navigációs sáv és egy Floating Action Button az új elemek felvételéhez.
+Ezeken túl több korábban is bemutatott elem megjelenik ebben a kódrészletben is.
+Ahogy látszik az \ref{lst:ListScreen}.~kódrészletben is, attól függően lehet elemeket beállítani, hogy milyen feltételhez kötjük az elemek megjelenítését.
 
 \begin{figure}[!ht]
     \centering
@@ -166,7 +158,7 @@ fun MultipleChoiceQuestionListResultScreen(
         \includegraphics[width=0.3\textwidth, keepaspectratio]{figures/List_Android.png} & 
         \includegraphics[width=0.6\textwidth, keepaspectratio]{figures/ListView_Desktop_framed.png}
     \end{tabular}
-    \caption{A fő képernyő Android és asztali alkalmazáson}
+    \caption{A listázó képernyő Android és asztali alkalmazáson}
     \label{fig:ListScreen}
 \end{figure}
 
@@ -174,18 +166,20 @@ fun MultipleChoiceQuestionListResultScreen(
 \subsubsection{Részletes nézet}
 
 A részletes oldalak általában csak az összes adatot felsorolják és mutatják meg a felhasználónak.
-Ezen kívül tartalmaznak egy törlés opciót ami egy megerősítő ablakot dob fel, mivel a törlés az végleges.
-Továbbá innen mehetünk át a szerkesztő oldalra is.
+Ezen kívül tartalmaznak egy törlés opcióját, mivel a törlés végleges.
+Továbbá innen átmehetünk a szerkesztő oldalra is.
 
 A \refstruc{fig:DetailsScreen} egy érdekesebb megoldást mutat be.
-Az oldal tetején a szokásos navigációs sávon kívül elhelyezkedik egy a kérdések közötti keresést segítő rész.
-Szűrhetünk kérdéstíusokra, ezt a csúszka segítségével tehetjük meg, ez egyúttal át is színezi azt a könnyebb megkülönböztethetőség kedvéért.
+Az oldal tetején a szokásos navigációs sávon kívül elhelyezkedik egy, a kérdések közötti keresést segítő rész.
+Szűrhetünk kérdéstípusokra, ezt a csúszka segítségével tehetjük meg, ez egyúttal át is színezi őket, hogy könnyebben megkülönböztethetők legyenek.
 Ezen kívül szűrhetünk témákra is.
-Az utolsó dropdwon menü segítségével választhatunk ki egy kérdést amit a gombbal hozzá adhatunk a listához.
+Az utolsó dropdown menü segítségével választhatunk ki egy kérdést, amit a gombbal hozzáadhatunk a listához.
 
-A lista része szintén LazyColumn alapú, itt a kérdések típusa alapjén vannak színezve az elemek.
-A kérdésekre kattintva lenyílnak és megnézhetjük a legfontosabb adataikat, és innen is lehet törölni a kérdéseket a listából. Ezzel csak a számonkérésből törlődnek, nem a teljes adatbázsiból.
-Hosszan lenyomva az elemet elhúzhatjuk felfelé és lefelé ezzel szabadon átrendzhetjük az kérdések sorrendjét.
+A lista része szintén LazyColumn alapú, itt a kérdések típusa alapján vannak színezve.
+A kérdésekre kattintva lenyílnak, és megnézhetjük a legfontosabb adataikat, és innen is lehet törölni a kérdéseket a listából. Ezzel csak a számonkérésből törlődnek, nem a teljes adatbázisból.
+Hosszan lenyomva az elemet, elhúzhatjuk felfelé és lefelé, így szabadon átrendelhetjük a kérdések sorrendjét.
+
+\pagebreak
 
 \begin{lstlisting}[caption={Kinyitható kérdés megvalósítása.}, label={lst:DetailsScreen}, language=Kotlin]
 @Composable
@@ -235,13 +229,13 @@ fun ExpandableQuestionItem(...){
 \end{lstlisting}
 
 A fenti kódrészletben sok érdekes megoldás látható.
-Az elején felveszünk több Statet, de ezek közül a második a legizgalamsabb. Ez a State lesz az egyik fontos eleme az animációnak.
-Felhasználjuk benne az első Statet aminek az állapota a kérdésre kattintáskot változik, és ennek az értéktől függően (nyitott vagy csukott) változtatjuk az animácihóz tartozó értéket.
-A Card Composable elemenhasználjuk az animációt, ezt az animateContentSize segítségével tehetjük meg.
-Vannak más fajta animációk is,mindegyik testreszabható és sajátok is létrehozhatóak. Ez esetben egy tween animációt használunk ami 0.3 másodperc alatt az összecsukott állpotról egy nyitott állapotra áll át.
-Attól változik meg az elem és játszódik le az animáció, hogy rákattintunk a kérdésre.
-Mivel a Cardon az animateContentSizet használtuk ezért amikor az expandedState megváltozok akkor a CollapsedQuestion helyett a recomposoition után a TrueFalseQuestionDetails kell megjeleníteni ez méretváltozással jár, ezt követi le az animáció ezáltal nem hirtelen ugrik egyet a képrenyő, hanem lekövethető módon változik meg.
-A rotationState pedig az ArrowDropDown elem animálásban játszik szerepet, így az ikont el tudjuk forgatni 180 fokkal, ehhez a Modifierhez tartozó rotate(Int) extension functiont tudjuk használni.
+Az elején felveszünk több State-et, de ezek közül a második a legizgalmasabb. Ez a State lesz az egyik fontos eleme az animációnak.
+Felhasználjuk benne az első State-et, aminek az állapota a kérdésre kattintáskor változik, és ennek az értéktől függően (nyitott vagy zárt) változtatjuk az animációhoz tartozó értéket.
+A Card Composable elemen használjuk az animációt, ezt az animateContentSize segítségével tehetjük meg.
+Vannak más fajta animációk is, mindegyik testreszabható, és sajátok is létrehozhatók. Ez esetben egy tween animációt használunk, ami 0.3 másodperc alatt az összecsukott állapotról egy nyitott állapotra áll át.
+Attól változik meg az elem, és játszódik le az animáció, hogy rákattintunk a kérdésre.
+Mivel a Card-on az animateContentSize-t használtuk, ezért amikor az expandedState megváltozik, akkor a CollapsedQuestion helyett a TrueFalseQuestionDetails-nek kell megjelenni, ez méretváltozással jár, ezt követi le az animáció, így nem hirtelen ugrik egyet a képernyő, hanem lekövethető módon változik meg.
+A rotationState pedig az ArrowDropDown elem animálásában játszik szerepet, így az ikont el tudjuk forgatni 180 fokkal, ehhez a Modifierhez tartozó rotate() extension function-t tudjuk használni.
 
 \begin{figure}[!ht]
     \centering
@@ -266,12 +260,12 @@ A rotationState pedig az ArrowDropDown elem animálásban játszik szerepet, íg
     \label{fig:EditScreen}
 \end{figure}
 
-A szerkesztő nézetben lehet módosítani minden adtot (kivéve a feladatsorhoz tartozó kérdéseket, amit az előző alfejezetben mutattam be).
-Itt sok féle elem megtaláható; szöveges bevuteli mezők, dropdwon menü, a pontok esetében pedig numerikus beviteli mezők.
+A szerkesztő nézetben lehet módosítani minden adatot (kivéve a feladatsorhoz tartozó kérdéseket, amit az előző alfejezetben mutattam be).
+Itt sokféle elem megtalálható: szöveges beviteli mezők, dropdown menü, a pontok esetében pedig numerikus beviteli mezők.
 
-A feleletválasztós kérdéseknél (\refstruc{fig:EditScreen}) van egy sepciális elem, ami a a kérdések megadásához készült.
-Tartalmaz egy TextButtont, ami a válasz sorszáma, egy ImageButton a válsz törléséhez és egy szöveges beviteli mező a válasz megadásához.
-Tetszőlges opció megadható, itt viszont egy egyszerű Column mellet döntöttem és egy for ciklus segítségével rajzolom ki az elemket.
+A feleletválasztós kérdéseknél (\refstruc{fig:EditScreen}) van egy speciális elem, ami a kérdések megadásához készült.
+Tartalmaz egy TextButton-t, ami a válasz sorszáma, egy ImageButton-t a válasz törléséhez és egy szöveges beviteli mezőt a válasz megadásához.
+Tetszőleges opció megadható, itt viszont egy egyszerű Column mellett döntöttem, és egy for ciklus segítségével rajzolom ki az elemeket.
 
 
 \begin{lstlisting}[caption={Szerkesztő nézet kódja.}, label={lst:EditScreen}, language=Kotlin]
@@ -310,21 +304,21 @@ fun ExamInputForm(
 }
 \end{lstlisting}
 
-A fenti kódrészletben megfigyelhetjük a ViewModelek átadását a Composable függvéynek.
-Eseténként többre is szükseg lehet, itt például az examEntry és a topicList ViewModelekre is szükség van, mivel a dropdwon listában a témakört ki kell választani a feladatsorhoz.
-A dropdwon menü kódjában kihasználtam a kotlin funkciionális programozást segítő kódját, ezzel kigyűjtöttem a témakörök listájából azokat amik nem egyeznek meg a jelenleg kiválasztottal.
-A hosszabb ideig tartó műveleteket egy coroutineScopeban valósítáttam meg egy másik lambda függvényben, így a UI nem blokkolódik le közben.
-A mentés gomb le van tiltva, ha hiányzik egy kötelező mező vagy ha ez egyedi mezőkben ütközés van a felhasználó kap egy értesítést és a gomb is letiltódik amíg nem változtat az értéken.
+A fenti kódrészletben megfigyelhetjük a ViewModelek átadását a Composable függvénynek.
+Esetenként többre is szükség lehet, itt például az examEntry és a topicList ViewModelekre is szükség van, mivel a dropdown listában a témakört ki kell választani a feladatsorhoz.
+A dropdown menü kódjában kihasználtam a Kotlin funkcionális programozást segítő elemeit, ezzel kigyűjtöttem a témakörök listájából azokat, amelyek nem egyeznek meg a jelenleg kiválasztottal.
+A hosszabb ideig tartó műveleteket egy coroutineScope-ban valósítottam meg egy másik lambda függvényben, így a UI nem blokkolódik le közben.
+A mentés gomb le van tiltva, ha hiányzik egy kötelező mező, vagy ha ez egyedi mezőkben ütközés van, a felhasználó kap egy értesítést, és a gomb is letiltódik, amíg nem változtat az értéken.
 
 \pagebreak
 
 \subsubsection{Új elem létrehozása}
 
 Ez a nézet lényegében megegyezik a szerkesztő nézettel.
-Egy jó szoftver arról ismerszik meg, hogy a lehető legtöbb helyen újra felhasználja a már meglévő kódot anélkül, hogy annak a kódját lényegesen meg kelljen változtatnia.
-Ebben az eseetben már terevezés során megszületett a dönés. Egész pontosan van egy Body része az új elem felvételének ami vár paraméternek egy UiStateet, amiben az adott elem adatai kerülnek.
-Az alapérteki úgy vannak megválasztva, hogy az üres hatást keltsen, de ha már léteznek akkor a szerkesztő nézetet kapjuk, az új létrehozésa helyett.
-Ehhez szükség van külön ViewModelre és kevés Composable függvény megírására is, de ez jelentősen kevesebb, mint az egész kód újraírása. Ezzel a kód karbantarhatósága is növekszik.  
+Egy jó szoftver arról ismerhető meg, hogy a lehető legtöbb helyen újra felhasználja a már meglévő kódot anélkül, hogy annak a működését lényegesen meg kellene változtatnia.
+Ebben az esetben már a tervezés során megszületett a döntés. Egész pontosan van egy body része az új elem felvételének, ami vár paraméterként egy UiState-et, amiben az adott elem adatai kerülnek.
+Az alapértelmezett értékek úgy vannak megválasztva, hogy üres hatást keltsenek, de ha már léteznek, akkor a szerkesztő nézetet kapjuk, az új létrehozása helyett.
+Ehhez szükség van külön ViewModel-re és kevés Composable függvény megírására is, de ez jelentősen kevesebb, mint az egész kód újraírása. Ezzel a kód karbantarthatósága is növekszik.
 
 \begin{figure}[!ht]
     \centering
@@ -339,12 +333,12 @@ Ehhez szükség van külön ViewModelre és kevés Composable függvény megír�
 
 \subsubsection{Ellenőrző képernyő}
 
-Az ellenőrző képetnyőn a kérdések vannak felsorolva, a szokásos színkódolással.
-Olvasható a teljes szöveg és a válaszok is a feleltválasztós kérdésknél. 
-A válasz formátuma látható kitöltés előtt, így a felhasználó tudja, hogy milyen formátumban van elvárva a válasz.
-A fenti Scan Exam gomb Android eszközön megnyit egy kamera nézetet ami segítségével pár gyors mozdulattal be tudjuk olvasni a válaszokat így nem kell kézzel begépelni azt.
-Ha valamit nem vagy rosszul detektált a mesterséges intelligencia akkor természtesen az oldalon ezek javíthatóak.
-A lap alján található egy gomb ami segítségével ki lehet értékelni a válaszkat, ez a backend oldalon történik meg, majd az eredményt visszaküldi és a felhasznló megtekintheti az elért pontszámot és a százalékos értéket.
+Az ellenőrző képernyőn a kérdések vannak felsorolva, a szokásos színkódolással.
+Olvasható a teljes szöveg és a válaszok is a feleletválasztós kérdéseknél.
+A válasz formátuma látható a kitöltés előtt, így a felhasználó tudja, hogy milyen formátumban van elvárva a válasz.
+A fenti Scan Exam gomb Android-eszközön megnyit egy kameranézetet, ami segítségével pár gyors mozdulattal be tudjuk olvasni a válaszokat, így nem kell kézzel begépelni azt.
+Ha valamit nem vagy rosszul detektált, akkor természetesen az oldalon ezek javíthatók.
+A lap alján található egy gomb, ami segítségével ki lehet értékelni a válaszokat, ez a backend oldalon történik meg, majd az eredményt visszaküldi, és a felhasználó megtekintheti az elért pontszámot és a százalékos értéket.
 
 \begin{figure}[!ht]
     \centering
@@ -357,9 +351,9 @@ A lap alján található egy gomb ami segítségével ki lehet értékelni a vá
 \end{figure}
 
 
-\subsection{Szekevencia diagram egy átlagos interakcióra}
+\subsection{Szekvencia diagram egy átlagos interakcióra}
 
-Végezetül szeretnék bemutatni egy szekevencia diagramot amin keresztül mégerthető, hogy a felhasználó, az alkalmazás és a háttérben futó szerver milyen kapcsolatbanállnak egymással.
+Végezetül szeretnék bemutatni egy szekvencia diagramot, amin keresztül megérthető, hogy a felhasználó, az alkalmazás és a háttérben futó szerver milyen kapcsolatban állnak egymással.
 
 \begin{figure}[!ht]
     \centering
@@ -371,18 +365,18 @@ Végezetül szeretnék bemutatni egy szekevencia diagramot amin keresztül mége
 \section{Navigáció}
 \label{sec:Nav}
 
-A szoftverben az Androidból jól ismert navigációs könyvtárat használtam.
-Szerencsére már jól integrálható multiplatform környezetben.
-A \refstruc{sec:Navigation}ban erről már felületesen bemutattam.
+A szoftverben az Android-ból jól ismert navigációs könyvtárat használtam.
+Szerencsére már könnyen integrálható a multiplatform környezetekben.
+A \refstruc{sec:Navigation}-ban erről már felületesen bemutattam.
 Az ebben a fejezetben bemutatott implementációs lépéseket most részletesebben bemutatom.
 
 Az első lépés kifejezetten egyszerű.
-Létre kell hozni egy a végpontokat összefogó sealed classt, érdemes ennek egy route String típusú változót.
-Ezt leginkább a böngészőben is megjelenő routinghoz hasonlít.
-A sealed classból leszármaztathatunk data objeceteket. Ez egy viszonlylag egyedi felhasználás.
-Itt az object egy singleton minta, mivel ebből az osztályból egy keletekezk összesen a program futása során.
-A data keyword pedig létrehoz hasznos metódusokat az adateléréshez.
-Tudunk megadni a leszármaztatott osztáylokban egyéb paramétereket így például tudunk egyes elemekre kulcsot adni amit ennek felhasználásával tudjuk a konrét példányt lekérdeni az adatbázsiból.
+Létre kell hozni egy, a végpontokat összefogó sealed class-t, érdemes ennek egy route String típusú változót.
+Ez leginkább a böngészőbeli routingra hasonlít.
+A sealed class-ból leszármaztathatunk data object-eket. Ez egy viszonylag egyedi felhasználás.
+Itt az object egy singleton minta, mivel ebből az osztályból egy példány keletkezik összesen a program futása során.
+A data kulcsszó pedig létrehoz hasznos metódusokat az adateléréshez.
+Tudunk megadni a leszármaztatott osztályokban egyéb paramétereket, így például tudunk egyes elemekre kulcsot adni, amit ennek felhasználásával tudjuk a konkrét példányt lekérdezni az adatbázisból.
 
 \begin{lstlisting}[caption={Példa a végpontok felvételére.}, label={lst:NavDestExample}, language=Kotlin]
 sealed class ExamDestination(val route: String) {
@@ -395,17 +389,17 @@ sealed class ExamDestination(val route: String) {
 }        
 \end{lstlisting}
 
-A másoik lépésben a NavHostControllert kell létrehozni. Ezt a rememberNavController() meghívásával tudjuk megtenni egy Composable függvény törzsén belül.
-Ezt követően szükség lesz NavHost létrehozására ami egy Composablefüggvény.
-Ennek lehet átadni az előbb létrehozott NavHostControllert, és be kell állítani egy kezeti végpontot ami az első composition során fog megjelenni.
+A második lépésben a NavHostController-t kell létrehozni. Ezt a rememberNavController() meghívásával tudjuk megtenni egy Composable függvény törzse belül.
+Ezt követően szükség lesz NavHost létrehozására, ami egy Composable függvény.
+Ennek lehet átadni az előbb létrehozott NavHostController-t, és be kell állítani egy kezdeti végpontot, ami az első composition során fog megjelenni.
 
-A lenti példkódban látható az, hogy milyen módon lehet a NavHoston belül felevenni és használni a végpontokat.
+A lenti példakódban látható, hogy milyen módon lehet a NavHost-on belül felevenni és használni a végpontokat.
 Számos paraméter megadható, de ezek közül csak a route kötelező.
-Megadahatók egyéb argumentumok, amiket az egyik képernyőről a másiknak szeretnénk átadani navArgumentek formájában.
-Ezzel lehet például az egyedi azaonsírokat átadni a lista nézetről a részletes nézetnek.
+Megadhatók egyéb argumentumok, amiket az egyik képernyőről a másiknak szeretnénk átadni navArgument-ek formájában.
+Ezzel lehet például az egyedi azonosítókat átadni a lista nézetről a részletes nézetnek.
 Ezt követően az utolsó kötelező elem megadása a content, aminek a típusa: @Composable AnimatedContentScope.(NavBackStackEntry).
-Ebből két dolog következik, ez egy Composable scope, így hívhatunk Composable függvényeket innen és, hogy hozzáférünk a BacstackEntryre tett adtaokat így például az argumentumokat.
-Szintén ebben a lambda scopeban hozzáférünk a navControllerhez amivel a navigációt megvalüsító függvényeket tudjuk átadni a Viewnak.
+Ebből két dolog következik: ez egy Composable scope, így hívhatunk Composable függvényeket innen, és hozzáférünk a backstackEntry-re tett adatokat, így például az argumentumokat.
+Szintén ebben a lambda scope-ban hozzáférünk a navController-hez, amivel a navigációt megvalósító függvényeket tudjuk átadni a View-nak.
 
 \begin{lstlisting}[caption={Példa egy végpont felvételére a navigációs gráfban.}, label={lst:NavEndPointExample}, language=Kotlin]
 composable(
@@ -449,8 +443,8 @@ fun TopicDetailsScreenUiState(
 \section{ViewModel}
 \label{sec:VM}
 
-A ViewModellel korábban a \refstruc{sec:ViewModel} és a \refstruc{sec:HighLevelArchitecture} részekben már foglalkoztam.
-Ebben a részben egy megvalósításával fogok foglalkozni.
+A ViewModel-lel korábban a \refstruc{sec:ViewModel} és a \refstruc{sec:HighLevelArchitecture} részekben már foglalkoztam vele.
+Ebben a részben a megvalósításával fogok foglalkozni.
 
 \begin{lstlisting}[caption={ViewModel implementációja.}, label={lst:VMImplementation}, language=Kotlin]
 class TopicDetailsViewModel(
@@ -493,29 +487,29 @@ class TopicDetailsViewModel(
 \end{lstlisting}
 
 A \ref{lst:VMImplementation}.~kódrészleten keresztül bemutatom a legfontosabb elemeket.
-Az viewmdel osztály az általános Android ViewModel osztályból származik le.
+A ViewModel osztály az általános Android ViewModel osztályból származik le.
 Ez teszi lehetővé többek között a ViewModelScope használatát.
-A szokásos módon adhatunk paramétereket, ebben az esetben így adjuk át az Id-t amivel a REST API-n keresztül tudjuk elérni a kívánt témakört.
+A szokásos módon adhatunk paramétereket, ebben az esetben így adjuk át az ID-t, amivel a REST API-n keresztül tudjuk elérni a kívánt témakört.
 
 Érdemes az osztály elején felvenni az állapotokat.
-Ilyen Statekben tárolom a képernyő állapotát és a képernyőn megjelenő adatot is.
+Ilyen Statekben tárolom a képernyő állapotát és a képernyőn megjelenő adatokat is.
 Ezeket a megfelelő kezdőértékkel létrehozva használhatjuk őket.
-Lehetne MutabelStaeFlow is immutábilis Stateet használni egy másik megoldásként.
+Lehetne MutableStateFlow is, de immutábilis State-et használni egy másik megoldásként.
 
-Az init{} blokk egyszer hívódik meg, az objektum létrehozása során a konstruktor után, ebből lehet több blokk is amik a leírt sorrendben hívódnak meg, későbbi init blokkban használhatjuk a korábbi értékekket.
+Az init{} blokk egyszer hívódik meg, az objektum létrehozása során, a konstruktor után. Ebből lehet több blokk is, amik a leírt sorrendben hívódnak meg. Későbbi init blokkban használhatjuk a korábbi értékeket.
 Most itt egy aszinkron művelet eredményeként kapjuk meg az adatot.
-Ezen kívül egy mésik inicailzációs elem a setId függvény, erre akkor van szükség amikor egy specifikus elemet akarunk megjeleníteni.
+Ezen kívül egy másik inicializációs elem a setId függvény, erre akkor van szükség, amikor egy specifikus elemet akarunk megjeleníteni.
 
-Az init{} blokkban nem tudunk tényleges aszinkron függvényeket hívni, ezért szükséges a töltőképernyő amíg az adatok megérkeznek.
-A getTopic függvény kezeli le ezt a részt. Első lépés a töltőképernyő beállítsa. Ezt követően kihasználjuk a viwModelScopepot, ahol végrehajthatunk hosszabb műveletet anélkül, hogy a UI szál lefagyjon addig.
-Itt megvárjuk amíg a REST API visszaküldi az adatokat, siker esetén a Succes képernyőt állítjuk be a stateben, hiba esetén erről adunk tájékoztatást.
+Az init{} blokkban nem tudunk tényleges aszinkron függvényeket hívni, ezért szükséges a töltőképernyő, amíg az adatok megérkeznek.
+A getTopic függvény kezeli le ezt a részt. Első lépés a töltőképernyő beállítása. Ezt követően kihasználjuk a viewModelScope-ot, ahol végrehajthatunk hosszabb műveletet anélkül, hogy a UI szál lefagyjon addig.
+Itt megvárjuk, amíg a REST API visszaküldi az adatokat, siker esetén a Success képernyőt állítjuk be a state-ben, hiba esetén erről adunk tájékoztatást.
 
 Egyéb függvények megadhatók aszinkron módon, mint a törlés például, ezt nem kell megvárnunk.
 
 \section{HTTP kliens}
 \label{sec:HTTP}
 
-Ebben a részben a HTTP kliens működését mutatom be.
+Ebben a részben a HTTP-kliens működését mutatom be.
 
 \begin{lstlisting}[caption={HTTP kliens.}, label={lst:HTTPClient}, language=Kotlin]
 object ApiService {
@@ -547,52 +541,51 @@ object ApiService {
 \end{lstlisting}
 
 
-A \ref{lst:HTTPClient}.~kódrészletben egy kis rész látható a komminikáció működéséről.
-Egy objectben valósítom meg, így csak példány készül belőle.
-Létrehozok benne egy HttpClientet aminek beállítom a tartalom típusát JSONre, és az alapértelmezett URL is beállításra kerül. 
-Az endpontokban megadott részek ehhez lesznek hozzáfűzve így kevsebb kódot kell írnis kevesebb hibázási lehetőség van.
+A \ref{lst:HTTPClient}.~kódrészletben egy kis rész látható a kommunikáció működéséről.
+Egy objektumban valósítom meg, így csak egy példány készül belőle.
+Létrehozok benne egy HttpClientet, aminek beállítom a tartalom típusát JSON-ra, és az alapértelmezett URL is beállításra kerül. 
+Az endpointokban megadott részek ehhez lesznek hozzáfűzve, így kevesebb kódot kell írni, és kevesebb hibázási lehetőség van.
 
-Ezek alatt aszinkron suspend függvények találhatóak. Mind a GET, POST, PUT és DELETE műveletkre vannak, de a GETen és a POSTon keresztül a lényeges részeket be lehet mutatni.
-A függvények kaphatnak paramétereket, a GET esetén egy stringet ami a UUID értékét tartalmazza.
-A visszatérési értéke pedig egy adott típusú dto lesz.
-A kérést a baseURL + megadott útvonalra továbbítja a Ktor. Ezt a stinget lehet paraméterezni is, például az idval.
-A válaszban megkapjuk a stászkódot és a válasz törzsében siker esetén a kért obkjektumot, amit a KotlinX szerilizáció állít elő a JSON adatból amit ténylgesen kapunk.
-Hiba esetén a felhasználónak adunk erről visszajelzést egy saját kivételosztály segítségéve, 200 OK válasz esetánpedig átadjuk az elkészült adatot.
-A listázós és a törlés ehhez hasonlómódon történik.
+Ezek alatt aszinkron, suspend függvények találhatóak. Mind a GET, POST, PUT és DELETE műveletekre vannak, de a GET-en és a POST-on keresztül a lényeges részeket be lehet mutatni.
+A függvények kaphatnak paramétereket, a GET esetén egy stringet, ami a UUID értékét tartalmazza.
+A visszatérési értéke pedig egy adott típusú DTO lesz.
+A kérést a baseURL + megadott útvonalra továbbítja a Ktor. Ezt a stringet lehet paraméterezni is, például az id-val.
+A válaszban megkapjuk a státuszkódot, és a válasz törzsében siker esetén a kért objektumot, amit a KotlinX szerializáció állít elő a JSON adatból, amit ténylegesen kapunk.
+Hiba esetén a felhasználónak adunk erről visszajelzést egy saját kivételosztály segítségével, 200 OK válasz esetén pedig átadjuk az elkészült adatot.
+A listázás és a törlés ehhez hasonló módon történik.
 
-Az alsó függvény az új adat létrehozását mutatja be, lényegében a módosítás is szinte pont így történik, csak ott a PUT metódost kell hívni és a Created státszkódot várjuk helyes visszatérés esetén.
-Itt paraméternek az objektumot kapjuk, amit a post üzenet törzsében állítunk be, itt történik meg a JSON szerilizáció, de most se kellezzel foglalkozni külön elég, ha az adat típusát megadjuk.
-Innentől minden ugyan úgy történik, mint a többi esetben.
-
+Az alsó függvény az új adat létrehozását mutatja be, lényegében a módosítás is szinte pont így történik, csak ott a PUT metódust kell hívni, és a Created státuszkódot várjuk helyes visszatérés esetén.
+Itt paraméternek az objektumot kapjuk, amit a POST üzenet törzsében állítunk be. Itt történik meg a JSON szerializáció, de most sem kell ezzel külön foglalkozni, elég, ha az adattípusát megadjuk.
+Innentől minden ugyanúgy történik, mint a többi esetben.
 
 \section{PDF exportáló funkció}
 \label{sec:PDF}
 
-A feladatsor PDFbe exportálása más módon zajik a két platformon. 
-Alapvetően hasinlüanműködnek.
+A feladatsor PDF-be exportálása más módon zajlik a két platformon. 
+Alapvetően hasonlóan működnek.
 Be kell állítani a megfelelő betűtípusokat, oldalméreteket, szövegméretet és hasonló egyéb változókat.
 
-Ezt követően float értékek segítségével lehet pozícionálni a kiírandó szövegeket.
-Táblázatokat nem lehet rajzolni, de egyéb geometriai elemekt, így vonalat igen, ezekből elkészíthető egy táblázat is.
-Csak alacsony szintű támogatása van az APIknak, így ugyan minden elkészíthető, de nagyon időigényes.
-Ahhoz, hogy egy jól kinéző dokumentum készüljön nagyon sok időt kell beletenni a megvalsításba.
-PDF szerkesztésére és létrehozására így tehát nem ezek a legtökéletesebb megoldások.
+Ezt követően float típusú értékek segítségével lehet pozícionálni a kiírandó szövegeket.
+Táblázatokat nem lehet rajzolni, de egyéb geometriai elemeket, így vonalat igen, ezekből elkészíthető egy táblázat is.
+Csak alacsony szintű támogatása van az API-knak, így ugyan minden elkészíthető, de nagyon időigényes.
+Ahhoz, hogy egy jól kinéző dokumentum készüljön, nagyon sok időt kell beletenni a megvalósításba.
+PDF szerkesztésére és létrehozására így tehát nem ezek a legjobb megoldások.
 
 \section{Szöveg felismerés}
 \label{sec:TextRec}
 
-A Szövegfelismeréshez a Google ML-Kit megoldását választttam.
-Sok előre elkészített egyszerű AI modellt tartalmaz amit könynen lehet a kódban hasznosítani.
+A Szövegfelismeréshez a Google ML-Kit megoldását választottam.
+Sok előre elkészített, egyszerű AI modellt tartalmaz, amit könnyen lehet a kódban hasznosítani.
 A használatát a \ref{lst:TextRec}.~kódrészlet mutatja be. 
 A teljes kód látható egyben, mivel tömören és hatékonyan megoldható a probléma.
-Ez a funkció Android eszözökön támogatott, asztali eszözökön nagyon furcsa lenne a használata.
+Ez a funkció Android eszközökön támogatott, asztali eszközökön nagyon furcsa lenne a használata.
 
-Az osztály leszármazik a ImageAnalysis.Analyzer, így lehet képeket feldolgozó kódot létrehozni.
-Be kell állítani az alapártékeket amikkel majd tud dolgozni az AI.
-Ezt követőenmeg kell írni az egyetlen függvényt amit overrideolni kell, itt tötténik a kép feldolgozása, paramétere egy ImageProxy.
-A szükséges hibakezelés után egy háttérszálon végrehjtódik a szöveg megkersése és felismerése a képen.
-A szöveget ezt követően átadja a kód egy másik függvények, amit paraméterben adtunk meg, így tudjuk kinyerni az értékes adatokat.
-Ez a kód amíg az adott nézeten vagyunk végtelen ideig fut, ezért szükség van egy kis késleltetésre, ezzel elkerülve a feleslges hardver használatot.
+Az osztály örökli az ImageAnalysis.Analyzer-t, így lehet képeket feldolgozó kódot létrehozni.
+Be kell állítani az alapértékeket, amikkel majd tud dolgozni az AI.
+Ezt követően meg kell írni az egyetlen függvényt, amit felülírni kell, itt történik a kép feldolgozása, paramétere egy ImageProxy.
+A szükséges hibakezelés után egy háttérszálon végrehajtódik a szöveg megkeresése és felismerése a képen.
+A szöveget ezt követően átadja a kód egy másik függvénynek, amit paraméterben adtunk meg, így tudjuk kinyerni az értékes adatokat.
+Ez a kód, amíg az adott nézeten vagyunk, végtelen ideig fut, ezért szükség van egy kis késleltetésre, ezzel elkerülve a felesleges hardver használatot.
 
 \begin{lstlisting}[caption={Szövegfelismerés.}, label={lst:TextRec}, language=Kotlin]
 actual class TextRecognitionAnalyzer actual constructor(

@@ -46,7 +46,7 @@
 \select@language {magyar} \contentsline {subsection}{\numberline {4.2.3}Common Client komponensek felépítése}{32}{subsection.4.2.3}%
 \select@language {magyar} \contentsline {chapter}{\numberline {5}Részletes megvalósítás}{34}{chapter.5}%
 \select@language {magyar} \contentsline {section}{\numberline {5.1}Compose}{34}{section.5.1}%
-\select@language {magyar} \contentsline {subsection}{\numberline {5.1.1}Compose alapelvek, használata valós környezeteben}{34}{subsection.5.1.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {5.1.1}Compose alapelvek, használata valós környezetben}{34}{subsection.5.1.1}%
 \select@language {magyar} \contentsline {subsection}{\numberline {5.1.2}Alkalmazás bemutatása képernyőképekkel}{36}{subsection.5.1.2}%
 \select@language {magyar} \contentsline {subsubsection}{\numberline {5.1.2.1}A fő képernyők}{36}{subsubsection.5.1.2.1}%
 \select@language {magyar} \contentsline {subsubsection}{\numberline {5.1.2.2}Elemek listázása}{37}{subsubsection.5.1.2.2}%
@@ -54,7 +54,7 @@
 \select@language {magyar} \contentsline {subsubsection}{\numberline {5.1.2.4}Szerekesztő nézet}{40}{subsubsection.5.1.2.4}%
 \select@language {magyar} \contentsline {subsubsection}{\numberline {5.1.2.5}Új elem létrehozása}{42}{subsubsection.5.1.2.5}%
 \select@language {magyar} \contentsline {subsubsection}{\numberline {5.1.2.6}Ellenőrző képernyő}{42}{subsubsection.5.1.2.6}%
-\select@language {magyar} \contentsline {subsection}{\numberline {5.1.3}Szekevencia diagram egy átlagos interakcióra}{43}{subsection.5.1.3}%
+\select@language {magyar} \contentsline {subsection}{\numberline {5.1.3}Szekvencia diagram egy átlagos interakcióra}{43}{subsection.5.1.3}%
 \select@language {magyar} \contentsline {section}{\numberline {5.2}Navigáció}{44}{section.5.2}%
 \select@language {magyar} \contentsline {section}{\numberline {5.3}ViewModel}{45}{section.5.3}%
 \select@language {magyar} \contentsline {section}{\numberline {5.4}HTTP kliens}{46}{section.5.4}%
@@ -62,8 +62,5 @@
 \select@language {magyar} \contentsline {section}{\numberline {5.6}Szöveg felismerés}{47}{section.5.6}%
 \select@language {magyar} \contentsline {chapter}{\numberline {6}Továbbfejlesztési lehetőségek}{49}{chapter.6}%
 \select@language {magyar} \contentsline {chapter}{\numberline {7}Összefoglalás}{50}{chapter.7}%
-\select@language {magyar} \contentsline {chapter}{Köszönetnyilvánítás}{51}{chapter*.23}%
-\select@language {magyar} \contentsline {chapter}{Irodalomjegyz\'ek}{54}{chapter*.24}%
-\select@language {magyar} \contentsline {chapter}{Függelék}{55}{appendix*.25}%
-\select@language {magyar} \contentsline {section}{\numberline {F.1}A TeXstudio felülete}{55}{section.F.1}%
-\select@language {magyar} \contentsline {section}{\numberline {F.2}Válasz az ,,Élet, a világmindenség, meg minden'' kérdésére}{56}{section.F.2}%
+\select@language {magyar} \contentsline {chapter}{Köszönetnyilvánítás}{51}{chapter*.26}%
+\select@language {magyar} \contentsline {chapter}{Irodalomjegyz\'ek}{54}{chapter*.27}%
